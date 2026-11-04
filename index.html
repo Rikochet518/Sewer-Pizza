@@ -87,6 +87,7 @@ p { margin: 0; }
 .hero-bg svg { display: block; width: 100%; height: 100%; }
 .top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .brand { display: flex; align-items: center; gap: 12px; }
+.brand-logo { width: 52px; height: 52px; border-radius: 50%; display: block; flex-shrink: 0; box-shadow: 0 2px 10px rgba(0,0,0,0.45); }
 .brand-name { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
 .count-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
 .count-title { font-size: 21px; font-weight: 800; min-width: 0; }
@@ -321,7 +322,7 @@ p { margin: 0; }
     return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6c6-3 12-3 18 0L12 22z" fill="none" stroke="' + C.dim + '" stroke-width="1.5" stroke-linejoin="round"></path></svg>';
   }
   var ICON = {
-    manhole: '<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#5BD27A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#1A201C"></circle><circle cx="22" cy="22" r="15"></circle><path d="M8.3 16h27.4M7 22h30M8.3 28h27.4M16 8.3v27.4M28 8.3v27.4" stroke-width="1.5" opacity="0.7"></path></svg>',
+    manhole: '<img class="brand-logo" src="icon.svg" width="52" height="52" alt="">',
     gear: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg>',
     back: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>',
     heart: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F29A3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg>',
