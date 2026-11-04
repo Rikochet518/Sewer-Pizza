@@ -185,6 +185,12 @@ p { margin: 0; }
 .tab:hover { color: var(--fg); }
 .tab[aria-current="page"] { color: var(--green); }
 
+.row-btns { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
+.sheet-back { position: fixed; inset: 0; z-index: 30; background: rgba(0, 0, 0, 0.6); }
+.sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 31; background: var(--surface); border-top: 1px solid var(--line); border-radius: 20px 20px 0 0; max-height: 82vh; overflow-y: auto;
+  padding: 18px max(16px, env(safe-area-inset-right, 0px)) calc(20px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.sheet-inner { max-width: 480px; margin: 0 auto; display: flex; flex-direction: column; gap: 16px; }
+.sheet .trow { border-bottom-color: var(--surface-2); }
 .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(88px + env(safe-area-inset-bottom, 0px)); z-index: 20; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 14px; padding: 10px 16px; border-radius: 22px; max-width: calc(100% - 32px); text-align: center; }
 
 @media (prefers-reduced-motion: reduce) {
@@ -206,6 +212,7 @@ p { margin: 0; }
     <a class="tab" href="#shop" data-view="shop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>Shop</a>
   </div>
 </nav>
+<div id="sheet"></div>
 <div id="toast" class="toast" role="status" hidden></div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
@@ -269,11 +276,42 @@ p { margin: 0; }
   }
   function search(q) { return 'https://www.google.com/search?q=' + encodeURIComponent(q); }
   function whereToWatch(item) { return item.url || 'https://www.justwatch.com/us/search?q=' + encodeURIComponent(item.title); }
+  function watchButtons(id) {
+    return '<div class="row-btns"><button class="btn btn-outline btn-sm" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="all">Where to watch</button>' +
+      '<button class="btn btn-ghost btn-sm" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="free">Free</button></div>';
+  }
+  function findTitle(id) {
+    var lib = D.library || {};
+    return (lib.shows || []).concat(lib.movies || []).filter(function (t) { return t.id === id; })[0];
+  }
+  function serviceRow(svc, title) {
+    var href = svc.search ? svc.search.replace('{q}', encodeURIComponent(title)) : svc.home;
+    return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(svc.name) + '</div><div class="muted small">' +
+      (svc.search ? 'Searches for this title' : 'Opens ' + esc(svc.name) + ', then search for it there') + '</div></div>' +
+      '<a class="btn btn-outline btn-sm" href="' + esc(href) + '" target="_blank" rel="noopener">Open</a></div>';
+  }
+  function sheetHTML() {
+    if (!ui.sheet || !D.library) return '';
+    var it = findTitle(ui.sheet.id); if (!it) return '';
+    var st = D.library.streaming || { paid: [], free: [] };
+    var label = it.title + (it.year ? ' (' + it.year + ')' : it.years ? ' (' + it.years.split(' ')[0] + ')' : '');
+    var free = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Free with ads</h3><div class="rows">' + (st.free || []).map(function (s) { return serviceRow(s, it.title); }).join('') + '</div></section>';
+    var mineList = (st.paid || []).filter(function (s) { return S.services.indexOf(s.id) >= 0; });
+    var mine = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Your services</h3>' +
+      (mineList.length ? '<div class="rows">' + mineList.map(function (s) { return serviceRow(s, it.title); }).join('') + '</div>'
+        : '<p class="muted" style="font-size:14px">Pick the services you have and they\'ll show here. <a class="link" href="#prefs">Choose my services</a></p>') + '</section>';
+    var jw = '<div class="note">What\'s free or included changes often. JustWatch shows every service that has this title right now, free ones included.</div>' +
+      '<a class="btn btn-primary" href="' + esc(whereToWatch(it)) + '" target="_blank" rel="noopener">See every option on JustWatch</a>';
+    return '<div class="sheet-back" data-act="closesheet"></div><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"><div class="sheet-inner">' +
+      '<div class="sec-head" style="align-items:center"><div><div class="eyebrow">' + (ui.sheet.mode === 'free' ? 'Watch free' : 'Where to watch') + '</div><h2 id="sheet-title">' + esc(label) + '</h2></div>' +
+      '<button class="icon-btn" data-act="closesheet" aria-label="Close" style="border:none">✕</button></div>' +
+      (ui.sheet.mode === 'free' ? free + jw : mine + free + jw) + '</div></div>';
+  }
   function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 
   /* ---------- saved state (this device only) ---------- */
   var KEY = 'sewerpizza.v1';
-  function blank() { return { ratings: {}, watched: {}, wishlist: [], streak: { count: 0, last: null }, trivia: { date: null, answers: [] }, badges: {}, alerts: { videos: true, releases: true, trivia: false } }; }
+  function blank() { return { ratings: {}, watched: {}, wishlist: [], services: [], streak: { count: 0, last: null }, trivia: { date: null, answers: [] }, badges: {}, alerts: { videos: true, releases: true, trivia: false } }; }
   var S = blank();
   try { var raw = localStorage.getItem(KEY); if (raw) { var parsed = JSON.parse(raw); Object.keys(S).forEach(function (k) { if (parsed[k] != null) S[k] = parsed[k]; }); } } catch (e) { /* storage unavailable */ }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* storage unavailable */ } }
@@ -281,7 +319,7 @@ p { margin: 0; }
   /* ---------- content ---------- */
   var D = { library: null, trivia: [], news: null, videos: null, sources: null };
   var loading = true, loadError = false;
-  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false };
+  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null };
 
   function getJSON(p) { return fetch(p, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
   function loadData() {
@@ -431,13 +469,13 @@ p { margin: 0; }
         var w = S.watched[s.id] || 0, eps = s.episodes || 0;
         var filled = eps ? Math.round(Math.min(1, w / eps) * 8) : 0;
         return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(s.title) + '</div><div class="muted small">Series · ' + esc(s.years) + '</div></div>' +
-          '<a class="btn btn-outline btn-sm" href="' + esc(whereToWatch(s)) + '" target="_blank" rel="noopener">Where to watch</a></div>' +
+          watchButtons(s.id) + '</div>' +
           '<div class="tracker">' + pie(filled, 22, { stroke: C.bg, empty: C.s3 }) + '<span class="small muted" style="flex:1">' + w + (eps ? ' of ' + eps : '') + ' episodes watched</span>' +
           '<button class="mini" data-act="ep" data-id="' + esc(s.id) + '" data-d="-1" aria-label="Remove one watched episode">&minus;</button><button class="mini" data-act="ep" data-id="' + esc(s.id) + '" data-d="1" aria-label="Mark one more episode watched">+</button></div>' +
           ratingRow(s.id) + '</div>';
       }).join('');
       var movies = (D.library.movies || []).map(function (m) {
-        return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(m.title) + '</div><div class="muted small">Movie · ' + esc(m.year) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(whereToWatch(m)) + '" target="_blank" rel="noopener">Where to watch</a></div>' + ratingRow(m.id) + '</div>';
+        return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(m.title) + '</div><div class="muted small">Movie · ' + esc(m.year) + '</div></div>' + watchButtons(m.id) + '</div>' + ratingRow(m.id) + '</div>';
       }).join('');
       return '<div class="stack-lg">' + out + featured +
         '<section class="stack"><h2>Series</h2><div class="rows">' + shows + '</div></section>' +
@@ -531,7 +569,7 @@ p { margin: 0; }
       var modes = [['episodes', 'Episodes'], ['movies', 'Movies'], ['both', 'Both']];
       var p = ui.pick;
       var result = p
-        ? '<section class="card"><div class="eyebrow">Tonight\'s pick</div><h2 style="font-size:20px">' + esc(p.title) + '</h2><p class="muted">' + esc(p.detail) + '</p><a class="btn btn-primary" href="' + esc(whereToWatch(p.item)) + '" target="_blank" rel="noopener">Where to watch</a></section>'
+        ? '<section class="card"><div class="eyebrow">Tonight\'s pick</div><h2 style="font-size:20px">' + esc(p.title) + '</h2><p class="muted">' + esc(p.detail) + '</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" style="flex:1" data-act="watchsheet" data-id="' + esc(p.item.id) + '" data-mode="all">Where to watch</button><button class="btn btn-ghost" data-act="watchsheet" data-id="' + esc(p.item.id) + '" data-mode="free">Free</button></div></section>'
         : '<div class="empty" style="text-align:center">Your pick shows up here.</div>';
       return '<div class="stack-lg">' + out +
         '<div class="chips" role="group" aria-label="What to pick from">' + modes.map(function (m) { return '<button class="chip" data-act="mode" data-mode="' + m[0] + '" aria-pressed="' + (ui.mode === m[0]) + '">' + m[1] + '</button>'; }).join('') + '</div>' +
@@ -554,6 +592,10 @@ p { margin: 0; }
         '<input class="share-url" id="share-url" readonly value="' + esc(url) + '" aria-label="App link">' +
         '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" data-act="copy" style="flex:1">Copy link</button><button class="btn btn-ghost" data-act="qr" style="flex:1" aria-expanded="' + ui.qr + '">' + (ui.qr ? 'Hide QR code' : 'Show QR code') + '</button></div>' +
         (ui.qr ? '<div class="qr" id="qr" aria-label="QR code for the app link"></div>' : '') + '</section>' +
+        '<section class="stack" style="gap:4px"><h2>My streaming services</h2><p class="muted" style="font-size:14px">Pick the ones you have. They show first when you tap Where to watch.</p>' +
+        ((D.library && D.library.streaming && D.library.streaming.paid) || []).map(function (s) {
+          return '<label class="toggle" for="svc-' + esc(s.id) + '">' + esc(s.name) + '<input type="checkbox" id="svc-' + esc(s.id) + '" data-service="' + esc(s.id) + '"' + (S.services.indexOf(s.id) >= 0 ? ' checked' : '') + '></label>';
+        }).join('') + '</section>' +
         '<section class="stack" style="gap:4px"><h2>Alerts</h2>' + alerts + '<p class="muted small">Your choices are saved now. Phone alerts arrive in a later version.</p></section>' +
         '<section class="stack" style="gap:4px"><h2>Sources</h2><div class="kv"><span>News feeds</span><span class="muted">' + feeds + '</span></div><div class="kv"><span>YouTube channels</span><span class="muted">' + chans + '</span></div><div class="kv"><span>News last updated</span><span class="muted">' + (D.news && D.news.updated ? ago(D.news.updated) : 'Not yet') + '</span></div></section>' +
         '<section class="stack"><h2>Your data</h2><p class="muted" style="font-size:14px">Ratings, streaks, badges and your wishlist stay on this device. There are no accounts.</p>' + reset + '</section>' +
@@ -573,8 +615,18 @@ p { margin: 0; }
       if (t.getAttribute('data-view') === tab) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
     });
     if (r === 'prefs' && ui.qr) drawQR();
+    renderSheet();
   }
-  window.addEventListener('hashchange', function () { ui.feedback = null; ui.resetAsk = false; ui.playing = false; render(); window.scrollTo(0, 0); });
+  var lastFocus = null;
+  function renderSheet() {
+    var box = document.getElementById('sheet');
+    box.innerHTML = sheetHTML();
+    document.body.style.overflow = ui.sheet ? 'hidden' : '';
+    if (ui.sheet) { var c = box.querySelector('.sheet .icon-btn'); if (c) c.focus(); }
+  }
+  function closeSheet() { ui.sheet = null; renderSheet(); if (lastFocus && document.body.contains(lastFocus)) lastFocus.focus(); }
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ui.sheet) closeSheet(); });
+  window.addEventListener('hashchange', function () { ui.feedback = null; ui.resetAsk = false; ui.playing = false; ui.sheet = null; render(); window.scrollTo(0, 0); });
 
   function drawQR() {
     var el = document.getElementById('qr'); if (!el) return;
@@ -656,7 +708,9 @@ p { margin: 0; }
     'reset-ask': function () { ui.resetAsk = true; render(); },
     'reset-no': function () { ui.resetAsk = false; render(); },
     'reset-yes': function () { S = blank(); save(); ui.resetAsk = false; render(); toast('Saved data cleared'); },
-    play: function () { ui.playing = true; render(); }
+    play: function () { ui.playing = true; render(); },
+    watchsheet: function (el) { lastFocus = el; ui.sheet = { id: el.getAttribute('data-id'), mode: el.getAttribute('data-mode') }; renderSheet(); },
+    closesheet: function () { closeSheet(); }
   };
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-act]'); if (!el) return;
@@ -664,7 +718,13 @@ p { margin: 0; }
   });
   document.addEventListener('change', function (e) {
     var k = e.target.getAttribute && e.target.getAttribute('data-alert');
-    if (k) { S.alerts[k] = e.target.checked; save(); toast('Saved'); }
+    if (k) { S.alerts[k] = e.target.checked; save(); toast('Saved'); return; }
+    var svc = e.target.getAttribute && e.target.getAttribute('data-service');
+    if (svc) {
+      S.services = S.services.filter(function (x) { return x !== svc; });
+      if (e.target.checked) S.services.push(svc);
+      save(); toast('Saved');
+    }
   });
   document.addEventListener('submit', function (e) {
     if (e.target.id !== 'wish-form') return;

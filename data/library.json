@@ -211,5 +211,78 @@
       "detail": "Final chapter of the saga · coming in 2027",
       "search": "TMNT The Last Ronin III comic 2027"
     }
-  ]
+  ],
+  "streaming": {
+    "_note": "search uses {q} for the title. Services without a search address just open the service.",
+    "paid": [
+      {
+        "id": "netflix",
+        "name": "Netflix",
+        "search": "https://www.netflix.com/search?q={q}",
+        "home": "https://www.netflix.com"
+      },
+      {
+        "id": "paramount",
+        "name": "Paramount+",
+        "search": "",
+        "home": "https://www.paramountplus.com"
+      },
+      {
+        "id": "prime",
+        "name": "Prime Video",
+        "search": "https://www.amazon.com/s?k={q}&i=instant-video",
+        "home": "https://www.amazon.com/primevideo"
+      },
+      {
+        "id": "hulu",
+        "name": "Hulu",
+        "search": "",
+        "home": "https://www.hulu.com"
+      },
+      {
+        "id": "disney",
+        "name": "Disney+",
+        "search": "",
+        "home": "https://www.disneyplus.com"
+      },
+      {
+        "id": "hbomax",
+        "name": "HBO Max",
+        "search": "",
+        "home": "https://www.hbomax.com"
+      },
+      {
+        "id": "peacock",
+        "name": "Peacock",
+        "search": "",
+        "home": "https://www.peacocktv.com"
+      },
+      {
+        "id": "apple",
+        "name": "Apple TV",
+        "search": "https://tv.apple.com/search?term={q}",
+        "home": "https://tv.apple.com"
+      }
+    ],
+    "free": [
+      {
+        "id": "pluto",
+        "name": "Pluto TV",
+        "search": "",
+        "home": "https://pluto.tv"
+      },
+      {
+        "id": "tubi",
+        "name": "Tubi",
+        "search": "",
+        "home": "https://tubitv.com"
+      },
+      {
+        "id": "roku",
+        "name": "The Roku Channel",
+        "search": "",
+        "home": "https://therokuchannel.roku.com"
+      }
+    ]
+  }
 }
