@@ -22,6 +22,12 @@
           "service": "tubi",
           "url": "https://tubitv.com/series/300016061/teenage-mutant-ninja-turtles"
         }
+      ],
+      "links": [
+        {
+          "service": "paramount",
+          "url": "https://www.paramountplus.com/shows/teenage-mutant-ninja-turtles-1987/"
+        }
       ]
     },
     {
@@ -34,6 +40,12 @@
         {
           "service": "roku",
           "url": "https://therokuchannel.roku.com/details/89cbe75edfb455bfb1750798516b3844/teenage-mutant-ninja-turtles"
+        }
+      ],
+      "links": [
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/show/teenage-mutant-ninja-turtles-2003/umc.cmc.38psbylg5x0twomuhi9c0otds"
         }
       ]
     },
@@ -48,6 +60,20 @@
           "service": "roku",
           "url": "https://therokuchannel.roku.com/details/91581f569fd454bdaba14120a72765f0"
         }
+      ],
+      "links": [
+        {
+          "service": "paramount",
+          "url": "https://www.paramountplus.com/shows/teenage-mutant-ninja-turtles-2012/"
+        },
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/show/teenage-mutant-ninja-turtles-2012/umc.cmc.4f1jbs8lfzkyswrc1p95um2ba"
+        },
+        {
+          "service": "prime",
+          "url": "https://www.amazon.com/Teenage-Mutant-Ninja-Turtles-Season/dp/B0CJRGLDWT"
+        }
       ]
     },
     {
@@ -61,6 +87,16 @@
           "service": "roku",
           "url": "https://therokuchannel.roku.com/details/09962bba183158c99091ac24f0e8c985/rise-of-the-teenage-mutant-ninja-turtles"
         }
+      ],
+      "links": [
+        {
+          "service": "netflix",
+          "url": "https://www.netflix.com/title/80242517"
+        },
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/show/rise-of-the-teenage-mutant-ninja-turtles/umc.cmc.1agp84dscwyoiijs5rqcdjyhh"
+        }
       ]
     },
     {
@@ -68,7 +104,21 @@
       "title": "Tales of the Teenage Mutant Ninja Turtles",
       "years": "2024–",
       "episodes": 12,
-      "url": ""
+      "url": "",
+      "links": [
+        {
+          "service": "paramount",
+          "url": "https://www.paramountplus.com/shows/tales-of-the-teenage-mutant-ninja-turtles/"
+        },
+        {
+          "service": "netflix",
+          "url": "https://www.netflix.com/title/81936702"
+        },
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/show/tales-of-the-teenage-mutant-ninja-turtles/umc.cmc.2j4n3bp71iwifdk5qfl3uglnp"
+        }
+      ]
     },
     {
       "id": "s2026",
@@ -83,7 +133,13 @@
       "id": "m1990",
       "title": "Teenage Mutant Ninja Turtles",
       "year": 1990,
-      "url": ""
+      "url": "",
+      "links": [
+        {
+          "service": "prime",
+          "url": "https://www.amazon.com/Teenage-Mutant-Ninja-Turtles-Koteas/dp/B001T5BZAO"
+        }
+      ]
     },
     {
       "id": "m1991",
@@ -101,7 +157,17 @@
       "id": "m2007",
       "title": "TMNT",
       "year": 2007,
-      "url": ""
+      "url": "",
+      "links": [
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/movie/tmnt/umc.cmc.5c6tbqec51r521lfveaje3utr"
+        },
+        {
+          "service": "prime",
+          "url": "https://www.amazon.com/TMNT-Chris-Evans/dp/B000UUF69A"
+        }
+      ]
     },
     {
       "id": "m2014",
@@ -129,13 +195,25 @@
           "service": "pluto",
           "url": "https://pluto.tv/us/movies/5eed2e62f44321001a7b6df2/"
         }
+      ],
+      "links": [
+        {
+          "service": "paramount",
+          "url": "https://www.paramountplus.com/movies/video/NX7LTAMBM9GBHmRtWW9gQdr2TTBLY04D/"
+        }
       ]
     },
     {
       "id": "m2022",
       "title": "Rise of the TMNT: The Movie",
       "year": 2022,
-      "url": ""
+      "url": "",
+      "links": [
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/movie/rise-of-the-teenage-mutant-ninja-turtles-the-movie/umc.cmc.ehw11wf1ylkkvgihrewsa8wg"
+        }
+      ]
     },
     {
       "id": "m2023",
@@ -146,6 +224,20 @@
         {
           "service": "pluto",
           "url": "https://pluto.tv/us/on-demand/movies/69ef8b5911a68f77042c1726"
+        }
+      ],
+      "links": [
+        {
+          "service": "paramount",
+          "url": "https://www.paramountplus.com/movies/video/zzvVWZ_qkLDj2LXltHmuZlUsX8BfdZ7U/"
+        },
+        {
+          "service": "netflix",
+          "url": "https://www.netflix.com/title/81670527"
+        },
+        {
+          "service": "apple",
+          "url": "https://tv.apple.com/us/movie/teenage-mutant-ninja-turtles-mutant-mayhem/umc.cmc.6eou7u8mro9ke2eowub9nie12"
         }
       ]
     }
@@ -277,7 +369,8 @@
         "id": "prime",
         "name": "Prime Video",
         "search": "https://www.amazon.com/s?k={q}&i=instant-video",
-        "home": "https://www.amazon.com/primevideo"
+        "home": "https://www.amazon.com/primevideo",
+        "rent": true
       },
       {
         "id": "hulu",
@@ -307,7 +400,8 @@
         "id": "apple",
         "name": "Apple TV",
         "search": "https://tv.apple.com/search?term={q}",
-        "home": "https://tv.apple.com"
+        "home": "https://tv.apple.com",
+        "rent": true
       }
     ],
     "free": [

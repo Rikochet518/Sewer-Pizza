@@ -312,10 +312,21 @@ p { margin: 0; }
     var free = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Free with ads</h3>' +
       (direct ? '<div class="rows">' + direct + '</div>' : '<p class="muted" style="font-size:14px">No direct free link for this one yet. Try these, or check JustWatch below.</p>') +
       (others ? (direct ? '<h3 style="font-size:13px;color:var(--muted);font-weight:600;margin-top:10px">Other free services</h3>' : '') + '<div class="rows">' + others + '</div>' : '') + '</section>';
+    var linkFor = {};
+    (it.links || []).forEach(function (l) { linkFor[l.service] = l.url; });
+    function paidRow(s) {
+      if (!linkFor[s.id]) return serviceRow(s, it.title);
+      return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">' +
+        (s.rent ? 'Goes straight to this title. It may be to rent or buy.' : 'Goes straight to this title') + '</div></div>' +
+        '<a class="btn btn-primary btn-sm" href="' + esc(linkFor[s.id]) + '" target="_blank" rel="noopener">Watch</a></div>';
+    }
     var mineList = (st.paid || []).filter(function (s) { return S.services.indexOf(s.id) >= 0; });
+    mineList.sort(function (a, b) { return (linkFor[b.id] ? 1 : 0) - (linkFor[a.id] ? 1 : 0); });
     var mine = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Your services</h3>' +
-      (mineList.length ? '<div class="rows">' + mineList.map(function (s) { return serviceRow(s, it.title); }).join('') + '</div>'
+      (mineList.length ? '<div class="rows">' + mineList.map(paidRow).join('') + '</div>'
         : '<p class="muted" style="font-size:14px">Pick the services you have and they\'ll show here. <a class="link" href="#prefs">Choose my services</a></p>') + '</section>';
+    var alsoList = (st.paid || []).filter(function (s) { return linkFor[s.id] && S.services.indexOf(s.id) < 0; });
+    if (alsoList.length) mine += '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Also on</h3><div class="rows">' + alsoList.map(paidRow).join('') + '</div></section>';
     var jw = '<div class="note">What\'s free or included changes often. JustWatch shows every service that has this title right now, free ones included.</div>' +
       '<a class="btn btn-primary" href="' + esc(whereToWatch(it)) + '" target="_blank" rel="noopener">See every option on JustWatch</a>';
     return '<div class="sheet-back" data-act="closesheet"></div><div class="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title"><div class="sheet-inner">' +
