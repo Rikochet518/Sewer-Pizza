@@ -16,28 +16,52 @@
       "title": "Teenage Mutant Ninja Turtles",
       "years": "1987–1996",
       "episodes": 193,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "tubi",
+          "url": "https://tubitv.com/series/300016061/teenage-mutant-ninja-turtles"
+        }
+      ]
     },
     {
       "id": "s2003",
       "title": "Teenage Mutant Ninja Turtles",
       "years": "2003–2009",
       "episodes": 155,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "roku",
+          "url": "https://therokuchannel.roku.com/details/89cbe75edfb455bfb1750798516b3844/teenage-mutant-ninja-turtles"
+        }
+      ]
     },
     {
       "id": "s2012",
       "title": "Teenage Mutant Ninja Turtles",
       "years": "2012–2017",
       "episodes": 124,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "roku",
+          "url": "https://therokuchannel.roku.com/details/91581f569fd454bdaba14120a72765f0"
+        }
+      ]
     },
     {
       "id": "s2018",
       "title": "Rise of the Teenage Mutant Ninja Turtles",
       "years": "2018–2020",
       "episodes": 39,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "roku",
+          "url": "https://therokuchannel.roku.com/details/09962bba183158c99091ac24f0e8c985/rise-of-the-teenage-mutant-ninja-turtles"
+        }
+      ]
     },
     {
       "id": "s2024",
@@ -83,13 +107,29 @@
       "id": "m2014",
       "title": "Teenage Mutant Ninja Turtles",
       "year": 2014,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "pluto",
+          "url": "https://pluto.tv/us/on-demand/movies/5c65cd8701d5a2826c1945da"
+        }
+      ]
     },
     {
       "id": "m2016",
       "title": "TMNT: Out of the Shadows",
       "year": 2016,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "tubi",
+          "url": "https://tubitv.com/movies/499428/teenage-mutant-ninja-turtles-out-of-the-shadows"
+        },
+        {
+          "service": "pluto",
+          "url": "https://pluto.tv/us/movies/5eed2e62f44321001a7b6df2/"
+        }
+      ]
     },
     {
       "id": "m2022",
@@ -101,7 +141,13 @@
       "id": "m2023",
       "title": "TMNT: Mutant Mayhem",
       "year": 2023,
-      "url": ""
+      "url": "",
+      "free": [
+        {
+          "service": "pluto",
+          "url": "https://pluto.tv/us/on-demand/movies/69ef8b5911a68f77042c1726"
+        }
+      ]
     }
   ],
   "games": [

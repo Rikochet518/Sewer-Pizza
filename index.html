@@ -278,7 +278,13 @@ p { margin: 0; }
   function whereToWatch(item) { return item.url || 'https://www.justwatch.com/us/search?q=' + encodeURIComponent(item.title); }
   function watchButtons(id) {
     return '<div class="row-btns"><button class="btn btn-outline btn-sm" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="all">Where to watch</button>' +
-      '<button class="btn btn-ghost btn-sm" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="free">Free</button></div>';
+      (hasFree(id)
+        ? '<button class="btn btn-sm" style="background:var(--sauce-bg);border:1px solid var(--orange);color:var(--orange)" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="free">Watch free</button></div>'
+        : '<button class="btn btn-ghost btn-sm" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="free">Free</button></div>');
+  }
+  function hasFree(id) {
+    var t = findTitle(id);
+    return !!(t && t.free && t.free.length);
   }
   function findTitle(id) {
     var lib = D.library || {};
@@ -295,7 +301,17 @@ p { margin: 0; }
     var it = findTitle(ui.sheet.id); if (!it) return '';
     var st = D.library.streaming || { paid: [], free: [] };
     var label = it.title + (it.year ? ' (' + it.year + ')' : it.years ? ' (' + it.years.split(' ')[0] + ')' : '');
-    var free = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Free with ads</h3><div class="rows">' + (st.free || []).map(function (s) { return serviceRow(s, it.title); }).join('') + '</div></section>';
+    var direct = (it.free || []).map(function (f) {
+      var svc = (st.free || []).filter(function (s) { return s.id === f.service; })[0];
+      var name = svc ? svc.name : f.service;
+      return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(name) + '</div><div class="muted small">Goes straight to this title</div></div>' +
+        '<a class="btn btn-sauce btn-sm" href="' + esc(f.url) + '" target="_blank" rel="noopener">Watch free</a></div>';
+    }).join('');
+    var directIds = (it.free || []).map(function (f) { return f.service; });
+    var others = (st.free || []).filter(function (s) { return directIds.indexOf(s.id) < 0; }).map(function (s) { return serviceRow(s, it.title); }).join('');
+    var free = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Free with ads</h3>' +
+      (direct ? '<div class="rows">' + direct + '</div>' : '<p class="muted" style="font-size:14px">No direct free link for this one yet. Try these, or check JustWatch below.</p>') +
+      (others ? (direct ? '<h3 style="font-size:13px;color:var(--muted);font-weight:600;margin-top:10px">Other free services</h3>' : '') + '<div class="rows">' + others + '</div>' : '') + '</section>';
     var mineList = (st.paid || []).filter(function (s) { return S.services.indexOf(s.id) >= 0; });
     var mine = '<section class="stack" style="gap:2px"><h3 style="font-size:15px">Your services</h3>' +
       (mineList.length ? '<div class="rows">' + mineList.map(function (s) { return serviceRow(s, it.title); }).join('') + '</div>'
