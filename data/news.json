@@ -1,11 +1,426 @@
 {
-  "updated": null,
-  "sample": true,
+  "updated": "2026-11-04T13:30:39.125Z",
+  "sample": false,
   "items": [
-    { "title": "Sample: real headlines appear here once the hourly feed update is running", "source": "Sample", "category": "News", "url": "https://news.google.com/search?q=%22Teenage%20Mutant%20Ninja%20Turtles%22", "published": "2026-11-04T10:00:00Z" },
-    { "title": "Sample: movie news will be tagged Movies automatically", "source": "Sample", "category": "Movies", "url": "https://news.google.com/search?q=TMNT%20movie", "published": "2026-11-04T08:00:00Z" },
-    { "title": "Sample: comic announcements will be tagged Comics", "source": "Sample", "category": "Comics", "url": "https://news.google.com/search?q=TMNT%20comic", "published": "2026-11-03T20:00:00Z" },
-    { "title": "Sample: toy and figure reveals will be tagged Toys", "source": "Sample", "category": "Toys", "url": "https://news.google.com/search?q=TMNT%20figures", "published": "2026-11-03T12:00:00Z" },
-    { "title": "Sample: game news will be tagged Games", "source": "Sample", "category": "Games", "url": "https://news.google.com/search?q=TMNT%20game", "published": "2026-11-02T15:00:00Z" }
+    {
+      "title": "TMNT Tuesday #81: Exclusive 'Teenage Mutant Ninja Turtles' #24 preview marks Gene Luen Yang's farewell",
+      "source": "AIPT",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE15OVA1bW9KSlpiMGd6b1dnTDJrMFc1OTVrbTBEUndEbktrQzBNN20tNnRKWERrOE9UUXRfc1RPeWtLSGk1TWpoaXpvWmtOb2JPcHdnRldHakt3M0RXMU9wSlgxZUdOT1IxRUE?oc=5",
+      "published": "2026-11-03T14:55:06.000Z"
+    },
+    {
+      "title": "TMNT Cowabunga Forever 90s Movie Figures 5 Pack on Target",
+      "source": "Toy Habits",
+      "category": "Toys",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUWJOMWNmYWVhcktnUXJwTmc4eDRzMXJnQ2JVVExKa3ByVWNTSVJlR0NaSGVTVGlYa1hFRVVBcWs0ZHlwQ2NQYVVZaVpaTnNnckZEU2JoV1pzd0Q3MUhjRlNoWDd0X0hLSWVHclh0aG1PU2pxRXoxbHAwUENMdkNhd3B4azF6WEk?oc=5",
+      "published": "2026-11-01T16:21:39.000Z"
+    },
+    {
+      "title": "Patrick Stewart Played A Teenage Mutant Ninja Turtles Villain In A Forgotten Movie",
+      "source": "SlashFilm",
+      "category": "Movies",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZlJSb080bG5kZXlMc3pIRDJBaVk2VkhRcnp2bmFvOU0yS05tSGlxVkRNaWNxRTB4ODF2TEtUa1EzV2JqOTN6aUZoX2syczlOQ090Q25vVWdqSGtVM2NDRVFUNEtxRmFCVGNPNWxCLTBsQ0JvaS1kWkdDbEpHcS0zNXV5Ny1BWVNiZEpiTEx3NjMwZ1dySGJxbUlYd0g5SWRL?oc=5",
+      "published": "2026-10-31T16:30:00.000Z"
+    },
+    {
+      "title": "Get Ready to Return to the TMNT: Mutant Mayhem Universe in Tales of the TMNT: Tear in Time Spinoff Comic",
+      "source": "IGN",
+      "category": "Comics",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQbUhzMHVjSTJZcjJNNC0zMDN1aVVPRHFDWHVGRlJzekNaVFlGVkdXZklKMDRETTNUU2NiYTBFTHlhZk9rb1J6ZHRsUlhTOXFlaU1xYWcxX1hsRGtQUFg1VGdaVWFKOTBacmJNc013RFpka0hmVHppUTZ0ZmNPeWs0UTVmTG83LUlreXJFSWl4eTVsZw?oc=5",
+      "published": "2026-10-30T14:00:00.000Z"
+    },
+    {
+      "title": "Frank Miller Teases Sin City Future and Finally Drawing Teenage Mutant Ninja Turtles",
+      "source": "IGN",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQRXBPTnNaZUpDVl9XSDE3blNVN3NyTTk0Mjl4cFo5dVVVa09aUFFNa3M3YzdVMGNMXzVITmlJY3RVUXdFUWt2NVBMd0YxOFkzZjI5RDdSNjZZTEtNdm8tV3lEYnlnSGowODNPRUlzdHVYaHBsZUc0WjktUGdjczRlNFBGMk0xOTQtTlVlM191ekdRZUZRYzQ0TFlQamNHMlkwdDZiTEtQVDA5akNSR3dKc2RsNA?oc=5",
+      "published": "2026-10-29T18:43:53.000Z"
+    },
+    {
+      "title": "Leonardo is a Nightmare with Super7’s New TMNT ULTIMATES! Figure",
+      "source": "Bleeding Cool News",
+      "category": "Toys",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPS21mN3JZMTF0anZvNEtKWlhyUjJQd21pbHVtRWlSQ1MxNl9WdUh4aS1RQ0QwMTR0VlR2MW9sY2s5bG9SSlkzWktWcVgyclFTbFBDTnNYZHhvY05yeVVMYTJxcXZxWHFQNWtlaXZzYkVINHFLSTJudEdBRDFJRjQ3bGZORjBDSm9oWTFweXNzdlVMYlpLdUU5aHFBcURFQ1pUVTJR?oc=5",
+      "published": "2026-10-28T14:51:13.000Z"
+    },
+    {
+      "title": "New Limited Edition Nightmare TMNT Mikey Figure Revealed by Super7",
+      "source": "Bleeding Cool News",
+      "category": "Toys",
+      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMFdNUWRiLUE3T3U1QTAxeDdnSkZhYllvUnhNT19IdHN1S3RJOUdpN0JEVFlTRDBvOEZONEw4ekNnM2U1a0Y0SDJsX3RRNnIwakpFUjlkN0hwZnYwZVpPSEcxeWtWV29VRS1HbzBjQjc3Zms1Q2RDeXdIMkROZ0tjMDl2eDZtZnNPeXNsYXU3b2RlZC1Xc3JVYTFPSDdYa0JUR0xJSnpqTlE?oc=5",
+      "published": "2026-10-28T14:23:08.000Z"
+    },
+    {
+      "title": "It's the End of an Era for the Teenage Mutant Ninja Turtles as We Say Goodbye to Their Saturday Morning Adventures",
+      "source": "Comic Book Resources",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPRm1kOWp4dWF0OWE0QTZCWHplaDU0Y19jUVBjVjY5QTB6akZQcVp2a29ObDhYOHNxc3hUa2hqa0dTTHlYbkMzSG5oallMZlVZZWlLeUs0QkdiNTZ1c3h0S0diajlFem5OV3R3aU51YzkzaU9UMVBPZ004QV9vbVo3X0JyWXJiSWdyRDFTbWdhWHBxU2d4TnhHYzVDekdhRXc?oc=5",
+      "published": "2026-10-17T07:00:00.000Z"
+    },
+    {
+      "title": "TEENAGE MUTANT NINJA TURTLES PACK IS AVAILABLE NOW",
+      "source": "SEGA",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOOTJ2RjZUVFNDc0JrM0pQRGdVY1U4S0xJSjRkWlFkc2xXYzBoRGpoLVNZaXNrLW10bkliY19HRUJReXZCcC05UU1GNFFiMzFYWG5lekxkUEdKeHRnXy1Dc0J6Nld1RE1qek1KMm9OQjFDUkFwSGFlcm5ndW5TY091QVVB?oc=5",
+      "published": "2026-07-28T07:00:00.000Z"
+    },
+    {
+      "title": "The Teenage Mutant Ninja Turtles Are Coming to a Stage Near You",
+      "source": "Playbill",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbDdac2ZaZUJCTmE4ZTRMTnU0dWV2VVdqa0ZXa1p5TndNYmZhQ2o2SEljTmZDWnFGXzgwUnhkbTFuc09TQk1NUHhBWW9wM3AzdlVxMXNaV084RmtLYVdtcUxHajZoMmZjMW5GRHBsQ29JZmdNanRLUXVnejVCTjgwMGVIdjhsYnVMelh5YUR5TXV3OEQ4eFlr?oc=5",
+      "published": "2026-06-24T07:00:00.000Z"
+    },
+    {
+      "title": "‘Teenage Mutant Ninja Turtles’ Stage Show Sets Across 2027 North American Tour",
+      "source": "Variety",
+      "category": "Shows",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxORVFmTGkzb1NOREFxb0hxZEUwbkZhZ1lnanpFX0U0LTRORldIc1dGZlBQQjEzT3JYMlB0SFp4LXhCcWJ6T1ViVllZRlVsakRqaGdyTGY5V3pMT0xkeTgwRHVKczZkbmRuMEJQV29YOC1DX0kteWNIV0xJZ01HdmgwWEhCQlJva21Ob2tKOTBHRzk2dXVtUjlHclZ3?oc=5",
+      "published": "2026-06-24T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Empire City Launches Today on Meta Quest",
+      "source": "www.meta.com",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBOUmVkSzZSTWh5REVqT0RWSU1KRTNqbVh3RWZwZUxveTFqQ2xrM0xBbGlIQnN6TnhHVHFNTi1qbEFBVVBMS2M4Nmd1WVFvWFBwMXRwUnExWGNzNTNTR0JEV2tDMmxOUlFkZkNrSWRaVVJhSUY0ajl3UHdTWnVzRk0?oc=5",
+      "published": "2026-04-30T07:00:00.000Z"
+    },
+    {
+      "title": "TMNT: Empire City Preview – Hanging with Your Turtle Bros in VR is a Shell of a Time",
+      "source": "IGN Nordic",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNTGh5U0pnV1QxYWlrblZVdmNkeE5YTW5FamtycTdyX3pSX3RhWjlOMGdCWW1WdEVIZTQ0ejF6Z2FicE94VlFPYnNla1dQTGVvbThuN0tiTkNsWTJBV2l6ZkVjU2F1ZVZSMXhuQXhoeUZKdGJDVGpWbXJvQ1VLWWcwMjNycHpGcUhYdy1pUFhiUHVBWTJYZnJkUTRseVpJeXZUTEVKcjc4LTNZY3hLaHN3aS1OOTNQVEkxRDJUcUNBNlkwZFEwMjdjQWd0cTVCdFFWQkhSSGZPSW9rM01DR0paR2J0V3dXSjR4dmJMU1NzaC15Zw?oc=5",
+      "published": "2026-04-13T07:00:00.000Z"
+    },
+    {
+      "title": "Frank Miller Draws His First-Ever ‘Teenage Mutant Ninja Turtles’ Cover (Exclusive)",
+      "source": "The Hollywood Reporter",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZjZaY0ZqMm82WVBSUThDczQzUGtYb0hkRlZpRnZ3b0xLTExUMGVRaEJXRWNTSy0xMVVGTmxlZUx2TTc0WHREYXZiSXgxNmdHbWpfOGhTSHl1MVZFbWRxZERYVDhVdkdYeHF5LW5KeWhBT255S1FwT05LZUJqVXltZTR2ZEduUlNCR2FNZDM3Z1kzQ2w1NmhGN0Zub2YzT0tmcDZNTlFjQ3hYSlgyMk01eHpkcDVnTlI2?oc=5",
+      "published": "2026-03-20T07:00:00.000Z"
+    },
+    {
+      "title": "Review: Teenage Mutant Ninja Turtles take over Magic: The Gathering",
+      "source": "Games with James | Substack",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9yNDJfUk9iUE5ESGVhZk5rUGx0TzFzOFEyd2tyNUNCV3BKWmczWTV6TDlBdDJEVUwwY3VrdHZoaUhicWpUZlBWaHZ1cV82S2dMcXBTYlRCb1RoZl9XYmN4Ymd0ejc0V05OZDlVY3ZJWXhWU3hDOUhqSGhocXd4UQ?oc=5",
+      "published": "2026-02-27T08:00:00.000Z"
+    },
+    {
+      "title": "Sneak Into Design with Magic: The Gathering® | Teenage Mutant Ninja Turtles",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZHlJY25OYm1SMGFJb1dwNVpiY0Ewcmo3VHk1cTI5azdIeWVCeDItOHRLZEh4WS0ySEJoeUNkVGZHUXhSTTRzWUUzUUNFalhISmRIOWxydXc5VE1fNVhIYndHZVhTQ3dMQXFxY3VEb0lfN1hSdUJyOHAtS2U0S2o3UHVMQ0lkRkg4d0pBTVdRWHZPOTBoWW41bA?oc=5",
+      "published": "2026-02-25T08:00:00.000Z"
+    },
+    {
+      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTjlxMUYwcFROZnRUZ2d5RFBLYmRvNXBQQV82RVd4Z1l2b3NNSFU0M0lVdWFQbXotR05HVTRWOHc1RTlnWlhiNXVsT3ozNlhyQTQ4YzIwVDBPQ3czSE9TUXJzQ0JpTDgzekEwTFBZWE9aQlM2ZFZwaFpMbng4MTBBUXp3NE1Vc1U0OEctUGM2MUJha2tET1RQRnBSczB4NEh5QkE?oc=5",
+      "published": "2026-02-19T08:00:00.000Z"
+    },
+    {
+      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Commander Decklist",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPLTNHTlpJaTVRYmwxYkVqQ3NSdGdVSmZaczVucVBIcFVWVVMtNXlHRVZYZVZteFFSTTlXSGNOUUlmQlBQYUpUZlY5cVllVF93bUgxWkc3Qld2cXUtOHM4TFV0Q3lOcUg4M1ZRcGY2VDBxdkpzTkdLZndKWUNPV2lidGRDMFFkT19oXzNFVGVQWWljcElqOXliSW1ZSQ?oc=5",
+      "published": "2026-02-18T08:00:00.000Z"
+    },
+    {
+      "title": "Collecting Magic: The Gathering® | Teenage Mutant Ninja Turtles: The Four Most Important Things to Know",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTzA0Z1poUm1lclU1Y2hXSFhyWVZUUGg1S3hkaE9sUzV4aWxtNmhHRkstQWtMTnhLNVJJMzZJMFY0MG1ua0hjMkYzMUl2M3E4dVNFbUJxbUhHSEhZMEhqdThSTzFyUTFXdEx5VVVVcExzbDY3TWJrUDhEY2dVUFlpV2RuS1Y5WEp0?oc=5",
+      "published": "2026-02-17T08:00:00.000Z"
+    },
+    {
+      "title": "Where to Find Magic: The Gathering® | Teenage Mutant Ninja Turtles Previews",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNalVwaDYzVUJZcHMwY29HOUVnaXlTSDJVc1BjejZGb054RzhhRjVnX3pzM0kwdUxNUFEzRnBrcDUwUVVKTVZEbVM2d0lkb084c3dZbmFHQjg1R09OUkk1X3daRmJWMzRpSXgzNjNZNjZoanh1eWhtNmktZjYxQ3MwTUVpWDgycjV2OG5ra3ZkN21fNndVVmcyTUVDci1qMUlm?oc=5",
+      "published": "2026-02-13T08:00:00.000Z"
+    },
+    {
+      "title": "Tales of the Teenage Mutant Ninja Turtles Theme - Gratis downloaden en installeren in Windows",
+      "source": "Microsoft",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOWGc0THlyR1VxcTJpUnZsNXg2aFc3Nmh6SFJWd2Y5aWlHZUhrOEVJYkluTl85ZVhDd0R3U082Q3AtSHM1NmVlNFBrVmM5MXFmaG9aSjFwYUgtYXhVMVItN1VLdEVFU1p5dlo2dzc3SGtiSk9ucUVaajd2YTVqT0o2RDEwUUJ6ZjNjM3hBQkVXakgyb0FFRU5tUTZn?oc=5",
+      "published": "2025-12-30T17:12:24.000Z"
+    },
+    {
+      "title": "Tales of the Teenage Mutant Ninja Turtles Theme – Last ned og installer gratis på Windows",
+      "source": "Microsoft",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSjhNZEItLVB4czVmaU9OWG90UjJqbm1IQzVCdDRVUzBHSHFBLU1yRUlkbGQybWlaMWxVRnJGczdwTWtBX0lLZExJR2tXSnAzcmpDQk5MaXBNRFkwUlEyMkoyRERSYUFyRVZFaUdWWHV0bXR5d0NOMTNrNEFuVTFXMWZZRWlNaWM4ZDB4QVBFOXZ0MHdzblRMSnh3?oc=5",
+      "published": "2025-12-25T16:55:48.000Z"
+    },
+    {
+      "title": "Announcing Magic Spotlight: Teenage Mutant Ninja Turtles",
+      "source": "Magic.gg",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNY3pCR0hzT1dYWjNVaW5qWGM2aGlPN3B6SjM0b1JqTTFXSXBobmNDLXgweUhIbi1WeWlhdFRyeEUyV3dqZFBiSW8wTWVMbDZCSG9TUTd2Z1pEN1dHNzVESHhkU2JLYWZad21YamFKenU3dGc0c2RLNG9wRTRWa0w1ZDhZTQ?oc=5",
+      "published": "2025-10-10T07:00:00.000Z"
+    },
+    {
+      "title": "I'm Not Saying Teenage Mutant Ninja Turtles II: The Secret Of The Ooze Is Better Than The First Movie, But Here Are Some Reasons Why It Might Be",
+      "source": "Cinemablend",
+      "category": "Movies",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxNLUF4VVlQd2NCVDA5S2NmelZXdkJHTlVaUklON2tIZFBUWURLREJZMEhUakl5TVY1R0tmVzZtakFmdzRyczFzeFdNVzlpcHc1ZkUzcXk4dDg4NldPVy1HU0l4Z2tvNGVwLVNtaWdQaEFtSDRuNkc4ckd5UjN2MGgyNWIzams2cVgtMnZFOFJpN29XUU1IbWlqcWZLVkM5dkRSOWh6TjV6WGl6OW1sMExXc2UtR1BTYXlBbmoxMmNqSmpFU1hodktZMTlidUNUUkpBTDFIbmVMdHpOWENCdkk3UTA3X2RXVmlrY2xwWC0zMWU2bVdXYWVhVXBqNlI?oc=5",
+      "published": "2025-08-20T07:00:00.000Z"
+    },
+    {
+      "title": "Critics said 'Teenage Mutant Ninja Turtles' would flop. They underestimated Turtle Power",
+      "source": "NPR",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUWZoSmZuMFRqWW5sQnNiYkRxVmRHOWVtRmo5c2lKNFBWc291eWt1SnVla28tMWlXRFZCU2JCZUt4RG16dV9HaVRpdHJIQl9CanFUT2tRdVd4Z0g0OHl3VlRveHhvdXBCMHNWNHNFai1QSTZpRjYwU29HdmxZNnVWQlo0UlV3R0VBSXFjbFY5TGp3Vl93RE9Dc1llY0pIN0lHTUxoWA?oc=5",
+      "published": "2025-08-13T07:00:00.000Z"
+    },
+    {
+      "title": "‘Teenage Mutant Ninja Turtles: Empire City’ Announced for Meta Quest",
+      "source": "www.meta.com",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPb1c2d1Q0dndJa0Z2S2RQcUM1eUx4OC1IZ0xJTm5obnd2dzhTbEk0dVQzZE51YUcyTUNjSUhRRV9IbVphblZQZFd6R1NJVWUxRFR5WkZZY2VsVXVmNVJpY2ZxRGdDX25DbFkwckc3MVpDN1lzWHd2bDhBVE1jWmk4N1hvZ3JmZDFPMXlraGRMTTFoLWZRaFI2UW12UVZKYWJWYWpfSlF3?oc=5",
+      "published": "2025-05-28T07:00:00.000Z"
+    },
+    {
+      "title": "Cowabunga Dude: It’s Rocket League | TMNT!",
+      "source": "Rocket League ®",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZWpSU0piMkVoUXZWRmVTQ2tIZ3l3enQ3YmdzMWpsNkk4VFI2QzlZMmVUdGVGQTdhZTRRY0pUODEwZHE2TzM2MWhhZHBIbUhCaHR3ZnkwbGNpVXhHRXZ3bU9YOEx1cUlOdV9HOGV1Mm5KNGRpQnpnVWs2dVJaUU94TA?oc=5",
+      "published": "2025-04-15T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles was the hardest game I ever played – so why am I back? | Dominik Diamond",
+      "source": "The Guardian",
+      "category": "Games",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYVlEa0hndmQ1bktDbUY4dkZZd1Ayc1lOQkxDVmhRU3dxOC1wSU1fSXlEaWJEcjkyeHVfM0F4VFZZLTlUY1IxRTdjcDY4X1hkd2RiNFNJaDZLMFFPU0pxRDVYWFJsLUk0Q3U2b3c1WFFZRDRoZVJHRHcwLVY2TWFYMnl2dlpvTzVyS3AwajlLb3hrZ285RjVqaEpMZ1VtSU5PRWs3cGpR?oc=5",
+      "published": "2025-03-29T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Splintered Fate",
+      "source": "Nintendo",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQLWh0ZUUyQ29XdndwMEtoZWJucUwtdzdzcTEyOWExWVZrUmc5V1Q4NFg3Tm00aEVzbWFzUndRUDVOakwwMTJmYWh3YkN0NTVwOGsyaWJldmY3MndZWTcwa3VUUmk5cmRzdjA2ZWhwZU5kLXhOcFdtaVpLQ2FJQXZaeFdMa1ZlejRCb2R5YU55Q3h6Y1JRLXB4N1ZiOEVPLXBNMGI3STdEdDJocXR0SXhrS0ZKelRRdDg0MGRV?oc=5",
+      "published": "2024-07-17T07:00:00.000Z"
+    },
+    {
+      "title": "Celebrating 40 years of Teenage Mutant Ninja Turtles with my kiddo",
+      "source": "Mirror Indy",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNXzdKY3dwWGstd1hrUklxZmRsRkJETXVOUW9JeFRlejFiVlM5ODk5Wk85V2NTdlNxSkJVR2VCeDhDR2NOcHNHaWRFUGZaOGFfRXBQZy1SZHV0dGt4NTRWQXN6SUs3U3h4TFRjb1lfYUFTd0psc1JPVUo0THViZkFtTk5GTXd3QQ?oc=5",
+      "published": "2024-03-21T07:00:00.000Z"
+    },
+    {
+      "title": "Fortnite Teasing TMNT Mini-Pass For Chapter 5 Season 1",
+      "source": "GameSpot",
+      "category": "Shows",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNbjQ4UUpUbGNLM3RpSGpLNW9XZXBQOVhjam1DTElpVndSY0VZZ2h1b2NtaVF1MnBJdnltT0cyNGhLQzd4d1RBeXZNLW9Lekh5a3Frb211N0tScVI4eUZ3LWlXckhmRzd1VnpLQ0RsMDNoNFBfMG8zRmxwazdBVGdfNjhOVVdfNnY2UkhFRHhXT191VzdCS3dHeHluTUFEUlh6LXRDSA?oc=5",
+      "published": "2024-02-02T08:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Meet the Superstar Creators Behind IDW's Big Relaunch",
+      "source": "IGN",
+      "category": "Comics",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxONzhMMmpYeFNYSF9JdmduVlROQmpOXzlhR3NWOXF0Ny1aeEY0cXN6b090XzFWMncxd3NOQmNqMjZOdU1yWlhDUzRFNDR3OTYyYU5wZlpsMUJxUUpnZFB6SHlRaDhmVmd6WGlUUXhRUU5oRW9YT3RLUzJoOXZSSktvSk42enJ4S2ZQbHhaMnduSzE?oc=5",
+      "published": "2024-01-22T08:00:00.000Z"
+    },
+    {
+      "title": "Nostalgia, ninja and No Diggity: Taking my son to go see Teenage Mutant Ninja Turtles",
+      "source": "ABC News & Headlines – Australian Broadcasting Corporation",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxQZ3RuMlBtSGlteGF5QWJLM2J6THM4T2Fsc1JBNFVoTk1GNU9mandCZHlyaG9HN2hjaHNmYVQwU0hLV00tZml2RnozWFlMVXhrcURzR3FNSU8xdlpwaVlobi1NNFR4RHFwbkVQa29nT2VxZWFoZ29feVFCRFZpV0dhWDlJYk52OHow?oc=5",
+      "published": "2023-09-19T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem’s Love for Anime",
+      "source": "Crunchyroll",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNaENhODN2ZU1OTW5rVFhvR09aYWRKQmxzLWxBM01ReDhlRE00Q1FoTURRTC1RdUtGeWZRM080RmcxREJDMFZyM3pfS2pTMTZrb1dmdDB5VG5tcjRvQ0lkZUJLcTB2Q3lBRHlyS2ZjWVBzSUZnVUhkUXJfWjdLOWZqUEt5bC01eVdVZ2c?oc=5",
+      "published": "2023-08-17T07:00:00.000Z"
+    },
+    {
+      "title": "Tales of the Teenage Mutant Ninja Turtles (TV Series 2024–2026) ⭐ 6.9 | Animation, Action, Adventure",
+      "source": "IMDb",
+      "category": "Shows",
+      "url": "https://news.google.com/rss/articles/CBMiT0FVX3lxTE5JYjdRRTdDMEU3NjUwZFZoZFlGRUFYZkNoU0lYekotU1Z3UXl5blZSRmUtVTBnS0tRMkhDNXBDNWp2MEl5eEdIOUYzanBkM1E?oc=5",
+      "published": "2023-08-16T22:03:53.000Z"
+    },
+    {
+      "title": "Film Review: 'Teenage Mutant Ninja Turtles: Mutant Mayhem' is a reference-heavy good time",
+      "source": "Rough Draft Atlanta",
+      "category": "Movies",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPd3pwV3B5em5IWmc2OHBHRUlKREpRNlpyRFpmbzlaN05lYXpaOGpUZlR3TEZEX2F5RjU2azZKNGgxeTFXWmtJdFNoakxQa0tuejlUcTBPWXhSMDg4VGZIWmxLRjVadjc0ZWdTLV92ZkFBbHdqaXY1SThnSlJHU2NRTzhKWHZmSjhfb2czZXl4b0ZUcDhjMVE?oc=5",
+      "published": "2023-08-11T07:00:00.000Z"
+    },
+    {
+      "title": "Cowabunga! Teenage Mutant Ninja Turtles Pizza Is Bringing Back ’90s Nostalgia",
+      "source": "Taste of Home",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE9ydlpGQ21nWElxSVNjLTZvcW0zenJWVDROT0thR0o3anFJemdIWWdLbEVzUW12bW0zNG1KQWJTVWtGSURiS1pwdzdWekN4cWVxbnFfbE1LbWxFZjUyenUwMlJ2VGRDR0pWNGxjTUpDWmNNbTdZcm5tRWFFZw?oc=5",
+      "published": "2023-08-03T07:00:00.000Z"
+    },
+    {
+      "title": "I Tried To Get My Kid Into Teenage Mutant Ninja Turtles And Learned That Nostalgia Is A Two-Way Street",
+      "source": "Fatherly",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOSl9NT0dPQnlvTXNselpkZm9QUlRJc2szaTN4V2RGaHgwLVFObXppdTZzbkx2a1R6R2FyODBiYVJlRzFObldVQy1NeFh0cFdPLS13TE9JdlI5M0RfTDF2X0Vydm1XWHp3ZEl5Q3psOWc3Y0Q1LU50ejB5bVV3YzB3UXg2cmxIWHlVZ3laMDhSaU5NelBtdzVSdQ?oc=5",
+      "published": "2023-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "Snag Your Very Own TEENAGE MUTANT NINJA TURTLES: MUTANT MAYHEM Poster",
+      "source": "Alamo Drafthouse",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiY0FVX3lxTFBWMTZZdzVaZ08ydGNkSlR1cW51d3pMM0xtX01INmtPNy1OTFlkNEw1SHEwQlpkUGhlejhqSER6VW92eEZ2LWwwdWYyNDM5Y1g5bnRMdlNOeHFVbWh0amRnaEtFdw?oc=5",
+      "published": "2023-07-14T01:35:04.000Z"
+    },
+    {
+      "title": "TMNT: April O’Neil Is White Not Black",
+      "source": "Cosmic Book News",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTFBxRm5IMnVOTTh1Zzd1RU5jNmIwd2tTU1NsdWdabkJrbnRlREI3ZHUyazhzSUUtNVhoNzdGR3ZYZW9Ea1FuZVExS20tQzRsVTljSEhBRXZ3UXJmcndFSXZYZG1qLWhaaWRaMl93?oc=5",
+      "published": "2023-03-08T08:00:00.000Z"
+    },
+    {
+      "title": "Commissioner López Visits Film Sets of Teenage Mutant Ninja Turtles 2, Spoken Word",
+      "source": "NYC.gov",
+      "category": "Movies",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTFBycVRQWUdCSmdTZFViRW93aTZjZ2hIaThUVFpuSG5nUWZkb3p1Z09kTmd4N3NZdnpCNW55cFJyRHZQZkkxMGxQaW9Wb2pBenJzTGlUbmZJUS1CLXhqUEdHdC1vTUE5VjNESmV3OUY2aDVCdw?oc=5",
+      "published": "2022-11-03T10:25:19.000Z"
+    },
+    {
+      "title": "Cowabunga! Teenage Mutant Ninja Turtles Co-Creator Kevin Eastman Loves Libraries",
+      "source": "I Love Libraries",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBZSnJtdWYwVnpadHdhWXpXUEJHNkRYZUVlS2p6Q055aE9yaS1wLTJLYmhGc084UXJqckZ0Y2dabUJlZVlqY2JBRmJ1Q3RKeUxTSFRMYld4WlREcmZDWmNEVi1iUkoyNVVXbGc?oc=5",
+      "published": "2022-09-25T07:00:00.000Z"
+    },
+    {
+      "title": "A Q&A with Teenage Mutant Ninja Turtles Co-Creator Kevin Eastman",
+      "source": "Down East Magazine",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1MbVRKYVBKWGdzQzJLXzRXWF9MUS1KVlhKVmtRR1Q4SmljLVdDTlgwUHNTOXM3Y2ZXUTJHS1JyZ19KandEa0NJUWRUTFdmbG5veVhRRUR0OUkybmZNOE5MU1VmYzAyamM?oc=5",
+      "published": "2022-05-18T08:19:47.000Z"
+    },
+    {
+      "title": "Power Rangers Vs. Teenage Mutant Ninja Turtles: What Was The Better Series In The '90s",
+      "source": "Cinemablend",
+      "category": "Shows",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxPenRoQi1yckp3Nmc5d3Q0WHpRRGFoX3FTOS1VTWFDOFZKWkxsckdOdEJsOF9vR3ZKd2NwMUNoemlOQ1NtaEV6R044bVdvTHJHQ1Rnbml3cVd4VHhwRjVZWFB2QUktT3UtclZnWHZGdTNuVW5Yc0lsRVA3S25oNmdJaFprMWhrWVJ1THdJX0pESkRIajZRN3JBY250cGpuUXRqeEVyNERfXzVVYkF4V21RUlNVNHpNOTBZTG9ReUFaQ3ZQVDFXcjJWUVFB?oc=5",
+      "published": "2021-06-01T07:00:00.000Z"
+    },
+    {
+      "title": "TIL The Teenage Mutant Ninja Turtles Creator Wishes The Turtles Weren’t So Obsessed With Pizza",
+      "source": "Cinemablend",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxPTWRIY2hlVG9pM1JRaWJsRHI5VUV4bGlLUjRNcTJyanBWc2Rka1lKMkoxUkhackJkbW43NEZtY0dmOXA5a1VXUEw3V010OFJrdDMzNGZ5Vl94eDRURzR3YVItUHNqYUcxbG91TkR0YVRvOVdDaEtuWjdlTXBydDBsa2FvWU13ZzluTHFNNWJkckd2d1hRZWVEMkF1NElzZjlvR0NlTkxzTE9ISGFjbW9LOFptZ1prZ2xDNHRjOTVTVHpsX3o5SWpfQWFUcFBwd290UXhhNjBIYw?oc=5",
+      "published": "2020-12-10T08:00:00.000Z"
+    },
+    {
+      "title": "Rise of the Teenage Mutant Ninja Turtles: The Movie (2022) ⭐ 6.2 | Animation, Action, Adventure",
+      "source": "IMDb",
+      "category": "Movies",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1Rd1B6MVA1YlhXcU9ZdlFMQ2p5aWlXLW1EY1JKMm1pYll3RkIzTGkwMlhpZXJkZ3RoSDVfSzJyTEl5ZTlhTWZpbmJseWhTQQ?oc=5",
+      "published": "2019-02-16T05:08:48.000Z"
+    },
+    {
+      "title": "Batman vs Teenage Mutant Ninja Turtles (Video 2019) ⭐ 7.1 | Animation, Action, Adventure",
+      "source": "IMDb",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE8tZFNHN3p0a1lFWTJCUVZKdWFUeHlnWm5NRnJPSG56d1pjcjNGdmszbXdJM1BmSGdXM0V0UUxHZ3hJcE80d1NRNEtLZ0x0UQ?oc=5",
+      "published": "2019-02-14T07:14:18.000Z"
+    },
+    {
+      "title": "Rise of the Teenage Mutant Ninja Turtles",
+      "source": "Plugged In",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxPZHlvclpkVmk1ZTFpUHdTRVcyaHp6UGJkdUhBSElrN25Fc0dpdEg0ZHpZUFhvaHZOcW1FdUZlc2g5bWhDbVVOazJVd0ItRWtFMERpcW5nemR0TnJVbzJuVUV6MzcwX1M0czFjVXIyb0NSMG5MQmxRWHB2WVpma3FRTnNneVE?oc=5",
+      "published": "2018-09-17T07:00:00.000Z"
+    },
+    {
+      "title": "20 Crazy Teenage Mutant Ninja Turtles Rip-Offs",
+      "source": "Comic Book Resources",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBYV1dYeEpUU09tZ1Fnc0JsbkZwMHFKMTkzMnRUUWhFYXdtRXFENm05MUZrRlpnQ3FZUmhadjlKZERURUhad0pqS3p0RXRZcGRhalltN05pcjVaWkVpODJiUHo2a0VzNGd4NkE?oc=5",
+      "published": "2018-07-27T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Mutant Mayhem (2023) ⭐ 7.2 | Animation, Action, Adventure",
+      "source": "IMDb",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1xb2pGTGw0S1VkN21vVjF1ZkRhTjl2OWdzbjFTR1AxR3JvR0pSN0VFWmlkT1pYUzhvWDZwZ0RtT0R4blA2Y2pXZ3RPUHcwZw?oc=5",
+      "published": "2018-06-21T16:23:40.000Z"
+    },
+    {
+      "title": "Rise of the Teenage Mutant Ninja Turtles (TV Series 2018–2020) ⭐ 6.0 | Animation, Action, Adventure",
+      "source": "IMDb",
+      "category": "Shows",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE5QUV9UMTJnVmxGc29PYnlQQUFUbWRGa21zQUhXNW16WWdvSW0tQ0J5VEhwdl9PX0psa2U3d0poRE1TTmt0blAwRWowTFdCUQ?oc=5",
+      "published": "2018-02-04T07:43:52.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Out of the Shadows (2016) ⭐ 5.9 | Action, Adventure, Comedy",
+      "source": "IMDb",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE04blUtejUwRDRiamR4aUxIcnA3cXpFUUs1VHUzdjhGOTNaTHhGZUtMRGNhQUQySUpBLTdDTUI3ZmpRYWNXNTU3WlJJUWpXQQ?oc=5",
+      "published": "2016-06-09T08:43:34.000Z"
+    },
+    {
+      "title": "Review: ‘TMNT 2’ – What parents should know",
+      "source": "The Des Moines Register",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxNcC1FRDB4eGZxMlNWaGlPNVJESUlHOTlleDJYWkZCYXliRG1WREpkaUxoWkh6dllrV3lrLXdGdEduNG9nMnNWVEVnUDNZTVByOTFVemw5Xzg5eWhwY1VPbm9pOVpXZktONzZaRXdib2U0b2ZSMGZKRlVTU1o5VFl3d0JOSzEtNHRGVzhpZHFzNzEyOUtXcVk4eXMzRmlLZVhjZ25HOEJ5R1B6enJNNWRMRXlBU2F3Y3dseGRsbQ?oc=5",
+      "published": "2016-06-03T07:00:00.000Z"
+    },
+    {
+      "title": "'Teenage Mutant Ninja Turtles: Out of the Shadows' is hard to watch",
+      "source": "KSL",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOSDdMVnhuaTlneEY4emJ2eDRva0VKVmhncldVN0pvd0xOck9uTHVBT0U4Nk8tcFN5SlptdXotWkQ4UEhocFNCLVA4S2xaNk9wQmlPbGlTR01id3drRDZZYldmLUhxR2xyLUo3LTNWYV93bVRaTFRJVFdvM2R3SG1ILUJTZEt3Slpham50VTBvLTZwTVJiYkZkNXVocFc0V25OQTljMmNjak9wYzJ3THFCX2d5MnlTblFaNHE5cQ?oc=5",
+      "published": "2016-06-02T07:00:00.000Z"
+    },
+    {
+      "title": "'Teenage Mutant Ninja Turtles' overshadowed by noise and sludge",
+      "source": "Los Angeles Times",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQUnhpa0lxYllnQktSaVo3ZWFVY3VSRjVMWWVqeEZnZ2VQc2lOWFYzRi1seGxkYjFaVGFiTzVSQ2lJODc0dllweS15ZU5oUlVoVmNGQnEzRG80d1dKeUJLVjhMTUV3bjUzUXkxOTNWQ0R3TnNDUHdaSldWR1BSUERiSjlwZUFOaG9QZy1reFp5ZFZVMm9kb21TclR1N1dJSDA?oc=5",
+      "published": "2016-06-02T07:00:00.000Z"
+    },
+    {
+      "title": "How we made Teenage Mutant Ninja Turtles",
+      "source": "The Guardian",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQSS1HY2MxMFZZLVQzNTdKdHZJOEFEeEMxVm5LREhsVVl6UEJ1TmxHSHpMUXl0UFpBN2VjcG1fNVpaRTk3X3hZYjMtUEEwZUVlTThyUmh0VzgySDFBeTQyVW00REpTRHdBZUtJRmoyNTVlWE1naGFVOU9nS214UlNzelEzRWJ3SkVtTWFUenN6T1pPZw?oc=5",
+      "published": "2016-05-10T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles II: The Secret of the Ooze (1991) ⭐ 6.1 | Action, Adventure, Comedy",
+      "source": "IMDb",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiTkFVX3lxTE1paVAzQTJZbEp2RUVFdndOaWQ3QmQxeGY1RWlFZTdBb1RNb2RSbDFsbmwyMEczZTlzck1Fc2ZZNEFTY3BjQzU5aENjTGoydw?oc=5",
+      "published": "2015-11-05T14:18:00.000Z"
+    },
+    {
+      "title": "The Complete History of Teenage Mutant Ninja Turtles",
+      "source": "Mental Floss",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNemhRVWdmYjljelJ1Tl9CQ01lOWNfbTBsZ1hzMldfU0tQeWowUnoycE54T3FrRW9OUHJPTEstRGxzTS01QVcyTGRRMnhtanp3WUhpTTZka2lJRTFBTzhINFQyX2cxSTd0VWlJdWc0SGM2blBxWUYwVk5RbFBmX2ZiMVdBNTJzOGk4MXJEU2xTVXZyMFIwQ2M3ZE9B?oc=5",
+      "published": "2015-06-27T07:00:00.000Z"
+    },
+    {
+      "title": "The fascinating origin story of the Teenage Mutant Ninja Turtles",
+      "source": "The Week",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxOQXVPVVV1T3gySzltalQxRkdDckd2eUluM3FBbEVMQi1HYURNNnZUVHp2LVluWkthRlk3YXV1cl9KeklkQTUzZWg5U0FBM204ODBxZ0d2VHNxS3E1ZXBJd3dJQmZyMTRWQWR3NVBBWEd2S1hYSlNnYldrdFlpRU5qOVB5UnR2ZGN4Q0VBMnZobTdUaFU?oc=5",
+      "published": "2015-01-08T08:00:00.000Z"
+    },
+    {
+      "title": "Worst Movie of the Week: Teenage Mutant Ninja Turtles",
+      "source": "GQ",
+      "category": "Movies",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5jaUhwS2kwNDIyMXFvUHRjYU5YaTR2MWZBaUVQbGRlenVBS2NJcEhwdmo5S0tnUUkxbkU0UV9jRmpobEJyTkdBVWljZEJfUVU1eUJLZURlM05GRmIxT3BxTUF5LWNUQWQ1MjJ5Mg?oc=5",
+      "published": "2014-08-15T07:00:00.000Z"
+    }
   ]
 }
