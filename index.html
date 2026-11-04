@@ -187,6 +187,7 @@ p { margin: 0; }
 
 .run-wrap { width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
 .run-canvas { display: block; width: 100%; touch-action: manipulation; -webkit-user-select: none; user-select: none; cursor: pointer; }
+#drop-canvas { touch-action: none; }
 .shop-banner { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 360 / 170; max-width: 100%; }
 .shop-banner svg { display: block; width: 100%; height: 100%; }
 .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
@@ -1111,7 +1112,7 @@ p { margin: 0; }
     '<rect x="6" y="34" width="52" height="18" fill="#E9D3A8" stroke="#B88A4A" stroke-width="2"></rect><path d="M14 43h36" stroke="#B88A4A" stroke-width="1.5" opacity="0.6"></path></svg>';
 
   VIEWS.drop = function () {
-    return '<div class="stack-lg">' + head('Slice Drop', 'Up on a rainy rooftop, catch the falling pizza in your box. Watch out for Meatball Mo, a rival courier pacing the ledge. He lobs anchovy tins and stinky socks. Catch one and the box is ruined.', 'games') +
+    return '<div class="stack-lg">' + head('Slice Drop', 'Up on a rainy rooftop, catch the falling pizza in your box. Slide your finger anywhere on the screen and the box slides with it. Watch out for Meatball Mo, a rival courier pacing the ledge. He lobs anchovy tins and stinky socks. Catch one and the box is ruined.', 'games') +
       '<div class="run-wrap"><canvas id="drop-canvas" class="run-canvas" role="img" aria-label="Slice Drop game. Drag to move the pizza box, or use the left and right arrow keys."></canvas></div>' +
       '<button class="btn btn-sauce" id="drop-btn" data-act="droptap" style="min-height:56px;font-size:17px">Start</button>' +
       '<div class="kv"><span>Best score</span><strong id="drop-best">' + S.drop.best + '</strong></div>' +
@@ -1133,8 +1134,8 @@ p { margin: 0; }
     c.width = Math.round(w * dpr); c.height = Math.round(h * dpr); c.style.height = h + 'px';
     DROP.canvas = c; DROP.ctx = c.getContext('2d'); DROP.ctx.setTransform(dpr, 0, 0, dpr, 0, 0); DROP.w = w; DROP.h = h;
     function toX(e) { var r = c.getBoundingClientRect(); return e.clientX - r.left; }
-    c.onpointerdown = function (e) { e.preventDefault(); if (DROP.state !== 'running') { dropTap(); } DROP.targetX = toX(e); try { c.setPointerCapture(e.pointerId); } catch (err) { /* not supported */ } };
-    c.onpointermove = function (e) { if (e.buttons || e.pointerType === 'touch' || DROP.state === 'running') DROP.targetX = toX(e); };
+    c.onpointerdown = function (e) { e.preventDefault(); if (DROP.state !== 'running') dropTap(); };
+    c.onpointermove = function (e) { if (e.pointerType === 'mouse' && !dropDrag && DROP.state === 'running') DROP.targetX = toX(e); };
     if (DROP.boxX === 0 || DROP.state === 'ready') DROP.boxX = w / 2;
     if (!DROP.rival) { DROP.rival = { x: w * 0.3, dir: 1, windup: 0 }; DROP.throwIn = 4.5; }
     if (!DROP.rain.length) for (var ri = 0; ri < 46; ri++) DROP.rain.push({ x: Math.random() * w, y: Math.random() * h, v: 380 + Math.random() * 220 });
@@ -1152,7 +1153,7 @@ p { margin: 0; }
   }
   function dropUI() {
     var b = document.getElementById('drop-btn');
-    if (b) b.textContent = DROP.state === 'running' ? 'Drag the box to catch' : DROP.state === 'over' ? 'Play again' : DROP.state === 'paused' ? 'Keep going' : 'Start';
+    if (b) b.textContent = DROP.state === 'running' ? 'Slide anywhere to move the box' : DROP.state === 'over' ? 'Play again' : DROP.state === 'paused' ? 'Keep going' : 'Start';
     var best = document.getElementById('drop-best'); if (best) best.textContent = S.drop.best;
     var plays = document.getElementById('drop-plays'); if (plays) plays.textContent = S.drop.plays;
   }
@@ -1327,6 +1328,22 @@ p { margin: 0; }
     else if (e.code === 'Space' || e.key === ' ') { if (e.target && /^(INPUT|TEXTAREA|SELECT|BUTTON)$/.test(e.target.tagName)) return; e.preventDefault(); if (DROP.state !== 'running') dropTap(); }
   });
   document.addEventListener('keyup', function (e) { if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') DROP.keys = 0; });
+  /* Slide anywhere on the screen: the box follows your finger's movement, not its position */
+  var dropDrag = null;
+  document.addEventListener('pointerdown', function (e) {
+    if (current() !== 'drop' || DROP.state !== 'running') return;
+    if (e.target.closest && e.target.closest('a, input, textarea, select, .tabs')) return;
+    dropDrag = { id: e.pointerId, x: e.clientX, box: DROP.boxX };
+    DROP.targetX = null; DROP.keys = 0;
+  });
+  document.addEventListener('pointermove', function (e) {
+    if (!dropDrag || e.pointerId !== dropDrag.id || DROP.state !== 'running') return;
+    DROP.boxX = Math.max(BOX_W / 2 + 4, Math.min(DROP.w - BOX_W / 2 - 4, dropDrag.box + (e.clientX - dropDrag.x) * 1.2));
+  });
+  function endDrag(e) { if (dropDrag && (!e || e.pointerId === dropDrag.id)) dropDrag = null; }
+  document.addEventListener('pointerup', endDrag);
+  document.addEventListener('pointercancel', endDrag);
+  document.addEventListener('touchmove', function (e) { if (current() === 'drop' && DROP.state === 'running') e.preventDefault(); }, { passive: false });
   document.addEventListener('visibilitychange', function () { if (document.hidden && DROP.state === 'running') { DROP.state = 'paused'; dropUI(); } });
   window.addEventListener('resize', function () { clearTimeout(resizeTimer); resizeTimer = setTimeout(function () { if (current() === 'drop') dropInit(); }, 150); });
 
