@@ -1,10 +1,14 @@
-// Sewer Pizza service worker: keeps the app working offline and
-// always tries the network first for news, videos and other data.
-const CACHE = 'sewer-pizza-v6';
-const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png'];
+// Sewer Pizza service worker: always tries the network first so updates show
+// up right away, and falls back to the saved copy when the phone is offline.
+const CACHE = 'sewer-pizza-v7';
+const SHELL = ['./', 'index.html', 'manifest.webmanifest?v=7', 'icon.svg?v=7', 'icon-192.png?v=7', 'icon-512.png?v=7'];
 
 self.addEventListener('install', (event) => {
-  event.waitUntil(caches.open(CACHE).then((c) => c.addAll(SHELL)).then(() => self.skipWaiting()));
+  event.waitUntil(
+    caches.open(CACHE)
+      .then((c) => c.addAll(SHELL.map((u) => new Request(u, { cache: 'reload' }))))
+      .then(() => self.skipWaiting())
+  );
 });
 
 self.addEventListener('activate', (event) => {
@@ -20,21 +24,12 @@ self.addEventListener('fetch', (event) => {
   if (req.method !== 'GET') return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin) return;
-
-  // Data files and the page itself: network first, cached copy when offline.
-  if (url.pathname.includes('/data/') || req.mode === 'navigate') {
-    event.respondWith(
-      fetch(req)
-        .then((res) => {
-          const copy = res.clone();
-          caches.open(CACHE).then((c) => c.put(req, copy));
-          return res;
-        })
-        .catch(() => caches.match(req).then((hit) => hit || caches.match('index.html')))
-    );
-    return;
-  }
-
-  // Everything else (icons, manifest): cache first.
-  event.respondWith(caches.match(req).then((hit) => hit || fetch(req)));
+  event.respondWith(
+    fetch(req, { cache: 'no-cache' })
+      .then((res) => {
+        if (res.ok) { const copy = res.clone(); caches.open(CACHE).then((c) => c.put(req, copy)); }
+        return res;
+      })
+      .catch(() => caches.match(req).then((hit) => hit || caches.match('index.html')))
+  );
 });
