@@ -9,7 +9,7 @@ const readJSON = async (p) => JSON.parse(await readFile(new URL(p, ROOT), 'utf8'
 const writeJSON = (p, data) => writeFile(new URL(p, ROOT), JSON.stringify(data, null, 2) + '\n');
 
 const MAX_NEWS = 60;
-const MAX_VIDEOS = 30;
+const MAX_VIDEOS = 40;
 
 function decode(s) {
   return s
@@ -108,11 +108,13 @@ async function updateVideos(channels) {
   for (const ch of channels) {
     const id = typeof ch === 'string' ? ch : ch.id;
     if (!id) continue;
+    const filter = ch.filter ? new RegExp(ch.filter, 'i') : null;
     try {
       const items = parseFeed(await getText(`https://www.youtube.com/feeds/videos.xml?channel_id=${encodeURIComponent(id)}`));
       for (const it of items) {
         if (!it.videoId) continue;
-        all.push({ id: it.videoId, title: it.title, channel: it.source, published: iso(it.published) });
+        if (filter && !filter.test(it.title)) continue;
+        all.push({ id: it.videoId, title: it.title, channel: it.source, fan: !!ch.fan, published: iso(it.published) });
       }
       console.log(`videos: ${id}: ${items.length} items`);
     } catch (err) {

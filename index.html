@@ -206,6 +206,15 @@ p { margin: 0; }
 .topic-row:hover .trow-title { color: var(--green-hi); }
 .giscus-box { min-height: 120px; }
 .giscus-box iframe { width: 100%; border: 0; }
+.vrow { display: flex; gap: 12px; align-items: center; width: 100%; padding: 10px 0; background: transparent; border: none; border-bottom: 1px solid #1F2723; text-align: left; color: var(--fg); }
+.vrow:last-child { border-bottom: none; }
+.vrow:hover .vtitle { color: var(--green-hi); }
+.vthumb { position: relative; width: 128px; flex-shrink: 0; aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.vthumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.vrow.on .vthumb { box-shadow: 0 0 0 2px var(--green); }
+.vnow { position: absolute; left: 4px; bottom: 4px; background: var(--green); color: var(--bg); font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+.vmeta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+.vtitle { font-size: 14px; font-weight: 600; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
 .shop-banner { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 360 / 170; max-width: 100%; }
 .shop-banner svg { display: block; width: 100%; height: 100%; }
 .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
@@ -508,7 +517,7 @@ p { margin: 0; }
   /* ---------- content ---------- */
   var D = { library: null, trivia: [], news: null, videos: null, sources: null };
   var loading = true, loadError = false;
-  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null, findIdx: null, addStore: false, findQuery: '', ebay: null };
+  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, vidIdx: 0, vidFilter: 'all', sheet: null, findIdx: null, addStore: false, findQuery: '', ebay: null };
 
   function getJSON(p) { return fetch(p, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
   function loadData() {
@@ -615,7 +624,7 @@ p { margin: 0; }
     home: function () {
       if (loadError) return errorCard();
       var news = D.news ? D.news.items.slice(0, 2) : [];
-      var vids = D.videos ? D.videos.items.slice(0, 2) : [];
+      var vids = D.videos ? D.videos.items.slice(0, 4) : [];
       return '<div class="hero-bg" aria-hidden="true">' + SKYLINE + '</div><div class="stack-lg rel">' +
         '<header class="top"><div class="brand">' + ICON.manhole + '<div><div class="brand-name">Sewer Pizza</div><div class="muted small">Unofficial fan hub</div></div></div><a class="icon-btn" href="#prefs" aria-label="Settings and sharing">' + ICON.gear + '</a></header>' +
         countdown() +
@@ -646,7 +655,8 @@ p { margin: 0; }
       var out = head('Watch', 'Official videos, plus where to stream every series and movie.');
       if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
       if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
-      var v = D.videos && D.videos.items && D.videos.items[0];
+      var allVids = (D.videos && D.videos.items) || [];
+      var v = allVids[ui.vidIdx] || allVids[0];
       var embed = D.library.settings && D.library.settings.embedVideos;
       var featured;
       if (v) {
@@ -670,7 +680,23 @@ p { margin: 0; }
       var movies = (D.library.movies || []).map(function (m) {
         return '<div class="trow trow-col"><div class="trow-top">' + cover(m, 'movie', 48) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(m.title) + '</div><div class="muted small">Movie · ' + esc(m.year) + '</div></div>' + watchButtons(m.id) + '</div><div class="row-foot">' + ratingRow(m.id) + '<a class="discuss" href="#talk-t-' + esc(m.id) + '"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"></path></svg>Discuss</a>' + '</div></div>';
       }).join('');
-      return '<div class="stack-lg">' + out + featured +
+      var vlist = '';
+      if (allVids.length > 1) {
+        var hasFan = allVids.some(function (x) { return x.fan; });
+        var shown = allVids.map(function (x, i) { return { v: x, i: i }; }).filter(function (o) {
+          return ui.vidFilter === 'all' || (ui.vidFilter === 'fan' ? o.v.fan : !o.v.fan);
+        });
+        vlist = '<section class="stack"><div class="sec-head"><h2>Latest videos</h2><span class="muted small">' + allVids.length + ' videos</span></div>' +
+          (hasFan ? '<div class="chips" role="group" aria-label="Filter videos">' + [['all', 'All'], ['official', 'Official'], ['fan', 'Fan channels']].map(function (f) {
+            return '<button class="chip" data-act="vidfilter" data-f="' + f[0] + '" aria-pressed="' + (ui.vidFilter === f[0]) + '">' + f[1] + '</button>'; }).join('') + '</div>' : '') +
+          '<div class="rows">' + shown.slice(0, ui.vidMore ? 40 : 8).map(function (o) {
+            var x = o.v, on = o.i === ui.vidIdx;
+            return '<button class="vrow' + (on ? ' on' : '') + '" data-act="pickvid" data-i="' + o.i + '" aria-label="Play ' + esc(x.title) + '"><span class="vthumb"><img src="https://i.ytimg.com/vi/' + esc(x.id) + '/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()">' + (on ? '<span class="vnow">Now playing</span>' : '') + '</span>' +
+              '<span class="vmeta"><span class="vtitle">' + esc(x.title) + '</span><span class="muted small">' + esc(x.channel || 'YouTube') + (x.fan ? ' · Fan channel' : '') + (x.published ? ' · ' + ago(x.published) : '') + '</span></span></button>';
+          }).join('') + '</div>' +
+          (!ui.vidMore && shown.length > 8 ? '<button class="btn btn-ghost" data-act="vidmore">Show more videos</button>' : '') + '</section>';
+      }
+      return '<div class="stack-lg">' + out + featured + vlist +
         '<section class="stack"><h2>Series</h2><div class="rows">' + shows + '</div></section>' +
         '<section class="stack"><h2>Movies</h2><div class="rows">' + movies + '</div></section></div>';
     },
@@ -1603,6 +1629,9 @@ p { margin: 0; }
     'reset-no': function () { ui.resetAsk = false; render(); },
     'reset-yes': function () { S = blank(); save(); ui.resetAsk = false; render(); toast('Saved data cleared'); },
     play: function () { ui.playing = true; render(); },
+    pickvid: function (el) { ui.vidIdx = +el.getAttribute('data-i'); ui.playing = !!(D.library && D.library.settings && D.library.settings.embedVideos); render(); window.scrollTo({ top: 0, behavior: 'smooth' }); },
+    vidfilter: function (el) { ui.vidFilter = el.getAttribute('data-f'); ui.vidMore = false; render(); },
+    vidmore: function () { ui.vidMore = true; render(); },
     watchsheet: function (el) { lastFocus = el; ui.sheet = { id: el.getAttribute('data-id'), mode: el.getAttribute('data-mode') }; renderSheet(); },
     closesheet: function () { closeSheet(); },
     runtap: function () { runTap(); },

@@ -1,5 +1,5 @@
 {
-  "_note": "Feeds and channels the hourly update reads. Add RSS feed URLs under feeds, and YouTube channel IDs (they start with UC) under youtubeChannels.",
+  "_note": "Feeds and channels the hourly update reads. Add RSS feed URLs under feeds, and YouTube channels under youtubeChannels. A channel's filter keeps only videos whose title matches it; fan marks fan-made channels.",
   "feeds": [
     {
       "name": "Google News",
@@ -25,6 +25,21 @@
     {
       "id": "UCTsgmnXbWotzbR36vU0YPrA",
       "name": "Teenage Mutant Ninja Turtles (official, @tmnt)"
+    },
+    {
+      "id": "UC5M_h2S8Ldoc9M6f7B-_m6A",
+      "name": "Nickelodeon",
+      "filter": "turtle|tmnt|ninja"
+    },
+    {
+      "id": "UCUe6ZpY6TJ0no8jI4l2iLxw",
+      "name": "Nick Jr.",
+      "filter": "teeny|turtle|tmnt|ninja"
+    },
+    {
+      "id": "UCjyJxIlfWwJvKN01Hya7gkg",
+      "name": "TMNT Universe (fan channel)",
+      "fan": true
     }
   ]
 }
