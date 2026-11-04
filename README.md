@@ -64,3 +64,33 @@ With this set up, tapping **Search** in the Shop shows real eBay listings, with 
 
 **3. Connect it**
 In `data/library.json`, set `"ebaySearch"` (under `"settings"`) to the worker's address and commit. Never paste the eBay keys into this repository. They belong only in Cloudflare.
+
+## The Sewer Lid (collector vault)
+
+The Sewer Lid lets fans sign in with GitHub, upload photos of their figures and displays, and browse each other's collections. Photos and collection lists are stored in a free Supabase project. Until it's connected, the app shows "The Sewer Lid opens soon."
+
+**1. Create the Supabase project (free)**
+1. Go to supabase.com, click **Start your project**, and sign in with GitHub.
+2. Click **New project**. Name it `sewer-pizza`, set a database password (save it somewhere safe), pick an East US region, and create it. Wait about 2 minutes.
+3. Open **SQL Editor → New query**, paste everything from `supabase/sewer-lid-setup.sql`, and click **Run**. You should see "Success."
+
+**2. Turn on GitHub sign-in**
+1. In Supabase, open **Authentication → Sign In / Providers → GitHub** and copy the **Callback URL** it shows.
+2. On GitHub, open **Settings → Developer settings → OAuth Apps → New OAuth App**. Name: `Sewer Pizza`. Homepage: `https://rikochet518.github.io/Sewer-Pizza/`. Authorization callback URL: paste the Supabase callback URL. Click **Register application**.
+3. Copy the **Client ID**, click **Generate a new client secret**, and copy the secret.
+4. Back in Supabase's GitHub provider, turn it on, paste the Client ID and secret, and save.
+5. In **Authentication → URL Configuration**, set **Site URL** to `https://rikochet518.github.io/Sewer-Pizza/` and add `https://rikochet518.github.io/Sewer-Pizza/**` under **Redirect URLs**.
+
+**3. Connect the app**
+In **Project Settings → API Keys**, open **Legacy API keys** and copy the **anon public** key (it starts with `eyJ`). Also copy the **Project URL** from **Project Settings → Data API**. Put both into `data/library.json` under `"settings" → "vault"` as `url` and `anonKey`. Both are meant to be public. Never put the **service_role** key or the database password in this repository.
+
+**4. Make yourself a moderator**
+Sign in once in the app, then run this in the SQL Editor:
+```sql
+insert into public.admins (user_id)
+select id from auth.users where raw_user_meta_data->>'user_name' = 'Rikochet518'
+on conflict do nothing;
+```
+Moderators can see and remove any post. Posts with three reports hide themselves until a moderator reviews them (in Supabase: **Table Editor → vault_items**, filter `hidden = true`).
+
+Free Supabase projects pause after a week with no visitors. If that happens, open the project in Supabase and click **Restore**.

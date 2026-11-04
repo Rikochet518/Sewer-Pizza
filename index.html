@@ -215,6 +215,33 @@ p { margin: 0; }
 .vnow { position: absolute; left: 4px; bottom: 4px; background: var(--green); color: var(--bg); font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
 .vmeta { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
 .vtitle { font-size: 14px; font-weight: 600; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.field select, .field textarea { border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 10px 12px; font: inherit; }
+.field select { min-height: 44px; }
+.field textarea { resize: vertical; min-height: 72px; }
+.field select:focus, .field textarea:focus { border-color: var(--green); outline: none; }
+.lid-banner, .lid-entry-art { display: block; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 360 / 120; max-width: 100%; }
+.lid-banner svg, .lid-entry-art svg { display: block; width: 100%; height: 100%; }
+.lid-entry { display: flex; flex-direction: column; gap: 10px; padding: 12px; border-radius: 18px; background: var(--surface); border: 1px solid var(--sauce-line); text-decoration: none; color: var(--fg); }
+.lid-entry:hover { color: var(--fg); border-color: var(--orange); }
+.lid-entry-art { border: none; border-radius: 12px; }
+.lid-entry-txt { display: flex; flex-direction: column; gap: 4px; }
+.lid-entry-txt strong { font-size: 17px; }
+.lid-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.lid-card { display: flex; flex-direction: column; gap: 4px; min-width: 0; padding: 0; background: transparent; border: none; text-align: left; color: var(--fg); }
+.lid-photo { position: relative; display: block; aspect-ratio: 1 / 1; max-width: 100%; border-radius: 14px; overflow: hidden; background: var(--surface-2); border: 1px solid var(--line); }
+.lid-card:hover .lid-photo { border-color: var(--green); }
+.lid-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.lid-tag { position: absolute; left: 6px; top: 6px; background: rgba(16,20,18,0.85); color: var(--fg); font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 6px; }
+.lid-title { font-size: 14px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.lid-drop { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 14px; border: 2px dashed var(--line); background: var(--bg); overflow: hidden; cursor: pointer; }
+.lid-drop:hover { border-color: var(--green); }
+.lid-drop img { width: 100%; height: 100%; object-fit: contain; display: block; }
+.lid-drop-txt { display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; padding: 12px; }
+.lid-modal { position: fixed; inset: 0; z-index: 40; background: rgba(0,0,0,0.75); overflow-y: auto; padding: calc(16px + env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) calc(24px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.lid-modal-inner { max-width: 480px; margin: 0 auto; background: var(--surface); border: 1px solid var(--line); border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+.lid-big { border-radius: 12px; overflow: hidden; background: var(--bg); min-height: 120px; }
+.lid-big img { width: 100%; height: auto; display: block; max-height: 70vh; object-fit: contain; }
 .shop-banner { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 360 / 170; max-width: 100%; }
 .shop-banner svg { display: block; width: 100%; height: 100%; }
 .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
@@ -633,6 +660,7 @@ p { margin: 0; }
         '<section class="stack"><div class="sec-head"><h2>New videos</h2><a class="link" href="#watch">Watch</a></div>' +
         (vids.length ? '<div class="vid-grid">' + vids.map(videoTile).join('') + '</div>' : '<div class="empty">No videos yet. They show up here once official YouTube channels are added to the feed.<a class="link" href="https://www.youtube.com/results?search_query=TMNT+official" target="_blank" rel="noopener">Browse on YouTube</a></div>') + '</section>' +
         '<div class="tile-grid"><a class="tile tile-sauce" href="#picker">' + slice(true, 24, C.sauce) + '<span>Pizza night picker</span></a><a class="tile" href="#shop">' + ICON.heart + '<span>Wishlist (' + S.wishlist.length + ')</span></a></div>' +
+        '<a class="lid-entry" href="#lid"><span class="lid-entry-art">' + LID_ART + '</span><span class="lid-entry-txt"><strong>The Sewer Lid</strong><span class="muted small">Show off your collection and browse other fans’ vaults.</span></span></a>' +
         '</div>';
     },
 
@@ -1445,6 +1473,7 @@ p { margin: 0; }
     var cfg = D.library && D.library.settings && D.library.settings.community;
     var ready = cfg && cfg.repoId && cfg.categoryId;
     return '<div class="stack-lg">' + head('Community', 'Talk with other fans. Pick a topic to read and post.') +
+      '<a class="lid-entry" href="#lid"><span class="lid-entry-art">' + LID_ART + '</span><span class="lid-entry-txt"><strong>The Sewer Lid</strong><span class="muted small">Collector vault: share photos of your figures and displays, and browse other fans’ collections.</span></span></a>' +
       (ready || loading ? '' : '<div class="note">Community is almost ready. Posting opens as soon as setup on GitHub is finished.</div>') +
       '<div class="rows">' + TOPICS.map(function (t) {
         return '<a class="trow topic-row" href="#talk-' + t.id + '">' + topicIcon(t, 44) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(t.name) + '</div><div class="muted small">' + esc(t.about) + '</div></div><span class="muted" aria-hidden="true">›</span></a>';
@@ -1506,10 +1535,311 @@ p { margin: 0; }
     box.appendChild(sc);
   }
 
+  var ACT_EXTRA = {};
+  /* ---------- The Sewer Lid: a shared collector vault (photos stored in Supabase) ---------- */
+  var LID = { client: null, loadingLib: false, ready: false, session: null, profile: null, isAdmin: false, tab: 'browse', feed: null, mine: null,
+    urls: {}, names: {}, cat: 'All', owner: null, item: null, busy: false, err: '', adding: false, preview: null, file: null,
+    form: { title: '', category: 'Figure', notes: '', pub: true, ok: false }, askDelete: false, reporting: false };
+  var LID_CATS = ['Figure', 'Display', 'Vehicle or playset', 'Comic', 'Vintage', 'Art or print', 'Other'];
+  function lidCfg() { return D.library && D.library.settings && D.library.settings.vault; }
+  function lidConfigured() { var c = lidCfg(); return !!(c && c.url && c.anonKey); }
+  function lidRefresh() { if (current() === 'lid') render(); }
+  function lidLoad() {
+    if (LID.client || LID.loadingLib || !lidConfigured()) return;
+    LID.loadingLib = true;
+    var sc = document.createElement('script');
+    sc.src = 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js';
+    sc.onload = lidStart;
+    sc.onerror = function () { LID.loadingLib = false; LID.err = 'The Sewer Lid could not load. Check your connection and try again.'; lidRefresh(); };
+    document.head.appendChild(sc);
+  }
+  function lidStart() {
+    var c = lidCfg();
+    try {
+      LID.client = window.supabase.createClient(c.url, c.anonKey, { auth: { flowType: 'pkce', persistSession: true, detectSessionInUrl: true } });
+    } catch (e) { LID.err = 'The Sewer Lid could not start.'; lidRefresh(); return; }
+    LID.client.auth.onAuthStateChange(function (ev, session) {
+      var was = LID.session && LID.session.user.id;
+      LID.session = session;
+      if (session && session.user.id !== was) lidProfile();
+      if (!session) { LID.profile = null; LID.isAdmin = false; LID.mine = null; }
+      lidRefresh();
+    });
+    LID.client.auth.getSession().then(function (r) {
+      LID.session = r.data && r.data.session;
+      LID.ready = true;
+      if (LID.session) lidProfile();
+      if (/[?&]code=/.test(location.search)) { try { history.replaceState(null, '', location.pathname + '#lid'); } catch (e) { /* keep url */ } }
+      lidFeed();
+      lidRefresh();
+    });
+  }
+  function lidProfile() {
+    var u = LID.session.user, md = u.user_metadata || {};
+    var name = String(md.user_name || md.preferred_username || md.full_name || md.name || 'Collector').slice(0, 40);
+    LID.profile = { id: u.id, name: name };
+    LID.names[u.id] = name;
+    LID.client.from('profiles').upsert({ id: u.id, name: name, avatar_url: md.avatar_url || null }).then(function () {});
+    LID.client.from('admins').select('user_id').eq('user_id', u.id).then(function (r) { LID.isAdmin = !!(r.data && r.data.length); lidRefresh(); });
+    lidMine();
+  }
+  var LID_COLS = 'id,owner,title,category,notes,image_path,is_public,hidden,created_at';
+  function lidFeed() {
+    var q = LID.client.from('vault_items').select(LID_COLS).eq('is_public', true).eq('hidden', false).order('created_at', { ascending: false }).limit(60);
+    if (LID.owner) q = q.eq('owner', LID.owner);
+    var want = LID.owner;
+    q.then(function (r) {
+      if (want !== LID.owner) return;
+      if (r.error) LID.err = 'Collections could not load right now. Try again in a minute.';
+      else { LID.feed = r.data || []; lidNames(LID.feed); lidUrls(LID.feed); }
+      lidRefresh();
+    });
+  }
+  function lidMine() {
+    if (!LID.session) return;
+    LID.client.from('vault_items').select(LID_COLS).eq('owner', LID.session.user.id).order('created_at', { ascending: false }).then(function (r) {
+      if (!r.error) { LID.mine = r.data || []; lidUrls(LID.mine); }
+      lidRefresh();
+    });
+  }
+  function lidNames(items) {
+    var ids = [];
+    items.forEach(function (i) { if (!LID.names[i.owner] && ids.indexOf(i.owner) < 0) ids.push(i.owner); });
+    if (!ids.length) return;
+    LID.client.from('profiles').select('id,name').in('id', ids).then(function (r) {
+      (r.data || []).forEach(function (p) { LID.names[p.id] = p.name; });
+      lidRefresh();
+    });
+  }
+  function lidUrls(items) {
+    var paths = items.map(function (i) { return i.image_path; }).filter(function (p) { return p && !LID.urls[p]; });
+    if (!paths.length) return;
+    LID.client.storage.from('vault').createSignedUrls(paths, 3600).then(function (r) {
+      (r.data || []).forEach(function (x) { if (x && x.signedUrl) LID.urls[x.path] = x.signedUrl; });
+      lidRefresh();
+    });
+  }
+  function lidResize(file) {
+    return new Promise(function (resolve, reject) {
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function () {
+        var s = Math.min(1, 1600 / Math.max(img.naturalWidth, img.naturalHeight));
+        var cv = document.createElement('canvas');
+        cv.width = Math.round(img.naturalWidth * s); cv.height = Math.round(img.naturalHeight * s);
+        cv.getContext('2d').drawImage(img, 0, 0, cv.width, cv.height);
+        URL.revokeObjectURL(url);
+        cv.toBlob(function (b) { if (b) resolve(b); else reject(new Error('That photo could not be prepared.')); }, 'image/jpeg', 0.85);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); reject(new Error('That file is not a photo the app can read. Try a JPG or PNG.')); };
+      img.src = url;
+    });
+  }
+  function lidSignIn() {
+    if (!LID.client) return;
+    LID.client.auth.signInWithOAuth({ provider: 'github', options: { redirectTo: location.origin + location.pathname + '#lid' } }).then(function (r) {
+      if (r.error) { LID.err = 'Sign-in did not start: ' + r.error.message; lidRefresh(); }
+    });
+  }
+  function lidCard(it, showOwner) {
+    var src = LID.urls[it.image_path];
+    return '<button class="lid-card" data-act="lidopen" data-id="' + esc(it.id) + '" aria-label="' + esc(it.title) + '">' +
+      '<span class="lid-photo">' + (src ? '<img src="' + esc(src) + '" alt="" loading="lazy">' : '') + (!it.is_public ? '<span class="lid-tag">Private</span>' : it.hidden ? '<span class="lid-tag">Hidden</span>' : '') + '</span>' +
+      '<span class="lid-title">' + esc(it.title) + '</span>' +
+      '<span class="muted small">' + esc(showOwner ? (LID.names[it.owner] || 'Collector') : it.category) + '</span></button>';
+  }
+  var LID_ART = '<svg viewBox="0 0 360 120" preserveAspectRatio="xMidYMid slice" role="img" aria-label="A manhole lid lifted open with a warm glow shining up from below">' +
+    '<rect width="360" height="120" fill="#141A16"></rect>' +
+    '<g stroke="#FFFFFF" stroke-opacity="0.05">' + (function () { var b = ''; for (var y = 0, r = 0; y < 120; y += 14, r++) { b += '<path d="M0 ' + (y + 0.5) + 'H360"></path>'; for (var x = (r % 2) * 18; x < 360; x += 36) b += '<path d="M' + (x + 0.5) + ' ' + y + 'V' + (y + 14) + '"></path>'; } return b; })() + '</g>' +
+    '<rect y="86" width="360" height="34" fill="#26302A"></rect>' +
+    '<ellipse cx="180" cy="94" rx="70" ry="14" fill="#0B0F0D"></ellipse>' +
+    '<ellipse cx="180" cy="92" rx="56" ry="9" fill="#F29A3A" fill-opacity="0.35"></ellipse>' +
+    '<path d="M150 92L120 20M210 92L240 20" stroke="#F29A3A" stroke-opacity="0.12" stroke-width="30"></path>' +
+    '<g transform="rotate(-24 180 40)"><ellipse cx="180" cy="40" rx="66" ry="13" fill="#3A443E" stroke="#5E6862" stroke-width="2"></ellipse>' +
+    '<path d="M126 38h108M132 44h96M150 32h60" stroke="#26302A" stroke-width="2"></path><ellipse cx="180" cy="36" rx="66" ry="13" fill="none" stroke="#7A857F" stroke-width="1.5" opacity="0.6"></ellipse></g>' +
+    '<g fill="#F2E6D0">' + [[60, 30, 26, 40], [92, 38, 20, 32], [268, 34, 22, 36], [296, 28, 26, 42]].map(function (r) { return '<rect x="' + r[0] + '" y="' + r[1] + '" width="' + r[2] + '" height="' + r[3] + '" rx="3" fill-opacity="0.12"></rect>'; }).join('') + '</g>' +
+    '<path d="M50 72h76M258 72h76" stroke="#5E6862" stroke-width="3" stroke-linecap="round"></path>' +
+    '<text x="180" y="114" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="12" fill="#F29A3A" letter-spacing="2">COLLECTOR VAULT</text></svg>';
+
+  VIEWS.lid = function () {
+    var out = head('The Sewer Lid', 'A vault for your figures, displays and collectibles. Show off yours and browse other fans’ collections.') + '<div class="lid-banner">' + LID_ART + '</div>';
+    if (loading) return '<div class="stack-lg">' + out + loader('Lifting the lid...') + '</div>';
+    if (!lidConfigured()) {
+      return '<div class="stack-lg">' + out + '<div class="empty"><strong style="color:var(--fg)">The Sewer Lid opens soon.</strong>Photo storage is being connected. Once it is, you can sign in, add your collection and browse everyone else’s.</div></div>';
+    }
+    lidLoad();
+    if (!LID.ready) return '<div class="stack-lg">' + out + (LID.err ? '<div class="note">' + esc(LID.err) + '</div>' : loader('Lifting the lid...')) + '</div>';
+    var me = LID.session;
+    var who = me
+      ? '<div class="kv" style="align-items:center"><span>Signed in as <strong>' + esc(LID.profile ? LID.profile.name : 'Collector') + '</strong>' + (LID.isAdmin ? ' <span class="small" style="color:var(--orange)">· Moderator</span>' : '') + '</span><button class="btn btn-ghost btn-sm" data-act="lidsignout">Sign out</button></div>'
+      : '';
+    var tabs = '<div class="chips" role="group" aria-label="Sewer Lid sections">' +
+      '<button class="chip" data-act="lidtab" data-tab="browse" aria-pressed="' + (LID.tab === 'browse') + '">Browse collections</button>' +
+      '<button class="chip" data-act="lidtab" data-tab="mine" aria-pressed="' + (LID.tab === 'mine') + '">My vault' + (LID.mine ? ' (' + LID.mine.length + ')' : '') + '</button></div>';
+    var body = '';
+    if (LID.err) body += '<div class="note">' + esc(LID.err) + ' <button class="btn btn-ghost btn-sm" data-act="liderr">OK</button></div>';
+    if (LID.tab === 'browse') {
+      var cats = ['All'].concat(LID_CATS);
+      var items = (LID.feed || []).filter(function (i) { return LID.cat === 'All' || i.category === LID.cat; });
+      body += (LID.owner ? '<div class="sec-head" style="align-items:center"><h2>' + esc(LID.names[LID.owner] || 'Collector') + '’s collection</h2><button class="btn btn-ghost btn-sm" data-act="lidall">All collections</button></div>' : '') +
+        '<div class="chips" role="group" aria-label="Filter by type">' + cats.map(function (c) { return '<button class="chip" data-act="lidcat" data-cat="' + esc(c) + '" aria-pressed="' + (LID.cat === c) + '">' + esc(c) + '</button>'; }).join('') + '</div>' +
+        (LID.feed == null ? loader('Opening the vault...') : items.length ? '<div class="lid-grid">' + items.map(function (i) { return lidCard(i, !LID.owner); }).join('') + '</div>'
+          : '<div class="empty">' + (LID.cat === 'All' ? 'No collections shared yet. Be the first: open <strong style="color:var(--fg)">My vault</strong> and add a photo.' : 'Nothing in this category yet.') + '</div>');
+    } else {
+      if (!me) {
+        body += '<section class="card" style="align-items:flex-start"><h2 style="font-size:18px">Start your vault</h2><p class="muted" style="font-size:14px">Sign in with a free GitHub account to add photos of your figures, displays and collectibles. You choose what others can see. GitHub accounts are for people 13 and older.</p>' +
+          '<button class="btn btn-primary" data-act="lidsignin">Sign in with GitHub</button></section>';
+      } else if (LID.adding) {
+        var f = LID.form;
+        body += '<form class="card lid-form" id="lid-form">' +
+          '<label class="lid-drop" for="lid-file">' + (LID.preview ? '<img src="' + esc(LID.preview) + '" alt="Your photo">' : '<span class="lid-drop-txt"><strong>Tap to add a photo</strong><span class="muted small">Take one or pick from your library</span></span>') + '</label>' +
+          '<input id="lid-file" type="file" accept="image/*" class="visually-hidden" data-lidfile="1">' +
+          '<div class="field"><label for="lid-title">Name</label><input id="lid-title" maxlength="80" required data-lidf="title" value="' + esc(f.title) + '" placeholder="What is it?"></div>' +
+          '<div class="field"><label for="lid-cat">Type</label><select id="lid-cat" data-lidf="category">' + LID_CATS.map(function (c) { return '<option' + (c === f.category ? ' selected' : '') + '>' + esc(c) + '</option>'; }).join('') + '</select></div>' +
+          '<div class="field"><label for="lid-notes">Notes (optional)</label><textarea id="lid-notes" maxlength="500" rows="3" data-lidf="notes" placeholder="Year, where you found it, condition...">' + esc(f.notes) + '</textarea></div>' +
+          '<label class="toggle" for="lid-pub">Show in Browse collections<input type="checkbox" id="lid-pub" data-lidf="pub"' + (f.pub ? ' checked' : '') + '></label>' +
+          '<label class="toggle" for="lid-ok" style="align-items:flex-start;gap:12px"><span class="small muted" style="line-height:1.4">I took this photo or can share it, and it shows no faces, addresses or other personal info.</span><input type="checkbox" id="lid-ok" data-lidf="ok"' + (f.ok ? ' checked' : '') + '></label>' +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" type="submit" style="flex:1"' + (LID.busy ? ' disabled' : '') + '>' + (LID.busy ? 'Adding...' : 'Add to my vault') + '</button><button class="btn btn-ghost" type="button" data-act="lidaddclose"' + (LID.busy ? ' disabled' : '') + '>Cancel</button></div>' +
+          '<p class="muted small">Photos are shrunk and any hidden location info is removed before upload.</p></form>';
+      } else {
+        body += '<button class="btn btn-primary" data-act="lidadd">+ Add to my vault</button>' +
+          (LID.mine == null ? loader('Opening your vault...') : LID.mine.length ? '<div class="lid-grid">' + LID.mine.map(function (i) { return lidCard(i, false); }).join('') + '</div>'
+            : '<div class="empty">Your vault is empty. Add your first figure, display or find.</div>');
+      }
+    }
+    return '<div class="stack-lg">' + out + who + tabs + body + lidDetail() + '</div>';
+  };
+
+  function lidFind(id) {
+    return (LID.feed || []).concat(LID.mine || []).filter(function (i) { return i.id === id; })[0];
+  }
+  function lidDetail() {
+    var it = LID.item && lidFind(LID.item); if (!it) return '';
+    var mine = LID.session && it.owner === LID.session.user.id, src = LID.urls[it.image_path];
+    var date = new Date(it.created_at).toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
+    var actions = '';
+    if (mine) {
+      actions = LID.askDelete
+        ? '<div class="confirm"><span>Delete this from your vault?</span><button class="btn btn-sm btn-sauce" data-act="liddelyes">Delete</button><button class="btn btn-sm btn-ghost" data-act="liddelno">Keep</button></div>'
+        : '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-ghost" data-act="lidvis" style="flex:1">' + (it.is_public ? 'Make private' : 'Show in Browse') + '</button><button class="btn btn-ghost" data-act="liddel">Delete</button></div>' +
+          (it.hidden ? '<p class="small" style="color:var(--orange)">This item was hidden after reports, so only you and moderators can see it.</p>' : '');
+    } else {
+      actions = '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-outline" data-act="lidowner" data-owner="' + esc(it.owner) + '" style="flex:1">See ' + esc(LID.names[it.owner] || 'their') + '’s collection</button>' +
+        (LID.session ? '<button class="btn btn-ghost" data-act="lidreport">Report</button>' : '') + '</div>';
+      if (LID.reporting) {
+        actions += '<div class="card" style="gap:8px"><strong>What is wrong with this post?</strong><div class="chips">' +
+          ['Not a collectible', 'Shows personal info', 'Inappropriate', 'Spam or selling'].map(function (r) { return '<button class="chip" data-act="lidreportsend" data-reason="' + esc(r) + '">' + esc(r) + '</button>'; }).join('') + '</div></div>';
+      }
+      if (LID.isAdmin) actions += LID.askDelete
+        ? '<div class="confirm"><span>Remove this post?</span><button class="btn btn-sm btn-sauce" data-act="liddelyes">Remove</button><button class="btn btn-sm btn-ghost" data-act="liddelno">Cancel</button></div>'
+        : '<button class="btn btn-ghost" data-act="liddel">Moderator: remove post</button>';
+    }
+    return '<div class="lid-modal" role="dialog" aria-modal="true" aria-labelledby="lid-item-title"><div class="lid-modal-inner">' +
+      '<div class="sec-head" style="align-items:center"><span class="eyebrow">' + esc(it.category) + '</span><button class="icon-btn" data-act="lidclose" aria-label="Close" style="border:none">✕</button></div>' +
+      '<div class="lid-big">' + (src ? '<img src="' + esc(src) + '" alt="' + esc(it.title) + '">' : '') + '</div>' +
+      '<h2 id="lid-item-title" style="font-size:20px">' + esc(it.title) + '</h2>' +
+      (it.notes ? '<p style="white-space:pre-line">' + esc(it.notes) + '</p>' : '') +
+      '<p class="muted small">' + (mine ? 'In your vault' : 'From ' + esc(LID.names[it.owner] || 'a collector') + '’s collection') + ' · ' + date + (it.is_public ? '' : ' · Private') + '</p>' +
+      actions + '</div></div>';
+  }
+  function lidSubmit() {
+    var f = LID.form;
+    if (!LID.file) { LID.err = 'Add a photo first.'; lidRefresh(); return; }
+    if (!f.title.trim()) { LID.err = 'Give it a name.'; lidRefresh(); return; }
+    if (!f.ok) { LID.err = 'Check the box confirming the photo is yours to share and shows no personal info.'; lidRefresh(); return; }
+    var uid = LID.session.user.id;
+    LID.busy = true; LID.err = ''; lidRefresh();
+    var path = uid + '/' + (window.crypto && crypto.randomUUID ? crypto.randomUUID() : Date.now() + '-' + Math.random().toString(36).slice(2)) + '.jpg';
+    lidResize(LID.file).then(function (blob) {
+      return LID.client.storage.from('vault').upload(path, blob, { contentType: 'image/jpeg', upsert: false });
+    }).then(function (r) {
+      if (r.error) throw r.error;
+      return LID.client.from('vault_items').insert({ owner: uid, title: f.title.trim().slice(0, 80), category: f.category, notes: f.notes.trim().slice(0, 500) || null, image_path: path, is_public: !!f.pub }).select(LID_COLS).single();
+    }).then(function (r) {
+      if (r.error) { LID.client.storage.from('vault').remove([path]); throw r.error; }
+      var item = r.data;
+      LID.busy = false; LID.adding = false; LID.file = null;
+      if (LID.preview) { try { URL.revokeObjectURL(LID.preview); } catch (e) { /* ignore */ } }
+      LID.preview = null; LID.form = { title: '', category: f.category, notes: '', pub: f.pub, ok: false };
+      LID.mine = [item].concat(LID.mine || []);
+      if (item.is_public && !LID.owner) LID.feed = [item].concat(LID.feed || []);
+      lidUrls([item]);
+      toast('Added to your vault');
+      lidRefresh();
+    }).catch(function (e) {
+      LID.busy = false;
+      LID.err = 'That did not upload. ' + ((e && e.message) || 'Try again.');
+      lidRefresh();
+    });
+  }
+  var LID_ACT = {
+    lidtab: function (el) { LID.tab = el.getAttribute('data-tab'); LID.err = ''; if (LID.tab === 'mine' && LID.session && LID.mine == null) lidMine(); render(); },
+    lidsignin: function () { lidSignIn(); },
+    lidsignout: function () { LID.client.auth.signOut().then(function () { LID.tab = 'browse'; render(); }); },
+    lidcat: function (el) { LID.cat = el.getAttribute('data-cat'); render(); },
+    lidadd: function () { LID.adding = true; LID.err = ''; render(); },
+    lidaddclose: function () { LID.adding = false; LID.err = ''; render(); },
+    lidopen: function (el) { LID.item = el.getAttribute('data-id'); LID.askDelete = false; LID.reporting = false; render(); var c = document.querySelector('.lid-modal .icon-btn'); if (c) c.focus(); },
+    lidclose: function () { LID.item = null; LID.askDelete = false; LID.reporting = false; render(); },
+    lidowner: function (el) { LID.owner = el.getAttribute('data-owner'); LID.item = null; LID.tab = 'browse'; LID.cat = 'All'; LID.feed = null; lidFeed(); render(); window.scrollTo(0, 0); },
+    lidall: function () { LID.owner = null; LID.feed = null; lidFeed(); render(); },
+    liddel: function () { LID.askDelete = true; render(); },
+    liddelno: function () { LID.askDelete = false; render(); },
+    liddelyes: function () {
+      var it = lidFind(LID.item); if (!it) return;
+      LID.client.from('vault_items').delete().eq('id', it.id).then(function (r) {
+        if (r.error) { LID.err = 'That could not be deleted. Try again.'; lidRefresh(); return; }
+        LID.client.storage.from('vault').remove([it.image_path]);
+        LID.mine = (LID.mine || []).filter(function (i) { return i.id !== it.id; });
+        LID.feed = (LID.feed || []).filter(function (i) { return i.id !== it.id; });
+        LID.item = null; LID.askDelete = false; toast('Deleted'); lidRefresh();
+      });
+    },
+    lidvis: function () {
+      var it = lidFind(LID.item); if (!it) return;
+      var to = !it.is_public;
+      LID.client.from('vault_items').update({ is_public: to }).eq('id', it.id).then(function (r) {
+        if (r.error) { LID.err = 'That change did not save. Try again.'; lidRefresh(); return; }
+        [LID.mine, LID.feed].forEach(function (list) { (list || []).forEach(function (i) { if (i.id === it.id) i.is_public = to; }); });
+        if (!to) LID.feed = (LID.feed || []).filter(function (i) { return i.id !== it.id; });
+        else if (!LID.owner && !(LID.feed || []).some(function (i) { return i.id === it.id; })) LID.feed = [it].concat(LID.feed || []);
+        toast(to ? 'Now showing in Browse' : 'Now private'); lidRefresh();
+      });
+    },
+    lidreport: function () { LID.reporting = !LID.reporting; render(); },
+    lidreportsend: function (el) {
+      var it = lidFind(LID.item); if (!it) return;
+      LID.client.from('vault_reports').insert({ item_id: it.id, reason: el.getAttribute('data-reason') }).then(function (r) {
+        LID.reporting = false;
+        toast(r.error && !/duplicate/i.test(r.error.message || '') ? 'Report did not send. Try again.' : 'Thanks. A moderator will take a look.');
+        lidRefresh();
+      });
+    },
+    liderr: function () { LID.err = ''; render(); }
+  };
+  Object.keys(LID_ACT).forEach(function (k) { ACT_EXTRA[k] = LID_ACT[k]; });
+  document.addEventListener('input', function (e) {
+    var k = e.target.getAttribute && e.target.getAttribute('data-lidf');
+    if (k && (k === 'title' || k === 'notes')) LID.form[k] = e.target.value;
+  });
+  document.addEventListener('change', function (e) {
+    var k = e.target.getAttribute && e.target.getAttribute('data-lidf');
+    if (k === 'category') LID.form.category = e.target.value;
+    if (k === 'pub' || k === 'ok') LID.form[k] = e.target.checked;
+    if (e.target.getAttribute && e.target.getAttribute('data-lidfile')) {
+      var file = e.target.files && e.target.files[0]; if (!file) return;
+      if (!/^image\//.test(file.type)) { LID.err = 'That file is not a photo. Pick a JPG or PNG.'; lidRefresh(); return; }
+      if (LID.preview) { try { URL.revokeObjectURL(LID.preview); } catch (err) { /* ignore */ } }
+      LID.file = file; LID.preview = URL.createObjectURL(file); LID.err = '';
+      var drop = document.querySelector('.lid-drop');
+      if (drop) drop.innerHTML = '<img src="' + LID.preview + '" alt="Your photo">';
+    }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && current() === 'lid' && LID.item) { LID.item = null; render(); } });
+
   /* ---------- router ---------- */
   var view = document.getElementById('view');
   function current() { var h = location.hash.replace('#', ''); if (/^talk-[a-z0-9-]+$/.test(h)) return 'thread'; return VIEWS[h] ? h : 'home'; }
-  var TAB_FOR = { thread: 'talk', trivia: 'games', run: 'games', drop: 'games', picker: 'home', prefs: 'home' };
+  var TAB_FOR = { lid: 'talk', thread: 'talk', trivia: 'games', run: 'games', drop: 'games', picker: 'home', prefs: 'home' };
   function render() {
     var r = current();
     view.innerHTML = VIEWS[r]();
@@ -1663,6 +1993,7 @@ p { margin: 0; }
     addstore: function () { ui.addStore = !ui.addStore; render(); if (ui.addStore) { var f = document.getElementById('store-name'); if (f) f.focus(); } },
     unstore: function (el) { S.stores.splice(+el.getAttribute('data-i'), 1); save(); render(); toast('Store removed'); }
   };
+  Object.keys(ACT_EXTRA).forEach(function (k) { ACT[k] = ACT_EXTRA[k]; });
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-act]'); if (!el) return;
     var fn = ACT[el.getAttribute('data-act')]; if (fn) { e.preventDefault(); fn(el); }
@@ -1678,6 +2009,7 @@ p { margin: 0; }
     }
   });
   document.addEventListener('submit', function (e) {
+    if (e.target.id === 'lid-form') { e.preventDefault(); lidSubmit(); return; }
     if (e.target.id === 'store-form') {
       e.preventDefault();
       var sn = e.target.elements.name.value.trim(), su = e.target.elements.url.value.trim();

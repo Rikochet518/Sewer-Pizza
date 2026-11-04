@@ -35,6 +35,10 @@
           "url": "https://www.facebook.com/TMNTfanpage/"
         }
       ]
+    },
+    "vault": {
+      "url": "",
+      "anonKey": ""
     }
   },
   "releases": [
