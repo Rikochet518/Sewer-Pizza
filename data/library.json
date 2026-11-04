@@ -321,6 +321,10 @@
       {
         "name": "GameStop",
         "search": "https://www.gamestop.com/search/?q="
+      },
+      {
+        "name": "BigBadToyStore",
+        "search": "https://www.bigbadtoystore.com/Search?SearchString="
       }
     ],
     "categories": [
@@ -375,6 +379,16 @@
         "name": "Paramount Games Shop",
         "note": "Official TMNT game merch",
         "url": "https://shop.paramountgames.com/collections/teenage-mutant-ninja-turtles"
+      },
+      {
+        "name": "BigBadToyStore",
+        "note": "Collector figures, preorders and exclusives",
+        "url": "https://www.bigbadtoystore.com/Search?SearchString=teenage+mutant+ninja+turtles"
+      },
+      {
+        "name": "Entertainment Earth",
+        "note": "Figures, collectibles and gear",
+        "url": "https://www.entertainmentearth.com/s/teenage-mutant-ninja-turtles/t"
       }
     ],
     "ideas": [
