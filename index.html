@@ -679,7 +679,7 @@ p { margin: 0; }
         var on = !!S.badges[b.id];
         return '<div class="badge' + (on ? ' on' : '') + '" style="color:' + (on ? 'var(--orange)' : 'var(--dim)') + '"><div class="badge-ico">' + b.icon(on) + '</div><div style="min-width:0"><div class="badge-name">' + esc(b.name) + '</div><div class="muted small">' + (on ? 'Earned' : esc(b.how)) + '</div></div></div>';
       }).join('');
-      var dropCard = '<section class="card"><div class="trivia-top"><div class="stack" style="gap:8px"><div class="eyebrow">Play here</div><h2 style="font-size:20px">Slice Drop</h2><p class="muted" style="font-size:14px">Catch falling pizza in your box. Dodge the anchovy tins and stinky socks or the box is ruined.</p></div>' + BOX_ICON + '</div>' +
+      var dropCard = '<section class="card"><div class="trivia-top"><div class="stack" style="gap:8px"><div class="eyebrow">Play here</div><h2 style="font-size:20px">Slice Drop</h2><p class="muted" style="font-size:14px">A rainy rooftop showdown. Catch falling pizza in your box while Meatball Mo, a rival courier, lobs junk at it.</p></div>' + BOX_ICON + '</div>' +
         '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#drop">Play Slice Drop</a><span class="muted small">Best score: ' + S.drop.best + '</span></div></section>';
       var runCard = '<section class="card"><div class="trivia-top"><div class="stack" style="gap:8px"><div class="eyebrow">Play here</div><h2 style="font-size:20px">Sewer Run</h2><p class="muted" style="font-size:14px">Race Slice, our pizza courier, through the sewers. Jump the rats and pipes and grab the pepperoni.</p></div>' + sliceMascot(60) + '</div>' +
         '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap"><a class="btn btn-primary" href="#run">Play Sewer Run</a><span class="muted small">Best score: ' + S.run.best + '</span></div></section>';
@@ -1111,19 +1111,20 @@ p { margin: 0; }
     '<rect x="6" y="34" width="52" height="18" fill="#E9D3A8" stroke="#B88A4A" stroke-width="2"></rect><path d="M14 43h36" stroke="#B88A4A" stroke-width="1.5" opacity="0.6"></path></svg>';
 
   VIEWS.drop = function () {
-    return '<div class="stack-lg">' + head('Slice Drop', 'Catch the falling pizza in your box. Drag or slide your finger to move it. Catch an anchovy tin or a stinky sock and the box is ruined.', 'games') +
+    return '<div class="stack-lg">' + head('Slice Drop', 'Up on a rainy rooftop, catch the falling pizza in your box. Watch out for Meatball Mo, a rival courier pacing the ledge. He lobs anchovy tins and stinky socks. Catch one and the box is ruined.', 'games') +
       '<div class="run-wrap"><canvas id="drop-canvas" class="run-canvas" role="img" aria-label="Slice Drop game. Drag to move the pizza box, or use the left and right arrow keys."></canvas></div>' +
       '<button class="btn btn-sauce" id="drop-btn" data-act="droptap" style="min-height:56px;font-size:17px">Start</button>' +
       '<div class="kv"><span>Best score</span><strong id="drop-best">' + S.drop.best + '</strong></div>' +
       '<div class="kv"><span>Games played</span><span class="muted" id="drop-plays">' + S.drop.plays + '</span></div>' +
-      '<p class="muted small">A slice is 1 point and a whole pizza is 5. Drop 5 slices on the floor and the game ends too. It speeds up as you go. On a keyboard, use the left and right arrows.</p></div>';
+      '<p class="muted small">A slice is 1 point and a whole pizza is 5. Drop 5 slices on the roof and the game ends too. Mo raises his arm right before he throws, so watch for it. It speeds up as you go. On a keyboard, use the left and right arrows.</p></div>';
   };
 
-  var DROP = { canvas: null, ctx: null, w: 0, h: 0, state: 'ready', raf: 0, last: 0, t: 0, score: 0, missed: 0, items: [], spawnIn: 0, boxX: 0, targetX: null, keys: 0, overAt: 0, reason: '', newBest: false, splat: null };
+  var DROP = { canvas: null, ctx: null, w: 0, h: 0, state: 'ready', raf: 0, last: 0, t: 0, score: 0, missed: 0, items: [], spawnIn: 0, boxX: 0, targetX: null, keys: 0, overAt: 0, reason: '', newBest: false, splat: null, rival: null, throwIn: 0, rain: [] };
   var BOX_W = 74;
   function dropReset() {
     DROP.state = 'ready'; DROP.t = 0; DROP.score = 0; DROP.missed = 0; DROP.items = []; DROP.spawnIn = 0.4;
     DROP.boxX = (DROP.w || 360) / 2; DROP.targetX = null; DROP.reason = ''; DROP.newBest = false; DROP.splat = null;
+    DROP.rival = { x: (DROP.w || 360) * 0.3, dir: 1, windup: 0 }; DROP.throwIn = 4.5;
   }
   function dropInit() {
     var c = document.getElementById('drop-canvas'); if (!c) return;
@@ -1135,6 +1136,8 @@ p { margin: 0; }
     c.onpointerdown = function (e) { e.preventDefault(); if (DROP.state !== 'running') { dropTap(); } DROP.targetX = toX(e); try { c.setPointerCapture(e.pointerId); } catch (err) { /* not supported */ } };
     c.onpointermove = function (e) { if (e.buttons || e.pointerType === 'touch' || DROP.state === 'running') DROP.targetX = toX(e); };
     if (DROP.boxX === 0 || DROP.state === 'ready') DROP.boxX = w / 2;
+    if (!DROP.rival) { DROP.rival = { x: w * 0.3, dir: 1, windup: 0 }; DROP.throwIn = 4.5; }
+    if (!DROP.rain.length) for (var ri = 0; ri < 46; ri++) DROP.rain.push({ x: Math.random() * w, y: Math.random() * h, v: 380 + Math.random() * 220 });
     dropUI();
     if (!DROP.raf) { DROP.last = performance.now(); DROP.raf = requestAnimationFrame(dropFrame); }
   }
@@ -1166,6 +1169,7 @@ p { margin: 0; }
     DROP.raf = requestAnimationFrame(dropFrame);
     var dt = Math.min(0.033, (now - DROP.last) / 1000); DROP.last = now;
     if (DROP.state === 'running') dropStep(dt);
+    DROP.rain.forEach(function (r) { r.y += r.v * dt; r.x -= r.v * 0.18 * dt; if (r.y > DROP.h) { r.y = -10; r.x = Math.random() * (DROP.w + 40); } });
     dropDraw(now / 1000);
   }
   function dropStep(dt) {
@@ -1177,24 +1181,32 @@ p { margin: 0; }
     var fall = 150 + DROP.t * 6;
     DROP.spawnIn -= dt;
     if (DROP.spawnIn <= 0) {
-      var hazardChance = DROP.t < 4 ? 0 : Math.min(0.42, 0.16 + (DROP.t - 4) * 0.004), r = Math.random(), kind;
-      if (r < hazardChance) kind = Math.random() < 0.5 ? 'tin' : 'sock';
-      else kind = Math.random() < 0.1 ? 'pizza' : 'slice';
-      DROP.items.push({ kind: kind, x: 20 + Math.random() * (w - 40), y: -24, vy: fall * (0.85 + Math.random() * 0.35), spin: (Math.random() - 0.5) * 3, a: 0 });
-      DROP.spawnIn = Math.max(0.32, 0.85 - DROP.t * 0.01) * (0.7 + Math.random() * 0.6);
+      DROP.items.push({ kind: Math.random() < 0.1 ? 'pizza' : 'slice', x: 20 + Math.random() * (w - 40), y: -24, vx: 0, vy: fall * (0.85 + Math.random() * 0.35), spin: (Math.random() - 0.5) * 3, a: 0 });
+      DROP.spawnIn = Math.max(0.36, 0.9 - DROP.t * 0.01) * (0.7 + Math.random() * 0.6);
+    }
+    var mo = DROP.rival;
+    var moSpeed = 70 + DROP.t * 2;
+    mo.x += mo.dir * moSpeed * dt;
+    if (mo.x < 30) { mo.x = 30; mo.dir = 1; } else if (mo.x > w - 30) { mo.x = w - 30; mo.dir = -1; } else if (Math.random() < dt * 0.6) mo.dir *= -1;
+    DROP.throwIn -= dt;
+    mo.windup = DROP.throwIn < 0.45 ? 1 : 0;
+    if (DROP.throwIn <= 0) {
+      var aim = (DROP.boxX - mo.x) * (0.25 + Math.random() * 0.45);
+      DROP.items.push({ kind: Math.random() < 0.5 ? 'tin' : 'sock', x: mo.x, y: 62, vx: aim / 1.6, vy: fall * 0.75, spin: (Math.random() - 0.5) * 6, a: 0 });
+      DROP.throwIn = Math.max(0.9, 2.4 - DROP.t * 0.025) * (0.75 + Math.random() * 0.5);
     }
     var boxTop = h - 58, keep = [];
     for (var i = 0; i < DROP.items.length; i++) {
       var it = DROP.items[i];
-      it.y += it.vy * dt; it.a += it.spin * dt;
+      it.y += it.vy * dt; it.x += (it.vx || 0) * dt; it.a += it.spin * dt;
       var inBox = it.y >= boxTop - 6 && it.y <= boxTop + 14 && Math.abs(it.x - DROP.boxX) < BOX_W / 2 - 2;
       if (inBox) {
-        if (it.kind === 'tin' || it.kind === 'sock') { DROP.splat = it; dropOver(it.kind === 'tin' ? 'An anchovy tin landed in the box. Gross!' : 'A stinky sock landed in the box. Gross!'); return; }
+        if (it.kind === 'tin' || it.kind === 'sock') { DROP.splat = it; dropOver(it.kind === 'tin' ? 'Mo got an anchovy tin in your box. Gross!' : 'Mo got a stinky sock in your box. Gross!'); return; }
         DROP.score += it.kind === 'pizza' ? 5 : 1;
         continue;
       }
       if (it.y > h + 20) {
-        if (it.kind === 'slice' || it.kind === 'pizza') { DROP.missed++; if (DROP.missed >= 5) { keep.push(it); DROP.items = keep; dropOver('Five slices hit the floor.'); return; } }
+        if (it.kind === 'slice' || it.kind === 'pizza') { DROP.missed++; if (DROP.missed >= 5) { keep.push(it); DROP.items = keep; dropOver('Five slices hit the roof.'); return; } }
         continue;
       }
       keep.push(it);
@@ -1237,6 +1249,22 @@ p { margin: 0; }
     c.strokeStyle = 'rgba(180,200,150,0.55)'; c.lineWidth = 1.5; c.beginPath();
     c.moveTo(it.x - 10, it.y - 18); c.quadraticCurveTo(it.x - 14, it.y - 24, it.x - 9, it.y - 29); c.moveTo(it.x + 10, it.y - 14); c.quadraticCurveTo(it.x + 6, it.y - 20, it.x + 11, it.y - 25); c.stroke();
   }
+  function drawMo(c, x, y, windup, t) {
+    var bob = Math.sin(t * 8) * 1.2;
+    c.fillStyle = 'rgba(0,0,0,0.35)'; c.beginPath(); c.ellipse(x, y + 15, 13, 3, 0, 0, Math.PI * 2); c.fill();
+    c.strokeStyle = '#6E3A22'; c.lineWidth = 3; c.lineCap = 'round';
+    c.beginPath(); c.moveTo(x - 5, y + 9 + bob); c.lineTo(x - 7, y + 15); c.moveTo(x + 5, y + 9 + bob); c.lineTo(x + 7, y + 15); c.stroke();
+    c.beginPath(); c.moveTo(x - 11, y + 2 + bob); c.lineTo(x - 17, y + 6 + bob);
+    if (windup) { c.moveTo(x + 11, y + bob); c.lineTo(x + 15, y - 12 + bob); } else { c.moveTo(x + 11, y + 2 + bob); c.lineTo(x + 17, y + 6 + bob); }
+    c.stroke();
+    c.fillStyle = '#8A4B2E'; c.beginPath(); c.arc(x, y + bob, 13, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#6E3A22'; [[-6, 5], [5, 7], [7, -2], [-3, 9]].forEach(function (d) { c.beginPath(); c.arc(x + d[0], y + d[1] + bob, 1.6, 0, Math.PI * 2); c.fill(); });
+    c.fillStyle = '#3A6BB5'; c.beginPath(); c.ellipse(x, y - 9 + bob, 11, 6, 0, Math.PI, 0); c.fill(); c.fillRect(x - 2, y - 10 + bob, 15, 3);
+    c.fillStyle = '#FFFFFF'; c.beginPath(); c.arc(x - 4.5, y - 1 + bob, 3, 0, Math.PI * 2); c.arc(x + 4.5, y - 1 + bob, 3, 0, Math.PI * 2); c.fill();
+    c.fillStyle = '#101412'; c.beginPath(); c.arc(x - 4, y + bob, 1.4, 0, Math.PI * 2); c.arc(x + 5, y + bob, 1.4, 0, Math.PI * 2); c.fill();
+    c.strokeStyle = '#101412'; c.lineWidth = 1.6; c.beginPath(); c.moveTo(x - 8, y - 6 + bob); c.lineTo(x - 2, y - 4 + bob); c.moveTo(x + 8, y - 6 + bob); c.lineTo(x + 2, y - 4 + bob); c.moveTo(x - 3, y + 6 + bob); c.quadraticCurveTo(x, y + 4 + bob, x + 3, y + 6 + bob); c.stroke();
+    if (windup) { c.fillStyle = '#F29A3A'; c.font = '800 13px Archivo, Arial, sans-serif'; c.textAlign = 'center'; c.textBaseline = 'middle'; c.fillText('!', x + 19, y - 18 + bob); }
+  }
   function drawBox(c, x, top, ruined) {
     var hw = BOX_W / 2;
     c.fillStyle = ruined ? '#B8A98A' : '#F4E2BC'; c.strokeStyle = '#B88A4A'; c.lineWidth = 2;
@@ -1250,29 +1278,36 @@ p { margin: 0; }
   function dropDraw(t) {
     var c = DROP.ctx; if (!c) return;
     var w = DROP.w, h = DROP.h;
-    c.fillStyle = '#141A16'; c.fillRect(0, 0, w, h);
-    c.strokeStyle = 'rgba(255,255,255,0.05)'; c.lineWidth = 1; c.beginPath();
-    for (var y = 0, row = 0; y < h - 40; y += 20, row++) {
-      c.moveTo(0, y + 0.5); c.lineTo(w, y + 0.5);
-      for (var x = (row % 2) * 20; x < w; x += 40) { c.moveTo(x + 0.5, y); c.lineTo(x + 0.5, y + 20); }
-    }
-    c.stroke();
-    c.fillStyle = '#26302A'; c.fillRect(0, 26, w, 8); c.fillStyle = '#3B5A2E'; c.fillRect(0, 22, w, 4);
-    for (var px = 30; px < w; px += 110) { c.fillStyle = '#3B5A2E'; c.fillRect(px, 34, 10, 10); c.fillStyle = 'rgba(139,230,162,0.35)'; c.beginPath(); c.arc(px + 5, 50 + ((t * 40 + px) % 30), 2, 0, Math.PI * 2); c.fill(); }
-    c.fillStyle = '#2E3832'; c.fillRect(0, h - 40, w, 40); c.fillStyle = '#1C3830'; c.fillRect(0, h - 22, w, 22);
+    var sky = c.createLinearGradient(0, 0, 0, h); sky.addColorStop(0, '#0C111C'); sky.addColorStop(1, '#1A2233');
+    c.fillStyle = sky; c.fillRect(0, 0, w, h);
+    c.fillStyle = 'rgba(242,230,208,0.85)'; c.beginPath(); c.arc(w - 46, 112, 14, 0, Math.PI * 2); c.fill();
+    c.fillStyle = 'rgba(12,17,28,0.6)'; c.beginPath(); c.arc(w - 40, 108, 13, 0, Math.PI * 2); c.fill();
+    var base = h - 40, bw = 34, seed = 7;
+    c.fillStyle = '#111824';
+    for (var bx = -10, bi = 0; bx < w + 10; bx += bw, bi++) { var bh = 60 + ((bi * 37 + seed) % 5) * 26; c.fillRect(bx, base - bh, bw - 4, bh); }
+    c.fillStyle = 'rgba(242,154,58,0.55)';
+    for (var wx = -10, wi = 0; wx < w + 10; wx += bw, wi++) { var wh = 60 + ((wi * 37 + seed) % 5) * 26; for (var wy = base - wh + 8, k = 0; wy < base - 8; wy += 12, k++) { if ((wi * 7 + k * 5) % 3 === 0) c.fillRect(wx + 6 + (k % 2) * 10, wy, 4, 5); } }
+    c.fillStyle = '#1B2230'; c.fillRect(w - 78, base - 70, 34, 30); c.fillRect(w - 74, base - 40, 4, 40); c.fillRect(w - 52, base - 40, 4, 40);
+    c.fillStyle = '#232B3A'; c.beginPath(); c.moveTo(w - 82, base - 70); c.lineTo(w - 61, base - 86); c.lineTo(w - 40, base - 70); c.closePath(); c.fill();
+    c.fillStyle = '#343C4C'; c.fillRect(0, 62, w, 4); c.fillStyle = '#2A3140'; c.fillRect(0, 66, w, 8);
+    c.strokeStyle = 'rgba(160,190,230,0.28)'; c.lineWidth = 1; c.beginPath();
+    DROP.rain.forEach(function (r) { c.moveTo(r.x, r.y); c.lineTo(r.x - 3, r.y + 12); }); c.stroke();
+    c.fillStyle = '#2A2F38'; c.fillRect(0, h - 40, w, 40); c.fillStyle = '#353B46'; c.fillRect(0, h - 40, w, 5);
+    c.fillStyle = 'rgba(160,190,230,0.12)'; c.fillRect(w * 0.15, h - 28, 46, 3); c.fillRect(w * 0.62, h - 20, 60, 3);
+    if (DROP.rival) drawMo(c, DROP.rival.x, 46, DROP.rival.windup && DROP.state === 'running', t);
     DROP.items.forEach(function (it) {
       if (it.kind === 'slice') drawFallSlice(c, it); else if (it.kind === 'pizza') drawFallPizza(c, it); else if (it.kind === 'tin') drawTin(c, it); else drawSock(c, it);
     });
     drawBox(c, DROP.boxX, h - 58, DROP.state === 'over' && DROP.splat);
     c.font = '700 15px Archivo, Arial, sans-serif'; c.textBaseline = 'top';
-    c.fillStyle = '#EEF2EC'; c.textAlign = 'left'; c.fillText('Score ' + DROP.score, 12, 44);
-    c.fillStyle = '#F29A3A'; c.textAlign = 'right'; c.fillText('Best ' + S.drop.best, w - 12, 44);
-    for (var m = 0; m < 5; m++) { c.globalAlpha = m < DROP.missed ? 0.25 : 1; c.fillStyle = '#F29A3A'; c.beginPath(); var sx = 14 + m * 14; c.moveTo(sx - 5, 68); c.lineTo(sx + 5, 68); c.lineTo(sx, 78); c.closePath(); c.fill(); }
+    c.fillStyle = '#EEF2EC'; c.textAlign = 'left'; c.fillText('Score ' + DROP.score, 12, 84);
+    c.fillStyle = '#F29A3A'; c.textAlign = 'right'; c.fillText('Best ' + S.drop.best, w - 12, 84);
+    for (var m = 0; m < 5; m++) { c.globalAlpha = m < DROP.missed ? 0.25 : 1; c.fillStyle = '#F29A3A'; c.beginPath(); var sx = 14 + m * 14; c.moveTo(sx - 5, 106); c.lineTo(sx + 5, 106); c.lineTo(sx, 116); c.closePath(); c.fill(); }
     c.globalAlpha = 1;
     if (DROP.state !== 'running') {
       c.fillStyle = 'rgba(16,20,18,0.74)'; c.fillRect(0, 0, w, h);
       c.textAlign = 'center'; c.textBaseline = 'middle';
-      var title = DROP.state === 'over' ? (DROP.newBest ? 'New best!' : 'Box ruined!') : DROP.state === 'paused' ? 'Paused' : 'Slice Drop';
+      var title = DROP.state === 'over' ? (DROP.newBest ? 'New best!' : 'Mo wins this round!') : DROP.state === 'paused' ? 'Paused' : 'Slice Drop';
       if (DROP.state === 'over' && !DROP.splat && !DROP.newBest) title = 'Game over';
       var sub = DROP.state === 'over' ? DROP.reason : DROP.state === 'paused' ? 'Tap to keep going' : 'Tap to start';
       c.fillStyle = '#EEF2EC'; c.font = '800 26px Archivo, Arial, sans-serif'; c.fillText(title, w / 2, h / 2 - 30);
@@ -1281,7 +1316,7 @@ p { margin: 0; }
         c.fillStyle = '#F29A3A'; c.font = '700 16px Archivo, Arial, sans-serif'; c.fillText('Score ' + DROP.score, w / 2, h / 2 + 26);
         c.fillStyle = '#9AA49D'; c.font = '600 13px Archivo, Arial, sans-serif'; c.fillText('Tap to play again', w / 2, h / 2 + 50);
       } else if (DROP.state === 'ready') {
-        c.fillStyle = '#9AA49D'; c.font = '600 13px Archivo, Arial, sans-serif'; c.fillText('Catch pizza. Dodge tins and socks.', w / 2, h / 2 + 24);
+        c.fillStyle = '#9AA49D'; c.font = '600 13px Archivo, Arial, sans-serif'; c.fillText('Catch pizza. Dodge whatever Mo throws.', w / 2, h / 2 + 24);
       }
       c.textBaseline = 'top';
     }
