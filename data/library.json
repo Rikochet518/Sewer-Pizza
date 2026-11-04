@@ -1,7 +1,8 @@
 {
   "_note": "Edit this file to change what the app lists. Leave a url empty to use a search link instead.",
   "settings": {
-    "embedVideos": true
+    "embedVideos": true,
+    "ebaySearch": ""
   },
   "releases": [
     {

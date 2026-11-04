@@ -188,6 +188,15 @@ p { margin: 0; }
 .run-wrap { width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
 .run-canvas { display: block; width: 100%; touch-action: manipulation; -webkit-user-select: none; user-select: none; cursor: pointer; }
 #drop-canvas { touch-action: none; }
+.ebay-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ebay-card { display: flex; flex-direction: column; gap: 4px; min-width: 0; text-decoration: none; color: var(--fg); background: var(--bg); border: 1px solid var(--line); border-radius: 12px; padding: 8px; }
+.ebay-card:hover { color: var(--fg); border-color: var(--green); }
+.ebay-img { position: relative; aspect-ratio: 1 / 1; max-width: 100%; border-radius: 8px; background: var(--surface-2); overflow: hidden; }
+.ebay-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.ebay-tag { position: absolute; left: 6px; top: 6px; background: var(--orange); color: var(--bg); font-size: 10px; font-weight: 800; padding: 2px 6px; border-radius: 6px; }
+.ebay-title { font-size: 12px; font-weight: 600; line-height: 1.3; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.ebay-price { font-size: 15px; font-weight: 800; color: var(--orange); }
+.ebay-skel { display: block; height: 10px; border-radius: 5px; background: var(--surface-2); }
 .shop-banner { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 360 / 170; max-width: 100%; }
 .shop-banner svg { display: block; width: 100%; height: 100%; }
 .cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
@@ -489,7 +498,7 @@ p { margin: 0; }
   /* ---------- content ---------- */
   var D = { library: null, trivia: [], news: null, videos: null, sources: null };
   var loading = true, loadError = false;
-  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null, findIdx: null, addStore: false, findQuery: '' };
+  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null, findIdx: null, addStore: false, findQuery: '', ebay: null };
 
   function getJSON(p) { return fetch(p, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
   function loadData() {
@@ -858,9 +867,29 @@ p { margin: 0; }
         '<a class="btn btn-primary btn-sm" href="' + esc(r.search + encodeURIComponent(term)) + '" target="_blank" rel="noopener">See results</a></div>';
     }).join('');
     var saved = S.wishlist.some(function (w) { return w.name.toLowerCase() === q.toLowerCase(); });
+    var helper = D.library.settings && D.library.settings.ebaySearch;
+    var ebay = '';
+    if (helper) {
+      var eb = ui.ebay && ui.ebay.term === term ? ui.ebay : null;
+      if (!eb || eb.state === 'loading') {
+        ebay = '<div class="stack" style="gap:8px"><h3 style="font-size:15px">On eBay</h3><div class="ebay-grid" aria-busy="true">' +
+          [0, 1, 2, 3].map(function () { return '<div class="ebay-card"><div class="ebay-img"></div><i class="ebay-skel" style="width:90%"></i><i class="ebay-skel" style="width:40%"></i></div>'; }).join('') + '</div></div>';
+      } else if (eb.state === 'error') {
+        ebay = '<div class="note">' + esc(eb.error) + '</div>';
+      } else if (!eb.items.length) {
+        ebay = '<div class="note">No eBay listings matched. Try fewer or different words.</div>';
+      } else {
+        ebay = '<div class="stack" style="gap:8px"><div class="sec-head"><h3 style="font-size:15px">On eBay</h3><span class="muted small">' + eb.items.length + ' of ' + Number(eb.total || eb.items.length).toLocaleString() + ' listings</span></div><div class="ebay-grid">' +
+          eb.items.map(function (it) {
+            var price = it.price != null ? (it.currency === 'USD' ? '$' + Number(it.price).toFixed(2) : Number(it.price).toFixed(2) + ' ' + it.currency) : '';
+            return '<a class="ebay-card" href="' + esc(it.url) + '" target="_blank" rel="noopener"><div class="ebay-img">' + (it.image ? '<img src="' + esc(it.image) + '" alt="" loading="lazy" onerror="this.remove()">' : '') + (it.buying === 'Auction' ? '<span class="ebay-tag">Auction</span>' : '') + '</div>' +
+              '<div class="ebay-title">' + esc(it.title) + '</div><div class="ebay-price">' + esc(price) + '</div>' + (it.condition ? '<div class="muted small">' + esc(it.condition) + '</div>' : '') + '</a>';
+          }).join('') + '</div><p class="muted small">Tap a listing to open it on eBay. Prices can change.</p></div>';
+      }
+    }
     return '<section class="card" id="find-results" aria-live="polite"><div class="sec-head" style="align-items:center"><div><div class="eyebrow">Search results</div><h2 style="font-size:18px">' + esc(q) + '</h2></div>' +
-      '<button class="btn btn-ghost btn-sm" data-act="clearfind" aria-label="Close search results">Close</button></div>' +
-      '<p class="muted" style="font-size:14px">Tap a store to see what it has. Results open on the store’s own site.</p>' +
+      '<button class="btn btn-ghost btn-sm" data-act="clearfind" aria-label="Close search results">Close</button></div>' + ebay +
+      '<p class="muted" style="font-size:14px">' + (helper ? 'More stores. ' : '') + 'Tap a store to see what it has. Results open on the store’s own site.</p>' +
       '<div class="rows">' + rows + '</div>' +
       '<div class="trow" style="align-items:center"><span class="store-badge" style="background:#26302A" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EEF2EC" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span><div class="trow-main" style="flex:1"><div class="trow-title">Whole web</div><div class="muted small">Compare prices everywhere</div></div><a class="btn btn-outline btn-sm" href="' + esc('https://www.google.com/search?tbm=shop&q=' + encodeURIComponent(term)) + '" target="_blank" rel="noopener">See results</a></div>' +
       (saved ? '<p class="small" style="color:var(--green);font-weight:600">On your wishlist</p>' : '<button class="btn btn-ghost" data-act="savewish">Save “' + esc(q) + '” to wishlist</button>') + '</section>';
@@ -1392,6 +1421,25 @@ p { margin: 0; }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ui.sheet) closeSheet(); });
   window.addEventListener('hashchange', function () { ui.feedback = null; ui.resetAsk = false; ui.playing = false; ui.sheet = null; render(); window.scrollTo(0, 0); });
 
+  function loadEbay() {
+    var helper = D.library && D.library.settings && D.library.settings.ebaySearch;
+    if (!helper || !ui.findQuery) return;
+    var term = findTerm(ui.findQuery);
+    if (ui.ebay && ui.ebay.term === term && ui.ebay.state !== 'error') return;
+    ui.ebay = { term: term, state: 'loading', items: [] };
+    fetch(helper + (helper.indexOf('?') >= 0 ? '&' : '?') + 'q=' + encodeURIComponent(term))
+      .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+      .then(function (res) {
+        if (!ui.ebay || ui.ebay.term !== term) return;
+        ui.ebay = res.ok ? { term: term, state: 'done', items: res.d.items || [], total: res.d.total } : { term: term, state: 'error', error: res.d.error || 'eBay search did not work. Try again.' };
+        if (current() === 'shop') render();
+      })
+      .catch(function () {
+        if (!ui.ebay || ui.ebay.term !== term) return;
+        ui.ebay = { term: term, state: 'error', error: 'Could not reach eBay. Check your connection and try again.' };
+        if (current() === 'shop') render();
+      });
+  }
   function showFind() {
     var r = document.getElementById('find-results');
     if (r) r.scrollIntoView({ behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
@@ -1488,7 +1536,7 @@ p { margin: 0; }
       if (!S.wishlist.some(function (w) { return w.name.toLowerCase() === name.toLowerCase(); })) S.wishlist.push({ name: name, url: '' });
       ui.findQuery = ui.findQuery || name; save(); render(); toast('Saved to wishlist');
     },
-    findwish: function (el) { var w = S.wishlist[+el.getAttribute('data-i')]; if (!w) return; ui.findQuery = w.name; render(); showFind(); },
+    findwish: function (el) { var w = S.wishlist[+el.getAttribute('data-i')]; if (!w) return; ui.findQuery = w.name; render(); showFind(); loadEbay(); },
     clearfind: function () { ui.findQuery = ''; render(); },
     shuffle: function () {
       var n = ((D.library && D.library.shop && D.library.shop.ideas) || []).length; if (!n) return;
@@ -1528,7 +1576,7 @@ p { margin: 0; }
     if (!name) return;
     ui.findQuery = name.slice(0, 80);
     if (document.activeElement) document.activeElement.blur();
-    render(); showFind();
+    render(); showFind(); loadEbay();
   });
 
   /* ---------- start ---------- */

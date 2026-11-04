@@ -44,3 +44,23 @@ All the content lives in the `data` folder. Edit a file on GitHub (click it, the
 ## What is saved where
 
 Ratings, the watch tracker, trivia streaks, badges and the wishlist are saved on each person's own phone. Nothing is sent anywhere, and clearing the browser's data resets them.
+
+## eBay listings inside the app (optional)
+
+With this set up, tapping **Search** in the Shop shows real eBay listings, with photos, prices and condition, right in the app. It uses a tiny free helper on Cloudflare that keeps your eBay keys private. The helper never stores any eBay data.
+
+**1. Get eBay keys (free)**
+1. Go to developer.ebay.com and sign in with your eBay account. Accept the developer terms.
+2. Open **Application Keys** and create a **Production** keyset (name it Sewer Pizza).
+3. If eBay asks about **Marketplace Account Deletion** notifications, choose the exemption and pick **"I do not persist eBay data."** That is true for this app.
+4. Copy the **App ID (Client ID)** and the **Cert ID (Client Secret)**. Keep them private.
+
+**2. Create the helper (free)**
+1. Sign up at dash.cloudflare.com.
+2. Go to **Workers & Pages → Create → Create Worker**. Name it `sewer-pizza-search` and click **Deploy**.
+3. Click **Edit code**, delete what's there, paste everything from `worker/ebay-search.js` in this repository, and click **Deploy**.
+4. Open the worker's **Settings → Variables and Secrets**. Add `EBAY_CLIENT_ID` and `EBAY_CLIENT_SECRET` as **Secret** values, then deploy.
+5. Copy the worker's address. It looks like `https://sewer-pizza-search.YOUR-NAME.workers.dev`.
+
+**3. Connect it**
+In `data/library.json`, set `"ebaySearch"` (under `"settings"`) to the worker's address and commit. Never paste the eBay keys into this repository. They belong only in Cloudflare.
