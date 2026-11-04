@@ -234,6 +234,13 @@ p { margin: 0; }
 .lid-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .lid-tag { position: absolute; left: 6px; top: 6px; background: rgba(16,20,18,0.85); color: var(--fg); font-size: 10px; font-weight: 800; padding: 3px 7px; border-radius: 6px; }
 .lid-title { font-size: 14px; font-weight: 700; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.col-row { width: 100%; background: transparent; border: none; border-bottom: 1px solid #1F2723; color: var(--fg); align-items: center; }
+.col-row:last-child { border-bottom: none; }
+.col-row:hover .trow-title { color: var(--green-hi); }
+.col-thumbs { display: flex; flex-shrink: 0; }
+.col-thumb { width: 44px; height: 44px; border-radius: 10px; overflow: hidden; background: var(--surface-2); border: 2px solid var(--bg); margin-left: -14px; display: block; }
+.col-thumb:first-child { margin-left: 0; }
+.col-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .lid-drop { display: flex; align-items: center; justify-content: center; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 14px; border: 2px dashed var(--line); background: var(--bg); overflow: hidden; cursor: pointer; }
 .lid-drop:hover { border-color: var(--green); }
 .lid-drop img { width: 100%; height: 100%; object-fit: contain; display: block; }
@@ -1537,7 +1544,7 @@ p { margin: 0; }
 
   var ACT_EXTRA = {};
   /* ---------- The Sewer Lid: a shared collector vault (photos stored in Supabase) ---------- */
-  var LID = { client: null, loadingLib: false, ready: false, session: null, profile: null, isAdmin: false, tab: 'browse', feed: null, mine: null,
+  var LID = { client: null, loadingLib: false, ready: false, session: null, profile: null, isAdmin: false, tab: 'browse', feed: null, mine: null, collectors: null,
     urls: {}, names: {}, cat: 'All', owner: null, item: null, busy: false, err: '', adding: false, preview: null, file: null,
     form: { title: '', category: 'Figure', notes: '', pub: true, ok: false }, askDelete: false, reporting: false };
   var LID_CATS = ['Figure', 'Display', 'Vehicle or playset', 'Comic', 'Vintage', 'Art or print', 'Other'];
@@ -1592,6 +1599,23 @@ p { margin: 0; }
       if (want !== LID.owner) return;
       if (r.error) LID.err = 'Collections could not load right now. Try again in a minute.';
       else { LID.feed = r.data || []; lidNames(LID.feed); lidUrls(LID.feed); }
+      lidRefresh();
+    });
+  }
+  function lidCollectors() {
+    LID.client.from('vault_items').select('owner,image_path,created_at').eq('is_public', true).eq('hidden', false).order('created_at', { ascending: false }).limit(500).then(function (r) {
+      if (r.error) { LID.err = 'The collectors list could not load right now.'; lidRefresh(); return; }
+      var by = {}, list = [];
+      (r.data || []).forEach(function (row) {
+        var c = by[row.owner];
+        if (!c) { c = by[row.owner] = { owner: row.owner, count: 0, latest: row.created_at, photos: [] }; list.push(c); }
+        c.count++;
+        if (c.photos.length < 3) c.photos.push(row.image_path);
+      });
+      LID.collectors = list;
+      lidNames(list);
+      var paths = []; list.forEach(function (c) { c.photos.forEach(function (ph) { paths.push({ image_path: ph }); }); });
+      lidUrls(paths);
       lidRefresh();
     });
   }
@@ -1674,10 +1698,23 @@ p { margin: 0; }
       : '';
     var tabs = '<div class="chips" role="group" aria-label="Sewer Lid sections">' +
       '<button class="chip" data-act="lidtab" data-tab="browse" aria-pressed="' + (LID.tab === 'browse') + '">Browse collections</button>' +
+      '<button class="chip" data-act="lidtab" data-tab="people" aria-pressed="' + (LID.tab === 'people') + '">Collectors</button>' +
       '<button class="chip" data-act="lidtab" data-tab="mine" aria-pressed="' + (LID.tab === 'mine') + '">My vault' + (LID.mine ? ' (' + LID.mine.length + ')' : '') + '</button></div>';
     var body = '';
     if (LID.err) body += '<div class="note">' + esc(LID.err) + ' <button class="btn btn-ghost btn-sm" data-act="liderr">OK</button></div>';
-    if (LID.tab === 'browse') {
+    if (LID.tab === 'people') {
+      var meId = LID.session && LID.session.user.id;
+      body += LID.collectors == null ? loader('Finding collectors...') : LID.collectors.length
+        ? '<p class="muted" style="font-size:14px">' + LID.collectors.length + (LID.collectors.length === 1 ? ' collector has' : ' collectors have') + ' shared their vault. Tap one to see everything they\u2019ve shared.</p><div class="rows">' +
+          LID.collectors.map(function (c) {
+            var name = LID.names[c.owner] || 'Collector';
+            var thumbs = c.photos.map(function (ph) { var u = LID.urls[ph]; return '<span class="col-thumb">' + (u ? '<img src="' + esc(u) + '" alt="" loading="lazy">' : '') + '</span>'; }).join('');
+            return '<button class="trow col-row" data-act="lidowner" data-owner="' + esc(c.owner) + '"><span class="col-thumbs" aria-hidden="true">' + thumbs + '</span>' +
+              '<span class="trow-main" style="flex:1;text-align:left"><span class="trow-title">' + esc(name) + (c.owner === meId ? ' <span class="small" style="color:var(--green)">(you)</span>' : '') + '</span>' +
+              '<span class="muted small">' + c.count + (c.count === 1 ? ' item' : ' items') + ' \u00b7 updated ' + esc(ago(c.latest)) + '</span></span><span class="muted" aria-hidden="true">\u203a</span></button>';
+          }).join('') + '</div>'
+        : '<div class="empty">No one has shared a collection yet. Be the first: open <strong style="color:var(--fg)">My vault</strong> and add a photo.</div>';
+    } else if (LID.tab === 'browse') {
       var cats = ['All'].concat(LID_CATS);
       var items = (LID.feed || []).filter(function (i) { return LID.cat === 'All' || i.category === LID.cat; });
       body += (LID.owner ? '<div class="sec-head" style="align-items:center"><h2>' + esc(LID.names[LID.owner] || 'Collector') + '’s collection</h2><button class="btn btn-ghost btn-sm" data-act="lidall">All collections</button></div>' : '') +
@@ -1763,6 +1800,7 @@ p { margin: 0; }
       LID.mine = [item].concat(LID.mine || []);
       if (item.is_public && !LID.owner) LID.feed = [item].concat(LID.feed || []);
       lidUrls([item]);
+      LID.collectors = null;
       toast('Added to your vault');
       lidRefresh();
     }).catch(function (e) {
@@ -1772,7 +1810,7 @@ p { margin: 0; }
     });
   }
   var LID_ACT = {
-    lidtab: function (el) { LID.tab = el.getAttribute('data-tab'); LID.err = ''; if (LID.tab === 'mine' && LID.session && LID.mine == null) lidMine(); render(); },
+    lidtab: function (el) { LID.tab = el.getAttribute('data-tab'); LID.err = ''; if (LID.tab === 'mine' && LID.session && LID.mine == null) lidMine(); if (LID.tab === 'people') lidCollectors(); render(); },
     lidsignin: function () { lidSignIn(); },
     lidsignout: function () { LID.client.auth.signOut().then(function () { LID.tab = 'browse'; render(); }); },
     lidcat: function (el) { LID.cat = el.getAttribute('data-cat'); render(); },
@@ -1791,7 +1829,7 @@ p { margin: 0; }
         LID.client.storage.from('vault').remove([it.image_path]);
         LID.mine = (LID.mine || []).filter(function (i) { return i.id !== it.id; });
         LID.feed = (LID.feed || []).filter(function (i) { return i.id !== it.id; });
-        LID.item = null; LID.askDelete = false; toast('Deleted'); lidRefresh();
+        LID.item = null; LID.askDelete = false; LID.collectors = null; toast('Deleted'); lidRefresh();
       });
     },
     lidvis: function () {
@@ -1802,6 +1840,7 @@ p { margin: 0; }
         [LID.mine, LID.feed].forEach(function (list) { (list || []).forEach(function (i) { if (i.id === it.id) i.is_public = to; }); });
         if (!to) LID.feed = (LID.feed || []).filter(function (i) { return i.id !== it.id; });
         else if (!LID.owner && !(LID.feed || []).some(function (i) { return i.id === it.id; })) LID.feed = [it].concat(LID.feed || []);
+        LID.collectors = null;
         toast(to ? 'Now showing in Browse' : 'Now private'); lidRefresh();
       });
     },
