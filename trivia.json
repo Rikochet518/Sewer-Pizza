@@ -1,0 +1,18 @@
+[
+  { "id": "t1", "q": "Who created the turtles?", "options": ["Kevin Eastman and Peter Laird", "Stan Lee and Jack Kirby", "Jim Davis and Bill Watterson", "Frank Miller and Alan Moore"], "answer": 0, "note": "Eastman and Laird created them in 1984." },
+  { "id": "t2", "q": "In what year did the first turtles comic come out?", "options": ["1979", "1984", "1987", "1990"], "answer": 1, "note": "The first issue came out in 1984." },
+  { "id": "t3", "q": "The four turtles are named after artists from which period?", "options": ["Baroque", "Impressionism", "The Renaissance", "Pop Art"], "answer": 2, "note": "All four are named for Italian Renaissance artists." },
+  { "id": "t4", "q": "What kind of animal is Splinter?", "options": ["A cat", "A rat", "A raccoon", "A turtle"], "answer": 1, "note": "Splinter is a rat and the turtles' teacher." },
+  { "id": "t5", "q": "What does Casey Jones usually wear over his face?", "options": ["A welding mask", "A ski mask", "A hockey mask", "A gas mask"], "answer": 2, "note": "His hockey mask is his trademark look." },
+  { "id": "t6", "q": "What kind of animal is Bebop?", "options": ["A warthog", "A rhino", "A bull", "A gorilla"], "answer": 0, "note": "Bebop is a warthog. His partner Rocksteady is a rhino." },
+  { "id": "t7", "q": "What kind of animal is Rocksteady?", "options": ["An elephant", "A rhino", "A hippo", "A warthog"], "answer": 1, "note": "Rocksteady is a rhino." },
+  { "id": "t8", "q": "In the 1987 cartoon, where does Krang come from?", "options": ["The Technodrome", "Dimension X", "Japan", "The Moon"], "answer": 1, "note": "Krang is a warlord from Dimension X." },
+  { "id": "t9", "q": "Which city do the turtles call home?", "options": ["Chicago", "Los Angeles", "New York City", "Boston"], "answer": 2, "note": "They live in the sewers under New York City." },
+  { "id": "t10", "q": "In what year did the first live-action movie come out?", "options": ["1988", "1990", "1993", "1995"], "answer": 1, "note": "The first live-action film opened in 1990." },
+  { "id": "t11", "q": "Which group does Shredder lead?", "options": ["The Purple Dragons", "The Foot Clan", "The Mighty Mutanimals", "The Triceratons"], "answer": 1, "note": "Shredder leads the Foot Clan." },
+  { "id": "t12", "q": "Which turtle is best known for using nunchucks?", "options": ["Leonardo", "Raphael", "Donatello", "Michelangelo"], "answer": 3, "note": "Michelangelo fights with nunchucks." },
+  { "id": "t13", "q": "Which turtle fights with a bo staff?", "options": ["Donatello", "Leonardo", "Raphael", "Michelangelo"], "answer": 0, "note": "Donatello uses a bo staff." },
+  { "id": "t14", "q": "What was April O'Neil's job in the 1987 cartoon?", "options": ["Police officer", "Lab scientist", "TV news reporter", "Pizza chef"], "answer": 2, "note": "She was a reporter for Channel 6." },
+  { "id": "t15", "q": "What is the name of the 2023 animated turtles movie?", "options": ["Out of the Shadows", "Mutant Mayhem", "Rise of the TMNT", "Secret of the Ooze"], "answer": 1, "note": "TMNT: Mutant Mayhem came out in 2023." },
+  { "id": "t16", "q": "Which studio published the original turtles comic?", "options": ["Marvel", "Image", "Mirage Studios", "Dark Horse"], "answer": 2, "note": "Eastman and Laird published it through Mirage Studios." }
+]

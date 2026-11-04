@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sewer Pizza</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="theme-color" content="#101412">
+<meta name="description" content="A free, unofficial fan hub for turtles news, videos, trivia and more.">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Sewer Pizza">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&display=swap">
+<style>
+/* Layout: one phone-width column (max 480px), fixed bottom tab bar, dark sewer-at-night look */
+:root {
+  --bg: #101412;
+  --bar: #151A17;
+  --surface: #1A201C;
+  --surface-2: #26302A;
+  --line: #2E3832;
+  --fg: #EEF2EC;
+  --muted: #9AA49D;
+  --dim: #5E6862;
+  --green: #5BD27A;
+  --green-hi: #8BE6A2;
+  --orange: #F29A3A;
+  --sauce-bg: #2A2116;
+  --sauce-line: #5A3E1E;
+  --bad: #E8735A;
+  --font: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { background: var(--bg); color: var(--fg); }
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 1.4;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-tap-highlight-color: transparent;
+}
+a { color: var(--green); }
+a:hover { color: var(--green-hi); }
+:focus-visible { outline: 2px solid var(--green); outline-offset: 2px; border-radius: 6px; }
+button { font-family: inherit; color: inherit; cursor: pointer; }
+h1, h2, h3 { margin: 0; text-wrap: balance; }
+h1 { font-size: 28px; font-weight: 800; letter-spacing: -0.3px; }
+h2 { font-size: 18px; font-weight: 800; }
+p { margin: 0; }
+.app { max-width: 480px; margin: 0 auto; padding-block: 24px calc(104px + env(safe-area-inset-bottom, 0px)); position: relative; }
+.rel { position: relative; z-index: 1; }
+.stack { display: flex; flex-direction: column; gap: 12px; }
+.stack-lg { display: flex; flex-direction: column; gap: 22px; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.eyebrow { font-size: 11px; font-weight: 600; color: var(--orange); text-transform: uppercase; letter-spacing: 1px; }
+.page-head { display: flex; flex-direction: column; gap: 4px; }
+.page-head p { color: var(--muted); font-size: 14px; }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.link { font-size: 13px; font-weight: 600; text-decoration: none; }
+.card { background: var(--surface); border: 1px solid #2A3A2F; border-radius: 18px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+.empty { background: var(--surface); border-radius: 14px; padding: 14px 16px; color: var(--muted); font-size: 14px; display: flex; flex-direction: column; gap: 6px; }
+.note { font-size: 13px; color: var(--muted); background: var(--surface); border-radius: 12px; padding: 10px 12px; }
+
+/* buttons */
+.btn { min-height: 44px; padding: 0 18px; border-radius: 22px; border: none; font-weight: 800; font-size: 14px; display: inline-flex; align-items: center; justify-content: center; gap: 8px; text-decoration: none; }
+.btn-primary { background: var(--green); color: var(--bg); }
+.btn-primary:hover { background: var(--green-hi); color: var(--bg); }
+.btn-sauce { background: var(--orange); color: var(--bg); }
+.btn-sauce:hover { color: var(--bg); filter: brightness(1.08); }
+.btn-outline { background: transparent; border: 1px solid var(--green); color: var(--green); font-weight: 600; }
+.btn-ghost { background: transparent; border: 1px solid var(--line); color: var(--fg); font-weight: 600; }
+.btn-sm { min-height: 40px; padding: 0 14px; font-size: 13px; white-space: nowrap; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+.icon-btn { width: 44px; height: 44px; border-radius: 22px; background: var(--surface); display: inline-flex; align-items: center; justify-content: center; color: var(--fg); flex-shrink: 0; }
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { min-height: 36px; padding: 0 14px; border-radius: 18px; border: 1px solid var(--line); background: transparent; color: var(--fg); font-weight: 600; font-size: 13px; }
+.chip[aria-pressed="true"] { background: var(--green); border-color: var(--green); color: var(--bg); font-weight: 800; }
+
+/* home */
+.hero-bg { position: absolute; top: -24px; left: 0; right: 0; height: 250px; z-index: 0; pointer-events: none; overflow: hidden; }
+.hero-bg svg { display: block; width: 100%; height: 100%; }
+.top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 12px; }
+.brand-name { font-size: 28px; font-weight: 800; letter-spacing: -0.5px; line-height: 1.1; }
+.count-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.count-title { font-size: 21px; font-weight: 800; min-width: 0; }
+.tile-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.tile { text-decoration: none; color: var(--fg); background: var(--surface); border: 1px solid transparent; border-radius: 14px; padding: 12px 14px; display: flex; align-items: center; gap: 10px; min-height: 52px; font-size: 14px; font-weight: 700; }
+.tile:hover { color: var(--fg); border-color: var(--line); }
+.tile-sauce { background: var(--sauce-bg); border-color: var(--sauce-line); }
+.tile svg { flex-shrink: 0; }
+
+/* news */
+.news-list { display: flex; flex-direction: column; }
+.news-row { display: flex; flex-direction: column; gap: 4px; padding: 12px 0; border-bottom: 1px solid #1F2723; text-decoration: none; color: var(--fg); }
+.news-row:last-child { border-bottom: none; }
+.news-row:hover { color: var(--fg); }
+.news-row:hover .news-title { color: var(--green-hi); }
+.news-title { font-size: 15px; font-weight: 600; }
+
+/* videos */
+.vid-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.vid { display: flex; flex-direction: column; gap: 6px; text-decoration: none; color: var(--fg); min-width: 0; }
+.thumb { aspect-ratio: 16 / 9; max-width: 100%; border-radius: 12px; background: var(--surface-2); overflow: hidden; display: flex; align-items: center; justify-content: center; color: var(--muted); position: relative; }
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.vid-title { font-size: 13px; font-weight: 600; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.featured .thumb { border-radius: 16px; }
+.play { position: absolute; width: 56px; height: 56px; border-radius: 28px; background: var(--green); color: var(--bg); display: flex; align-items: center; justify-content: center; }
+.embed { aspect-ratio: 16 / 9; width: 100%; border: 0; border-radius: 16px; }
+
+/* title rows (watch, games) */
+.rows { display: flex; flex-direction: column; }
+.trow { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 14px 0; border-bottom: 1px solid #1F2723; }
+.trow:last-child { border-bottom: none; }
+.trow-col { flex-direction: column; align-items: stretch; gap: 8px; }
+.trow-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.trow-main { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.trow-title { font-size: 15px; font-weight: 600; }
+.tracker { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.mini { width: 36px; height: 36px; border-radius: 18px; border: 1px solid var(--line); background: transparent; font-size: 18px; line-height: 1; display: inline-flex; align-items: center; justify-content: center; }
+.rating { display: flex; align-items: center; margin-left: -8px; }
+.slice-btn { width: 36px; height: 36px; border: none; background: transparent; padding: 0; display: inline-flex; align-items: center; justify-content: center; border-radius: 18px; }
+
+/* games */
+.trivia-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.streak { display: flex; flex-direction: column; align-items: center; gap: 4px; flex-shrink: 0; }
+.streak span { font-size: 11px; font-weight: 600; color: var(--orange); }
+.badges { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.badge { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.badge-ico { width: 48px; height: 48px; border-radius: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; background: var(--surface); border: 2px solid var(--line); }
+.badge.on .badge-ico { background: var(--sauce-bg); border-color: var(--orange); }
+.badge-name { font-size: 13px; font-weight: 700; }
+.badge:not(.on) .badge-name { color: var(--muted); }
+
+/* trivia */
+.q-text { font-size: 21px; font-weight: 800; line-height: 1.25; }
+.opts { display: flex; flex-direction: column; gap: 10px; }
+.opt { min-height: 52px; padding: 12px 16px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); text-align: left; font-size: 15px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.opt:hover:not(:disabled) { border-color: var(--green); }
+.opt.right { border-color: var(--green); background: #173222; }
+.opt.wrong { border-color: var(--bad); background: #321C17; }
+.opt:disabled { cursor: default; }
+.progress-slices { display: flex; gap: 2px; flex-wrap: wrap; }
+
+/* shop */
+.wish-form { display: flex; flex-direction: column; gap: 10px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field label { font-size: 13px; font-weight: 600; color: var(--muted); }
+.field input { min-height: 44px; border-radius: 12px; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 0 12px; font: inherit; }
+.field input:focus { border-color: var(--green); outline: none; }
+
+/* picker */
+.picker-wrap { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.pizza { width: min(272px, 78vw); height: min(272px, 78vw); transition: transform 1.6s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.pizza svg { width: 100%; height: 100%; display: block; }
+
+/* settings */
+.toggle { display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; font-size: 15px; }
+.toggle input { width: 22px; height: 22px; accent-color: var(--green); margin: 0; flex-shrink: 0; }
+.kv { display: flex; justify-content: space-between; gap: 12px; padding: 12px 0; border-bottom: 1px solid #1F2723; font-size: 15px; }
+.kv:last-child { border-bottom: none; }
+.share-url { width: 100%; min-height: 40px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); color: var(--muted); padding: 0 10px; font: inherit; font-size: 13px; }
+.qr { align-self: center; background: var(--fg); padding: 12px; border-radius: 12px; }
+.qr img, .qr canvas { display: block; }
+.confirm { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+
+/* loader */
+.loader { display: flex; flex-direction: column; align-items: center; gap: 12px; padding: 24px 0 8px; }
+.w { transform-origin: 36px 36px; animation: slicein 2.4s ease-out infinite; opacity: 0; }
+@keyframes slicein { 0% { opacity: 0; transform: scale(0.4); } 12% { opacity: 1; transform: scale(1); } 80% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1); } }
+.skel { display: flex; flex-direction: column; gap: 8px; padding: 12px 0; }
+.skel i { display: block; height: 12px; border-radius: 6px; background: var(--surface); }
+
+/* tab bar */
+.tabs { position: fixed; left: 0; right: 0; bottom: 0; z-index: 10; background: var(--bar); border-top: 1px solid var(--surface-2);
+  padding: 8px max(16px, env(safe-area-inset-right, 0px)) calc(8px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
+.tabs-inner { max-width: 480px; margin: 0 auto; display: flex; justify-content: space-around; }
+.tab { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 56px; min-height: 48px; padding-top: 4px; text-decoration: none; color: var(--muted); font-size: 11px; font-weight: 600; }
+.tab:hover { color: var(--fg); }
+.tab[aria-current="page"] { color: var(--green); }
+
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(88px + env(safe-area-inset-bottom, 0px)); z-index: 20; background: var(--fg); color: var(--bg); font-weight: 700; font-size: 14px; padding: 10px 16px; border-radius: 22px; max-width: calc(100% - 32px); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  .w { animation: none; opacity: 1; }
+  .pizza { transition: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="app"><main id="view" aria-live="polite"></main></div>
+
+<nav class="tabs" aria-label="Main">
+  <div class="tabs-inner">
+    <a class="tab" href="#home" data-view="home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M4.5 9h15M3 12h18M4.5 15h15M9 3.5v17M15 3.5v17" stroke-width="1.3"></path></svg>Home</a>
+    <a class="tab" href="#news" data-view="news"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 8h10M7 12h10M7 16h6"></path></svg>News</a>
+    <a class="tab" href="#watch" data-view="watch"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M10 9l5 3-5 3z"></path></svg>Watch</a>
+    <a class="tab" href="#games" data-view="games"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="11" rx="4"></rect><path d="M7 11v3M5.5 12.5h3M15 12h.01M18 13h.01"></path></svg>Games</a>
+    <a class="tab" href="#shop" data-view="shop"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path></svg>Shop</a>
+  </div>
+</nav>
+<div id="toast" class="toast" role="status" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  /* ---------- helpers ---------- */
+  var C = { bg: '#101412', surface: '#1A201C', s2: '#26302A', s3: '#3A443E', orange: '#F29A3A', dim: '#5E6862', sauce: '#2A2116' };
+  var W = [
+    'M36 36L36 6A30 30 0 0 1 57.21 14.79Z', 'M36 36L57.21 14.79A30 30 0 0 1 66 36Z',
+    'M36 36L66 36A30 30 0 0 1 57.21 57.21Z', 'M36 36L57.21 57.21A30 30 0 0 1 36 66Z',
+    'M36 36L36 66A30 30 0 0 1 14.79 57.21Z', 'M36 36L14.79 57.21A30 30 0 0 1 6 36Z',
+    'M36 36L6 36A30 30 0 0 1 14.79 14.79Z', 'M36 36L14.79 14.79A30 30 0 0 1 36 6Z'
+  ];
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function pie(filled, size, o) {
+    o = o || {};
+    var stroke = o.stroke || C.surface, empty = o.empty || C.s2;
+    var paths = W.map(function (d, i) { return '<path d="' + d + '" fill="' + (i < filled ? C.orange : empty) + '"></path>'; }).join('');
+    var a = o.label ? 'role="img" aria-label="' + esc(o.label) + '"' : 'aria-hidden="true"';
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 72 72" ' + a + '><g stroke="' + stroke + '" stroke-width="' + (size < 32 ? 3.5 : 2) + '" stroke-linejoin="round">' + paths + '</g></svg>';
+  }
+  function slice(on, size, bg) {
+    if (on) {
+      return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6c6-3 12-3 18 0L12 22z" fill="' + C.orange + '" stroke="' + C.orange + '" stroke-width="1.5" stroke-linejoin="round"></path><circle cx="10" cy="10" r="1.3" fill="' + (bg || C.bg) + '"></circle><circle cx="14.5" cy="12" r="1.3" fill="' + (bg || C.bg) + '"></circle><circle cx="11.5" cy="15.5" r="1.1" fill="' + (bg || C.bg) + '"></circle></svg>';
+    }
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6c6-3 12-3 18 0L12 22z" fill="none" stroke="' + C.dim + '" stroke-width="1.5" stroke-linejoin="round"></path></svg>';
+  }
+  var ICON = {
+    manhole: '<svg width="44" height="44" viewBox="0 0 44 44" fill="none" stroke="#5BD27A" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="22" cy="22" r="20" fill="#1A201C"></circle><circle cx="22" cy="22" r="15"></circle><path d="M8.3 16h27.4M7 22h30M8.3 28h27.4M16 8.3v27.4M28 8.3v27.4" stroke-width="1.5" opacity="0.7"></path></svg>',
+    gear: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1z"></path></svg>',
+    back: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>',
+    heart: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#F29A3A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"></path></svg>',
+    play: '<svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5l12 7-12 7z"></path></svg>',
+    film: '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M10 9l5 3-5 3z"></path></svg>',
+    cheese: '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6c6-3 12-3 18 0L12 22z"></path><path d="M7.5 9.5c3-1 6-1 9 0"></path><circle cx="12" cy="13" r="1.3" fill="currentColor"></circle></svg>'
+  };
+  var SKYLINE = '<svg viewBox="0 0 390 240" preserveAspectRatio="xMidYMax slice"><defs><pattern id="bricks" width="40" height="20" patternUnits="userSpaceOnUse"><path d="M0 0.5H40M0 10.5H40M0.5 0V10M20.5 10V20" stroke="#FFFFFF" stroke-opacity="0.05" fill="none"></path></pattern><linearGradient id="fade" x1="0" y1="0" x2="0" y2="1"><stop offset="0.55" stop-color="#101412" stop-opacity="0"></stop><stop offset="1" stop-color="#101412" stop-opacity="1"></stop></linearGradient></defs><rect width="390" height="240" fill="url(#bricks)"></rect><circle cx="258" cy="38" r="14" fill="#EEF2EC" fill-opacity="0.12"></circle><path d="M0 240V160H28V138H54V168H78V116H96V104H108V116H128V150H158V130H188V170H212V96H238V146H268V124H296V156H322V108H348V140H390V240Z" fill="#18201B"></path><path d="M134 118H146V108H134Z M139 118V130H141V118Z" fill="#18201B"></path><g fill="#F29A3A" fill-opacity="0.45"><rect x="84" y="126" width="4" height="5"></rect><rect x="84" y="140" width="4" height="5"></rect><rect x="220" y="108" width="4" height="5"></rect><rect x="228" y="122" width="4" height="5"></rect><rect x="330" y="120" width="4" height="5"></rect><rect x="38" y="150" width="4" height="5"></rect><rect x="276" y="136" width="4" height="5"></rect></g><rect width="390" height="240" fill="url(#fade)"></rect></svg>';
+  var PIZZA = (function () {
+    var wedges = W.map(function (d, i) { return '<path fill="' + (i % 2 ? '#EDB95A' : '#F2C46D') + '" d="' + d + '"></path>'; }).join('');
+    var pep = [[44, 16, 2.6], [54, 28, 2.6], [52, 46, 2.6], [40, 56, 2.6], [24, 52, 2.6], [18, 38, 2.6], [22, 22, 2.6], [34, 24, 2.2], [44, 38, 2.2], [30, 44, 2.2]]
+      .map(function (p) { return '<circle cx="' + p[0] + '" cy="' + p[1] + '" r="' + p[2] + '"></circle>'; }).join('');
+    return '<svg viewBox="0 0 72 72" role="img" aria-label="Pizza spinner"><circle cx="36" cy="36" r="34" fill="#C9852E"></circle><g stroke="#C9852E" stroke-width="0.8" stroke-linejoin="round">' + wedges + '</g><g fill="#B5452E">' + pep + '</g></svg>';
+  })();
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function today() { var d = new Date(); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function dayDiff(a, b) { return Math.round((new Date(b + 'T00:00:00') - new Date(a + 'T00:00:00')) / 86400000); }
+  function niceDate(s) { return new Date(s + 'T00:00:00').toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' }); }
+  function ago(iso) {
+    var t = Date.parse(iso); if (!t) return '';
+    var m = Math.max(0, Math.round((Date.now() - t) / 60000));
+    if (m < 60) return m + 'm ago';
+    var h = Math.round(m / 60); if (h < 24) return h + 'h ago';
+    var d = Math.round(h / 24); return d + 'd ago';
+  }
+  function search(q) { return 'https://www.google.com/search?q=' + encodeURIComponent(q); }
+  function whereToWatch(item) { return item.url || 'https://www.justwatch.com/us/search?q=' + encodeURIComponent(item.title); }
+  function rng(seed) { return function () { seed |= 0; seed = seed + 0x6D2B79F5 | 0; var t = Math.imul(seed ^ seed >>> 15, 1 | seed); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+
+  /* ---------- saved state (this device only) ---------- */
+  var KEY = 'sewerpizza.v1';
+  function blank() { return { ratings: {}, watched: {}, wishlist: [], streak: { count: 0, last: null }, trivia: { date: null, answers: [] }, badges: {}, alerts: { videos: true, releases: true, trivia: false } }; }
+  var S = blank();
+  try { var raw = localStorage.getItem(KEY); if (raw) { var parsed = JSON.parse(raw); Object.keys(S).forEach(function (k) { if (parsed[k] != null) S[k] = parsed[k]; }); } } catch (e) { /* storage unavailable */ }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* storage unavailable */ } }
+
+  /* ---------- content ---------- */
+  var D = { library: null, trivia: [], news: null, videos: null, sources: null };
+  var loading = true, loadError = false;
+  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false };
+
+  function getJSON(p) { return fetch(p, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
+  function loadData() {
+    var files = ['data/library.json', 'data/trivia.json', 'data/news.json', 'data/videos.json', 'data/sources.json'];
+    return Promise.allSettled(files.map(getJSON)).then(function (res) {
+      if (res[0].status === 'fulfilled') D.library = res[0].value; else loadError = true;
+      if (res[1].status === 'fulfilled' && Array.isArray(res[1].value)) D.trivia = res[1].value;
+      if (res[2].status === 'fulfilled') D.news = res[2].value;
+      if (res[3].status === 'fulfilled') D.videos = res[3].value;
+      if (res[4].status === 'fulfilled') D.sources = res[4].value;
+      loading = false;
+    });
+  }
+
+  /* ---------- badges, streak, toast ---------- */
+  var BADGES = [
+    { id: 'first', name: 'First Slice', how: 'Get a trivia answer right', icon: function (on) { return slice(on, 24, C.sauce); } },
+    { id: 'cheese', name: 'Extra Cheese', how: 'Score 10 of 10 in one day', icon: function () { return ICON.cheese; } },
+    { id: 'pie', name: 'Whole Pie', how: 'Play trivia 8 days in a row', icon: function (on) { return pie(on ? 8 : 0, 28, { stroke: on ? C.sauce : C.surface, empty: C.s3 }); } },
+    { id: 'movie', name: 'Movie Night', how: 'Spin the pizza night picker', icon: function () { return ICON.film; } }
+  ];
+  var toastTimer;
+  function toast(msg) {
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(function () { t.hidden = true; }, 2600);
+  }
+  function award(id) {
+    if (S.badges[id]) return;
+    S.badges[id] = today(); save();
+    var b = BADGES.filter(function (x) { return x.id === id; })[0];
+    toast('Badge earned: ' + b.name);
+  }
+  function streakNow() {
+    var last = S.streak.last; if (!last) return 0;
+    var gap = dayDiff(last, today());
+    return gap <= 1 ? S.streak.count : 0;
+  }
+
+  /* ---------- trivia ---------- */
+  function dailySet() {
+    var d = today(), seed = 0;
+    for (var i = 0; i < d.length; i++) seed = (seed * 31 + d.charCodeAt(i)) >>> 0;
+    var r = rng(seed), arr = D.trivia.slice();
+    for (var j = arr.length - 1; j > 0; j--) { var k = Math.floor(r() * (j + 1)); var tmp = arr[j]; arr[j] = arr[k]; arr[k] = tmp; }
+    return arr.slice(0, 10);
+  }
+  function todayTrivia() {
+    if (S.trivia.date !== today()) S.trivia = { date: today(), answers: [] };
+    return S.trivia;
+  }
+  function score(set, answers) { return answers.reduce(function (n, a, i) { return n + (set[i] && a === set[i].answer ? 1 : 0); }, 0); }
+
+  /* ---------- shared bits ---------- */
+  function loader(text) {
+    var paths = W.map(function (d, i) { return '<path class="w" style="animation-delay:' + (i * 0.15) + 's" d="' + d + '"></path>'; }).join('');
+    return '<div class="loader" role="status"><svg width="96" height="96" viewBox="0 0 72 72" aria-hidden="true"><g stroke="#101412" stroke-width="2" stroke-linejoin="round" fill="#F29A3A">' + paths + '</g></svg><div class="muted" style="font-weight:600">' + esc(text || 'Warming up the oven...') + '</div></div>';
+  }
+  function skeleton(n) {
+    var out = '';
+    for (var i = 0; i < n; i++) out += '<div class="skel" aria-hidden="true"><i style="width:28%"></i><i style="width:88%;height:14px"></i><i style="width:36%"></i></div>';
+    return out;
+  }
+  function errorCard() { return '<div class="empty"><strong style="color:var(--fg)">Couldn\'t load the app\'s content.</strong>Check your connection, then reload the page.</div>'; }
+  function head(title, sub, back) {
+    return '<header class="page-head">' + (back ? '<div style="display:flex;align-items:center;gap:6px"><a class="icon-btn" style="background:transparent;margin-left:-10px" href="#' + back + '" aria-label="Back">' + ICON.back + '</a><h1 style="font-size:24px">' + esc(title) + '</h1></div>' : '<h1>' + esc(title) + '</h1>') + (sub ? '<p>' + esc(sub) + '</p>' : '') + '</header>';
+  }
+  function newsRow(n) {
+    return '<a class="news-row" href="' + esc(n.url) + '" target="_blank" rel="noopener"><span class="eyebrow">' + esc(n.category || 'News') + '</span><span class="news-title">' + esc(n.title) + '</span><span class="muted small">' + esc(n.source || '') + (n.published ? ' · ' + ago(n.published) : '') + '</span></a>';
+  }
+  function videoUrl(v) { return 'https://www.youtube.com/watch?v=' + encodeURIComponent(v.id); }
+  function videoTile(v) {
+    return '<a class="vid" href="' + videoUrl(v) + '" target="_blank" rel="noopener"><div class="thumb"><img src="https://i.ytimg.com/vi/' + esc(v.id) + '/mqdefault.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="vid-title">' + esc(v.title) + '</div></a>';
+  }
+  function ratingRow(id) {
+    var r = S.ratings[id] || 0, out = '';
+    for (var n = 1; n <= 5; n++) out += '<button class="slice-btn" data-act="rate" data-id="' + esc(id) + '" data-n="' + n + '" aria-label="Rate ' + n + ' of 5 slices" aria-pressed="' + (n <= r) + '">' + slice(n <= r, 20) + '</button>';
+    return '<div class="rating" role="group" aria-label="Your rating">' + out + '</div>';
+  }
+
+  /* ---------- views ---------- */
+  function nextRelease() {
+    var list = (D.library && D.library.releases) || [], t = today();
+    return list.filter(function (r) { return r.date && dayDiff(t, r.date) >= 0; }).sort(function (a, b) { return a.date < b.date ? -1 : 1; })[0];
+  }
+  function countdown() {
+    if (loading) return '<section class="card" aria-busy="true">' + skeleton(1) + '</section>';
+    var r = nextRelease();
+    var label = '<div class="eyebrow" style="display:flex;align-items:center;gap:8px">' + slice(true, 18, C.surface) + 'Next release</div>';
+    if (!r) return '<section class="card">' + label + '<p class="muted">No upcoming release added yet. Add one in the library file.</p></section>';
+    var days = dayDiff(today(), r.date);
+    var left = Math.min(8, Math.max(0, Math.ceil(days / 7)));
+    var when = days === 0 ? 'Out today' : days === 1 ? 'Tomorrow' : 'In ' + days + ' days';
+    return '<section class="card">' + label +
+      '<div class="count-row"><div class="count-title">' + esc(r.title) + '</div>' + pie(left, 56, { label: left + ' of 8 slices left, one per week' }) + '</div>' +
+      '<div class="muted" style="font-size:14px">' + when + ' · ' + niceDate(r.date) + (r.url ? ' · <a class="link" href="' + esc(r.url) + '" target="_blank" rel="noopener">Details</a>' : '') + '</div></section>';
+  }
+
+  var VIEWS = {
+    home: function () {
+      if (loadError) return errorCard();
+      var news = D.news ? D.news.items.slice(0, 2) : [];
+      var vids = D.videos ? D.videos.items.slice(0, 2) : [];
+      return '<div class="hero-bg" aria-hidden="true">' + SKYLINE + '</div><div class="stack-lg rel">' +
+        '<header class="top"><div class="brand">' + ICON.manhole + '<div><div class="brand-name">Sewer Pizza</div><div class="muted small">Unofficial fan hub</div></div></div><a class="icon-btn" href="#prefs" aria-label="Settings and sharing">' + ICON.gear + '</a></header>' +
+        countdown() +
+        '<section class="stack"><div class="sec-head"><h2>Fresh from the sewer</h2><a class="link" href="#news">See all</a></div><div class="news-list">' +
+        (loading ? skeleton(2) : news.length ? news.map(newsRow).join('') : '<p class="muted">No headlines yet.</p>') + '</div></section>' +
+        '<section class="stack"><div class="sec-head"><h2>New videos</h2><a class="link" href="#watch">Watch</a></div>' +
+        (vids.length ? '<div class="vid-grid">' + vids.map(videoTile).join('') + '</div>' : '<div class="empty">No videos yet. They show up here once official YouTube channels are added to the feed.<a class="link" href="https://www.youtube.com/results?search_query=TMNT+official" target="_blank" rel="noopener">Browse on YouTube</a></div>') + '</section>' +
+        '<div class="tile-grid"><a class="tile tile-sauce" href="#picker">' + slice(true, 24, C.sauce) + '<span>Pizza night picker</span></a><a class="tile" href="#shop">' + ICON.heart + '<span>Wishlist (' + S.wishlist.length + ')</span></a></div>' +
+        '</div>';
+    },
+
+    news: function () {
+      var out = head('News', 'Headlines from the feeds you follow. Tap one to read it at the source.');
+      if (loading) return '<div class="stack-lg">' + out + loader() + skeleton(3) + '</div>';
+      if (!D.news) return '<div class="stack-lg">' + out + errorCard() + '</div>';
+      var items = D.news.items || [];
+      var cats = ['All'];
+      items.forEach(function (n) { var c = n.category || 'News'; if (cats.indexOf(c) < 0) cats.push(c); });
+      if (cats.indexOf(ui.newsCat) < 0) ui.newsCat = 'All';
+      var shown = items.filter(function (n) { return ui.newsCat === 'All' || (n.category || 'News') === ui.newsCat; });
+      return '<div class="stack-lg">' + out +
+        '<div class="chips" role="group" aria-label="Filter news">' + cats.map(function (c) { return '<button class="chip" data-act="newscat" data-cat="' + esc(c) + '" aria-pressed="' + (c === ui.newsCat) + '">' + esc(c) + '</button>'; }).join('') + '</div>' +
+        (D.news.sample ? '<p class="note">These are sample headlines. Real ones arrive once the hourly news update is turned on.</p>' : (D.news.updated ? '<p class="muted small">Updated ' + ago(D.news.updated) + '</p>' : '')) +
+        '<div class="news-list">' + (shown.length ? shown.map(newsRow).join('') : '<p class="muted">Nothing in this category yet.</p>') + '</div></div>';
+    },
+
+    watch: function () {
+      var out = head('Watch', 'Official videos, plus where to stream every series and movie.');
+      if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
+      if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
+      var v = D.videos && D.videos.items && D.videos.items[0];
+      var embed = D.library.settings && D.library.settings.embedVideos;
+      var featured;
+      if (v) {
+        featured = '<section class="featured stack">' +
+          (ui.playing && embed ? '<iframe class="embed" src="https://www.youtube-nocookie.com/embed/' + esc(v.id) + '?autoplay=1" title="' + esc(v.title) + '" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>'
+            : (embed ? '<button data-act="play" class="thumb" style="border:none;padding:0;width:100%" aria-label="Play ' + esc(v.title) + '">' : '<a class="thumb" href="' + videoUrl(v) + '" target="_blank" rel="noopener" aria-label="Play ' + esc(v.title) + ' on YouTube">') +
+              '<img src="https://i.ytimg.com/vi/' + esc(v.id) + '/hqdefault.jpg" alt="" onerror="this.remove()"><span class="play">' + ICON.play + '</span>' + (embed ? '</button>' : '</a>')) +
+          '<div><div style="font-size:16px;font-weight:800">' + esc(v.title) + '</div><div class="muted small">' + esc(v.channel || 'YouTube') + (v.published ? ' · ' + ago(v.published) : '') + '</div></div></section>';
+      } else {
+        featured = '<div class="empty"><strong style="color:var(--fg)">No official videos in the feed yet.</strong>Add official YouTube channels to the sources file and new uploads appear here every hour.<a class="link" href="https://www.youtube.com/results?search_query=TMNT+official" target="_blank" rel="noopener">Browse on YouTube</a></div>';
+      }
+      var shows = (D.library.shows || []).map(function (s) {
+        var w = S.watched[s.id] || 0, eps = s.episodes || 0;
+        var filled = eps ? Math.round(Math.min(1, w / eps) * 8) : 0;
+        return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(s.title) + '</div><div class="muted small">Series · ' + esc(s.years) + '</div></div>' +
+          '<a class="btn btn-outline btn-sm" href="' + esc(whereToWatch(s)) + '" target="_blank" rel="noopener">Where to watch</a></div>' +
+          '<div class="tracker">' + pie(filled, 22, { stroke: C.bg, empty: C.s3 }) + '<span class="small muted" style="flex:1">' + w + (eps ? ' of ' + eps : '') + ' episodes watched</span>' +
+          '<button class="mini" data-act="ep" data-id="' + esc(s.id) + '" data-d="-1" aria-label="Remove one watched episode">&minus;</button><button class="mini" data-act="ep" data-id="' + esc(s.id) + '" data-d="1" aria-label="Mark one more episode watched">+</button></div>' +
+          ratingRow(s.id) + '</div>';
+      }).join('');
+      var movies = (D.library.movies || []).map(function (m) {
+        return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(m.title) + '</div><div class="muted small">Movie · ' + esc(m.year) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(whereToWatch(m)) + '" target="_blank" rel="noopener">Where to watch</a></div>' + ratingRow(m.id) + '</div>';
+      }).join('');
+      return '<div class="stack-lg">' + out + featured +
+        '<section class="stack"><h2>Series</h2><div class="rows">' + shows + '</div></section>' +
+        '<section class="stack"><h2>Movies</h2><div class="rows">' + movies + '</div></section></div>';
+    },
+
+    games: function () {
+      var out = head('Games', 'Daily fan trivia here, official games at their stores.');
+      if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
+      if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
+      var set = dailySet(), t = todayTrivia(), sc = score(set, t.answers);
+      var done = set.length && t.answers.length >= set.length;
+      var st = streakNow();
+      var btn = !set.length ? '' : done ? '<a class="btn btn-ghost" href="#trivia">See today\'s results</a>' : '<a class="btn btn-primary" href="#trivia">' + (t.answers.length ? 'Keep going' : 'Start trivia') + '</a>';
+      var trivia = '<section class="card"><div class="trivia-top"><div class="stack" style="gap:8px"><div class="eyebrow">Play here</div><h2 style="font-size:20px">Daily fan trivia</h2><p class="muted" style="font-size:14px">' + set.length + ' questions a day. Earn a slice for each right answer. Get them all for a whole pie.</p></div>' +
+        '<div class="streak">' + pie(Math.min(st, 8), 72, { label: 'Streak pie: ' + st + ' days in a row' }) + '<span>' + st + '-day streak</span></div></div>' +
+        '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + btn + '<span class="muted small" style="display:flex;align-items:center;gap:6px">' + slice(true, 18, C.surface) + 'Today: ' + sc + ' of ' + set.length + ' slices</span></div></section>';
+      var games = (D.library.games || []).map(function (g) {
+        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(g.title) + '</div><div class="muted small">' + esc(g.platform) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(g.url || search(g.title + ' game')) + '" target="_blank" rel="noopener">Find it</a></div>';
+      }).join('');
+      var badges = BADGES.map(function (b) {
+        var on = !!S.badges[b.id];
+        return '<div class="badge' + (on ? ' on' : '') + '" style="color:' + (on ? 'var(--orange)' : 'var(--dim)') + '"><div class="badge-ico">' + b.icon(on) + '</div><div style="min-width:0"><div class="badge-name">' + esc(b.name) + '</div><div class="muted small">' + (on ? 'Earned' : esc(b.how)) + '</div></div></div>';
+      }).join('');
+      return '<div class="stack-lg">' + out + trivia + '<section class="stack"><h2>Official games</h2><div class="rows">' + games + '</div></section><section class="stack"><h2>Badges</h2><div class="badges">' + badges + '</div></section></div>';
+    },
+
+    trivia: function () {
+      if (loading) return '<div class="stack-lg">' + head('Daily trivia', '', 'games') + loader() + '</div>';
+      var set = dailySet(), t = todayTrivia();
+      if (!set.length) return '<div class="stack-lg">' + head('Daily trivia', '', 'games') + '<div class="empty">No trivia questions are loaded yet.</div></div>';
+      var sc = score(set, t.answers), fb = ui.feedback;
+      var bar = '<div class="progress-slices" role="img" aria-label="' + sc + ' slices earned">' + set.map(function (q, i) { return slice(i < t.answers.length && t.answers[i] === q.answer, 18); }).join('') + '</div>';
+      if (!fb && t.answers.length >= set.length) {
+        var filled = Math.round(sc / set.length * 8);
+        return '<div class="stack-lg">' + head('Today\'s results', '', 'games') +
+          '<section class="card" style="align-items:center;text-align:center;gap:14px">' + pie(filled, 120, { label: sc + ' of ' + set.length + ' right' }) +
+          '<h2 style="font-size:22px">' + (sc === set.length ? 'Whole pie!' : sc + ' of ' + set.length + ' slices') + '</h2>' +
+          '<p class="muted">Your streak is ' + streakNow() + (streakNow() === 1 ? ' day' : ' days') + '. A new set of questions arrives tomorrow.</p>' + bar +
+          '<a class="btn btn-primary" href="#games">Back to games</a></section></div>';
+      }
+      var idx = fb ? fb.index : t.answers.length, q = set[idx];
+      var opts = q.options.map(function (o, i) {
+        var cls = '';
+        if (fb) { if (i === q.answer) cls = ' right'; else if (i === fb.chosen) cls = ' wrong'; }
+        var mark = fb && i === q.answer ? '<span aria-hidden="true">✓</span>' : fb && i === fb.chosen ? '<span aria-hidden="true">✕</span>' : '';
+        return '<button class="opt' + cls + '" data-act="answer" data-i="' + i + '"' + (fb ? ' disabled' : '') + '><span>' + esc(o) + '</span>' + mark + '</button>';
+      }).join('');
+      var feedback = '';
+      if (fb) {
+        var right = fb.chosen === q.answer, last = idx >= set.length - 1;
+        feedback = '<div class="card" style="gap:8px"><strong style="color:' + (right ? 'var(--green)' : 'var(--bad)') + '">' + (right ? 'Right! You earned a slice.' : 'Not this time.') + '</strong><p class="muted" style="font-size:14px">' + esc(q.note || '') + '</p></div>' +
+          '<button class="btn btn-primary" data-act="next">' + (last ? 'See my results' : 'Next question') + '</button>';
+      }
+      return '<div class="stack-lg">' + head('Daily trivia', '', 'games') +
+        '<div class="stack" style="gap:8px"><div class="muted small">Question ' + (idx + 1) + ' of ' + set.length + '</div>' + bar + '</div>' +
+        '<p class="q-text">' + esc(q.q) + '</p><div class="opts">' + opts + '</div>' + feedback + '</div>';
+    },
+
+    shop: function () {
+      var out = head('Shop', 'Official gear at real retailers. Links go straight to the store.');
+      if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
+      if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
+      var shop = D.library.shop || { retailers: [], categories: [] };
+      var cats = shop.categories || [];
+      if (!ui.shopCat && cats.length) ui.shopCat = cats[0].id;
+      var cat = cats.filter(function (c) { return c.id === ui.shopCat; })[0];
+      var links = cat ? (shop.retailers || []).map(function (r) {
+        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Search for “' + esc(cat.query) + '”</div></div><a class="btn btn-outline btn-sm" href="' + esc(r.search + encodeURIComponent(cat.query)) + '" target="_blank" rel="noopener">Shop</a></div>';
+      }).join('') : '';
+      var wish = S.wishlist.length ? S.wishlist.map(function (w, i) {
+        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(w.name) + '</div>' + (w.url ? '<a class="link" href="' + esc(w.url) + '" target="_blank" rel="noopener">Open link</a>' : '<span class="muted small">No link saved</span>') + '</div><button class="btn btn-ghost btn-sm" data-act="unwish" data-i="' + i + '" aria-label="Remove ' + esc(w.name) + ' from wishlist">Remove</button></div>';
+      }).join('') : '<p class="muted">Nothing saved yet. Add something you\'re hunting for below.</p>';
+      return '<div class="stack-lg">' + out +
+        '<div class="chips" role="group" aria-label="Categories">' + cats.map(function (c) { return '<button class="chip" data-act="shopcat" data-cat="' + esc(c.id) + '" aria-pressed="' + (c.id === ui.shopCat) + '">' + esc(c.label) + '</button>'; }).join('') + '</div>' +
+        '<div class="rows">' + links + '</div>' +
+        '<section class="stack"><div class="sec-head"><h2 style="display:flex;align-items:center;gap:8px">' + ICON.heart + 'My wishlist</h2><span class="muted small">' + S.wishlist.length + ' saved</span></div><div class="rows">' + wish + '</div>' +
+        '<form class="wish-form card" id="wish-form"><div class="field"><label for="wish-name">Item</label><input id="wish-name" name="name" required maxlength="80" placeholder="What are you looking for?"></div>' +
+        '<div class="field"><label for="wish-url">Store link (optional)</label><input id="wish-url" name="url" type="url" inputmode="url" placeholder="https://"></div>' +
+        '<button class="btn btn-primary" type="submit">Add to wishlist</button><p class="muted small">Your wishlist is saved on this device only.</p></form></section></div>';
+    },
+
+    picker: function () {
+      var out = head('Pizza night picker', 'Can\'t decide what to watch? Spin the pizza and let it pick.', 'home');
+      if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
+      if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
+      var modes = [['episodes', 'Episodes'], ['movies', 'Movies'], ['both', 'Both']];
+      var p = ui.pick;
+      var result = p
+        ? '<section class="card"><div class="eyebrow">Tonight\'s pick</div><h2 style="font-size:20px">' + esc(p.title) + '</h2><p class="muted">' + esc(p.detail) + '</p><a class="btn btn-primary" href="' + esc(whereToWatch(p.item)) + '" target="_blank" rel="noopener">Where to watch</a></section>'
+        : '<div class="empty" style="text-align:center">Your pick shows up here.</div>';
+      return '<div class="stack-lg">' + out +
+        '<div class="chips" role="group" aria-label="What to pick from">' + modes.map(function (m) { return '<button class="chip" data-act="mode" data-mode="' + m[0] + '" aria-pressed="' + (ui.mode === m[0]) + '">' + m[1] + '</button>'; }).join('') + '</div>' +
+        '<div class="picker-wrap"><svg width="28" height="20" viewBox="0 0 28 20" aria-hidden="true"><path d="M14 20L0 0H28Z" fill="#5BD27A"></path></svg><div class="pizza" id="pizza" style="transform:rotate(' + ui.rot + 'deg)">' + PIZZA + '</div></div>' +
+        '<button class="btn btn-sauce" id="spin-btn" data-act="spin" style="min-height:52px;font-size:16px">' + (ui.spinning ? 'Spinning...' : 'Spin the pizza') + '</button>' +
+        '<div id="pick-result">' + result + '</div></div>';
+    },
+
+    prefs: function () {
+      var url = location.href.split('#')[0];
+      var feeds = D.sources ? (D.sources.feeds || []).length : 0, chans = D.sources ? (D.sources.youtubeChannels || []).length : 0;
+      var alerts = [['videos', 'New official videos'], ['releases', 'Release-day reminders'], ['trivia', 'Daily trivia nudge']].map(function (a) {
+        return '<label class="toggle" for="alert-' + a[0] + '">' + a[1] + '<input type="checkbox" id="alert-' + a[0] + '" data-alert="' + a[0] + '"' + (S.alerts[a[0]] ? ' checked' : '') + '></label>';
+      }).join('');
+      var reset = ui.resetAsk
+        ? '<div class="confirm"><span>Clear ratings, streak, badges and wishlist?</span><button class="btn btn-sm btn-sauce" data-act="reset-yes">Yes, clear it</button><button class="btn btn-sm btn-ghost" data-act="reset-no">Keep it</button></div>'
+        : '<button class="btn btn-ghost" data-act="reset-ask">Clear my saved data</button>';
+      return '<div class="stack-lg">' + head('Settings & sharing', '', 'home') +
+        '<section class="card"><h2>Share Sewer Pizza</h2><p class="muted" style="font-size:14px">Send friends the link. On their phone they open it, then choose “Add to Home Screen.”</p>' +
+        '<input class="share-url" id="share-url" readonly value="' + esc(url) + '" aria-label="App link">' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" data-act="copy" style="flex:1">Copy link</button><button class="btn btn-ghost" data-act="qr" style="flex:1" aria-expanded="' + ui.qr + '">' + (ui.qr ? 'Hide QR code' : 'Show QR code') + '</button></div>' +
+        (ui.qr ? '<div class="qr" id="qr" aria-label="QR code for the app link"></div>' : '') + '</section>' +
+        '<section class="stack" style="gap:4px"><h2>Alerts</h2>' + alerts + '<p class="muted small">Your choices are saved now. Phone alerts arrive in a later version.</p></section>' +
+        '<section class="stack" style="gap:4px"><h2>Sources</h2><div class="kv"><span>News feeds</span><span class="muted">' + feeds + '</span></div><div class="kv"><span>YouTube channels</span><span class="muted">' + chans + '</span></div><div class="kv"><span>News last updated</span><span class="muted">' + (D.news && D.news.updated ? ago(D.news.updated) : 'Not yet') + '</span></div></section>' +
+        '<section class="stack"><h2>Your data</h2><p class="muted" style="font-size:14px">Ratings, streaks, badges and your wishlist stay on this device. There are no accounts.</p>' + reset + '</section>' +
+        '<p class="muted small" style="line-height:1.5">Sewer Pizza is a free, unofficial fan app. It is not affiliated with or endorsed by Paramount, Nickelodeon or any rights holder. All videos, articles and products belong to their owners and open at the original source.</p></div>';
+    }
+  };
+
+  /* ---------- router ---------- */
+  var view = document.getElementById('view');
+  function current() { var h = location.hash.replace('#', ''); return VIEWS[h] ? h : 'home'; }
+  var TAB_FOR = { trivia: 'games', picker: 'home', prefs: 'home' };
+  function render() {
+    var r = current();
+    view.innerHTML = VIEWS[r]();
+    var tab = TAB_FOR[r] || r;
+    document.querySelectorAll('.tab').forEach(function (t) {
+      if (t.getAttribute('data-view') === tab) t.setAttribute('aria-current', 'page'); else t.removeAttribute('aria-current');
+    });
+    if (r === 'prefs' && ui.qr) drawQR();
+  }
+  window.addEventListener('hashchange', function () { ui.feedback = null; ui.resetAsk = false; ui.playing = false; render(); window.scrollTo(0, 0); });
+
+  function drawQR() {
+    var el = document.getElementById('qr'); if (!el) return;
+    if (window.QRCode) {
+      try { new window.QRCode(el, { text: location.href.split('#')[0], width: 176, height: 176, colorDark: '#101412', colorLight: '#EEF2EC' }); } catch (e) { el.textContent = 'QR code unavailable.'; }
+    } else { el.textContent = 'QR code unavailable right now.'; }
+  }
+
+  /* ---------- actions ---------- */
+  var ACT = {
+    newscat: function (el) { ui.newsCat = el.getAttribute('data-cat'); render(); },
+    shopcat: function (el) { ui.shopCat = el.getAttribute('data-cat'); render(); },
+    rate: function (el) {
+      var id = el.getAttribute('data-id'), n = +el.getAttribute('data-n');
+      S.ratings[id] = S.ratings[id] === n ? 0 : n; save(); render();
+    },
+    ep: function (el) {
+      var id = el.getAttribute('data-id'), d = +el.getAttribute('data-d');
+      var show = (D.library.shows || []).filter(function (s) { return s.id === id; })[0];
+      var max = show && show.episodes ? show.episodes : Infinity;
+      S.watched[id] = Math.max(0, Math.min(max, (S.watched[id] || 0) + d)); save(); render();
+    },
+    answer: function (el) {
+      var set = dailySet(), t = todayTrivia(), idx = t.answers.length;
+      if (idx >= set.length || ui.feedback) return;
+      var chosen = +el.getAttribute('data-i');
+      t.answers.push(chosen);
+      if (chosen === set[idx].answer) award('first');
+      if (t.answers.length >= set.length) {
+        var last = S.streak.last, now = today();
+        if (last !== now) { S.streak.count = last && dayDiff(last, now) === 1 ? S.streak.count + 1 : 1; S.streak.last = now; }
+        if (score(set, t.answers) === set.length) award('cheese');
+        if (S.streak.count >= 8) award('pie');
+      }
+      save();
+      ui.feedback = { index: idx, chosen: chosen };
+      render();
+    },
+    next: function () { ui.feedback = null; render(); window.scrollTo(0, 0); },
+    unwish: function (el) { S.wishlist.splice(+el.getAttribute('data-i'), 1); save(); render(); toast('Removed from wishlist'); },
+    mode: function (el) { ui.mode = el.getAttribute('data-mode'); render(); },
+    spin: function () {
+      if (ui.spinning) return;
+      var pool = [];
+      if (ui.mode !== 'movies') (D.library.shows || []).forEach(function (s) { pool.push({ kind: 'show', item: s }); });
+      if (ui.mode !== 'episodes') (D.library.movies || []).forEach(function (m) { pool.push({ kind: 'movie', item: m }); });
+      if (!pool.length) return;
+      var choice = pool[Math.floor(Math.random() * pool.length)];
+      var wedge = Math.floor(Math.random() * 8);
+      ui.rot = Math.ceil(ui.rot / 360) * 360 + 1440 + (360 - (22.5 + 45 * wedge));
+      ui.spinning = true; ui.pick = null;
+      var pz = document.getElementById('pizza'), btn = document.getElementById('spin-btn'), res = document.getElementById('pick-result');
+      if (pz) pz.style.transform = 'rotate(' + ui.rot + 'deg)';
+      if (btn) btn.textContent = 'Spinning...';
+      if (res) res.innerHTML = '<div class="empty" style="text-align:center">Picking...</div>';
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      setTimeout(function () {
+        var it = choice.item;
+        if (choice.kind === 'show') {
+          var ep = it.episodes ? Math.floor(Math.random() * it.episodes) + 1 : null;
+          ui.pick = { item: it, title: it.title + ' (' + it.years + ')', detail: ep ? 'Watch episode ' + ep + ' of ' + it.episodes + ', counting from the very first one.' : 'Pick any episode.' };
+        } else {
+          ui.pick = { item: it, title: it.title, detail: 'Movie night: the ' + it.year + ' movie.' };
+        }
+        ui.spinning = false;
+        award('movie');
+        if (current() === 'picker') render();
+      }, reduce ? 50 : 1650);
+    },
+    copy: function () {
+      var input = document.getElementById('share-url'), url = input ? input.value : location.href.split('#')[0];
+      function fallback() { if (input) { input.focus(); input.select(); } toast('Select the link and copy it'); }
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(function () { toast('Link copied'); }, fallback);
+        else fallback();
+      } catch (e) { fallback(); }
+    },
+    qr: function () { ui.qr = !ui.qr; render(); },
+    'reset-ask': function () { ui.resetAsk = true; render(); },
+    'reset-no': function () { ui.resetAsk = false; render(); },
+    'reset-yes': function () { S = blank(); save(); ui.resetAsk = false; render(); toast('Saved data cleared'); },
+    play: function () { ui.playing = true; render(); }
+  };
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest('[data-act]'); if (!el) return;
+    var fn = ACT[el.getAttribute('data-act')]; if (fn) { e.preventDefault(); fn(el); }
+  });
+  document.addEventListener('change', function (e) {
+    var k = e.target.getAttribute && e.target.getAttribute('data-alert');
+    if (k) { S.alerts[k] = e.target.checked; save(); toast('Saved'); }
+  });
+  document.addEventListener('submit', function (e) {
+    if (e.target.id !== 'wish-form') return;
+    e.preventDefault();
+    var name = e.target.elements.name.value.trim(), url = e.target.elements.url.value.trim();
+    if (!name) return;
+    if (url && !/^https?:\/\//i.test(url)) url = 'https://' + url;
+    S.wishlist.push({ name: name.slice(0, 80), url: url }); save(); render(); toast('Added to wishlist');
+  });
+
+  /* ---------- start ---------- */
+  render();
+  loadData().then(render, function () { loading = false; loadError = true; render(); });
+  try {
+    if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('sw.js').catch(function () {});
+  } catch (e) { /* not supported here */ }
+})();
+</script>
+</body>
+</html>

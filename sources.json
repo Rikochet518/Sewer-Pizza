@@ -1,0 +1,10 @@
+{
+  "_note": "Feeds and channels the hourly update reads. Add RSS feed URLs under feeds, and YouTube channel IDs (they start with UC) under youtubeChannels.",
+  "feeds": [
+    {
+      "name": "Google News",
+      "url": "https://news.google.com/rss/search?q=%22Teenage+Mutant+Ninja+Turtles%22+OR+TMNT&hl=en-US&gl=US&ceid=US:en"
+    }
+  ],
+  "youtubeChannels": []
+}

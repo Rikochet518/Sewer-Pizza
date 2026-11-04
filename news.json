@@ -1,0 +1,11 @@
+{
+  "updated": null,
+  "sample": true,
+  "items": [
+    { "title": "Sample: real headlines appear here once the hourly feed update is running", "source": "Sample", "category": "News", "url": "https://news.google.com/search?q=%22Teenage%20Mutant%20Ninja%20Turtles%22", "published": "2026-11-04T10:00:00Z" },
+    { "title": "Sample: movie news will be tagged Movies automatically", "source": "Sample", "category": "Movies", "url": "https://news.google.com/search?q=TMNT%20movie", "published": "2026-11-04T08:00:00Z" },
+    { "title": "Sample: comic announcements will be tagged Comics", "source": "Sample", "category": "Comics", "url": "https://news.google.com/search?q=TMNT%20comic", "published": "2026-11-03T20:00:00Z" },
+    { "title": "Sample: toy and figure reveals will be tagged Toys", "source": "Sample", "category": "Toys", "url": "https://news.google.com/search?q=TMNT%20figures", "published": "2026-11-03T12:00:00Z" },
+    { "title": "Sample: game news will be tagged Games", "source": "Sample", "category": "Games", "url": "https://news.google.com/search?q=TMNT%20game", "published": "2026-11-02T15:00:00Z" }
+  ]
+}

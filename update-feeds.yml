@@ -1,0 +1,31 @@
+name: Update news and videos
+
+on:
+  schedule:
+    - cron: "17 * * * *"   # every hour, at 17 minutes past
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Fetch feeds
+        run: node scripts/update-feeds.mjs
+      - name: Save changes
+        run: |
+          if git diff --quiet -- data/; then
+            echo "No new items."
+            exit 0
+          fi
+          git config user.name "sewer-pizza-bot"
+          git config user.email "sewer-pizza-bot@users.noreply.github.com"
+          git add data/news.json data/videos.json
+          git commit -m "Update news and videos"
+          git push
