@@ -1,6 +1,6 @@
 // Sewer Pizza service worker: keeps the app working offline and
 // always tries the network first for news, videos and other data.
-const CACHE = 'sewer-pizza-v2';
+const CACHE = 'sewer-pizza-v3';
 const SHELL = ['./', 'index.html', 'manifest.webmanifest', 'icon.svg', 'icon-192.png', 'icon-512.png'];
 
 self.addEventListener('install', (event) => {
