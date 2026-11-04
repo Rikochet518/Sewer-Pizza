@@ -244,15 +244,41 @@
   ],
   "games": [
     {
-      "id": "g5",
-      "title": "TMNT: The Last Ronin",
-      "platform": "PS5, Xbox Series X|S and PC · in development, no release date yet",
-      "url": ""
-    },
-    {
       "id": "g1",
       "title": "TMNT: Shredder's Revenge",
       "platform": "Console, PC and phone",
+      "url": "",
+      "free": {
+        "label": "Free on phones with a Netflix membership",
+        "url": "https://www.netflix.com/games/81623532"
+      }
+    },
+    {
+      "id": "g6",
+      "title": "Rise of the TMNT: Pizza Quest",
+      "platform": "Web browser, on Nick.com",
+      "url": "https://www.nick.com/games/maawus/rise-of-the-teenage-mutant-ninja-turtles-pizza-quest",
+      "free": {
+        "label": "Free to play in your browser",
+        "url": "https://www.nick.com/games/maawus/rise-of-the-teenage-mutant-ninja-turtles-pizza-quest",
+        "only": true
+      }
+    },
+    {
+      "id": "g7",
+      "title": "Ninja Turtles: Legends",
+      "platform": "Android phones and tablets",
+      "url": "https://play.google.com/store/apps/details?id=com.ludia.tmnt&hl=en_US",
+      "free": {
+        "label": "Free to play, with in-app purchases",
+        "url": "https://play.google.com/store/apps/details?id=com.ludia.tmnt&hl=en_US",
+        "only": true
+      }
+    },
+    {
+      "id": "g5",
+      "title": "TMNT: The Last Ronin",
+      "platform": "PS5, Xbox Series X|S and PC · in development, no release date yet",
       "url": ""
     },
     {

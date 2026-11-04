@@ -551,13 +551,19 @@ p { margin: 0; }
         '<div class="streak">' + pie(Math.min(st, 8), 72, { label: 'Streak pie: ' + st + ' days in a row' }) + '<span>' + st + '-day streak</span></div></div>' +
         '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + btn + '<span class="muted small" style="display:flex;align-items:center;gap:6px">' + slice(true, 18, C.surface) + 'Today: ' + sc + ' of ' + set.length + ' slices</span></div></section>';
       var games = (D.library.games || []).map(function (g) {
-        return '<div class="trow" style="align-items:center">' + cover(g, 'game', 48) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(g.title) + '</div><div class="muted small">' + esc(g.platform) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(g.url || search(g.title + ' game')) + '" target="_blank" rel="noopener">Find it</a></div>';
+        var find = '<a class="btn btn-outline btn-sm" href="' + esc(g.url || search(g.title + ' game')) + '" target="_blank" rel="noopener">Find it</a>';
+        var btns = g.free
+          ? '<div class="row-btns"><a class="btn btn-sm" style="background:var(--sauce-bg);border:1px solid var(--orange);color:var(--orange)" href="' + esc(g.free.url) + '" target="_blank" rel="noopener">Play free</a>' + (g.free.only ? '' : find) + '</div>'
+          : find;
+        return '<div class="trow" style="align-items:center">' + cover(g, 'game', 48) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(g.title) + '</div><div class="muted small">' + esc(g.platform) + '</div>' +
+          (g.free ? '<div class="small" style="color:var(--orange);font-weight:600">' + esc(g.free.label) + '</div>' : '') + '</div>' + btns + '</div>';
       }).join('');
+      var freeCount = (D.library.games || []).filter(function (g) { return g.free; }).length;
       var badges = BADGES.map(function (b) {
         var on = !!S.badges[b.id];
         return '<div class="badge' + (on ? ' on' : '') + '" style="color:' + (on ? 'var(--orange)' : 'var(--dim)') + '"><div class="badge-ico">' + b.icon(on) + '</div><div style="min-width:0"><div class="badge-name">' + esc(b.name) + '</div><div class="muted small">' + (on ? 'Earned' : esc(b.how)) + '</div></div></div>';
       }).join('');
-      return '<div class="stack-lg">' + out + trivia + '<section class="stack"><h2>Official games</h2><div class="rows">' + games + '</div></section><section class="stack"><h2>Badges</h2><div class="badges">' + badges + '</div></section></div>';
+      return '<div class="stack-lg">' + out + trivia + '<section class="stack"><div class="sec-head"><h2>Official games</h2>' + (freeCount ? '<span class="small" style="color:var(--orange);font-weight:600">' + freeCount + ' free to play</span>' : '') + '</div><div class="rows">' + games + '</div></section><section class="stack"><h2>Badges</h2><div class="badges">' + badges + '</div></section></div>';
     },
 
     trivia: function () {
