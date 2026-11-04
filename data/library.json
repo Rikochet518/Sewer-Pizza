@@ -2,7 +2,13 @@
   "_note": "Edit this file to change what the app lists. Leave a url empty to use a search link instead.",
   "settings": {
     "embedVideos": true,
-    "ebaySearch": ""
+    "ebaySearch": "",
+    "community": {
+      "repo": "Rikochet518/Sewer-Pizza",
+      "repoId": "R_kgDOVioNPQ",
+      "category": "Announcements",
+      "categoryId": ""
+    }
   },
   "releases": [
     {
