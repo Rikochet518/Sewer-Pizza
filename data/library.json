@@ -37,8 +37,8 @@
       ]
     },
     "vault": {
-      "url": "",
-      "anonKey": ""
+      "url": "https://rfwehsseswwnoofyatqe.supabase.co",
+      "anonKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJmd2Voc3Nlc3d3bm9vZnlhdHFlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTM4MTY1MTksImV4cCI6MjEwOTM5MjUxOX0.HkZi7h5kpwtRKPKpbGHd9ULiOvmlRhDk1Pn7My_VL7U"
     }
   },
   "releases": [
