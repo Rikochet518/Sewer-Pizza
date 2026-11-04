@@ -4,6 +4,21 @@
     {
       "name": "Google News",
       "url": "https://news.google.com/rss/search?q=%22Teenage+Mutant+Ninja+Turtles%22+OR+TMNT&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Kevin Eastman news",
+      "category": "Events",
+      "url": "https://news.google.com/rss/search?q=%22Kevin+Eastman%22&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Woodman Museum",
+      "category": "Events",
+      "url": "https://news.google.com/rss/search?q=%22Woodman+Museum%22+Dover&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "TMNT conventions and tours",
+      "category": "Events",
+      "url": "https://news.google.com/rss/search?q=TMNT+(comic+con+OR+convention+OR+tour+OR+signing)&hl=en-US&gl=US&ceid=US:en"
     }
   ],
   "youtubeChannels": [
