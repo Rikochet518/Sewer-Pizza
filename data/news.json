@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-04T19:16:01.035Z",
+  "updated": "2026-11-04T20:13:20.475Z",
   "sample": false,
   "items": [
     {
@@ -85,6 +85,13 @@
       "category": "Toys",
       "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNMFdNUWRiLUE3T3U1QTAxeDdnSkZhYllvUnhNT19IdHN1S3RJOUdpN0JEVFlTRDBvOEZONEw4ekNnM2U1a0Y0SDJsX3RRNnIwakpFUjlkN0hwZnYwZVpPSEcxeWtWV29VRS1HbzBjQjc3Zms1Q2RDeXdIMkROZ0tjMDl2eDZtZnNPeXNsYXU3b2RlZC1Xc3JVYTFPSDdYa0JUR0xJSnpqTlE?oc=5",
       "published": "2026-10-28T14:23:08.000Z"
+    },
+    {
+      "title": "TMNT Announces New Special, And It's Only 1 Month Away",
+      "source": "ScreenRant",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiXkFVX3lxTFBIYTAyclZiVWVvMnVIakJUM1lxYU5jV1oyU291VV9YZ3BJZjNjeFM0Qm9hUXhqLU85MUQxdTY2S3hxZU9GdV9fUUpxVUY1bWVIOGdHTUJNQTN1cVIxWmc?oc=5",
+      "published": "2026-10-25T00:30:00.000Z"
     },
     {
       "title": "It's the End of an Era for the Teenage Mutant Ninja Turtles as We Say Goodbye to Their Saturday Morning Adventures",
@@ -414,13 +421,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPb1c2d1Q0dndJa0Z2S2RQcUM1eUx4OC1IZ0xJTm5obnd2dzhTbEk0dVQzZE51YUcyTUNjSUhRRV9IbVphblZQZFd6R1NJVWUxRFR5WkZZY2VsVXVmNVJpY2ZxRGdDX25DbFkwckc3MVpDN1lzWHd2bDhBVE1jWmk4N1hvZ3JmZDFPMXlraGRMTTFoLWZRaFI2UW12UVZKYWJWYWpfSlF3?oc=5",
       "published": "2025-05-28T07:00:00.000Z"
-    },
-    {
-      "title": "Cowabunga Dude: It’s Rocket League | TMNT!",
-      "source": "Rocket League ®",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZWpSU0piMkVoUXZWRmVTQ2tIZ3l3enQ3YmdzMWpsNkk4VFI2QzlZMmVUdGVGQTdhZTRRY0pUODEwZHE2TzM2MWhhZHBIbUhCaHR3ZnkwbGNpVXhHRXZ3bU9YOEx1cUlOdV9HOGV1Mm5KNGRpQnpnVWs2dVJaUU94TA?oc=5",
-      "published": "2025-04-15T07:00:00.000Z"
     }
   ]
 }
