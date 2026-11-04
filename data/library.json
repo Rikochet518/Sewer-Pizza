@@ -393,6 +393,12 @@
     ],
     "shops": [
       {
+        "name": "Kevin Eastman Studios",
+        "note": "Signed prints, books and art from the turtles' co-creator",
+        "url": "https://fan.kevineastmanstudios.com/shop",
+        "icon": "art"
+      },
+      {
         "name": "Hot Topic",
         "note": "TMNT shirts, hoodies and gifts",
         "url": "https://hottopic.com/pop-culture/shop-by-license/teenage-mutant-ninja-turtles/",
