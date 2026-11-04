@@ -6,5 +6,10 @@
       "url": "https://news.google.com/rss/search?q=%22Teenage+Mutant+Ninja+Turtles%22+OR+TMNT&hl=en-US&gl=US&ceid=US:en"
     }
   ],
-  "youtubeChannels": []
+  "youtubeChannels": [
+    {
+      "id": "UCTsgmnXbWotzbR36vU0YPrA",
+      "name": "Teenage Mutant Ninja Turtles (official, @tmnt)"
+    }
+  ]
 }

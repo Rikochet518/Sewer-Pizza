@@ -1,7 +1,7 @@
 {
   "_note": "Edit this file to change what the app lists. Leave a url empty to use a search link instead.",
   "settings": {
-    "embedVideos": false
+    "embedVideos": true
   },
   "releases": [
     {
@@ -11,39 +11,154 @@
     }
   ],
   "shows": [
-    { "id": "s1987", "title": "Teenage Mutant Ninja Turtles", "years": "1987–1996", "episodes": 193, "url": "" },
-    { "id": "s2003", "title": "Teenage Mutant Ninja Turtles", "years": "2003–2009", "episodes": 155, "url": "" },
-    { "id": "s2012", "title": "Teenage Mutant Ninja Turtles", "years": "2012–2017", "episodes": 124, "url": "" },
-    { "id": "s2018", "title": "Rise of the Teenage Mutant Ninja Turtles", "years": "2018–2020", "episodes": 39, "url": "" },
-    { "id": "s2024", "title": "Tales of the Teenage Mutant Ninja Turtles", "years": "2024–", "episodes": 12, "url": "" }
+    {
+      "id": "s1987",
+      "title": "Teenage Mutant Ninja Turtles",
+      "years": "1987–1996",
+      "episodes": 193,
+      "url": ""
+    },
+    {
+      "id": "s2003",
+      "title": "Teenage Mutant Ninja Turtles",
+      "years": "2003–2009",
+      "episodes": 155,
+      "url": ""
+    },
+    {
+      "id": "s2012",
+      "title": "Teenage Mutant Ninja Turtles",
+      "years": "2012–2017",
+      "episodes": 124,
+      "url": ""
+    },
+    {
+      "id": "s2018",
+      "title": "Rise of the Teenage Mutant Ninja Turtles",
+      "years": "2018–2020",
+      "episodes": 39,
+      "url": ""
+    },
+    {
+      "id": "s2024",
+      "title": "Tales of the Teenage Mutant Ninja Turtles",
+      "years": "2024–",
+      "episodes": 12,
+      "url": ""
+    }
   ],
   "movies": [
-    { "id": "m1990", "title": "Teenage Mutant Ninja Turtles", "year": 1990, "url": "" },
-    { "id": "m1991", "title": "TMNT II: The Secret of the Ooze", "year": 1991, "url": "" },
-    { "id": "m1993", "title": "Teenage Mutant Ninja Turtles III", "year": 1993, "url": "" },
-    { "id": "m2007", "title": "TMNT", "year": 2007, "url": "" },
-    { "id": "m2014", "title": "Teenage Mutant Ninja Turtles", "year": 2014, "url": "" },
-    { "id": "m2016", "title": "TMNT: Out of the Shadows", "year": 2016, "url": "" },
-    { "id": "m2022", "title": "Rise of the TMNT: The Movie", "year": 2022, "url": "" },
-    { "id": "m2023", "title": "TMNT: Mutant Mayhem", "year": 2023, "url": "" }
+    {
+      "id": "m1990",
+      "title": "Teenage Mutant Ninja Turtles",
+      "year": 1990,
+      "url": ""
+    },
+    {
+      "id": "m1991",
+      "title": "TMNT II: The Secret of the Ooze",
+      "year": 1991,
+      "url": ""
+    },
+    {
+      "id": "m1993",
+      "title": "Teenage Mutant Ninja Turtles III",
+      "year": 1993,
+      "url": ""
+    },
+    {
+      "id": "m2007",
+      "title": "TMNT",
+      "year": 2007,
+      "url": ""
+    },
+    {
+      "id": "m2014",
+      "title": "Teenage Mutant Ninja Turtles",
+      "year": 2014,
+      "url": ""
+    },
+    {
+      "id": "m2016",
+      "title": "TMNT: Out of the Shadows",
+      "year": 2016,
+      "url": ""
+    },
+    {
+      "id": "m2022",
+      "title": "Rise of the TMNT: The Movie",
+      "year": 2022,
+      "url": ""
+    },
+    {
+      "id": "m2023",
+      "title": "TMNT: Mutant Mayhem",
+      "year": 2023,
+      "url": ""
+    }
   ],
   "games": [
-    { "id": "g1", "title": "TMNT: Shredder's Revenge", "platform": "Console, PC and phone", "url": "" },
-    { "id": "g2", "title": "TMNT: The Cowabunga Collection", "platform": "Console and PC", "url": "" },
-    { "id": "g3", "title": "TMNT: Mutants Unleashed", "platform": "Console and PC", "url": "" },
-    { "id": "g4", "title": "TMNT Arcade: Wrath of the Mutants", "platform": "Console and PC", "url": "" }
+    {
+      "id": "g1",
+      "title": "TMNT: Shredder's Revenge",
+      "platform": "Console, PC and phone",
+      "url": ""
+    },
+    {
+      "id": "g2",
+      "title": "TMNT: The Cowabunga Collection",
+      "platform": "Console and PC",
+      "url": ""
+    },
+    {
+      "id": "g3",
+      "title": "TMNT: Mutants Unleashed",
+      "platform": "Console and PC",
+      "url": ""
+    },
+    {
+      "id": "g4",
+      "title": "TMNT Arcade: Wrath of the Mutants",
+      "platform": "Console and PC",
+      "url": ""
+    }
   ],
   "shop": {
     "retailers": [
-      { "name": "Amazon", "search": "https://www.amazon.com/s?k=" },
-      { "name": "Target", "search": "https://www.target.com/s?searchTerm=" },
-      { "name": "Walmart", "search": "https://www.walmart.com/search?q=" }
+      {
+        "name": "Amazon",
+        "search": "https://www.amazon.com/s?k="
+      },
+      {
+        "name": "Target",
+        "search": "https://www.target.com/s?searchTerm="
+      },
+      {
+        "name": "Walmart",
+        "search": "https://www.walmart.com/search?q="
+      }
     ],
     "categories": [
-      { "id": "figures", "label": "Figures", "query": "TMNT action figures" },
-      { "id": "clothes", "label": "Clothes", "query": "TMNT shirt" },
-      { "id": "comics", "label": "Comics", "query": "TMNT comics" },
-      { "id": "collectibles", "label": "Collectibles", "query": "TMNT collectibles" }
+      {
+        "id": "figures",
+        "label": "Figures",
+        "query": "TMNT action figures"
+      },
+      {
+        "id": "clothes",
+        "label": "Clothes",
+        "query": "TMNT shirt"
+      },
+      {
+        "id": "comics",
+        "label": "Comics",
+        "query": "TMNT comics"
+      },
+      {
+        "id": "collectibles",
+        "label": "Collectibles",
+        "query": "TMNT collectibles"
+      }
     ]
   }
 }
