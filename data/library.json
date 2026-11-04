@@ -307,12 +307,20 @@
         "search": "https://www.amazon.com/s?k="
       },
       {
+        "name": "eBay",
+        "search": "https://www.ebay.com/sch/i.html?_nkw="
+      },
+      {
         "name": "Target",
         "search": "https://www.target.com/s?searchTerm="
       },
       {
         "name": "Walmart",
         "search": "https://www.walmart.com/search?q="
+      },
+      {
+        "name": "GameStop",
+        "search": "https://www.gamestop.com/search/?q="
       }
     ],
     "categories": [
@@ -335,6 +343,141 @@
         "id": "collectibles",
         "label": "Collectibles",
         "query": "TMNT collectibles"
+      },
+      {
+        "id": "games",
+        "label": "Games",
+        "query": "TMNT video games"
+      },
+      {
+        "id": "plush",
+        "label": "Plush",
+        "query": "TMNT plush"
+      },
+      {
+        "id": "costumes",
+        "label": "Costumes",
+        "query": "TMNT costume"
+      }
+    ],
+    "shops": [
+      {
+        "name": "Hot Topic",
+        "note": "TMNT shirts, hoodies and gifts",
+        "url": "https://hottopic.com/pop-culture/shop-by-license/teenage-mutant-ninja-turtles/"
+      },
+      {
+        "name": "Target",
+        "note": "TMNT toys and more",
+        "url": "https://www.target.com/b/teenage-mutant-ninja-turtles/-/N-55rhv"
+      },
+      {
+        "name": "Paramount Games Shop",
+        "note": "Official TMNT game merch",
+        "url": "https://shop.paramountgames.com/collections/teenage-mutant-ninja-turtles"
+      }
+    ],
+    "ideas": [
+      {
+        "label": "Vintage 1980s action figures",
+        "query": "vintage 1988 TMNT action figures",
+        "note": "Original Playmates figures from the cartoon era. Check condition and whether the weapons are included."
+      },
+      {
+        "label": "The Last Ronin statue or figure",
+        "query": "Last Ronin TMNT figure",
+        "note": "Collector figures and statues based on the Last Ronin comics."
+      },
+      {
+        "label": "Mutant Mayhem figures",
+        "query": "Mutant Mayhem action figures"
+      },
+      {
+        "label": "Cowabunga Forever figures",
+        "query": "TMNT Cowabunga Forever figures",
+        "note": "Figures styled after the 90s live-action movie."
+      },
+      {
+        "label": "Super7 Ultimates figures",
+        "query": "Super7 TMNT Ultimates"
+      },
+      {
+        "label": "NECA collector figures",
+        "query": "NECA TMNT figure"
+      },
+      {
+        "label": "Funko Pop",
+        "query": "TMNT Funko Pop"
+      },
+      {
+        "label": "Arcade cabinet for home",
+        "query": "Arcade1Up TMNT",
+        "note": "Home-size arcade machines. Big, so check the dimensions first."
+      },
+      {
+        "label": "Classic cartoon on DVD or Blu-ray",
+        "query": "TMNT 1987 complete series DVD"
+      },
+      {
+        "label": "Comic collections",
+        "query": "TMNT comic omnibus",
+        "note": "Big hardcovers and paperbacks that collect whole story arcs."
+      },
+      {
+        "label": "Soundtrack on vinyl",
+        "query": "TMNT soundtrack vinyl"
+      },
+      {
+        "label": "Board and card games",
+        "query": "TMNT board game"
+      },
+      {
+        "label": "Trading cards",
+        "query": "TMNT trading cards"
+      },
+      {
+        "label": "Hoodie",
+        "query": "TMNT hoodie"
+      },
+      {
+        "label": "Retro t-shirt",
+        "query": "TMNT retro t-shirt"
+      },
+      {
+        "label": "Socks",
+        "query": "TMNT socks"
+      },
+      {
+        "label": "Pajamas",
+        "query": "TMNT pajamas"
+      },
+      {
+        "label": "Backpack",
+        "query": "TMNT backpack"
+      },
+      {
+        "label": "Plush",
+        "query": "TMNT plush"
+      },
+      {
+        "label": "Lunchbox",
+        "query": "TMNT lunch box"
+      },
+      {
+        "label": "Poster or art print",
+        "query": "TMNT poster"
+      },
+      {
+        "label": "Halloween costume",
+        "query": "TMNT costume adult"
+      },
+      {
+        "label": "Building sets",
+        "query": "TMNT building set"
+      },
+      {
+        "label": "Video games on sale",
+        "query": "TMNT video game"
       }
     ]
   },

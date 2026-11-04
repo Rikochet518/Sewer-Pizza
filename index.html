@@ -370,7 +370,7 @@ p { margin: 0; }
 
   /* ---------- saved state (this device only) ---------- */
   var KEY = 'sewerpizza.v1';
-  function blank() { return { ratings: {}, watched: {}, wishlist: [], services: [], run: { best: 0, plays: 0 }, streak: { count: 0, last: null }, trivia: { date: null, answers: [] }, badges: {}, alerts: { videos: true, releases: true, trivia: false } }; }
+  function blank() { return { ratings: {}, watched: {}, wishlist: [], services: [], stores: [], run: { best: 0, plays: 0 }, streak: { count: 0, last: null }, trivia: { date: null, answers: [] }, badges: {}, alerts: { videos: true, releases: true, trivia: false } }; }
   var S = blank();
   try { var raw = localStorage.getItem(KEY); if (raw) { var parsed = JSON.parse(raw); Object.keys(S).forEach(function (k) { if (parsed[k] != null) S[k] = parsed[k]; }); } } catch (e) { /* storage unavailable */ }
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) { /* storage unavailable */ } }
@@ -378,7 +378,7 @@ p { margin: 0; }
   /* ---------- content ---------- */
   var D = { library: null, trivia: [], news: null, videos: null, sources: null };
   var loading = true, loadError = false;
-  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null };
+  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null, findIdx: null, addStore: false };
 
   function getJSON(p) { return fetch(p, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
   function loadData() {
@@ -605,25 +605,71 @@ p { margin: 0; }
     },
 
     shop: function () {
-      var out = head('Shop', 'Official gear at real retailers. Links go straight to the store.');
+      var out = head('Shop', 'Official gear at real stores. Every link goes straight to the store.');
       if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
       if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
-      var shop = D.library.shop || { retailers: [], categories: [] };
+      var shop = D.library.shop || { retailers: [], categories: [], ideas: [], shops: [] };
+      var retailers = shop.retailers || [];
+      function storeChips(query, n) {
+        return '<div class="chips">' + retailers.slice(0, n || 3).map(function (r) {
+          return '<a class="chip" style="display:inline-flex;align-items:center;text-decoration:none" href="' + esc(r.search + encodeURIComponent(query)) + '" target="_blank" rel="noopener">' + esc(r.name) + '</a>';
+        }).join('') + '</div>';
+      }
+
+      /* Find of the day: picked by date, or a new one each time you shuffle */
+      var ideas = shop.ideas || [], find = '';
+      if (ideas.length) {
+        var idx = ui.findIdx != null ? ui.findIdx : hashStr(today()) % ideas.length;
+        var idea = ideas[idx % ideas.length];
+        find = '<section class="card" style="background:var(--sauce-bg);border-color:var(--sauce-line)"><div class="sec-head" style="align-items:center"><div class="eyebrow" style="display:flex;align-items:center;gap:8px">' + slice(true, 18, C.sauce) + (ui.findIdx != null ? 'Random find' : 'Find of the day') + '</div>' +
+          '<button class="btn btn-ghost btn-sm" data-act="shuffle" aria-label="Show another find">Shuffle</button></div>' +
+          '<h2 style="font-size:20px">' + esc(idea.label) + '</h2>' + (idea.note ? '<p class="muted" style="font-size:14px">' + esc(idea.note) + '</p>' : '') +
+          '<div class="small muted">Look for it at</div>' + storeChips(idea.query, 4) + '</section>';
+      }
+
+      /* Fresh finds: toy news from the hourly news feed */
+      var toyNews = ((D.news && !D.news.sample && D.news.items) || []).filter(function (n) { return n.category === 'Toys'; }).slice(0, 3);
+      var fresh = toyNews.length ? '<section class="stack" style="gap:4px"><div class="sec-head"><h2>Fresh from the news</h2><span class="muted small">New toys and gear</span></div><div class="news-list">' + toyNews.map(newsRow).join('') + '</div></section>' : '';
+
+      /* Picked for you: titles you rated 4 or 5 slices */
+      var titles = (D.library.shows || []).concat(D.library.movies || []);
+      var liked = titles.filter(function (t) { return (S.ratings[t.id] || 0) >= 4; }).sort(function (a, b) { return (S.ratings[b.id] || 0) - (S.ratings[a.id] || 0); }).slice(0, 3);
+      var picked = '<section class="stack" style="gap:4px"><div class="sec-head"><h2>Picked for you</h2><span class="muted small">From your slice ratings</span></div>' +
+        (liked.length ? '<div class="rows">' + liked.map(function (t) {
+          var q = t.title + ' merch';
+          return '<div class="trow trow-col"><div class="trow-top">' + cover(t, t.years ? 'series' : 'movie', 40) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(t.title) + '</div><div class="muted small">You rated it ' + S.ratings[t.id] + ' slices</div></div></div>' + storeChips(q, 4) + '</div>';
+        }).join('') + '</div>'
+          : '<p class="muted" style="font-size:14px">Rate shows and movies 4 or 5 slices on the <a class="link" href="#watch">Watch</a> screen and gear ideas for them show up here.</p>') + '</section>';
+
+      /* Browse by category */
       var cats = shop.categories || [];
       if (!ui.shopCat && cats.length) ui.shopCat = cats[0].id;
       var cat = cats.filter(function (c) { return c.id === ui.shopCat; })[0];
-      var links = cat ? (shop.retailers || []).map(function (r) {
+      var links = cat ? retailers.map(function (r) {
         return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Search for “' + esc(cat.query) + '”</div></div><a class="btn btn-outline btn-sm" href="' + esc(r.search + encodeURIComponent(cat.query)) + '" target="_blank" rel="noopener">Shop</a></div>';
       }).join('') : '';
+      var browse = '<section class="stack"><h2>Browse</h2><div class="chips" role="group" aria-label="Categories">' + cats.map(function (c) { return '<button class="chip" data-act="shopcat" data-cat="' + esc(c.id) + '" aria-pressed="' + (c.id === ui.shopCat) + '">' + esc(c.label) + '</button>'; }).join('') + '</div><div class="rows">' + links + '</div></section>';
+
+      /* TMNT shops: official store pages plus stores you add */
+      var shopRows = (shop.shops || []).map(function (s) {
+        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">' + esc(s.note || 'TMNT shop page') + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a></div>';
+      }).join('') + S.stores.map(function (s, i) {
+        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">Added by you</div></div><div class="row-btns"><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a><button class="btn btn-ghost btn-sm" data-act="unstore" data-i="' + i + '" aria-label="Remove ' + esc(s.name) + '">Remove</button></div></div>';
+      }).join('');
+      var addStore = ui.addStore
+        ? '<form class="wish-form card" id="store-form"><div class="field"><label for="store-name">Store name</label><input id="store-name" name="name" required maxlength="40" placeholder="Your favorite comic shop"></div>' +
+          '<div class="field"><label for="store-url">Store link</label><input id="store-url" name="url" required inputmode="url" placeholder="https://"></div>' +
+          '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" type="submit" style="flex:1">Add store</button><button class="btn btn-ghost" type="button" data-act="addstore">Cancel</button></div><p class="muted small">Stores you add are saved on this device only.</p></form>'
+        : '<button class="btn btn-ghost" data-act="addstore">+ Add a store</button>';
+      var shops = '<section class="stack"><div class="sec-head"><h2>TMNT shops</h2><span class="muted small">Store pages</span></div><div class="rows">' + shopRows + '</div>' + addStore + '</section>';
+
       var comics = (D.library.comics || []).map(function (c) {
         return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(c.title) + '</div><div class="muted small">' + esc(c.detail) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(c.url || search(c.search || c.title)) + '" target="_blank" rel="noopener">Find it</a></div>';
       }).join('');
       var wish = S.wishlist.length ? S.wishlist.map(function (w, i) {
         return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(w.name) + '</div>' + (w.url ? '<a class="link" href="' + esc(w.url) + '" target="_blank" rel="noopener">Open link</a>' : '<span class="muted small">No link saved</span>') + '</div><button class="btn btn-ghost btn-sm" data-act="unwish" data-i="' + i + '" aria-label="Remove ' + esc(w.name) + ' from wishlist">Remove</button></div>';
       }).join('') : '<p class="muted">Nothing saved yet. Add something you\'re hunting for below.</p>';
-      return '<div class="stack-lg">' + out +
-        '<div class="chips" role="group" aria-label="Categories">' + cats.map(function (c) { return '<button class="chip" data-act="shopcat" data-cat="' + esc(c.id) + '" aria-pressed="' + (c.id === ui.shopCat) + '">' + esc(c.label) + '</button>'; }).join('') + '</div>' +
-        '<div class="rows">' + links + '</div>' +
+      return '<div class="stack-lg">' + out + find + fresh + picked + browse + shops +
         (comics ? '<section class="stack"><div class="sec-head"><h2>Comics &amp; books</h2><span class="muted small">The Last Ronin saga</span></div><div class="rows">' + comics + '</div></section>' : '') +
         '<section class="stack"><div class="sec-head"><h2 style="display:flex;align-items:center;gap:8px">' + ICON.heart + 'My wishlist</h2><span class="muted small">' + S.wishlist.length + ' saved</span></div><div class="rows">' + wish + '</div>' +
         '<form class="wish-form card" id="wish-form"><div class="field"><label for="wish-name">Item</label><input id="wish-name" name="name" required maxlength="80" placeholder="What are you looking for?"></div>' +
@@ -984,7 +1030,15 @@ p { margin: 0; }
     play: function () { ui.playing = true; render(); },
     watchsheet: function (el) { lastFocus = el; ui.sheet = { id: el.getAttribute('data-id'), mode: el.getAttribute('data-mode') }; renderSheet(); },
     closesheet: function () { closeSheet(); },
-    runtap: function () { runTap(); }
+    runtap: function () { runTap(); },
+    shuffle: function () {
+      var n = ((D.library && D.library.shop && D.library.shop.ideas) || []).length; if (!n) return;
+      var cur = ui.findIdx != null ? ui.findIdx : hashStr(today()) % n, next = cur;
+      while (n > 1 && next === cur) next = Math.floor(Math.random() * n);
+      ui.findIdx = next; render();
+    },
+    addstore: function () { ui.addStore = !ui.addStore; render(); if (ui.addStore) { var f = document.getElementById('store-name'); if (f) f.focus(); } },
+    unstore: function (el) { S.stores.splice(+el.getAttribute('data-i'), 1); save(); render(); toast('Store removed'); }
   };
   document.addEventListener('click', function (e) {
     var el = e.target.closest('[data-act]'); if (!el) return;
@@ -1001,6 +1055,14 @@ p { margin: 0; }
     }
   });
   document.addEventListener('submit', function (e) {
+    if (e.target.id === 'store-form') {
+      e.preventDefault();
+      var sn = e.target.elements.name.value.trim(), su = e.target.elements.url.value.trim();
+      if (!sn || !su) return;
+      if (!/^https?:\/\//i.test(su)) su = 'https://' + su;
+      S.stores.push({ name: sn.slice(0, 40), url: su }); save(); ui.addStore = false; render(); toast('Store added');
+      return;
+    }
     if (e.target.id !== 'wish-form') return;
     e.preventDefault();
     var name = e.target.elements.name.value.trim(), url = e.target.elements.url.value.trim();
