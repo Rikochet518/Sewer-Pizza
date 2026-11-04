@@ -654,15 +654,15 @@ p { margin: 0; }
       if (!ui.shopCat && cats.length) ui.shopCat = cats[0].id;
       var cat = cats.filter(function (c) { return c.id === ui.shopCat; })[0];
       var links = cat ? retailers.map(function (r) {
-        return '<div class="trow" style="align-items:center">' + storeBadge(r.name) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Search for “' + esc(cat.query) + '”</div></div><a class="btn btn-outline btn-sm" href="' + esc(r.search + encodeURIComponent(cat.query)) + '" target="_blank" rel="noopener">Shop</a></div>';
+        return '<div class="trow" style="align-items:center">' + storeBadge(r.name, r.icon) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Search for “' + esc(cat.query) + '”</div></div><a class="btn btn-outline btn-sm" href="' + esc(r.search + encodeURIComponent(cat.query)) + '" target="_blank" rel="noopener">Shop</a></div>';
       }).join('') : '';
       var browse = '<section class="stack"><h2>Browse</h2><div class="cat-grid" role="group" aria-label="Categories">' + cats.map(function (c) { return '<button class="cat-tile" data-act="shopcat" data-cat="' + esc(c.id) + '" aria-pressed="' + (c.id === ui.shopCat) + '"><span class="cat-ico" style="background:' + (CAT_TINT[c.id] || '#26302A') + '">' + catIcon(c.id, 22) + '</span>' + esc(c.label) + '</button>'; }).join('') + '</div><div class="rows">' + links + '</div></section>';
 
       /* TMNT shops: official store pages plus stores you add */
       var shopRows = (shop.shops || []).map(function (s) {
-        return '<div class="trow" style="align-items:center">' + storeBadge(s.name) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">' + esc(s.note || 'TMNT shop page') + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a></div>';
+        return '<div class="trow" style="align-items:center">' + storeBadge(s.name, s.icon) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">' + esc(s.note || 'TMNT shop page') + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a></div>';
       }).join('') + S.stores.map(function (s, i) {
-        return '<div class="trow" style="align-items:center">' + storeBadge(s.name) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">Added by you</div></div><div class="row-btns"><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a><button class="btn btn-ghost btn-sm" data-act="unstore" data-i="' + i + '" aria-label="Remove ' + esc(s.name) + '">Remove</button></div></div>';
+        return '<div class="trow" style="align-items:center">' + storeBadge(s.name, 'bag') + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">Added by you</div></div><div class="row-btns"><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a><button class="btn btn-ghost btn-sm" data-act="unstore" data-i="' + i + '" aria-label="Remove ' + esc(s.name) + '">Remove</button></div></div>';
       }).join('');
       var addStore = ui.addStore
         ? '<form class="wish-form card" id="store-form"><div class="field"><label for="store-name">Store name</label><input id="store-name" name="name" required maxlength="40" placeholder="Your favorite comic shop"></div>' +
@@ -756,11 +756,16 @@ p { margin: 0; }
   function catIcon(id, size) {
     return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="#EEF2EC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (CAT_ICON[id] || CAT_ICON.collectibles) + '</svg>';
   }
-  function storeBadge(name) {
-    var words = name.replace(/[^A-Za-z0-9 ]/g, ' ').split(/\s+/).filter(Boolean);
-    var ini = (words.length > 1 ? words[0].charAt(0) + words[1].charAt(0) : name.replace(/[^A-Za-z0-9]/g, '').slice(0, 2)).toUpperCase();
+  var STORE_ICON = {
+    figure: CAT_ICON.figures,
+    shirt: CAT_ICON.clothes,
+    controller: CAT_ICON.games,
+    tag: '<path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"></path><circle cx="7.5" cy="7.5" r="1.5"></circle>',
+    bag: '<path d="M6 7h12l-1 13H7z"></path><path d="M9 7a3 3 0 0 1 6 0"></path>'
+  };
+  function storeBadge(name, icon) {
     var bg = TILE_BG[hashStr(name) % TILE_BG.length];
-    return '<span class="store-badge" style="background:' + bg + '" aria-hidden="true">' + esc(ini) + '</span>';
+    return '<span class="store-badge" style="background:' + bg + '" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EEF2EC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">' + (STORE_ICON[icon] || STORE_ICON.bag) + '</svg></span>';
   }
   var MYSTERY_BOX = '<svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true" style="flex-shrink:0">' +
     '<ellipse cx="36" cy="64" rx="26" ry="4" fill="#000000" fill-opacity="0.3"></ellipse>' +

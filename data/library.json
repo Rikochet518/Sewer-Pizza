@@ -304,27 +304,33 @@
     "retailers": [
       {
         "name": "Amazon",
-        "search": "https://www.amazon.com/s?k="
+        "search": "https://www.amazon.com/s?k=",
+        "icon": "bag"
       },
       {
         "name": "eBay",
-        "search": "https://www.ebay.com/sch/i.html?_nkw="
+        "search": "https://www.ebay.com/sch/i.html?_nkw=",
+        "icon": "tag"
       },
       {
         "name": "Target",
-        "search": "https://www.target.com/s?searchTerm="
+        "search": "https://www.target.com/s?searchTerm=",
+        "icon": "bag"
       },
       {
         "name": "Walmart",
-        "search": "https://www.walmart.com/search?q="
+        "search": "https://www.walmart.com/search?q=",
+        "icon": "bag"
       },
       {
         "name": "GameStop",
-        "search": "https://www.gamestop.com/search/?q="
+        "search": "https://www.gamestop.com/search/?q=",
+        "icon": "controller"
       },
       {
         "name": "BigBadToyStore",
-        "search": "https://www.bigbadtoystore.com/Search?SearchString="
+        "search": "https://www.bigbadtoystore.com/Search?SearchString=",
+        "icon": "figure"
       }
     ],
     "categories": [
@@ -368,27 +374,32 @@
       {
         "name": "Hot Topic",
         "note": "TMNT shirts, hoodies and gifts",
-        "url": "https://hottopic.com/pop-culture/shop-by-license/teenage-mutant-ninja-turtles/"
+        "url": "https://hottopic.com/pop-culture/shop-by-license/teenage-mutant-ninja-turtles/",
+        "icon": "shirt"
       },
       {
         "name": "Target",
         "note": "TMNT toys and more",
-        "url": "https://www.target.com/b/teenage-mutant-ninja-turtles/-/N-55rhv"
+        "url": "https://www.target.com/b/teenage-mutant-ninja-turtles/-/N-55rhv",
+        "icon": "bag"
       },
       {
         "name": "Paramount Games Shop",
         "note": "Official TMNT game merch",
-        "url": "https://shop.paramountgames.com/collections/teenage-mutant-ninja-turtles"
+        "url": "https://shop.paramountgames.com/collections/teenage-mutant-ninja-turtles",
+        "icon": "controller"
       },
       {
         "name": "BigBadToyStore",
         "note": "Collector figures, preorders and exclusives",
-        "url": "https://www.bigbadtoystore.com/Search?SearchString=teenage+mutant+ninja+turtles"
+        "url": "https://www.bigbadtoystore.com/Search?SearchString=teenage+mutant+ninja+turtles",
+        "icon": "figure"
       },
       {
         "name": "Entertainment Earth",
         "note": "Figures, collectibles and gear",
-        "url": "https://www.entertainmentearth.com/s/teenage-mutant-ninja-turtles/t"
+        "url": "https://www.entertainmentearth.com/s/teenage-mutant-ninja-turtles/t",
+        "icon": "figure"
       }
     ],
     "ideas": [
