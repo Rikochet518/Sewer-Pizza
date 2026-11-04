@@ -45,6 +45,13 @@
       "years": "2024–",
       "episodes": 12,
       "url": ""
+    },
+    {
+      "id": "s2026",
+      "title": "Teeny Mutant Ninja Turtles",
+      "years": "2026– · short episodes for little kids on YouTube",
+      "episodes": 30,
+      "url": "https://www.youtube.com/results?search_query=Teeny+Mutant+Ninja+Turtles"
     }
   ],
   "movies": [
@@ -98,6 +105,12 @@
     }
   ],
   "games": [
+    {
+      "id": "g5",
+      "title": "TMNT: The Last Ronin",
+      "platform": "PS5, Xbox Series X|S and PC · in development, no release date yet",
+      "url": ""
+    },
     {
       "id": "g1",
       "title": "TMNT: Shredder's Revenge",
@@ -160,5 +173,43 @@
         "query": "TMNT collectibles"
       }
     ]
-  }
+  },
+  "comics": [
+    {
+      "id": "c1",
+      "title": "The Last Ronin",
+      "detail": "IDW comic · 5 issues · 2020–2022",
+      "search": "TMNT The Last Ronin comic"
+    },
+    {
+      "id": "c2",
+      "title": "The Last Ronin: The Lost Years",
+      "detail": "IDW comic · 5 issues · 2023",
+      "search": "TMNT The Last Ronin The Lost Years comic"
+    },
+    {
+      "id": "c3",
+      "title": "The Last Ronin II: Re-Evolution",
+      "detail": "Comic · 5 issues · 2024–2025",
+      "search": "TMNT The Last Ronin II Re-Evolution comic"
+    },
+    {
+      "id": "c4",
+      "title": "The Last Ronin: Training Day",
+      "detail": "One-shot prequel comic · July 2026",
+      "search": "TMNT The Last Ronin Training Day comic"
+    },
+    {
+      "id": "c5",
+      "title": "The Last Ronin: A TMNT Novel",
+      "detail": "Novel of the original story · Abrams Books · June 2026",
+      "search": "The Last Ronin A Teenage Mutant Ninja Turtles Novel"
+    },
+    {
+      "id": "c6",
+      "title": "The Last Ronin III",
+      "detail": "Final chapter of the saga · coming in 2027",
+      "search": "TMNT The Last Ronin III comic 2027"
+    }
+  ]
 }
