@@ -187,6 +187,14 @@ p { margin: 0; }
 
 .run-wrap { width: 100%; border-radius: 16px; overflow: hidden; border: 1px solid var(--line); background: var(--bg); }
 .run-canvas { display: block; width: 100%; touch-action: manipulation; -webkit-user-select: none; user-select: none; cursor: pointer; }
+.shop-banner { border-radius: 18px; overflow: hidden; border: 1px solid var(--line); aspect-ratio: 360 / 170; max-width: 100%; }
+.shop-banner svg { display: block; width: 100%; height: 100%; }
+.cat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.cat-tile { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 10px 4px; min-height: 76px; border-radius: 14px; border: 1px solid var(--line); background: var(--surface); font-size: 12px; font-weight: 700; color: var(--fg); }
+.cat-tile:hover { border-color: var(--green); }
+.cat-tile[aria-pressed="true"] { border-color: var(--green); background: #173222; color: var(--green-hi); }
+.cat-ico { width: 40px; height: 40px; border-radius: 20px; display: flex; align-items: center; justify-content: center; }
+.store-badge { width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; color: #EEF2EC; font-weight: 800; font-size: 14px; letter-spacing: 0.3px; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08); }
 .cover { flex-shrink: 0; display: block; border-radius: 8px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset; }
 .row-btns { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
 .sheet-back { position: fixed; inset: 0; z-index: 30; background: rgba(0, 0, 0, 0.6); }
@@ -605,7 +613,7 @@ p { margin: 0; }
     },
 
     shop: function () {
-      var out = head('Shop', 'Official gear at real stores. Every link goes straight to the store.');
+      var out = head('Shop', 'Official gear at real stores. Every link goes straight to the store.') + shopBanner();
       if (loading) return '<div class="stack-lg">' + out + loader() + '</div>';
       if (!D.library) return '<div class="stack-lg">' + out + errorCard() + '</div>';
       var shop = D.library.shop || { retailers: [], categories: [], ideas: [], shops: [] };
@@ -623,7 +631,7 @@ p { margin: 0; }
         var idea = ideas[idx % ideas.length];
         find = '<section class="card" style="background:var(--sauce-bg);border-color:var(--sauce-line)"><div class="sec-head" style="align-items:center"><div class="eyebrow" style="display:flex;align-items:center;gap:8px">' + slice(true, 18, C.sauce) + (ui.findIdx != null ? 'Random find' : 'Find of the day') + '</div>' +
           '<button class="btn btn-ghost btn-sm" data-act="shuffle" aria-label="Show another find">Shuffle</button></div>' +
-          '<h2 style="font-size:20px">' + esc(idea.label) + '</h2>' + (idea.note ? '<p class="muted" style="font-size:14px">' + esc(idea.note) + '</p>' : '') +
+          '<div style="display:flex;gap:14px;align-items:center">' + MYSTERY_BOX + '<div class="stack" style="gap:6px;min-width:0"><h2 style="font-size:20px">' + esc(idea.label) + '</h2>' + (idea.note ? '<p class="muted" style="font-size:14px">' + esc(idea.note) + '</p>' : '') + '</div></div>' +
           '<div class="small muted">Look for it at</div>' + storeChips(idea.query, 4) + '</section>';
       }
 
@@ -646,15 +654,15 @@ p { margin: 0; }
       if (!ui.shopCat && cats.length) ui.shopCat = cats[0].id;
       var cat = cats.filter(function (c) { return c.id === ui.shopCat; })[0];
       var links = cat ? retailers.map(function (r) {
-        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Search for “' + esc(cat.query) + '”</div></div><a class="btn btn-outline btn-sm" href="' + esc(r.search + encodeURIComponent(cat.query)) + '" target="_blank" rel="noopener">Shop</a></div>';
+        return '<div class="trow" style="align-items:center">' + storeBadge(r.name) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Search for “' + esc(cat.query) + '”</div></div><a class="btn btn-outline btn-sm" href="' + esc(r.search + encodeURIComponent(cat.query)) + '" target="_blank" rel="noopener">Shop</a></div>';
       }).join('') : '';
-      var browse = '<section class="stack"><h2>Browse</h2><div class="chips" role="group" aria-label="Categories">' + cats.map(function (c) { return '<button class="chip" data-act="shopcat" data-cat="' + esc(c.id) + '" aria-pressed="' + (c.id === ui.shopCat) + '">' + esc(c.label) + '</button>'; }).join('') + '</div><div class="rows">' + links + '</div></section>';
+      var browse = '<section class="stack"><h2>Browse</h2><div class="cat-grid" role="group" aria-label="Categories">' + cats.map(function (c) { return '<button class="cat-tile" data-act="shopcat" data-cat="' + esc(c.id) + '" aria-pressed="' + (c.id === ui.shopCat) + '"><span class="cat-ico" style="background:' + (CAT_TINT[c.id] || '#26302A') + '">' + catIcon(c.id, 22) + '</span>' + esc(c.label) + '</button>'; }).join('') + '</div><div class="rows">' + links + '</div></section>';
 
       /* TMNT shops: official store pages plus stores you add */
       var shopRows = (shop.shops || []).map(function (s) {
-        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">' + esc(s.note || 'TMNT shop page') + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a></div>';
+        return '<div class="trow" style="align-items:center">' + storeBadge(s.name) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">' + esc(s.note || 'TMNT shop page') + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a></div>';
       }).join('') + S.stores.map(function (s, i) {
-        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">Added by you</div></div><div class="row-btns"><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a><button class="btn btn-ghost btn-sm" data-act="unstore" data-i="' + i + '" aria-label="Remove ' + esc(s.name) + '">Remove</button></div></div>';
+        return '<div class="trow" style="align-items:center">' + storeBadge(s.name) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.name) + '</div><div class="muted small">Added by you</div></div><div class="row-btns"><a class="btn btn-outline btn-sm" href="' + esc(s.url) + '" target="_blank" rel="noopener">Visit</a><button class="btn btn-ghost btn-sm" data-act="unstore" data-i="' + i + '" aria-label="Remove ' + esc(s.name) + '">Remove</button></div></div>';
       }).join('');
       var addStore = ui.addStore
         ? '<form class="wish-form card" id="store-form"><div class="field"><label for="store-name">Store name</label><input id="store-name" name="name" required maxlength="40" placeholder="Your favorite comic shop"></div>' +
@@ -719,9 +727,8 @@ p { margin: 0; }
   };
 
   /* ---------- Sewer Run: an original mini-game starring Slice, the pizza courier ---------- */
-  function sliceMascot(size) {
-    return '<svg width="' + size + '" height="' + Math.round(size * 1.3) + '" viewBox="0 0 40 52" role="img" aria-label="Slice, the Sewer Pizza courier" style="flex-shrink:0">' +
-      '<path d="M3 9L37 9L20 42Z" fill="#F2C46D" stroke="#C9852E" stroke-width="1.5" stroke-linejoin="round"></path>' +
+  function sliceShapes() {
+    return '<path d="M3 9L37 9L20 42Z" fill="#F2C46D" stroke="#C9852E" stroke-width="1.5" stroke-linejoin="round"></path>' +
       '<rect x="1" y="5" width="38" height="7" rx="3.5" fill="#C9852E"></rect>' +
       '<path d="M9 5c0-4 22-4 22 0z" fill="#B5452E"></path><rect x="27" y="3.6" width="9" height="2.4" rx="1.2" fill="#B5452E"></rect>' +
       '<circle cx="15" cy="17" r="3.4" fill="#FFFFFF"></circle><circle cx="25" cy="17" r="3.4" fill="#FFFFFF"></circle>' +
@@ -729,8 +736,73 @@ p { margin: 0; }
       '<path d="M16.5 23c2 1.6 5 1.6 7 0" stroke="#7A3E16" stroke-width="1.4" fill="none" stroke-linecap="round"></path>' +
       '<circle cx="12" cy="12.5" r="1.8" fill="#B5452E"></circle><circle cx="20" cy="30" r="1.8" fill="#B5452E"></circle>' +
       '<path d="M17 37v9M23 37v9" stroke="#EEF2EC" stroke-width="2" stroke-linecap="round"></path>' +
-      '<ellipse cx="15.5" cy="48" rx="4" ry="2.4" fill="#EEF2EC"></ellipse><ellipse cx="24.5" cy="48" rx="4" ry="2.4" fill="#EEF2EC"></ellipse>' +
-      '</svg>';
+      '<ellipse cx="15.5" cy="48" rx="4" ry="2.4" fill="#EEF2EC"></ellipse><ellipse cx="24.5" cy="48" rx="4" ry="2.4" fill="#EEF2EC"></ellipse>';
+  }
+  function sliceMascot(size) {
+    return '<svg width="' + size + '" height="' + Math.round(size * 1.3) + '" viewBox="0 0 40 52" role="img" aria-label="Slice, the Sewer Pizza courier" style="flex-shrink:0">' + sliceShapes() + '</svg>';
+  }
+
+  /* ---------- Shop art: all original drawings ---------- */
+  var CAT_ICON = {
+    figures: '<circle cx="12" cy="5" r="2.5"></circle><path d="M8.5 9.5h7l-1 6h-5zM9.5 15.5l-1 5.5M14.5 15.5l1 5.5M8.5 10l-3 3.5M15.5 10l3-3.5"></path>',
+    clothes: '<path d="M8 3L3 6l2 4 3-1v12h8V9l3 1 2-4-5-3c-1 2-2 3-4 3S9 5 8 3z"></path>',
+    comics: '<path d="M2 5h7a3 3 0 0 1 3 3v12a2 2 0 0 0-2-2H2zM22 5h-7a3 3 0 0 0-3 3v12a2 2 0 0 1 2-2h8z"></path>',
+    collectibles: '<rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M12 7l1.5 3 3.4.5-2.5 2.4.6 3.4L12 14.7l-3 1.6.6-3.4-2.5-2.4 3.4-.5z"></path>',
+    games: '<rect x="2" y="7" width="20" height="11" rx="4"></rect><path d="M7 11v3M5.5 12.5h3M15 12h.01M18 13h.01"></path>',
+    plush: '<circle cx="7" cy="6" r="2.5"></circle><circle cx="17" cy="6" r="2.5"></circle><circle cx="12" cy="12" r="6.5"></circle><circle cx="12" cy="14" r="1.4"></circle><path d="M9.5 10h.01M14.5 10h.01"></path>',
+    costumes: '<path d="M8 3h8l1.5 4L12 9 6.5 7zM6.5 7L4 21h16L17.5 7"></path>'
+  };
+  var CAT_TINT = { figures: '#1F4D4A', clothes: '#6B2E24', comics: '#273E63', collectibles: '#6E5414', games: '#4A2C55', plush: '#5A2F3E', costumes: '#3B5A2E' };
+  function catIcon(id, size) {
+    return '<svg width="' + size + '" height="' + size + '" viewBox="0 0 24 24" fill="none" stroke="#EEF2EC" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' + (CAT_ICON[id] || CAT_ICON.collectibles) + '</svg>';
+  }
+  function storeBadge(name) {
+    var words = name.replace(/[^A-Za-z0-9 ]/g, ' ').split(/\s+/).filter(Boolean);
+    var ini = (words.length > 1 ? words[0].charAt(0) + words[1].charAt(0) : name.replace(/[^A-Za-z0-9]/g, '').slice(0, 2)).toUpperCase();
+    var bg = TILE_BG[hashStr(name) % TILE_BG.length];
+    return '<span class="store-badge" style="background:' + bg + '" aria-hidden="true">' + esc(ini) + '</span>';
+  }
+  var MYSTERY_BOX = '<svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true" style="flex-shrink:0">' +
+    '<ellipse cx="36" cy="64" rx="26" ry="4" fill="#000000" fill-opacity="0.3"></ellipse>' +
+    '<path d="M10 36h52v24H10z" fill="#E9D3A8" stroke="#B88A4A" stroke-width="2" stroke-linejoin="round"></path>' +
+    '<path d="M10 36L18 14h44l-8 22z" fill="#F4E2BC" stroke="#B88A4A" stroke-width="2" stroke-linejoin="round"></path>' +
+    '<path d="M36 18c6-2 10 2 9 6-1 3-5 4-7 6v3" fill="none" stroke="#B5452E" stroke-width="3.2" stroke-linecap="round"></path>' +
+    '<circle cx="37" cy="33" r="0.1" stroke="#B5452E" stroke-width="3.6" stroke-linecap="round"></circle>' +
+    '<path d="M16 44h40M16 50h28" stroke="#B88A4A" stroke-width="1.5" stroke-linecap="round" opacity="0.6"></path>' +
+    '<path d="M60 8l2 4 4 1-4 1-2 4-2-4-4-1 4-1z" fill="#F29A3A"></path><path d="M8 20l1.2 2.4 2.4.8-2.4.8L8 26.4 6.8 24l-2.4-.8 2.4-.8z" fill="#5BD27A"></path>' +
+    '</svg>';
+  function shopBanner() {
+    var bricks = '';
+    for (var y = 0, r = 0; y < 136; y += 14, r++) {
+      bricks += '<path d="M0 ' + (y + 0.5) + 'H360" />';
+      for (var x = (r % 2) * 18; x < 360; x += 36) bricks += '<path d="M' + (x + 0.5) + ' ' + y + 'V' + (y + 14) + '" />';
+    }
+    var stripes = '';
+    for (var i = 0; i < 12; i++) {
+      var sx = i * 30, col = i % 2 ? '#F2E6D0' : '#F29A3A';
+      stripes += '<path d="M' + sx + ' 8h30v22a15 15 0 0 1-30 0z" fill="' + col + '"></path>';
+    }
+    var boxes = [['#6B2E24', 30, 82, 22, 30], ['#273E63', 56, 88, 18, 24], ['#6E5414', 78, 76, 26, 36], ['#4A2C55', 108, 86, 20, 26], ['#1F4D4A', 132, 80, 24, 32], ['#5A2F3E', 160, 90, 18, 22], ['#3B5A2E', 182, 82, 22, 30]]
+      .map(function (bx) { return '<rect x="' + bx[1] + '" y="' + bx[2] + '" width="' + bx[3] + '" height="' + bx[4] + '" rx="2" fill="' + bx[0] + '"></rect><rect x="' + (bx[1] + 4) + '" y="' + (bx[2] + 5) + '" width="' + (bx[3] - 8) + '" height="' + Math.round(bx[4] * 0.45) + '" rx="1.5" fill="#FFFFFF" fill-opacity="0.18"></rect>'; }).join('');
+    return '<div class="shop-banner"><svg viewBox="0 0 360 170" preserveAspectRatio="xMidYMid slice" role="img" aria-label="The Sewer Pizza shop at night: a striped awning, a window full of toy boxes, a glowing sign, and Slice carrying a shopping bag">' +
+      '<defs><filter id="neon" x="-30%" y="-60%" width="160%" height="220%"><feGaussianBlur stdDeviation="2.4" result="b"></feGaussianBlur><feMerge><feMergeNode in="b"></feMergeNode><feMergeNode in="SourceGraphic"></feMergeNode></feMerge></filter>' +
+      '<radialGradient id="glow" cx="0.5" cy="0.4" r="0.7"><stop offset="0" stop-color="#5BD27A" stop-opacity="0.28"></stop><stop offset="1" stop-color="#5BD27A" stop-opacity="0"></stop></radialGradient></defs>' +
+      '<rect width="360" height="170" fill="#141A16"></rect>' +
+      '<g stroke="#FFFFFF" stroke-opacity="0.06" stroke-width="1">' + bricks + '</g>' +
+      '<rect x="18" y="54" width="196" height="84" rx="6" fill="#1C3830" stroke="#2E3832" stroke-width="3"></rect>' +
+      '<rect x="18" y="54" width="196" height="84" rx="6" fill="url(#glow)"></rect>' +
+      '<path d="M24 112H208" stroke="#2E3832" stroke-width="3"></path>' + boxes +
+      '<path d="M190 104l14-2 4 10-14 2z" fill="#E9D3A8"></path>' +
+      '<path d="M22 60l40 0M22 66l24 0" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="3" stroke-linecap="round"></path>' +
+      '<rect x="0" y="0" width="360" height="10" fill="#26302A"></rect>' + stripes +
+      '<rect x="230" y="56" width="114" height="38" rx="8" fill="#101412" stroke="#5BD27A" stroke-width="2" filter="url(#neon)"></rect>' +
+      '<text x="287" y="82" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="19" fill="#8BE6A2" filter="url(#neon)" letter-spacing="1">THE SHOP</text>' +
+      '<circle cx="241" cy="104" r="4" fill="#F29A3A" filter="url(#neon)"></circle><text x="251" y="108" font-family="Archivo, Arial, sans-serif" font-weight="700" font-size="11" fill="#F29A3A">OPEN</text>' +
+      '<rect x="0" y="138" width="360" height="32" fill="#26302A"></rect><path d="M0 138.5H360" stroke="#3A443E" stroke-width="2"></path>' +
+      '<ellipse cx="96" cy="154" rx="30" ry="7" fill="#1A201C" stroke="#3A443E" stroke-width="2"></ellipse><path d="M72 154h48M80 150h32M80 158h32" stroke="#3A443E" stroke-width="1.2"></path>' +
+      '<g transform="translate(282 88) scale(1.15)">' + sliceShapes() + '</g>' +
+      '<g transform="translate(318 116)"><path d="M3 6c0-6 12-6 12 0" fill="none" stroke="#EEF2EC" stroke-width="2"></path><rect x="0" y="6" width="18" height="20" rx="2" fill="#F29A3A"></rect><path d="M5 14c2 1.5 6 1.5 8 0" stroke="#101412" stroke-width="1.6" fill="none" stroke-linecap="round"></path></g>' +
+      '</svg></div>';
   }
 
   VIEWS.run = function () {
