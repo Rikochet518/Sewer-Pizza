@@ -28,7 +28,8 @@
           "service": "paramount",
           "url": "https://www.paramountplus.com/shows/teenage-mutant-ninja-turtles-1987/"
         }
-      ]
+      ],
+      "scene": "tv"
     },
     {
       "id": "s2003",
@@ -47,7 +48,8 @@
           "service": "apple",
           "url": "https://tv.apple.com/us/show/teenage-mutant-ninja-turtles-2003/umc.cmc.38psbylg5x0twomuhi9c0otds"
         }
-      ]
+      ],
+      "scene": "lair"
     },
     {
       "id": "s2012",
@@ -74,7 +76,8 @@
           "service": "prime",
           "url": "https://www.amazon.com/Teenage-Mutant-Ninja-Turtles-Season/dp/B0CJRGLDWT"
         }
-      ]
+      ],
+      "scene": "neon"
     },
     {
       "id": "s2018",
@@ -97,7 +100,8 @@
           "service": "apple",
           "url": "https://tv.apple.com/us/show/rise-of-the-teenage-mutant-ninja-turtles/umc.cmc.1agp84dscwyoiijs5rqcdjyhh"
         }
-      ]
+      ],
+      "scene": "comic"
     },
     {
       "id": "s2024",
@@ -118,14 +122,16 @@
           "service": "apple",
           "url": "https://tv.apple.com/us/show/tales-of-the-teenage-mutant-ninja-turtles/umc.cmc.2j4n3bp71iwifdk5qfl3uglnp"
         }
-      ]
+      ],
+      "scene": "portal"
     },
     {
       "id": "s2026",
       "title": "Teeny Mutant Ninja Turtles",
       "years": "2026– · short episodes for little kids on YouTube",
       "episodes": 30,
-      "url": "https://www.youtube.com/results?search_query=Teeny+Mutant+Ninja+Turtles"
+      "url": "https://www.youtube.com/results?search_query=Teeny+Mutant+Ninja+Turtles",
+      "scene": "blocks"
     }
   ],
   "movies": [
@@ -139,19 +145,22 @@
           "service": "prime",
           "url": "https://www.amazon.com/Teenage-Mutant-Ninja-Turtles-Koteas/dp/B001T5BZAO"
         }
-      ]
+      ],
+      "scene": "film"
     },
     {
       "id": "m1991",
       "title": "TMNT II: The Secret of the Ooze",
       "year": 1991,
-      "url": ""
+      "url": "",
+      "scene": "city"
     },
     {
       "id": "m1993",
       "title": "Teenage Mutant Ninja Turtles III",
       "year": 1993,
-      "url": ""
+      "url": "",
+      "scene": "film"
     },
     {
       "id": "m2007",
@@ -167,7 +176,8 @@
           "service": "prime",
           "url": "https://www.amazon.com/TMNT-Chris-Evans/dp/B000UUF69A"
         }
-      ]
+      ],
+      "scene": "neon"
     },
     {
       "id": "m2014",
@@ -179,7 +189,8 @@
           "service": "pluto",
           "url": "https://pluto.tv/us/on-demand/movies/5c65cd8701d5a2826c1945da"
         }
-      ]
+      ],
+      "scene": "city"
     },
     {
       "id": "m2016",
@@ -201,7 +212,8 @@
           "service": "paramount",
           "url": "https://www.paramountplus.com/movies/video/NX7LTAMBM9GBHmRtWW9gQdr2TTBLY04D/"
         }
-      ]
+      ],
+      "scene": "portal"
     },
     {
       "id": "m2022",
@@ -213,7 +225,8 @@
           "service": "apple",
           "url": "https://tv.apple.com/us/movie/rise-of-the-teenage-mutant-ninja-turtles-the-movie/umc.cmc.ehw11wf1ylkkvgihrewsa8wg"
         }
-      ]
+      ],
+      "scene": "comic"
     },
     {
       "id": "m2023",
@@ -239,7 +252,8 @@
           "service": "apple",
           "url": "https://tv.apple.com/us/movie/teenage-mutant-ninja-turtles-mutant-mayhem/umc.cmc.6eou7u8mro9ke2eowub9nie12"
         }
-      ]
+      ],
+      "scene": "graffiti"
     }
   ],
   "games": [
@@ -251,7 +265,8 @@
       "free": {
         "label": "Free on phones with a Netflix membership",
         "url": "https://www.netflix.com/games/81623532"
-      }
+      },
+      "scene": "pixel"
     },
     {
       "id": "g6",
@@ -262,7 +277,8 @@
         "label": "Free to play in your browser",
         "url": "https://www.nick.com/games/maawus/rise-of-the-teenage-mutant-ninja-turtles-pizza-quest",
         "only": true
-      }
+      },
+      "scene": "browser"
     },
     {
       "id": "g7",
@@ -273,31 +289,36 @@
         "label": "Free to play, with in-app purchases",
         "url": "https://play.google.com/store/apps/details?id=com.ludia.tmnt&hl=en_US",
         "only": true
-      }
+      },
+      "scene": "cards"
     },
     {
       "id": "g5",
       "title": "TMNT: The Last Ronin",
       "platform": "PS5, Xbox Series X|S and PC · in development, no release date yet",
-      "url": ""
+      "url": "",
+      "scene": "snow"
     },
     {
       "id": "g2",
       "title": "TMNT: The Cowabunga Collection",
       "platform": "Console and PC",
-      "url": ""
+      "url": "",
+      "scene": "arcade"
     },
     {
       "id": "g3",
       "title": "TMNT: Mutants Unleashed",
       "platform": "Console and PC",
-      "url": ""
+      "url": "",
+      "scene": "lair"
     },
     {
       "id": "g4",
       "title": "TMNT Arcade: Wrath of the Mutants",
       "platform": "Console and PC",
-      "url": ""
+      "url": "",
+      "scene": "arcade"
     }
   ],
   "shop": {

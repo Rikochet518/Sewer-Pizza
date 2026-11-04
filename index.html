@@ -301,19 +301,121 @@ p { margin: 0; }
     var words = part.replace(/[^A-Za-z0-9' ]/g, ' ').split(/\s+/).filter(function (w) { return w && !/^(of|the|and|a)$/i.test(w); });
     return words.slice(0, 2).map(function (w) { return w.charAt(0).toUpperCase(); }).join('') || 'GO';
   }
+  /* Original scene art for title tiles (60x80 canvas). Settings and moods only: no characters, logos or poster designs. */
+  function dots(list, r, fill, op) { return list.map(function (d) { return '<circle cx="' + d[0] + '" cy="' + d[1] + '" r="' + r + '" fill="' + fill + '" fill-opacity="' + op + '"></circle>'; }).join(''); }
+  function rects(list, fill, op) { return list.map(function (d) { return '<rect x="' + d[0] + '" y="' + d[1] + '" width="' + d[2] + '" height="' + d[3] + '" fill="' + fill + '" fill-opacity="' + op + '"></rect>'; }).join(''); }
+  var DARK = '#0B0F0D';
+  var SCENES = {
+    city: function () {
+      return dots([[8, 8], [20, 14], [32, 6], [54, 26], [12, 24]], 0.7, '#EEF2EC', 0.7) +
+        '<circle cx="45" cy="15" r="6" fill="#F2E6D0" fill-opacity="0.85"></circle>' +
+        '<path d="M0 66V44h8v-6h8v10h6V34h10v12h6v-8h8v14h6v-6h8v28z" fill="' + DARK + '" fill-opacity="0.85"></path>' +
+        rects([[3, 48, 2, 2], [11, 42, 2, 2], [25, 38, 2, 2], [29, 44, 2, 2], [41, 42, 2, 2], [49, 50, 2, 2]], '#F29A3A', 0.8);
+    },
+    tv: function () {
+      var lines = ''; for (var y = 20; y < 42; y += 2) lines += 'M13 ' + y + 'H41';
+      return '<path d="M24 14l-6-8M36 14l6-8" stroke="#C9852E" stroke-width="1.5" stroke-linecap="round"></path>' +
+        '<rect x="9" y="14" width="42" height="32" rx="5" fill="#2A2116" stroke="#C9852E" stroke-width="1.5"></rect>' +
+        '<rect x="13" y="18" width="28" height="24" rx="3" fill="#8BE6A2" fill-opacity="0.35"></rect>' +
+        '<path d="' + lines + '" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="0.8"></path>' +
+        '<circle cx="46" cy="24" r="2" fill="#F29A3A"></circle><circle cx="46" cy="32" r="2" fill="#F29A3A"></circle>' +
+        '<path d="M16 46l-3 7M44 46l3 7" stroke="#C9852E" stroke-width="1.5" stroke-linecap="round"></path>';
+    },
+    neon: function () {
+      return '<rect x="4" y="26" width="16" height="34" fill="' + DARK + '" stroke="#5BD27A" stroke-width="1"></rect>' +
+        '<rect x="22" y="14" width="16" height="46" fill="' + DARK + '" stroke="#F29A3A" stroke-width="1"></rect>' +
+        '<rect x="40" y="30" width="16" height="30" fill="' + DARK + '" stroke="#E86AA8" stroke-width="1"></rect>' +
+        '<rect x="25" y="20" width="10" height="4" rx="1" fill="#F29A3A"></rect><rect x="7" y="32" width="10" height="3" rx="1" fill="#5BD27A"></rect><rect x="43" y="36" width="10" height="3" rx="1" fill="#E86AA8"></rect>' +
+        rects([[8, 40, 2, 2], [14, 46, 2, 2], [27, 30, 2, 2], [31, 38, 2, 2], [45, 44, 2, 2]], '#EEF2EC', 0.5);
+    },
+    portal: function () {
+      return '<circle cx="30" cy="28" r="20" fill="none" stroke="#8BE6A2" stroke-opacity="0.25" stroke-width="3"></circle>' +
+        '<circle cx="30" cy="28" r="14" fill="none" stroke="#5BD27A" stroke-opacity="0.55" stroke-width="3"></circle>' +
+        '<circle cx="30" cy="28" r="8" fill="#8BE6A2" fill-opacity="0.35" stroke="#EEF2EC" stroke-opacity="0.7" stroke-width="2"></circle>' +
+        '<path d="M8 10l2 2M50 46l2 2M52 8l-2 2M6 42l3-1" stroke="#EEF2EC" stroke-opacity="0.6" stroke-width="1.2" stroke-linecap="round"></path>' +
+        '<path d="M0 60V52h10v-4h8v6h10v-8h8v8h10v-4h14v10z" fill="' + DARK + '" fill-opacity="0.85"></path>';
+    },
+    snow: function () {
+      return '<rect width="60" height="80" fill="#FFFFFF" fill-opacity="0.08"></rect>' +
+        '<path d="M0 60V40l6 2V30l5 4 3-8 4 6V22l6 10 2-6 5 8V28l6 6 4-10 3 4v12l6 4v20z" fill="' + DARK + '" fill-opacity="0.8"></path>' +
+        '<rect x="0" y="54" width="60" height="6" fill="#EEF2EC" fill-opacity="0.55"></rect>' +
+        dots([[6, 8], [14, 18], [22, 6], [30, 14], [40, 8], [50, 18], [56, 6], [10, 30], [46, 28], [36, 22], [26, 26], [54, 40]], 1, '#FFFFFF', 0.85);
+    },
+    arcade: function () {
+      return '<path d="M18 8h24l2 10-2 4v38H18V22l-2-4z" fill="#1A201C" stroke="#F29A3A" stroke-width="1.2"></path>' +
+        '<rect x="18" y="8" width="24" height="7" fill="#F29A3A"></rect>' +
+        '<rect x="21" y="23" width="18" height="14" rx="1.5" fill="#5BD27A" fill-opacity="0.5"></rect>' +
+        rects([[24, 28, 2, 2], [30, 32, 3, 2], [35, 27, 2, 2]], '#EEF2EC', 0.8) +
+        '<path d="M24 46v-4" stroke="#EEF2EC" stroke-width="1.4" stroke-linecap="round"></path><circle cx="24" cy="41" r="1.6" fill="#E86AA8"></circle>' +
+        '<circle cx="32" cy="45" r="1.6" fill="#F29A3A"></circle><circle cx="37" cy="44" r="1.6" fill="#5BD27A"></circle>';
+    },
+    pixel: function () {
+      return '<path d="M0 64V44h8v-8h8v12h4V32h12v16h4v-8h8v12h8v-4h8v24z" fill="' + DARK + '" fill-opacity="0.85"></path>' +
+        rects([[44, 8, 8, 4], [42, 12, 12, 4], [44, 16, 8, 4]], '#F2E6D0', 0.85) +
+        rects([[2, 48, 2, 2], [10, 40, 2, 2], [24, 36, 2, 2], [28, 42, 2, 2], [40, 46, 2, 2], [50, 50, 2, 2]], '#F29A3A', 0.85) +
+        rects([[6, 10, 2, 2], [18, 6, 2, 2], [30, 14, 2, 2]], '#EEF2EC', 0.7);
+    },
+    lair: function () {
+      return '<path d="M0 80V30Q30 2 60 30V80z" fill="' + DARK + '" fill-opacity="0.6"></path>' +
+        '<path d="M10 80V38Q30 16 50 38V80z" fill="' + DARK + '" fill-opacity="0.55"></path>' +
+        '<circle cx="30" cy="40" r="9" fill="#F29A3A" fill-opacity="0.3"></circle><circle cx="30" cy="40" r="3" fill="#F29A3A" fill-opacity="0.8"></circle>' +
+        '<rect x="0" y="52" width="60" height="28" fill="#1C3830"></rect>' +
+        '<path d="M6 55h10M24 56h8M40 55h12" stroke="#8BE6A2" stroke-opacity="0.45" stroke-width="1" stroke-linecap="round"></path>';
+    },
+    browser: function () {
+      return '<rect x="6" y="12" width="48" height="40" rx="4" fill="#EEF2EC" fill-opacity="0.92"></rect>' +
+        '<path d="M10 12h40a4 4 0 0 1 4 4v3H6v-3a4 4 0 0 1 4-4z" fill="#3A443E"></path>' +
+        '<circle cx="11" cy="15.5" r="1.2" fill="#E8735A"></circle><circle cx="15" cy="15.5" r="1.2" fill="#F29A3A"></circle><circle cx="19" cy="15.5" r="1.2" fill="#5BD27A"></circle>' +
+        '<path d="M19 26c7-3 15-3 22 0L30 47z" fill="#F2C46D" stroke="#C9852E" stroke-width="1.2" stroke-linejoin="round"></path>' +
+        '<circle cx="27" cy="30" r="1.8" fill="#B5452E"></circle><circle cx="33" cy="33" r="1.8" fill="#B5452E"></circle><circle cx="30" cy="39" r="1.5" fill="#B5452E"></circle>';
+    },
+    blocks: function () {
+      return '<rect x="9" y="36" width="18" height="18" rx="2" fill="#F29A3A"></rect><rect x="31" y="36" width="18" height="18" rx="2" fill="#5BD27A"></rect><rect x="20" y="16" width="18" height="18" rx="2" fill="#7FA7E0"></rect>' +
+        '<circle cx="18" cy="45" r="4.5" fill="#FFFFFF" fill-opacity="0.85"></circle>' +
+        '<path d="M40 40l5 9h-10z" fill="#FFFFFF" fill-opacity="0.85"></path>' +
+        '<path d="M29 20l1.8 3.6 4 .6-2.9 2.8.7 4L29 29.1 25.4 31l.7-4-2.9-2.8 4-.6z" fill="#FFFFFF" fill-opacity="0.85"></path>';
+    },
+    film: function () {
+      var holes = [[30, 18], [39, 24], [36, 35], [24, 35], [21, 24]].map(function (h) { return '<circle cx="' + h[0] + '" cy="' + h[1] + '" r="3.6" fill="' + DARK + '"></circle>'; }).join('');
+      return '<circle cx="30" cy="27" r="17" fill="#1A201C" stroke="#EEF2EC" stroke-opacity="0.6" stroke-width="2"></circle>' + holes +
+        '<circle cx="30" cy="27" r="2.4" fill="#EEF2EC" fill-opacity="0.7"></circle>' +
+        '<rect x="0" y="48" width="60" height="10" fill="' + DARK + '" fill-opacity="0.85"></rect>' +
+        rects([[3, 50, 3, 2], [11, 50, 3, 2], [19, 50, 3, 2], [27, 50, 3, 2], [35, 50, 3, 2], [43, 50, 3, 2], [51, 50, 3, 2], [3, 54, 3, 2], [11, 54, 3, 2], [19, 54, 3, 2], [27, 54, 3, 2], [35, 54, 3, 2], [43, 54, 3, 2], [51, 54, 3, 2]], '#EEF2EC', 0.55);
+    },
+    comic: function () {
+      var ht = []; for (var y = 4; y < 58; y += 6) for (var x = 4 + (y % 12 ? 3 : 0); x < 60; x += 6) ht.push([x, y]);
+      return dots(ht, 1.3, '#FFFFFF', 0.12) +
+        '<path d="M30 10l4 9 9-4-3 9 10 3-9 5 5 9-10-2-2 10-5-8-6 7-1-10-10 1 6-8-8-6 10-2-3-10 9 5z" fill="#F29A3A" stroke="' + DARK + '" stroke-width="1.2" stroke-linejoin="round"></path>' +
+        '<text x="30" y="33" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="9" fill="' + DARK + '">POW</text>';
+    },
+    graffiti: function () {
+      var b = ''; for (var y = 6; y < 58; y += 8) { b += 'M0 ' + y + 'H60'; for (var x = (y % 16 ? 0 : 8); x < 60; x += 16) b += 'M' + x + ' ' + y + 'V' + (y + 8); }
+      return '<path d="' + b + '" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="0.8"></path>' +
+        '<path d="M8 30c6-10 14 8 20-2s12 6 18-4" fill="none" stroke="#5BD27A" stroke-width="4" stroke-linecap="round"></path>' +
+        '<path d="M12 44c8-6 12 4 20-2" fill="none" stroke="#F29A3A" stroke-width="3.4" stroke-linecap="round"></path>' +
+        '<circle cx="46" cy="40" r="5" fill="none" stroke="#E86AA8" stroke-width="3"></circle>' +
+        '<path d="M20 31v8M44 26v6M30 46v6" stroke="#5BD27A" stroke-width="1.4" stroke-linecap="round" opacity="0.8"></path>';
+    },
+    cards: function () {
+      return '<rect x="12" y="16" width="22" height="32" rx="3" fill="#EEF2EC" fill-opacity="0.55" transform="rotate(-14 23 32)"></rect>' +
+        '<rect x="26" y="16" width="22" height="32" rx="3" fill="#EEF2EC" fill-opacity="0.7" transform="rotate(12 37 32)"></rect>' +
+        '<rect x="19" y="12" width="22" height="34" rx="3" fill="#F2E6D0" stroke="#C9852E" stroke-width="1.2"></rect>' +
+        '<path d="M30 20l2.4 4.8 5.3.8-3.8 3.7.9 5.3L30 32.1l-4.8 2.5.9-5.3-3.8-3.7 5.3-.8z" fill="#F29A3A"></path>';
+    }
+  };
+  var SCENE_BG = { snow: '#3A4A60', browser: '#273E63', blocks: '#2C3A4F', lair: '#22332B' };
   function cover(item, kind, w) {
     var h = Math.round(w * 4 / 3);
-    var bg = TILE_BG[hashStr(item.id || item.title) % TILE_BG.length];
+    var scene = item.scene || (kind === 'game' ? 'arcade' : kind === 'series' ? 'tv' : 'city');
+    var bg = SCENE_BG[scene] || TILE_BG[hashStr(item.id || item.title) % TILE_BG.length];
     var big = kind === 'game' ? initials(item.title) : String(kind === 'series' ? String(item.years || '').slice(0, 4) : (item.year || ''));
-    var size = big.length > 2 ? 17 : 22;
+    var size = big.length > 2 ? 14 : 16;
     return '<svg class="cover" width="' + w + '" height="' + h + '" viewBox="0 0 60 80" role="img" aria-label="' + esc(kind + ' tile: ' + item.title) + '">' +
-      '<rect width="60" height="80" fill="' + bg + '"></rect>' +
-      '<circle cx="52" cy="10" r="20" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="2"></circle>' +
-      '<circle cx="52" cy="10" r="13" fill="none" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1.5"></circle>' +
-      '<path d="M0 66H60M0 73H60M10 66V73M30 66V73M50 66V73M20 73V80M40 73V80" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1" fill="none"></path>' +
-      '<g transform="translate(6 7) scale(0.5)" fill="none" stroke="#EEF2EC" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + TILE_ICON[kind] + '</g>' +
-      '<text x="6" y="52" fill="#EEF2EC" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="' + size + '" letter-spacing="-0.5">' + esc(big) + '</text>' +
-      '<path d="M44 68c3-1.5 7-1.5 10 0L49 78z" fill="#F29A3A"></path>' +
+      '<rect width="60" height="80" fill="' + bg + '"></rect>' + (SCENES[scene] || SCENES.city)() +
+      '<rect y="60" width="60" height="20" fill="#000000" fill-opacity="0.5"></rect>' +
+      '<circle cx="9.5" cy="9.5" r="7" fill="#000000" fill-opacity="0.45"></circle>' +
+      '<g transform="translate(4.5 4.5) scale(0.42)" fill="none" stroke="#EEF2EC" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">' + TILE_ICON[kind] + '</g>' +
+      '<text x="6" y="75" fill="#EEF2EC" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="' + size + '" letter-spacing="-0.3">' + esc(big) + '</text>' +
       '</svg>';
   }
   function watchButtons(id) {
