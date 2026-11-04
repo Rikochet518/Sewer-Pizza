@@ -7,7 +7,39 @@
       "repo": "Rikochet518/Sewer-Pizza",
       "repoId": "R_kgDOVioNPQ",
       "category": "Announcements",
-      "categoryId": "DIC_kwDOVioNPc4DKY34"
+      "categoryId": "DIC_kwDOVioNPc4DKY34",
+      "elsewhere": [
+        {
+          "name": "Teenage Mutant Ninja Turtles",
+          "note": "Big TMNT page on Facebook",
+          "url": "https://www.facebook.com/teenagemutantninjaturtles/"
+        },
+        {
+          "name": "Teenage Mutant Ninja Turtles Collector",
+          "note": "Collecting news and finds",
+          "url": "https://www.facebook.com/NickTMNT/"
+        },
+        {
+          "name": "TMNT Multiverse Fans Group",
+          "note": "Fans of every series and comic",
+          "url": "https://www.facebook.com/Teenage.Mutant.Ninja.Turtles.Multiverse.Fans/"
+        },
+        {
+          "name": "Teenage Mutant Ninja Turtles Fans Forever",
+          "note": "Fan community",
+          "url": "https://www.facebook.com/TMNTFansForever/"
+        },
+        {
+          "name": "Teenage Mutant Ninja Turtles Fan Club",
+          "note": "Fan club page",
+          "url": "https://www.facebook.com/Teenage-Mutant-Ninja-Turtles-Fan-Club-1512088199008986/"
+        },
+        {
+          "name": "TeenageMutantNinjaTurtles.com fan page",
+          "note": "Fan news and posts",
+          "url": "https://www.facebook.com/TMNTfanpage/"
+        }
+      ]
     }
   },
   "releases": [
