@@ -489,7 +489,7 @@ p { margin: 0; }
   /* ---------- content ---------- */
   var D = { library: null, trivia: [], news: null, videos: null, sources: null };
   var loading = true, loadError = false;
-  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null, findIdx: null, addStore: false };
+  var ui = { newsCat: 'All', shopCat: null, mode: 'both', rot: 0, spinning: false, pick: null, feedback: null, resetAsk: false, qr: false, playing: false, sheet: null, findIdx: null, addStore: false, findQuery: '' };
 
   function getJSON(p) { return fetch(p, { cache: 'no-store' }).then(function (r) { if (!r.ok) throw new Error(p); return r.json(); }); }
   function loadData() {
@@ -782,14 +782,14 @@ p { margin: 0; }
         return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(c.title) + '</div><div class="muted small">' + esc(c.detail) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(c.url || search(c.search || c.title)) + '" target="_blank" rel="noopener">Find it</a></div>';
       }).join('');
       var wish = S.wishlist.length ? S.wishlist.map(function (w, i) {
-        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(w.name) + '</div>' + (w.url ? '<a class="link" href="' + esc(w.url) + '" target="_blank" rel="noopener">Open link</a>' : '<span class="muted small">No link saved</span>') + '</div><button class="btn btn-ghost btn-sm" data-act="unwish" data-i="' + i + '" aria-label="Remove ' + esc(w.name) + ' from wishlist">Remove</button></div>';
+        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(w.name) + '</div>' + (w.url ? '<a class="link" href="' + esc(w.url) + '" target="_blank" rel="noopener">Open saved link</a>' : '<span class="muted small">Saved find</span>') + '</div><div class="row-btns"><button class="btn btn-outline btn-sm" data-act="findwish" data-i="' + i + '">Find it</button><button class="btn btn-ghost btn-sm" data-act="unwish" data-i="' + i + '" aria-label="Remove ' + esc(w.name) + ' from wishlist">Remove</button></div></div>';
       }).join('') : '<p class="muted">Nothing saved yet. Add something you\'re hunting for below.</p>';
       return '<div class="stack-lg">' + out + find + fresh + picked + browse + shops +
         (comics ? '<section class="stack"><div class="sec-head"><h2>Comics &amp; books</h2><span class="muted small">The Last Ronin saga</span></div><div class="rows">' + comics + '</div></section>' : '') +
         '<section class="stack"><div class="sec-head"><h2 style="display:flex;align-items:center;gap:8px">' + ICON.heart + 'My wishlist</h2><span class="muted small">' + S.wishlist.length + ' saved</span></div><div class="rows">' + wish + '</div>' +
-        '<form class="wish-form card" id="wish-form"><div class="field"><label for="wish-name">Item</label><input id="wish-name" name="name" required maxlength="80" placeholder="What are you looking for?"></div>' +
-        '<div class="field"><label for="wish-url">Store link (optional)</label><input id="wish-url" name="url" type="url" inputmode="url" placeholder="https://"></div>' +
-        '<button class="btn btn-primary" type="submit">Add to wishlist</button><p class="muted small">Your wishlist is saved on this device only.</p></form></section></div>';
+        '<form class="wish-form card" id="wish-form" role="search"><div class="field"><label for="wish-name">Find something</label><input id="wish-name" name="name" type="search" enterkeyhint="search" required maxlength="80" placeholder="Like “Last Ronin figure” or “retro hoodie”" value="' + esc(ui.findQuery || '') + '"></div>' +
+        '<div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" type="submit" style="flex:1">Search</button><button class="btn btn-ghost" type="button" data-act="savewish">Save to wishlist</button></div>' +
+        '<p class="muted small">Search checks every store in the app. Saved finds stay on this device only.</p></form>' + findResults() + '</section></div>';
     },
 
     picker: function () {
@@ -847,6 +847,23 @@ p { margin: 0; }
   }
   function sliceMascot(size) {
     return '<svg width="' + size + '" height="' + Math.round(size * 1.3) + '" viewBox="0 0 40 52" role="img" aria-label="Slice, the Sewer Pizza courier" style="flex-shrink:0">' + sliceShapes() + '</svg>';
+  }
+
+  function findTerm(q) { return /tmnt|turtle|ninja/i.test(q) ? q : 'TMNT ' + q; }
+  function findResults() {
+    var q = ui.findQuery; if (!q || !D.library) return '';
+    var term = findTerm(q), shop = D.library.shop || {};
+    var rows = (shop.retailers || []).map(function (r) {
+      return '<div class="trow" style="align-items:center">' + storeBadge(r.name, r.icon) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(r.name) + '</div><div class="muted small">Results for “' + esc(term) + '”</div></div>' +
+        '<a class="btn btn-primary btn-sm" href="' + esc(r.search + encodeURIComponent(term)) + '" target="_blank" rel="noopener">See results</a></div>';
+    }).join('');
+    var saved = S.wishlist.some(function (w) { return w.name.toLowerCase() === q.toLowerCase(); });
+    return '<section class="card" id="find-results" aria-live="polite"><div class="sec-head" style="align-items:center"><div><div class="eyebrow">Search results</div><h2 style="font-size:18px">' + esc(q) + '</h2></div>' +
+      '<button class="btn btn-ghost btn-sm" data-act="clearfind" aria-label="Close search results">Close</button></div>' +
+      '<p class="muted" style="font-size:14px">Tap a store to see what it has. Results open on the store’s own site.</p>' +
+      '<div class="rows">' + rows + '</div>' +
+      '<div class="trow" style="align-items:center"><span class="store-badge" style="background:#26302A" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#EEF2EC" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></span><div class="trow-main" style="flex:1"><div class="trow-title">Whole web</div><div class="muted small">Compare prices everywhere</div></div><a class="btn btn-outline btn-sm" href="' + esc('https://www.google.com/search?tbm=shop&q=' + encodeURIComponent(term)) + '" target="_blank" rel="noopener">See results</a></div>' +
+      (saved ? '<p class="small" style="color:var(--green);font-weight:600">On your wishlist</p>' : '<button class="btn btn-ghost" data-act="savewish">Save “' + esc(q) + '” to wishlist</button>') + '</section>';
   }
 
   /* ---------- Shop art: all original drawings ---------- */
@@ -1375,6 +1392,10 @@ p { margin: 0; }
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && ui.sheet) closeSheet(); });
   window.addEventListener('hashchange', function () { ui.feedback = null; ui.resetAsk = false; ui.playing = false; ui.sheet = null; render(); window.scrollTo(0, 0); });
 
+  function showFind() {
+    var r = document.getElementById('find-results');
+    if (r) r.scrollIntoView({ behavior: window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+  }
   function drawQR() {
     var el = document.getElementById('qr'); if (!el) return;
     if (window.QRCode) {
@@ -1460,6 +1481,15 @@ p { margin: 0; }
     closesheet: function () { closeSheet(); },
     runtap: function () { runTap(); },
     droptap: function () { dropTap(); },
+    savewish: function () {
+      var input = document.getElementById('wish-name');
+      var name = ((input && input.value) || ui.findQuery || '').trim().slice(0, 80);
+      if (!name) { if (input) input.focus(); toast('Type what you are looking for first'); return; }
+      if (!S.wishlist.some(function (w) { return w.name.toLowerCase() === name.toLowerCase(); })) S.wishlist.push({ name: name, url: '' });
+      ui.findQuery = ui.findQuery || name; save(); render(); toast('Saved to wishlist');
+    },
+    findwish: function (el) { var w = S.wishlist[+el.getAttribute('data-i')]; if (!w) return; ui.findQuery = w.name; render(); showFind(); },
+    clearfind: function () { ui.findQuery = ''; render(); },
     shuffle: function () {
       var n = ((D.library && D.library.shop && D.library.shop.ideas) || []).length; if (!n) return;
       var cur = ui.findIdx != null ? ui.findIdx : hashStr(today()) % n, next = cur;
@@ -1494,10 +1524,11 @@ p { margin: 0; }
     }
     if (e.target.id !== 'wish-form') return;
     e.preventDefault();
-    var name = e.target.elements.name.value.trim(), url = e.target.elements.url.value.trim();
+    var name = e.target.elements.name.value.trim();
     if (!name) return;
-    if (url && !/^https?:\/\//i.test(url)) url = 'https://' + url;
-    S.wishlist.push({ name: name.slice(0, 80), url: url }); save(); render(); toast('Added to wishlist');
+    ui.findQuery = name.slice(0, 80);
+    if (document.activeElement) document.activeElement.blur();
+    render(); showFind();
   });
 
   /* ---------- start ---------- */
