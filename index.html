@@ -185,6 +185,7 @@ p { margin: 0; }
 .tab:hover { color: var(--fg); }
 .tab[aria-current="page"] { color: var(--green); }
 
+.cover { flex-shrink: 0; display: block; border-radius: 8px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset; }
 .row-btns { display: flex; flex-direction: column; gap: 6px; flex-shrink: 0; }
 .sheet-back { position: fixed; inset: 0; z-index: 30; background: rgba(0, 0, 0, 0.6); }
 .sheet { position: fixed; left: 0; right: 0; bottom: 0; z-index: 31; background: var(--surface); border-top: 1px solid var(--line); border-radius: 20px 20px 0 0; max-height: 82vh; overflow-y: auto;
@@ -276,6 +277,35 @@ p { margin: 0; }
   }
   function search(q) { return 'https://www.google.com/search?q=' + encodeURIComponent(q); }
   function whereToWatch(item) { return item.url || 'https://www.justwatch.com/us/search?q=' + encodeURIComponent(item.title); }
+  /* Original cover tiles: a color chosen from the title, the year (or initials for games),
+     a type icon and a small manhole-and-brick motif. No official artwork is used. */
+  var TILE_BG = ['#1F4D4A', '#6B2E24', '#6E5414', '#273E63', '#4A2C55', '#3B5A2E', '#7A3E16', '#2C3A4F', '#5A2F3E', '#355C5C'];
+  var TILE_ICON = {
+    movie: '<rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M10 9l5 3-5 3z"></path>',
+    series: '<rect x="3" y="7" width="18" height="12" rx="2"></rect><path d="M8 3l4 4 4-4"></path>',
+    game: '<rect x="2" y="7" width="20" height="11" rx="4"></rect><path d="M7 11v3M5.5 12.5h3M15 12h.01M18 13h.01"></path>'
+  };
+  function hashStr(s) { var h = 0; for (var i = 0; i < s.length; i++) h = (h * 31 + s.charCodeAt(i)) >>> 0; return h; }
+  function initials(title) {
+    var part = title.indexOf(':') >= 0 ? title.split(':').slice(1).join(' ') : title;
+    var words = part.replace(/[^A-Za-z0-9' ]/g, ' ').split(/\s+/).filter(function (w) { return w && !/^(of|the|and|a)$/i.test(w); });
+    return words.slice(0, 2).map(function (w) { return w.charAt(0).toUpperCase(); }).join('') || 'GO';
+  }
+  function cover(item, kind, w) {
+    var h = Math.round(w * 4 / 3);
+    var bg = TILE_BG[hashStr(item.id || item.title) % TILE_BG.length];
+    var big = kind === 'game' ? initials(item.title) : String(kind === 'series' ? String(item.years || '').slice(0, 4) : (item.year || ''));
+    var size = big.length > 2 ? 17 : 22;
+    return '<svg class="cover" width="' + w + '" height="' + h + '" viewBox="0 0 60 80" role="img" aria-label="' + esc(kind + ' tile: ' + item.title) + '">' +
+      '<rect width="60" height="80" fill="' + bg + '"></rect>' +
+      '<circle cx="52" cy="10" r="20" fill="none" stroke="#FFFFFF" stroke-opacity="0.14" stroke-width="2"></circle>' +
+      '<circle cx="52" cy="10" r="13" fill="none" stroke="#FFFFFF" stroke-opacity="0.1" stroke-width="1.5"></circle>' +
+      '<path d="M0 66H60M0 73H60M10 66V73M30 66V73M50 66V73M20 73V80M40 73V80" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1" fill="none"></path>' +
+      '<g transform="translate(6 7) scale(0.5)" fill="none" stroke="#EEF2EC" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">' + TILE_ICON[kind] + '</g>' +
+      '<text x="6" y="52" fill="#EEF2EC" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="' + size + '" letter-spacing="-0.5">' + esc(big) + '</text>' +
+      '<path d="M44 68c3-1.5 7-1.5 10 0L49 78z" fill="#F29A3A"></path>' +
+      '</svg>';
+  }
   function watchButtons(id) {
     return '<div class="row-btns"><button class="btn btn-outline btn-sm" data-act="watchsheet" data-id="' + esc(id) + '" data-mode="all">Where to watch</button>' +
       (hasFree(id)
@@ -495,14 +525,14 @@ p { margin: 0; }
       var shows = (D.library.shows || []).map(function (s) {
         var w = S.watched[s.id] || 0, eps = s.episodes || 0;
         var filled = eps ? Math.round(Math.min(1, w / eps) * 8) : 0;
-        return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(s.title) + '</div><div class="muted small">Series · ' + esc(s.years) + '</div></div>' +
+        return '<div class="trow trow-col"><div class="trow-top">' + cover(s, 'series', 48) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(s.title) + '</div><div class="muted small">Series · ' + esc(s.years) + '</div></div>' +
           watchButtons(s.id) + '</div>' +
           '<div class="tracker">' + pie(filled, 22, { stroke: C.bg, empty: C.s3 }) + '<span class="small muted" style="flex:1">' + w + (eps ? ' of ' + eps : '') + ' episodes watched</span>' +
           '<button class="mini" data-act="ep" data-id="' + esc(s.id) + '" data-d="-1" aria-label="Remove one watched episode">&minus;</button><button class="mini" data-act="ep" data-id="' + esc(s.id) + '" data-d="1" aria-label="Mark one more episode watched">+</button></div>' +
           ratingRow(s.id) + '</div>';
       }).join('');
       var movies = (D.library.movies || []).map(function (m) {
-        return '<div class="trow trow-col"><div class="trow-top"><div class="trow-main"><div class="trow-title">' + esc(m.title) + '</div><div class="muted small">Movie · ' + esc(m.year) + '</div></div>' + watchButtons(m.id) + '</div>' + ratingRow(m.id) + '</div>';
+        return '<div class="trow trow-col"><div class="trow-top">' + cover(m, 'movie', 48) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(m.title) + '</div><div class="muted small">Movie · ' + esc(m.year) + '</div></div>' + watchButtons(m.id) + '</div>' + ratingRow(m.id) + '</div>';
       }).join('');
       return '<div class="stack-lg">' + out + featured +
         '<section class="stack"><h2>Series</h2><div class="rows">' + shows + '</div></section>' +
@@ -521,7 +551,7 @@ p { margin: 0; }
         '<div class="streak">' + pie(Math.min(st, 8), 72, { label: 'Streak pie: ' + st + ' days in a row' }) + '<span>' + st + '-day streak</span></div></div>' +
         '<div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">' + btn + '<span class="muted small" style="display:flex;align-items:center;gap:6px">' + slice(true, 18, C.surface) + 'Today: ' + sc + ' of ' + set.length + ' slices</span></div></section>';
       var games = (D.library.games || []).map(function (g) {
-        return '<div class="trow" style="align-items:center"><div class="trow-main"><div class="trow-title">' + esc(g.title) + '</div><div class="muted small">' + esc(g.platform) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(g.url || search(g.title + ' game')) + '" target="_blank" rel="noopener">Find it</a></div>';
+        return '<div class="trow" style="align-items:center">' + cover(g, 'game', 48) + '<div class="trow-main" style="flex:1"><div class="trow-title">' + esc(g.title) + '</div><div class="muted small">' + esc(g.platform) + '</div></div><a class="btn btn-outline btn-sm" href="' + esc(g.url || search(g.title + ' game')) + '" target="_blank" rel="noopener">Find it</a></div>';
       }).join('');
       var badges = BADGES.map(function (b) {
         var on = !!S.badges[b.id];
@@ -596,7 +626,7 @@ p { margin: 0; }
       var modes = [['episodes', 'Episodes'], ['movies', 'Movies'], ['both', 'Both']];
       var p = ui.pick;
       var result = p
-        ? '<section class="card"><div class="eyebrow">Tonight\'s pick</div><h2 style="font-size:20px">' + esc(p.title) + '</h2><p class="muted">' + esc(p.detail) + '</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" style="flex:1" data-act="watchsheet" data-id="' + esc(p.item.id) + '" data-mode="all">Where to watch</button><button class="btn btn-ghost" data-act="watchsheet" data-id="' + esc(p.item.id) + '" data-mode="free">Free</button></div></section>'
+        ? '<section class="card"><div style="display:flex;gap:14px;align-items:center">' + cover(p.item, p.item.years ? 'series' : 'movie', 84) + '<div class="stack" style="gap:6px;min-width:0"><div class="eyebrow">Tonight\'s pick</div><h2 style="font-size:20px">' + esc(p.title) + '</h2></div></div><p class="muted">' + esc(p.detail) + '</p><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="btn btn-primary" style="flex:1" data-act="watchsheet" data-id="' + esc(p.item.id) + '" data-mode="all">Where to watch</button><button class="btn btn-ghost" data-act="watchsheet" data-id="' + esc(p.item.id) + '" data-mode="free">Free</button></div></section>'
         : '<div class="empty" style="text-align:center">Your pick shows up here.</div>';
       return '<div class="stack-lg">' + out +
         '<div class="chips" role="group" aria-label="What to pick from">' + modes.map(function (m) { return '<button class="chip" data-act="mode" data-mode="' + m[0] + '" aria-pressed="' + (ui.mode === m[0]) + '">' + m[1] + '</button>'; }).join('') + '</div>' +
