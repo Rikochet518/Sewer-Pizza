@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T08:28:50.568Z",
+  "updated": "2026-11-05T10:20:05.058Z",
   "sample": false,
   "items": [
     {
@@ -22,20 +22,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxOUk5YMzJBWkRBcXUwTE9kenBaczVwM0sxem5oZUxGaVRkbEVoUDB2cE90VVV0LXlYR05BZzUxN1YyRkJEajRuT0RHZEVtOTlWbFdtUmwzMGM1ZnIxMUZiX1UyYnpLbWc2aTE5ODBlc1dLa05NUThlOXk1RFotRmwzejhYLVRmU0xQQTBSdV9QZkplbW14bDRpZm1nUFBqUQ?oc=5",
       "published": "2026-11-04T14:23:56.000Z"
-    },
-    {
-      "title": "TMNT Tuesday #81: Exclusive 'Teenage Mutant Ninja Turtles' #24 preview marks Gene Luen Yang's farewell",
-      "source": "AIPT",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTE15OVA1bW9KSlpiMGd6b1dnTDJrMFc1OTVrbTBEUndEbktrQzBNN20tNnRKWERrOE9UUXRfc1RPeWtLSGk1TWpoaXpvWmtOb2JPcHdnRldHakt3M0RXMU9wSlgxZUdOT1IxRUE?oc=5",
-      "published": "2026-11-03T14:55:06.000Z"
-    },
-    {
-      "title": "TMNT Cowabunga Forever 90s Movie Figures 5 Pack on Target",
-      "source": "Toy Habits",
-      "category": "Toys",
-      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxOUWJOMWNmYWVhcktnUXJwTmc4eDRzMXJnQ2JVVExKa3ByVWNTSVJlR0NaSGVTVGlYa1hFRVVBcWs0ZHlwQ2NQYVVZaVpaTnNnckZEU2JoV1pzd0Q3MUhjRlNoWDd0X0hLSWVHclh0aG1PU2pxRXoxbHAwUENMdkNhd3B4azF6WEk?oc=5",
-      "published": "2026-11-01T16:21:39.000Z"
     },
     {
       "title": "Warning: Parents Discover TMNT Play Boosters in Children’s Halloween Candy",
@@ -276,7 +262,7 @@
       "published": "2026-02-20T08:00:00.000Z"
     },
     {
-      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
+      "title": "Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
       "source": "Magic: The Gathering",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTjlxMUYwcFROZnRUZ2d5RFBLYmRvNXBQQV82RVd4Z1l2b3NNSFU0M0lVdWFQbXotR05HVTRWOHc1RTlnWlhiNXVsT3ozNlhyQTQ4YzIwVDBPQ3czSE9TUXJzQ0JpTDgzekEwTFBZWE9aQlM2ZFZwaFpMbng4MTBBUXp3NE1Vc1U0OEctUGM2MUJha2tET1RQRnBSczB4NEh5QkE?oc=5",
@@ -368,9 +354,9 @@
     },
     {
       "title": "Critics said 'Teenage Mutant Ninja Turtles' would flop. They underestimated Turtle Power",
-      "source": "NPR",
+      "source": "New Hampshire Public Radio",
       "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxPUWZoSmZuMFRqWW5sQnNiYkRxVmRHOWVtRmo5c2lKNFBWc291eWt1SnVla28tMWlXRFZCU2JCZUt4RG16dV9HaVRpdHJIQl9CanFUT2tRdVd4Z0g0OHl3VlRveHhvdXBCMHNWNHNFai1QSTZpRjYwU29HdmxZNnVWQlo0UlV3R0VBSXFjbFY5TGp3Vl93RE9Dc1llY0pIN0lHTUxoWA?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxQMF9Ya3JOSmpOT21PU2x3Z1VOdk9iQ0tCcF9xdTJRa0p0RG9UZ3VtYmpic3V0Xzc1TmxoZ05KSGdFRmUyWERmdFBKNXlhX1ZqNG1EZGZYdVZaaDhyY18zTjZIeTA3bHRHMjBYOWxYaTNIeWpKdXU0N1hlTkwxeDZuTVk1MDdVY0JVbHBDM1lDdHhCMTRTSlZPVWtTdGMza1BtUUF2MVN3ekNXVHU4SGE1Z1BmcDdRWHdCdzBOdjFNZVFpVFdqV1N2SU5B?oc=5",
       "published": "2025-08-13T07:00:00.000Z"
     },
     {
@@ -421,6 +407,20 @@
       "category": "Games",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYVlEa0hndmQ1bktDbUY4dkZZd1Ayc1lOQkxDVmhRU3dxOC1wSU1fSXlEaWJEcjkyeHVfM0F4VFZZLTlUY1IxRTdjcDY4X1hkd2RiNFNJaDZLMFFPU0pxRDVYWFJsLUk0Q3U2b3c1WFFZRDRoZVJHRHcwLVY2TWFYMnl2dlpvTzVyS3AwajlLb3hrZ285RjVqaEpMZ1VtSU5PRWs3cGpR?oc=5",
       "published": "2025-03-29T07:00:00.000Z"
+    },
+    {
+      "title": "Kevin Eastman",
+      "source": "USA Basketball",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
+      "published": "2025-03-07T15:26:00.000Z"
+    },
+    {
+      "title": "TMNT Comic Writers Share Exciting Details of Ongoing Series and TMNT x Naruto | IGN Fan Fest 2025",
+      "source": "IGN Southeast Asia",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPaTRFVEhXbTl2NWtNTTJib0lRODFUVGI5eWFGNGRidzJ3SzMxVVQ3M3hEQ1IzTkc2dVVfaUFkN2ZKM0piZmluZ283SnpOTV9PMm5JWnlfUDRoQllMcHZxRlY5QnZRQ3hGS3ZmSm93cndJTjROYzhlaGZUNmhLbU91UFJPeENXOGpqQkFub25pQjVjenJuNWpUTWEzR1ZCQzgwV2FLcVZLbmFTTzBFUnpQbng4R2xsNjA5bG54U0N1YV9BWVMzRGpzTzRiNDlHVld5Qk93ZlNkdFVlSDBUNkRHUlpVMjZpNUlYM3VvNUI5ZFpmb2c?oc=5",
+      "published": "2025-03-01T08:00:00.000Z"
     }
   ]
 }
