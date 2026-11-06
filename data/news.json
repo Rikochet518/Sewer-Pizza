@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-05T23:55:37.128Z",
+  "updated": "2026-11-06T01:28:39.655Z",
   "sample": false,
   "items": [
     {
@@ -227,13 +227,6 @@
       "published": "2026-04-28T07:00:00.000Z"
     },
     {
-      "title": "TMNT: Empire City Preview – Hanging with Your Turtle Bros in VR is a Shell of a Time",
-      "source": "IGN Nordic",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxNTGh5U0pnV1QxYWlrblZVdmNkeE5YTW5FamtycTdyX3pSX3RhWjlOMGdCWW1WdEVIZTQ0ejF6Z2FicE94VlFPYnNla1dQTGVvbThuN0tiTkNsWTJBV2l6ZkVjU2F1ZVZSMXhuQXhoeUZKdGJDVGpWbXJvQ1VLWWcwMjNycHpGcUhYdy1pUFhiUHVBWTJYZnJkUTRseVpJeXZUTEVKcjc4LTNZY3hLaHN3aS1OOTNQVEkxRDJUcUNBNlkwZFEwMjdjQWd0cTVCdFFWQkhSSGZPSW9rM01DR0paR2J0V3dXSjR4dmJMU1NzaC15Zw?oc=5",
-      "published": "2026-04-13T07:00:00.000Z"
-    },
-    {
       "title": "Frank Miller Draws His First-Ever ‘Teenage Mutant Ninja Turtles’ Cover (Exclusive)",
       "source": "The Hollywood Reporter",
       "category": "News",
@@ -267,6 +260,13 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE14cEJYVmZVY1UtLXRRNS1XVE40VEN2NmFJeGlpM0ZrenFxdW1aMWUxOUgtczhoZW80R2VNcUVPU1NyZU55Mjg2QS1fTnMxWHdmb1FIeGpibEphMkdzZGJ6emE0RVhkcjhrckhxMFc3UVVkdDFYeUsxZ1p6LTU?oc=5",
       "published": "2026-02-22T08:00:00.000Z"
+    },
+    {
+      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Prerelease Guide",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOZ0ZwRlU1WFdJVVBxc0JIZzNYLWV0OFVLV2ZENTJIUVNOQm1LaFpwZlZFeUFVVzRVOU8yc2hpczkzU2VkY3ZyUExCNmhBTGhxNFktbmtZNmZlOWx1MFZFbWZGNmtLekk3OUpaQ3FuM0NsSjRwSTRad2RESlpkMGpqRF84T2pQYlEwQ1pIZUh2RTU?oc=5",
+      "published": "2026-02-20T08:00:00.000Z"
     },
     {
       "title": "Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
@@ -402,13 +402,6 @@
       "published": "2025-05-28T07:00:00.000Z"
     },
     {
-      "title": "Teenage Mutant Ninja Turtles: 35th Anniversary",
-      "source": "Museum of the Moving Image",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9pWWc3ZlZaY3NaTDlxRFo1UGxILUFYY0U4eWk3R0cyLVRTZDJZTlFzeFRJaXdDOWFKYTA4Z3VtM09ZclJDT1dmdUlXUXU5bEM3aEtiaS1vSHVGdnVsYlF6dA?oc=5",
-      "published": "2025-04-19T07:00:00.000Z"
-    },
-    {
       "title": "Cowabunga Dude: It’s Rocket League | TMNT!",
       "source": "Rocket League ®",
       "category": "News",
@@ -421,6 +414,13 @@
       "category": "Games",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYVlEa0hndmQ1bktDbUY4dkZZd1Ayc1lOQkxDVmhRU3dxOC1wSU1fSXlEaWJEcjkyeHVfM0F4VFZZLTlUY1IxRTdjcDY4X1hkd2RiNFNJaDZLMFFPU0pxRDVYWFJsLUk0Q3U2b3c1WFFZRDRoZVJHRHcwLVY2TWFYMnl2dlpvTzVyS3AwajlLb3hrZ285RjVqaEpMZ1VtSU5PRWs3cGpR?oc=5",
       "published": "2025-03-29T07:00:00.000Z"
+    },
+    {
+      "title": "Kevin Eastman",
+      "source": "USA Basketball",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
+      "published": "2025-03-07T15:26:00.000Z"
     }
   ]
 }
