@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T17:08:01.105Z",
+  "updated": "2026-11-06T17:58:34.497Z",
   "sample": false,
   "items": [
     {
@@ -15,13 +15,6 @@
       "category": "Movies",
       "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQSjNZVUVUcGNBOW1uaWJKWmstT0RLX0tmM1hRc1V6XzNvam5jUHNRR2lwX0JRNjRRaUQ4ZFVTZDlIeFdxZDg1elB0MHk0MFJTTWprM3lpaTNTenRkOTN0d0todWcyRGdES09MeXVnbXU3MTJNOEF1NDRPQkl1VTlEVGtkVlhudGRoT0tvNXdsUlBmZERhSWNpd1JzRjRYSWlhZmdrUWhQcWVkbU93Uk93UnNscXZpVHh0dWNGMjNn?oc=5",
       "published": "2026-11-05T19:12:23.000Z"
-    },
-    {
-      "title": "Raphael vs Leonardo | Stop Motion TMNT 1990 NECA Action Figure",
-      "source": "YouTube",
-      "category": "Toys",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE5rYnJmNVNWNVd5eUtpNWdRaHRnZ0lTTkQxbHJxb2ZfUUlzMUNWUkhUT0J4Qm5jZ3NPR3N3WUhFUHNNTTFxbHRCX3NvRTBHd2h5MjFoVlp3Mzk3cDFn?oc=5",
-      "published": "2026-11-05T05:05:54.000Z"
     },
     {
       "title": "New TMNT Sequel Confirms Radical Redesign For Classic Series Villain",
@@ -73,13 +66,6 @@
       "published": "2026-10-30T10:07:00.000Z"
     },
     {
-      "title": "NYCC '26: Sarah Myer reflects on drawing \"sad strange little men\" in TMNT: SATURDAY MORNING ADVENTURES",
-      "source": "Comics Beat",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxNYkZEbnFUQTRnS0hMNzBTV1NGZmxYRDIxdm9VTk1OOTljRmktdGsxSXNGVHh4SGhpZ1lrMEF6NHB3N0cyZG04ZlBOZE9ySlppZEl1eEVuZmVETlh3dkJXeFM2bzNTajRYSGM4akFSdTVLSEROSnRHb0pNdzlRYUdJSFZCczBiUQ?oc=5",
-      "published": "2026-10-26T07:00:00.000Z"
-    },
-    {
       "title": "It's the End of an Era for the Teenage Mutant Ninja Turtles as We Say Goodbye to Their Saturday Morning Adventures",
       "source": "Comic Book Resources",
       "category": "News",
@@ -122,17 +108,17 @@
       "published": "2026-07-26T07:00:00.000Z"
     },
     {
-      "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
-      "source": "Gizmodo",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "Turtles by the Beach",
       "source": "San Diego Comic-Con Unofficial Blog",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
+      "published": "2026-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
+      "source": "Gizmodo",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
@@ -162,13 +148,6 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPem9fNVo3UWN3eEdOekFNcjZpcXhXengtZ1hrRE4zbGNhdDBHWUJhOUU0LVdFTzQ3Vk9QeDlYUXlZWXlpRkhJZlBzdmZnMjZBR2hUWENETHBObHU2RVdKRVZCUU5PYUNvaS1IZ2xZTE4zY2lWMFRNX3BkT3R0RC1RSi1UR0NIOFdRblg3YVJBc0toZ2Q4QzBfVXNTc290Rmc?oc=5",
       "published": "2026-07-15T07:00:00.000Z"
-    },
-    {
-      "title": "IDW unveils packed San Diego Comic-Con 2026 plans with TMNT #300, Godzilla, Hello Kitty, Sonic, and more",
-      "source": "AIPT",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ONXNYMnhPQ0dWNVF4YUxZWEhXbER1LWFKSFFWZWlZanZFaXBueWUxanFjNmtlSGpaZjZMbDhHN3cxZW9hdS1GQ3JYdUVNbUtBLWNCLTlQOUNTMmZBUktuZ3RuZmI5dVJCdWI3dW5xMllrMTRJLU5naFdR?oc=5",
-      "published": "2026-07-14T07:00:00.000Z"
     },
     {
       "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
@@ -421,6 +400,27 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
       "published": "2025-03-07T15:26:00.000Z"
+    },
+    {
+      "title": "TMNT Comic Writers Share Exciting Details of Ongoing Series and TMNT x Naruto | IGN Fan Fest 2025",
+      "source": "IGN Southeast Asia",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPaTRFVEhXbTl2NWtNTTJib0lRODFUVGI5eWFGNGRidzJ3SzMxVVQ3M3hEQ1IzTkc2dVVfaUFkN2ZKM0piZmluZ283SnpOTV9PMm5JWnlfUDRoQllMcHZxRlY5QnZRQ3hGS3ZmSm93cndJTjROYzhlaGZUNmhLbU91UFJPeENXOGpqQkFub25pQjVjenJuNWpUTWEzR1ZCQzgwV2FLcVZLbmFTTzBFUnpQbng4R2xsNjA5bG54U0N1YV9BWVMzRGpzTzRiNDlHVld5Qk93ZlNkdFVlSDBUNkRHUlpVMjZpNUlYM3VvNUI5ZFpmb2c?oc=5",
+      "published": "2025-03-01T08:00:00.000Z"
+    },
+    {
+      "title": "Dog mess problem: Woodman Museum, Dover neighbors seek solution",
+      "source": "Foster's Daily Democrat",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTkJ6MlVROGZfVFB2Q2p5N0VVQlFlaFowand2SFI5MVVuTG5uOEt1dTJKTFNlRTBjcHBhaHlUX29GTHJZTjJlaTh4N3o5Qm1JWW8xbjlEdnNyeEpRNFUwTWR6dU0zeXZ2cGdWYnhMV05zUmVobzZPTTFkdXk1UGYxSF9ENUhtbGRidFlkNGc1MHVEakdBM1dJdUZuN0pwNzZBRnhMQWM2TTNHWHZVcktOUHQxSjBSRnpRNGc?oc=5",
+      "published": "2024-12-23T08:00:00.000Z"
+    },
+    {
+      "title": "‘The Fellini’s 8½ of Comics’: PW Talks with Kevin Eastman, David Avallone, and Ben Bishop",
+      "source": "Publishers Weekly",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi_AFBVV95cUxPWllQZ2JYeDItWkZFRXdEdEpOREFITnJCRHF0dzlpNWdCbS13dW5hZ1hvVERGS1VkUkthbU9kSGhNdTVBYWEydmpHejh5UUZFdl9mU0V1VmNDQW9hTUdWcW1pV3VvSVI1S0FyMGQzZjVxSEdlV0lqVkJid1FVLU85cy1vdDRnSWsyNzNHY083SmtGOGJ3QlJZTTZ6MmRHdjlLTkNpTWNLMFdWSk83cnJHWEtoY2JaYnYtczdKYWh3Mk05MzhaYVV3U2xUdEFQUkxMck95cGJuZUMzYzRvLXRVNE12YnhEZ0VGb2E1VjF2NzdzemFRVWxTTHR2V3g?oc=5",
+      "published": "2024-10-30T07:00:00.000Z"
     }
   ]
 }
