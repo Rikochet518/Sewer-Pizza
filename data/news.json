@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-06T16:02:33.229Z",
+  "updated": "2026-11-06T17:08:01.105Z",
   "sample": false,
   "items": [
     {
@@ -8,13 +8,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMi6AFBVV95cUxPMUxTZnlJMklmSjdIWHZsUzRpNEEwNnhJbm1Zc29RYWRwT1FoUUpJTFJZR0NOeHN3SXRFUzNrdXdtWmVXX0ZZTXdqaWxmQ2tNM2NPRkFaX1A0ZGNyVm1LNk4xMnBWMk1hRm1EYTY4dVd2cHhVQ0JselBtN0piSmdJaVpkMnJFTG82Mk84bjVtWEpPR0F3d1ZLV1hUQkllckg0RHpuZzQxcXdabzRhWTFhTkYwbXRPUkFtNnNUSWVLNmlINWdtV2NKM0JCbVcxc05KdFdWVFVBUDdXZFJxbGxtaEFUUVZSQ3N6?oc=5",
       "published": "2026-11-06T11:58:00.000Z"
-    },
-    {
-      "title": "Tales of the Teenage Mutant Ninja Turtles: Coastal Chaos #1 Review (★★★½) by AndreaPandrea",
-      "source": "League of Comic Geeks",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOQWh2WVVmc1pCRENKVndxYzlEa2tpcGpURkY0NHdlUS11cFgycjBUVm9Fa1VzQktVVkxzRHRuekhZbFJBWW05bU9QZUpCcTNGNkthZlZlaXI4WGZ2ODhHT0pwX1dTckhpMXB3R18xNWlDMG0tUm9kV0NIMEpDNjlhWFE1dHlrNzB5a2pEN3NUNlBhTVhpeW1IZUpMeGZoQWZDMjU3Rk5KeENnOXk1RTBsYWRoM3c5T01lSEFKU3hzMVlNbkZxMnc?oc=5",
-      "published": "2026-11-05T21:16:51.000Z"
     },
     {
       "title": "TMNT Movie Franchise Gets Surprising Update After Another Reboot Was Already Announced",
@@ -129,17 +122,17 @@
       "published": "2026-07-26T07:00:00.000Z"
     },
     {
-      "title": "Turtles by the Beach",
-      "source": "San Diego Comic-Con Unofficial Blog",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
       "source": "Gizmodo",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
+      "published": "2026-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "Turtles by the Beach",
+      "source": "San Diego Comic-Con Unofficial Blog",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
@@ -421,6 +414,13 @@
       "category": "Games",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYVlEa0hndmQ1bktDbUY4dkZZd1Ayc1lOQkxDVmhRU3dxOC1wSU1fSXlEaWJEcjkyeHVfM0F4VFZZLTlUY1IxRTdjcDY4X1hkd2RiNFNJaDZLMFFPU0pxRDVYWFJsLUk0Q3U2b3c1WFFZRDRoZVJHRHcwLVY2TWFYMnl2dlpvTzVyS3AwajlLb3hrZ285RjVqaEpMZ1VtSU5PRWs3cGpR?oc=5",
       "published": "2025-03-29T07:00:00.000Z"
+    },
+    {
+      "title": "Kevin Eastman",
+      "source": "USA Basketball",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
+      "published": "2025-03-07T15:26:00.000Z"
     }
   ]
 }
