@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-07T16:54:08.389Z",
+  "updated": "2026-11-07T17:49:42.281Z",
   "sample": false,
   "items": [
     {
@@ -57,13 +57,6 @@
       "category": "Movies",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOZlJSb080bG5kZXlMc3pIRDJBaVk2VkhRcnp2bmFvOU0yS05tSGlxVkRNaWNxRTB4ODF2TEtUa1EzV2JqOTN6aUZoX2syczlOQ090Q25vVWdqSGtVM2NDRVFUNEtxRmFCVGNPNWxCLTBsQ0JvaS1kWkdDbEpHcS0zNXV5Ny1BWVNiZEpiTEx3NjMwZ1dySGJxbUlYd0g5SWRL?oc=5",
       "published": "2026-10-31T16:30:00.000Z"
-    },
-    {
-      "title": "Get Ready to Return to the TMNT: Mutant Mayhem Universe in Tales of the TMNT: Tear in Time Spinoff Comic",
-      "source": "IGN",
-      "category": "Comics",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxQbUhzMHVjSTJZcjJNNC0zMDN1aVVPRHFDWHVGRlJzekNaVFlGVkdXZklKMDRETTNUU2NiYTBFTHlhZk9rb1J6ZHRsUlhTOXFlaU1xYWcxX1hsRGtQUFg1VGdaVWFKOTBacmJNc013RFpka0hmVHppUTZ0ZmNPeWs0UTVmTG83LUlreXJFSWl4eTVsZw?oc=5",
-      "published": "2026-10-30T14:00:00.000Z"
     },
     {
       "title": "Dover's Pine Hill Cemetery chapel needs $1 million restoration",
@@ -169,13 +162,6 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPem9fNVo3UWN3eEdOekFNcjZpcXhXengtZ1hrRE4zbGNhdDBHWUJhOUU0LVdFTzQ3Vk9QeDlYUXlZWXlpRkhJZlBzdmZnMjZBR2hUWENETHBObHU2RVdKRVZCUU5PYUNvaS1IZ2xZTE4zY2lWMFRNX3BkT3R0RC1RSi1UR0NIOFdRblg3YVJBc0toZ2Q4QzBfVXNTc290Rmc?oc=5",
       "published": "2026-07-15T07:00:00.000Z"
-    },
-    {
-      "title": "IDW unveils packed San Diego Comic-Con 2026 plans with TMNT #300, Godzilla, Hello Kitty, Sonic, and more",
-      "source": "AIPT",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ONXNYMnhPQ0dWNVF4YUxZWEhXbER1LWFKSFFWZWlZanZFaXBueWUxanFjNmtlSGpaZjZMbDhHN3cxZW9hdS1GQ3JYdUVNbUtBLWNCLTlQOUNTMmZBUktuZ3RuZmI5dVJCdWI3dW5xMllrMTRJLU5naFdR?oc=5",
-      "published": "2026-07-14T07:00:00.000Z"
     },
     {
       "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
@@ -421,6 +407,20 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZWpSU0piMkVoUXZWRmVTQ2tIZ3l3enQ3YmdzMWpsNkk4VFI2QzlZMmVUdGVGQTdhZTRRY0pUODEwZHE2TzM2MWhhZHBIbUhCaHR3ZnkwbGNpVXhHRXZ3bU9YOEx1cUlOdV9HOGV1Mm5KNGRpQnpnVWs2dVJaUU94TA?oc=5",
       "published": "2025-04-15T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles was the hardest game I ever played – so why am I back? | Dominik Diamond",
+      "source": "The Guardian",
+      "category": "Games",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYVlEa0hndmQ1bktDbUY4dkZZd1Ayc1lOQkxDVmhRU3dxOC1wSU1fSXlEaWJEcjkyeHVfM0F4VFZZLTlUY1IxRTdjcDY4X1hkd2RiNFNJaDZLMFFPU0pxRDVYWFJsLUk0Q3U2b3c1WFFZRDRoZVJHRHcwLVY2TWFYMnl2dlpvTzVyS3AwajlLb3hrZ285RjVqaEpMZ1VtSU5PRWs3cGpR?oc=5",
+      "published": "2025-03-29T07:00:00.000Z"
+    },
+    {
+      "title": "Kevin Eastman",
+      "source": "USA Basketball",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
+      "published": "2025-03-07T15:26:00.000Z"
     }
   ]
 }
