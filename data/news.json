@@ -1,20 +1,20 @@
 {
-  "updated": "2026-11-11T10:16:04.248Z",
+  "updated": "2026-11-11T11:16:25.932Z",
   "sample": false,
   "items": [
+    {
+      "title": "The Superhero Reboot That Turned Childhood Heroes Into Hulking Monsters",
+      "source": "Giant Freakin Robot",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTkxjMWNFbmliVWxyS0JKakxRZ2R3Q1VJRko4cVZGUlUxUkU1VmdDaUxWYlJjOElCcER4SmJzemhnSm1BX1JNT25WbndSaV8wVjVqbTJJa3RqV2lnTnJtLVBOLUJwWUdTMVNDXy1ZRERfVGw5blpRRG9BUEdaQTJ5Q2FsUXFEUHl0ZXJCa0Q3MnFlRGxNT0E?oc=5",
+      "published": "2026-11-11T10:15:49.000Z"
+    },
     {
       "title": "Teenage Mutant Ninja Turtles: Splintered Fate Shell Squad Co-Op Update Live",
       "source": "Gamers Heroes",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxOWG1UX2tDYmh3Q2hTdHJ6dWNYanNkVzdHZ0JzSTQ1YUtNQmpnM0tVV2VReFJGNE9EQi1Fb1lJdWI4V3k5LWRvdTRjRUJoSVoxUXZLNEEyZTJ1SlZmLXdhLXZfSTZKVVJDOGo0b2xkZDhFZjRZMTFCZ0NYSmlQa2piSWc3bmJ5elRMRExRa2VCRkxBbHVuTjFzWWFBazVFb1FSUHZuZGladHgxaXdwcEhvZ1JWd29GajQ?oc=5",
       "published": "2026-11-11T05:09:02.000Z"
-    },
-    {
-      "title": "The Superhero Reboot That Turned Childhood Heroes Into Hulking Monsters",
-      "source": "Giant Freakin Robot",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTkxjMWNFbmliVWxyS0JKakxRZ2R3Q1VJRko4cVZGUlUxUkU1VmdDaUxWYlJjOElCcER4SmJzemhnSm1BX1JNT25WbndSaV8wVjVqbTJJa3RqV2lnTnJtLVBOLUJwWUdTMVNDXy1ZRERfVGw5blpRRG9BUEdaQTJ5Q2FsUXFEUHl0ZXJCa0Q3MnFlRGxNT0E?oc=5",
-      "published": "2026-11-11T04:14:02.000Z"
     },
     {
       "title": "Every Version of TMNT's Armaggon, Ranked",
@@ -123,9 +123,9 @@
     },
     {
       "title": "First printing copy of Teenage Mutant Ninja Turtles #1 snaps up $192,000 in Part 1 of the Lawrence Klein collection",
-      "source": "EIN News",
+      "source": "EIN Presswire",
       "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOU0RZd3hiMEx1SEZPeWpwVEo3Q1VsZTRUSFdBV0d5STdvRDJXc1VQMUNCd2xMWmZzRFFPOE5oYU93cEVjNmc2UmNSNW4tY29SbFNETXlJWmtKTjg1V0h5YWJENTVVQm1DSHI2cEpoR2RGcEdONXRFQ05rWmxHb2M5b2lsSFVRR1U3aU5nTWpIZzRGSDlJLUh2M2ViZjU5TGFFNVhmNkt0WF9YV0RBdC05UlpUT1dhWXN6ZzBTaTNOVkN0QnhOSDNxZG16bDVyRmFtNWJ2dGUza0J6cTByR0o5Z2I4MjAzOGZ2cjkw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMi8gFBVV95cUxPbENSRUJvVVg5M2hLUTJwMjN3UWtibDZ5Q2pSaWUwQS1yd0pxWk5JZzVzVUpndmswUTVBSlphbmVZUGotN1BQQTlZUHd5UmRYLWhGNlpCSXZiSWxpQjJuTk1UcE9vSXBhTUMtZjduNTBFLWtkUDJKMjltSzJ3MFVhQnkzaVdiQmQzak1yRDIwaEpwOF9iTjU0c2ZRbmdRNkNZZEtPNU9KcHZaWDhnSDl3YzRTWGVQLU9YQkRKTE5Md1Z4YjVNN2FwSEkxOVhIXzk0SGhHel9oNHkwNXppZW84YlBhZjNDUWY4TmxMU2xtb0hpUQ?oc=5",
       "published": "2026-11-09T22:15:00.000Z"
     },
     {
@@ -297,6 +297,13 @@
       "published": "2026-07-15T07:00:00.000Z"
     },
     {
+      "title": "IDW unveils packed San Diego Comic-Con 2026 plans with TMNT #300, Godzilla, Hello Kitty, Sonic, and more",
+      "source": "AIPT",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ONXNYMnhPQ0dWNVF4YUxZWEhXbER1LWFKSFFWZWlZanZFaXBueWUxanFjNmtlSGpaZjZMbDhHN3cxZW9hdS1GQ3JYdUVNbUtBLWNCLTlQOUNTMmZBUktuZ3RuZmI5dVJCdWI3dW5xMllrMTRJLU5naFdR?oc=5",
+      "published": "2026-07-14T07:00:00.000Z"
+    },
+    {
       "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
       "source": "Foster's Daily Democrat",
       "category": "Events",
@@ -413,13 +420,6 @@
       "source": "Polygon.com",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE5Bci1kZnk5ZEp5MXZwbXlhZ3hfX3hZbkRLUzlMYnpMc1FnMExZdWx2bkpXRHhUclhHd2poQ3BkY0R1ajJGeDZnMl9ZSGxvYnBEREx5NkJTZ3RocE1LeWo0MlhXdUJYc3UwMk5n?oc=5",
-      "published": "2026-02-18T08:00:00.000Z"
-    },
-    {
-      "title": "Kevin Eastman Writes TMNT: Last Ronin Prequel & Threequel",
-      "source": "Bleeding Cool News",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRGg4YjdvMWlkWWdIRWhKdUpTVUJkWmJyeURDc1FNOU02d0ZGWXdvdVpTV19lVlZKLVBwQWJrRWc2Y1Zna0Fod2wyOTU0bjVLNW45RllnWkI4RlRNYzhrN1J5QVZ0TjNjZWNJcjl5QVlWTTFwb1Zka2tSNm8ycDBfcFFFcFgyY3kweGtqS3NFWUs?oc=5",
       "published": "2026-02-18T08:00:00.000Z"
     }
   ]
