@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T22:00:31.206Z",
+  "updated": "2026-11-12T22:59:37.249Z",
   "sample": false,
   "items": [
     {
@@ -64,13 +64,6 @@
       "category": "Movies",
       "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOajBJNjIwMmdkY0Y2M2YtYTFPOEh2MVpYSUVGU0lTQWhac1dyaG96SHYyaUJOc2dJOFhQN1JaZl85djRmeGdzVko0MmlWeEZVLWkxc1hXOElYVE1nYmh3VXVnQkJjUTRzTGp3ZFl3NENEQjQwRVp5Mk1DVTEyRkFwMF84akpnWFAzQlRSLXg4aHlqWlRJblJQYTV6OWE3RTZMRHhnVnlNRnVoQ1RNVnlj?oc=5",
       "published": "2026-11-11T16:32:52.000Z"
-    },
-    {
-      "title": "My pizza dinner with Matthew Rosenberg",
-      "source": "Comics Beat",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1RYll5OGhqSGJRcjlFMUIwVF8zVHFHc0tWTWtETFZjcF81MXNsQnF1SENtbG5PMEVLc0hxVWxVOFVHRV8zcGlTVmlFSkdFYmh0TlJVLTh0YXlZYjM1Xy1sbG5zRS1FMWhFWHQ2U1JYcEMwZE5mcjBuRkxEdw?oc=5",
-      "published": "2026-11-11T15:00:09.000Z"
     },
     {
       "title": "Teenage Mutant Ninja Turtles: Splinter's Fate gets an update and DLC",
@@ -248,17 +241,17 @@
       "published": "2026-07-26T07:00:00.000Z"
     },
     {
-      "title": "Turtles by the Beach",
-      "source": "San Diego Comic-Con Unofficial Blog",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
       "source": "Gizmodo",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
+      "published": "2026-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "Turtles by the Beach",
+      "source": "San Diego Comic-Con Unofficial Blog",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
@@ -381,7 +374,7 @@
       "published": "2026-02-20T08:00:00.000Z"
     },
     {
-      "title": "Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
+      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
       "source": "Magic: The Gathering",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTjlxMUYwcFROZnRUZ2d5RFBLYmRvNXBQQV82RVd4Z1l2b3NNSFU0M0lVdWFQbXotR05HVTRWOHc1RTlnWlhiNXVsT3ozNlhyQTQ4YzIwVDBPQ3czSE9TUXJzQ0JpTDgzekEwTFBZWE9aQlM2ZFZwaFpMbng4MTBBUXp3NE1Vc1U0OEctUGM2MUJha2tET1RQRnBSczB4NEh5QkE?oc=5",
@@ -421,6 +414,13 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTzA0Z1poUm1lclU1Y2hXSFhyWVZUUGg1S3hkaE9sUzV4aWxtNmhHRkstQWtMTnhLNVJJMzZJMFY0MG1ua0hjMkYzMUl2M3E4dVNFbUJxbUhHSEhZMEhqdThSTzFyUTFXdEx5VVVVcExzbDY3TWJrUDhEY2dVUFlpV2RuS1Y5WEp0?oc=5",
       "published": "2026-02-17T08:00:00.000Z"
+    },
+    {
+      "title": "Where to Find Magic: The Gathering® | Teenage Mutant Ninja Turtles Previews",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNalVwaDYzVUJZcHMwY29HOUVnaXlTSDJVc1BjejZGb054RzhhRjVnX3pzM0kwdUxNUFEzRnBrcDUwUVVKTVZEbVM2d0lkb084c3dZbmFHQjg1R09OUkk1X3daRmJWMzRpSXgzNjNZNjZoanh1eWhtNmktZjYxQ3MwTUVpWDgycjV2OG5ra3ZkN21fNndVVmcyTUVDci1qMUlm?oc=5",
+      "published": "2026-02-13T08:00:00.000Z"
     }
   ]
 }
