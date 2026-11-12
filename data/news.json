@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T15:12:16.688Z",
+  "updated": "2026-11-12T16:19:58.919Z",
   "sample": false,
   "items": [
     {
@@ -290,13 +290,6 @@
       "published": "2026-06-24T07:00:00.000Z"
     },
     {
-      "title": "Kevin Eastman: Bio And Career Highlights",
-      "source": "Bored Panda",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5TaDBUVlR1dVFIRlZqMzhqcjdKeTdjWFd6T2pUdjZHMXo2bE5iTFFjalg5VEJQZE8zMXVRekZFYllDZG5ScVBwNUhDTk0xSFhjbVVSQW1HWGNDYXpaXy1uMlhDWXlwSTk3ZC1tbXQzbEUwbVQzeVE?oc=5",
-      "published": "2026-05-30T07:00:00.000Z"
-    },
-    {
       "title": "From Ninja Turtles to Lincoln— Woodman is NH's wildest museum: America 250",
       "source": "Foster's Daily Democrat",
       "category": "Events",
@@ -421,6 +414,13 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNEc2R3hST01wZjB0WHhtYVR5SzNtcmNhVEZjWDMyRVdBRHhTVjNsM3NGM3lSX04wYjltcFNENUFZdnVBU01saU5PWkVRWXJYOWZqamJwc0g2dkVTVVhuMDEtSzRPNG5zLVBYVkpqR3k1am4wM3hTNm16VHFRUGNMQS1jVGhaUQ?oc=5",
       "published": "2025-10-20T07:00:00.000Z"
+    },
+    {
+      "title": "Announcing Magic Spotlight: Teenage Mutant Ninja Turtles",
+      "source": "Magic.gg",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNY3pCR0hzT1dYWjNVaW5qWGM2aGlPN3B6SjM0b1JqTTFXSXBobmNDLXgweUhIbi1WeWlhdFRyeEUyV3dqZFBiSW8wTWVMbDZCSG9TUTd2Z1pEN1dHNzVESHhkU2JLYWZad21YamFKenU3dGc0c2RLNG9wRTRWa0w1ZDhZTQ?oc=5",
+      "published": "2025-10-10T07:00:00.000Z"
     }
   ]
 }
