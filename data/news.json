@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-12T03:06:09.468Z",
+  "updated": "2026-11-12T04:12:21.499Z",
   "sample": false,
   "items": [
     {
@@ -143,13 +143,6 @@
       "published": "2026-11-10T16:00:00.000Z"
     },
     {
-      "title": "TMNT Tuesday #82: Got questions for new 'Teenage Mutant Ninja Turtles' writer Matthew Rosenberg?",
-      "source": "AIPT",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE13blZQalRWTURfTjBYUEhrR29fUTl0LUxERlhZWE0tWDE4Z3prXzNuWlpjRFlGYXRicUpCYzMxbkRhLWtPZ05hX2pLYXVBM1h5c0pHWnFpOW05MHNNZkc0Rno0RllCZnVLdWtYZw?oc=5",
-      "published": "2026-11-10T15:30:50.000Z"
-    },
-    {
       "title": "Teenage Mutant Ninja Turtles, Sonic and More Are Headed to Comics Giveaway Day from IDW (And Fans Will Love It) [EXCLUSIVE]",
       "source": "ComicBook.com",
       "category": "Comics",
@@ -248,17 +241,17 @@
       "published": "2026-07-26T07:00:00.000Z"
     },
     {
-      "title": "Turtles by the Beach",
-      "source": "San Diego Comic-Con Unofficial Blog",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
       "source": "Gizmodo",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
+      "published": "2026-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "Turtles by the Beach",
+      "source": "San Diego Comic-Con Unofficial Blog",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
@@ -421,6 +414,13 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNRGg4YjdvMWlkWWdIRWhKdUpTVUJkWmJyeURDc1FNOU02d0ZGWXdvdVpTV19lVlZKLVBwQWJrRWc2Y1Zna0Fod2wyOTU0bjVLNW45RllnWkI4RlRNYzhrN1J5QVZ0TjNjZWNJcjl5QVlWTTFwb1Zka2tSNm8ycDBfcFFFcFgyY3kweGtqS3NFWUs?oc=5",
       "published": "2026-02-18T08:00:00.000Z"
+    },
+    {
+      "title": "Collecting Magic: The Gathering® | Teenage Mutant Ninja Turtles: The Four Most Important Things to Know",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTzA0Z1poUm1lclU1Y2hXSFhyWVZUUGg1S3hkaE9sUzV4aWxtNmhHRkstQWtMTnhLNVJJMzZJMFY0MG1ua0hjMkYzMUl2M3E4dVNFbUJxbUhHSEhZMEhqdThSTzFyUTFXdEx5VVVVcExzbDY3TWJrUDhEY2dVUFlpV2RuS1Y5WEp0?oc=5",
+      "published": "2026-02-17T08:00:00.000Z"
     }
   ]
 }
