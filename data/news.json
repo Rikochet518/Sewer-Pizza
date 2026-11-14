@@ -1,7 +1,14 @@
 {
-  "updated": "2026-11-13T23:53:01.925Z",
+  "updated": "2026-11-14T01:22:12.937Z",
   "sample": false,
   "items": [
+    {
+      "title": "PlatinumGames is developing a cross-gen game called TMNT The Last Ronin.",
+      "source": "GameGPU",
+      "category": "Games",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOYnd4QTBXenpPS1V1RXhpWk43NkpVYnptbHlfeEhVTS1XUHFETWVuWlQzRERQaGYzZ3VpYS1XRlBrcGR1UVBuVENfZGtQSUtqVHZqUjcteGFYdE85SExmTkxIem5hTjU2a2ZGV3c1VXF0OXJwam1PcjJnUGF5d2N3WC1JNHJhYjZfTFNwRlRBYWluRFdLZFowOEpPQ3pqOGY5a2ZNOQ?oc=5",
+      "published": "2026-11-14T01:04:43.000Z"
+    },
     {
       "title": "TMNT’s New Story Is About To Give The Turtles The Worst Night Of Their Lives (Exclusive)",
       "source": "ScreenRant",
@@ -143,13 +150,6 @@
       "published": "2026-11-10T15:30:50.000Z"
     },
     {
-      "title": "First printing copy of Teenage Mutant Ninja Turtles #1 snaps up $192,000 in Part 1 of the Lawrence Klein collection",
-      "source": "EIN News",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMi6wFBVV95cUxOU0RZd3hiMEx1SEZPeWpwVEo3Q1VsZTRUSFdBV0d5STdvRDJXc1VQMUNCd2xMWmZzRFFPOE5oYU93cEVjNmc2UmNSNW4tY29SbFNETXlJWmtKTjg1V0h5YWJENTVVQm1DSHI2cEpoR2RGcEdONXRFQ05rWmxHb2M5b2lsSFVRR1U3aU5nTWpIZzRGSDlJLUh2M2ViZjU5TGFFNVhmNkt0WF9YV0RBdC05UlpUT1dhWXN6ZzBTaTNOVkN0QnhOSDNxZG16bDVyRmFtNWJ2dGUza0J6cTByR0o5Z2I4MjAzOGZ2cjkw?oc=5",
-      "published": "2026-11-09T22:15:00.000Z"
-    },
-    {
       "title": "Skydance Games Confirms Layoffs Following Warner Bros.-Paramount Merger",
       "source": "IGN India",
       "category": "Games",
@@ -176,13 +176,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE12dGZTOUZKaFRwTk51RGY0YzJaTFc5dHpiVzV6LThvMWo4bWpDZnR5TmZHSVc5LUZ3aTVtV20yQmdtdXdyQ292SjlkS3RmenNpYnBuSnl0d0kyN29GcV9RT2NyQWl0RV9UN0JDTUs3Z2ctRURtSC0w?oc=5",
       "published": "2026-11-09T03:46:00.000Z"
-    },
-    {
-      "title": "Teeny Mutant Ninja Turtles Fight an OOZIFIED BOOMBOX! 🔊🐢 | TMNT Toy Play | Toymation",
-      "source": "NickALive!",
-      "category": "Toys",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTFBDb3FuVHo0a3B2YjBpcWNMLTgtR0tLT0ZsQjZwSm9QZHI3ZFhPalFkMmhwUmt3S0xJeEpmMzNJWVN3dFAtM2pwU3FSV2xFS25aSGNjZzB5SlBndi1pUGR6UW1Dck1YWm5XNTJZSlhIcFNNU0NtWmF6dEpETQ?oc=5",
-      "published": "2026-11-08T07:56:00.000Z"
     },
     {
       "title": "Dover's Pine Hill Cemetery chapel needs $1 million restoration",
@@ -234,17 +227,17 @@
       "published": "2026-07-26T07:00:00.000Z"
     },
     {
-      "title": "Turtles by the Beach",
-      "source": "San Diego Comic-Con Unofficial Blog",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
       "source": "Gizmodo",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
+      "published": "2026-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "Turtles by the Beach",
+      "source": "San Diego Comic-Con Unofficial Blog",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
@@ -393,6 +386,13 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNTzA0Z1poUm1lclU1Y2hXSFhyWVZUUGg1S3hkaE9sUzV4aWxtNmhHRkstQWtMTnhLNVJJMzZJMFY0MG1ua0hjMkYzMUl2M3E4dVNFbUJxbUhHSEhZMEhqdThSTzFyUTFXdEx5VVVVcExzbDY3TWJrUDhEY2dVUFlpV2RuS1Y5WEp0?oc=5",
       "published": "2026-02-17T08:00:00.000Z"
+    },
+    {
+      "title": "Where to Find Magic: The Gathering® | Teenage Mutant Ninja Turtles Previews",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNalVwaDYzVUJZcHMwY29HOUVnaXlTSDJVc1BjejZGb054RzhhRjVnX3pzM0kwdUxNUFEzRnBrcDUwUVVKTVZEbVM2d0lkb084c3dZbmFHQjg1R09OUkk1X3daRmJWMzRpSXgzNjNZNjZoanh1eWhtNmktZjYxQ3MwTUVpWDgycjV2OG5ra3ZkN21fNndVVmcyTUVDci1qMUlm?oc=5",
+      "published": "2026-02-13T08:00:00.000Z"
     },
     {
       "title": "Tales of the Teenage Mutant Ninja Turtles Theme – Last ned og installer gratis på Windows",
