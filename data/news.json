@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T11:54:02.550Z",
+  "updated": "2026-11-14T13:11:16.215Z",
   "sample": false,
   "items": [
     {
@@ -87,13 +87,6 @@
       "published": "2026-11-11T16:32:52.000Z"
     },
     {
-      "title": "My pizza dinner with Matthew Rosenberg",
-      "source": "Comics Beat",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1RYll5OGhqSGJRcjlFMUIwVF8zVHFHc0tWTWtETFZjcF81MXNsQnF1SENtbG5PMEVLc0hxVWxVOFVHRV8zcGlTVmlFSkdFYmh0TlJVLTh0YXlZYjM1Xy1sbG5zRS1FMWhFWHQ2U1JYcEMwZE5mcjBuRkxEdw?oc=5",
-      "published": "2026-11-11T15:00:09.000Z"
-    },
-    {
       "title": "The Superhero Reboot That Turned Childhood Heroes Into Hulking Monsters",
       "source": "Giant Freakin Robot",
       "category": "News",
@@ -148,13 +141,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXNHeDNBaFZadXZxZVZWSGpPb21EVkJUcENjbHJWWW1HcEtqSnE2X0RIYXNnRW5HcGUydWVmZjNpUTFhbmM1YmtPVEdRclplN0hyOG9UVFc2YWtVNXJhcFp2NlBjcHRjVlcwakw4UUZYM0FKYlQxY3FZbV9waG5XNDlHWjh5VHFSSGl3NjA5SUVkU2dRcXAxc0FVTk1FSnN1YmRqLUdLQldEX2FaNWJialdfWQ?oc=5",
       "published": "2026-11-10T16:00:00.000Z"
-    },
-    {
-      "title": "TMNT Tuesday #82: Got questions for new 'Teenage Mutant Ninja Turtles' writer Matthew Rosenberg?",
-      "source": "AIPT",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE13blZQalRWTURfTjBYUEhrR29fUTl0LUxERlhZWE0tWDE4Z3prXzNuWlpjRFlGYXRicUpCYzMxbkRhLWtPZ05hX2pLYXVBM1h5c0pHWnFpOW05MHNNZkc0Rno0RllCZnVLdWtYZw?oc=5",
-      "published": "2026-11-10T15:30:50.000Z"
     },
     {
       "title": "Paramount Planning Several New ‘Teenage Mutant Ninja Turtles’ Movies: Report",
@@ -421,6 +407,20 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNY3pCR0hzT1dYWjNVaW5qWGM2aGlPN3B6SjM0b1JqTTFXSXBobmNDLXgweUhIbi1WeWlhdFRyeEUyV3dqZFBiSW8wTWVMbDZCSG9TUTd2Z1pEN1dHNzVESHhkU2JLYWZad21YamFKenU3dGc0c2RLNG9wRTRWa0w1ZDhZTQ?oc=5",
       "published": "2025-10-10T07:00:00.000Z"
+    },
+    {
+      "title": "TMNT’s Kevin Eastman Bringing Back a Fan-Favorite Character He Created 13 Years Ago (Exclusive)",
+      "source": "Comic Book Resources",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxOdmZ2SExVR2JRUlZTY0RyOERaMjZ2a0VKenZEbXJNQzdHZUd3aVRabXdBVThNUHo5YTQyc1FLcm0wUXRKaE1CNnRCbll3SkhOOThwbFBfU2ZQRDFKaEpnVWVGdjc1M0ZncDhmR1FOWmJiNzhBYkNIdlBCa09mSkpBWmttcW4tbENoRVE?oc=5",
+      "published": "2025-10-06T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Empire City to Share First Gameplay Look Exclusively at New York Comic Con",
+      "source": "Cision News",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPWENWalVyd2VVVUNaTjIwVk81VnpJel95S1UzdlNVaUJkLTNEaC12TmtZdG1fbjlNV0ExR0h5SEI0emhiRUhoTGxjVExDMEg0LWpJY3p1Nmo3UTlwZE5QVGJyaENObjlJYzdUdlk3c1VRcUU2Q1lHQkpjV0twV19GajZkM2thWUFDaWgzekhhZlZzQ2VyVUNKVWZxVDZvYUg0WVFEOEZTY3g4QjVVNW02WGdSVXBBQmdacEQ1UEI3SHBWang0aTNrcXd2WW5DYlRTSmVNcHRTOEJXRVlKSlRrWlF0OA?oc=5",
+      "published": "2025-10-06T07:00:00.000Z"
     }
   ]
 }
