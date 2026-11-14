@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T03:03:42.457Z",
+  "updated": "2026-11-14T04:08:28.753Z",
   "sample": false,
   "items": [
     {
@@ -31,13 +31,6 @@
       "published": "2026-11-13T18:00:19.000Z"
     },
     {
-      "title": "An exceptional version of \"Teenage Mutant Ninja Turtles\" sets a record at a global auction",
-      "source": "صوت الإمارات",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMi3gFBVV95cUxNbDN5NWpKaERwc0dNRWpDZ1JLMm55cmlnNlM3V1lyNV9IeERPcjFxaUZMT2dDVTZzMTdCUHNqZGtVZjFoRVRxWXkxU2JiXzBTeDZtaXJFWGRzbU93ZUpwT0VjdmhSWTVjNWJjSUQzaE1xSGtmVGF2ZzRQaVh1MDJCbDNQQVBVSmR4cjFZc0trWkVTbGROMkFULTYyd3lGak9RMUMwU2xPUFg5c3VEZ3puSS05ZThjZW5rQXNaVFZEZlE1NFZoakd1Z0wwOFdYc2V5QXJqclphWm1JYnVva0E?oc=5",
-      "published": "2026-11-13T05:53:13.000Z"
-    },
-    {
       "title": "Skydance Owning Both Warner Bros. and Paramount Could Open the Door to a Future of Crossover Slop",
       "source": "IGN India",
       "category": "News",
@@ -57,13 +50,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxOX1ZLYlE4RFY5Tjk0SnR5b0pJSW9fakZzUmtxVnlGaTgwcFI4Sk5UcjZxUVpZR3djcldBREhiWWRpTVpnTFJienBHSDdoa2ZtNV9HT0VzOEpqcnBybkpNTkdha29EOVZGaXFRSE5QczdUMlJQTG9DMmlUZjZRTkpzaFMwRnU1X1pVQnJHODhXd0hHZ3Y2X05BMmlqUkkzMUVGT1BPLVd6amtGWU5lSGc?oc=5",
       "published": "2026-11-12T20:04:05.000Z"
-    },
-    {
-      "title": "Garden State Comic Fest returns to Vineland with actors from Teenage Mutant Ninja Turtles movies",
-      "source": "Press of Atlantic City",
-      "category": "Comics",
-      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdWlXN3FPWmpmaFBWMjNrYmo4cW5GczRzX21iUlFTN2xnZHpuSzlwdmNmc09LQkhnOFQ4ek53dDRYMHVBMTRDNFlyaXFiQkdDdjFhT2NKT1BCX3RMbjF6dkFTeFV1emxVbDFWMEJqVGFMYy0wb0w4UGFmYTY0UWppWUt3SzMzd1ZzRl85a0dlQkp6bVBVQ0lud2M2WGtPd3p4VS00TFdNVEVWTTNxRUZqMHh1TQ?oc=5",
-      "published": "2026-11-12T20:00:00.000Z"
     },
     {
       "title": "Super Evil Megacorp Announces New TMNT: Splintered Fate Update",
@@ -248,17 +234,17 @@
       "published": "2026-07-26T07:00:00.000Z"
     },
     {
-      "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
-      "source": "Gizmodo",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "Turtles by the Beach",
       "source": "San Diego Comic-Con Unofficial Blog",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
+      "published": "2026-07-25T07:00:00.000Z"
+    },
+    {
+      "title": "The Teenage Mutant Ninja Turtles Have One ‘Last Ronin’ Adventure in Them",
+      "source": "Gizmodo",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNVlU1WFdSLVpuZnRHZGdtRElfNVdmS2R4WFFCb09sMk1OZTJEVWxLUU9vNFdZWnhRdmNHbEhWY1V3QUVSNHVQYkVkN3lSVEZ2a0lCNG5sMnhyaVpUaHBiOGxxY0xnV1BORUo0LWJLeUtybEwyTXNhTnlfZU1oQnI5WXgzVUVDSmcyZXA3Qi0wa2JINlByWFhVZnlGWDB1M2tfZmxV?oc=5",
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
@@ -295,13 +281,6 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPem9fNVo3UWN3eEdOekFNcjZpcXhXengtZ1hrRE4zbGNhdDBHWUJhOUU0LVdFTzQ3Vk9QeDlYUXlZWXlpRkhJZlBzdmZnMjZBR2hUWENETHBObHU2RVdKRVZCUU5PYUNvaS1IZ2xZTE4zY2lWMFRNX3BkT3R0RC1RSi1UR0NIOFdRblg3YVJBc0toZ2Q4QzBfVXNTc290Rmc?oc=5",
       "published": "2026-07-15T07:00:00.000Z"
-    },
-    {
-      "title": "IDW unveils packed San Diego Comic-Con 2026 plans with TMNT #300, Godzilla, Hello Kitty, Sonic, and more",
-      "source": "AIPT",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ONXNYMnhPQ0dWNVF4YUxZWEhXbER1LWFKSFFWZWlZanZFaXBueWUxanFjNmtlSGpaZjZMbDhHN3cxZW9hdS1GQ3JYdUVNbUtBLWNCLTlQOUNTMmZBUktuZ3RuZmI5dVJCdWI3dW5xMllrMTRJLU5naFdR?oc=5",
-      "published": "2026-07-14T07:00:00.000Z"
     },
     {
       "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
@@ -374,7 +353,7 @@
       "published": "2026-02-20T08:00:00.000Z"
     },
     {
-      "title": "Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
+      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
       "source": "Magic: The Gathering",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTjlxMUYwcFROZnRUZ2d5RFBLYmRvNXBQQV82RVd4Z1l2b3NNSFU0M0lVdWFQbXotR05HVTRWOHc1RTlnWlhiNXVsT3ozNlhyQTQ4YzIwVDBPQ3czSE9TUXJzQ0JpTDgzekEwTFBZWE9aQlM2ZFZwaFpMbng4MTBBUXp3NE1Vc1U0OEctUGM2MUJha2tET1RQRnBSczB4NEh5QkE?oc=5",
@@ -421,6 +400,27 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNalVwaDYzVUJZcHMwY29HOUVnaXlTSDJVc1BjejZGb054RzhhRjVnX3pzM0kwdUxNUFEzRnBrcDUwUVVKTVZEbVM2d0lkb084c3dZbmFHQjg1R09OUkk1X3daRmJWMzRpSXgzNjNZNjZoanh1eWhtNmktZjYxQ3MwTUVpWDgycjV2OG5ra3ZkN21fNndVVmcyTUVDci1qMUlm?oc=5",
       "published": "2026-02-13T08:00:00.000Z"
+    },
+    {
+      "title": "Tales of the Teenage Mutant Ninja Turtles Theme – Last ned og installer gratis på Windows",
+      "source": "Microsoft",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNSjhNZEItLVB4czVmaU9OWG90UjJqbm1IQzVCdDRVUzBHSHFBLU1yRUlkbGQybWlaMWxVRnJGczdwTWtBX0lLZExJR2tXSnAzcmpDQk5MaXBNRFkwUlEyMkoyRERSYUFyRVZFaUdWWHV0bXR5d0NOMTNrNEFuVTFXMWZZRWlNaWM4ZDB4QVBFOXZ0MHdzblRMSnh3?oc=5",
+      "published": "2025-12-25T16:55:48.000Z"
+    },
+    {
+      "title": "Move over Spider-Man, the Teenage Mutant Ninja Turtles were the cosplay kings of New York Comic Con 2025",
+      "source": "Popverse",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxPNEc2R3hST01wZjB0WHhtYVR5SzNtcmNhVEZjWDMyRVdBRHhTVjNsM3NGM3lSX04wYjltcFNENUFZdnVBU01saU5PWkVRWXJYOWZqamJwc0g2dkVTVVhuMDEtSzRPNG5zLVBYVkpqR3k1am4wM3hTNm16VHFRUGNMQS1jVGhaUQ?oc=5",
+      "published": "2025-10-20T07:00:00.000Z"
+    },
+    {
+      "title": "Announcing Magic Spotlight: Teenage Mutant Ninja Turtles",
+      "source": "Magic.gg",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxNY3pCR0hzT1dYWjNVaW5qWGM2aGlPN3B6SjM0b1JqTTFXSXBobmNDLXgweUhIbi1WeWlhdFRyeEUyV3dqZFBiSW8wTWVMbDZCSG9TUTd2Z1pEN1dHNzVESHhkU2JLYWZad21YamFKenU3dGc0c2RLNG9wRTRWa0w1ZDhZTQ?oc=5",
+      "published": "2025-10-10T07:00:00.000Z"
     }
   ]
 }
