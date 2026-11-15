@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T03:02:34.900Z",
+  "updated": "2026-11-15T04:10:26.644Z",
   "sample": false,
   "items": [
     {
@@ -87,25 +87,11 @@
       "published": "2026-11-11T13:25:27.000Z"
     },
     {
-      "title": "The Superhero Reboot That Turned Childhood Heroes Into Hulking Monsters",
-      "source": "Giant Freakin Robot",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxOTkxjMWNFbmliVWxyS0JKakxRZ2R3Q1VJRko4cVZGUlUxUkU1VmdDaUxWYlJjOElCcER4SmJzemhnSm1BX1JNT25WbndSaV8wVjVqbTJJa3RqV2lnTnJtLVBOLUJwWUdTMVNDXy1ZRERfVGw5blpRRG9BUEdaQTJ5Q2FsUXFEUHl0ZXJCa0Q3MnFlRGxNT0E?oc=5",
-      "published": "2026-11-11T12:12:56.000Z"
-    },
-    {
       "title": "Every Version of TMNT's Armaggon, Ranked",
       "source": "Comic Book Resources",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiakFVX3lxTFBfYmdtQS13Wl83ZU90NHhiRmItSkR1cEJOeThsT0NqQWtmM2x0VDdxemRJX0gxTnVETVRETXpncUtERnBELXhhT1NfX3N5NzRFeTJwc3UzeURBVjN2NklETklpQUtoenZzbUE?oc=5",
       "published": "2026-11-11T04:00:12.000Z"
-    },
-    {
-      "title": "Teenage Mutant Ninja Turtles: Splintered Fate ‘Shell Squad Co-Op Update’ now available",
-      "source": "Gematsu",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNU1lkMjNWYVBGa0d5MEJ6Vl95YjFlN1pVeDQ4VVh2em91OENXMUp3MW81VTluQTJFSFJ6Zm1zNlV5b0N2cWFXMkVrVXBBYnJhMHZHTk55VkZkbEJ1QkhveVVPX0JKT2JqcEx6YVo1Rkh3eUE1UHRmb2FJVk13X3hZWXByenFSckdNV01fVURWdnNxTzYxcjZnUW9ETUZZaG1xVFFTdDhjS1Y4Z3dKQ1FMTzhJaVVaQQ?oc=5",
-      "published": "2026-11-10T16:00:18.000Z"
     },
     {
       "title": "TMNT: Splintered Fate - Shell Squad Co-op Update Trailer | PS5 & PS4 Games",
@@ -318,7 +304,7 @@
       "published": "2026-02-20T08:00:00.000Z"
     },
     {
-      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
+      "title": "Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
       "source": "Magic: The Gathering",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTjlxMUYwcFROZnRUZ2d5RFBLYmRvNXBQQV82RVd4Z1l2b3NNSFU0M0lVdWFQbXotR05HVTRWOHc1RTlnWlhiNXVsT3ozNlhyQTQ4YzIwVDBPQ3czSE9TUXJzQ0JpTDgzekEwTFBZWE9aQlM2ZFZwaFpMbng4MTBBUXp3NE1Vc1U0OEctUGM2MUJha2tET1RQRnBSczB4NEh5QkE?oc=5",
@@ -421,6 +407,20 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNOTNHOWlFb1RRMDVOUDgzYTk3VDIwSTBqY0VhbUFBcnAwYmFlcG1CWTBmbHZodWwwMDN4czlPQVJCUXE2RnBPMXJ1aG5Od0RjNE1jWS12Z3lmSi16ZlVJbmFfSGUtUktwNURTUkZpUWI1aEZ4MGhDMUdJNlRNd2tvWHJOeHl2S3lvNE1FYmQ4NTFnVGMyWHJOcXBNeHFWMFlZRkFQcnhpYWt4eUhHTVUyb2ZzOA?oc=5",
       "published": "2025-08-04T07:00:00.000Z"
+    },
+    {
+      "title": "TMNT: The Return | 35th Anniversary at Comic-Con feat. Kevin Eastman | SDCC 2025",
+      "source": "IGN Nordic",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOYnhwcWc2WjNVOXdnRW5UZzRSNUxBcGM1V3FTRGVYVzFmU1JrUFNHY1prVjdCNk5SU3BpaW50dlpLV2IzM2pJaWlEcUZPNm9fMFg1R2JRS3V2VXBsM2JzSG1rNlFhMTlQeTl5OWozNmNjYjZyNUFzUjgybGpjWERiT1Y4SURuV18xMlk3LXA3RDkwUmZDTHF1bTdVR1pEV2MzWDZEVjV2VG5fSTBwNU1TMDQ5eWJ0b3Y0cmJsQm5UUVkxRE1xZXotREpyVWpOZW84cXlfOWVmLWQ3MWs?oc=5",
+      "published": "2025-07-29T07:00:00.000Z"
+    },
+    {
+      "title": "Kevin Eastman Gets As Nostalgic As We Do for TMNT's 35th Anniversary | SDCC 2025",
+      "source": "IGN Nordic",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZG1RODBQTlR0YndHWmdMdS1LVEIyX3ktaENjNTRYaFB4ZUxqdWpQQ3dIUFZXSU45dU01UWRyT3ZlbS0zc0lNQVQ5bnRyNF9WNFFLdGgzQ1dHajZuZTVvSkR6NDVodVdNYTRDNFp0MGo0T3MzX2FKSG13ekpQaldoS0ZSNDdhZVZ4b3FKOEstMlpKM0dtWF94bjJxVlhQUkVLRU9mQWRaakhwekZyZmxEZWdtU0NyUUpKZUxfTXVLR2t2Y1NlVGRlTndfbl9WclV3d1RoeExuaUc?oc=5",
+      "published": "2025-07-26T07:00:00.000Z"
     }
   ]
 }
