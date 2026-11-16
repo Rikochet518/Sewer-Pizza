@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-16T04:55:53.211Z",
+  "updated": "2026-11-16T06:46:55.949Z",
   "sample": false,
   "items": [
     {
@@ -31,6 +31,13 @@
       "published": "2026-11-15T11:33:08.000Z"
     },
     {
+      "title": "WWAY TV Events - Can I Kick It? Teenage Mutant Ninja Turtles",
+      "source": "WWAYTV3",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPbGwtR01yeUVQbnh5dnFmWFRFZm9wWFZsWWhiaUdVelI0LXowQnFpeGhyd19rYkw5c2h3azRnVUNBS3JTR0FoY2txajM5ejZtNVZoOW5PLUhGelF0YldHcXBkVWk4czFsSzdYeXJpMHE1SEFCYm5tdHc1aUdWRDVtT0VHM2MzaXZndEtwMGtVcDcyc3dKTHgxQ0NSXzFITlNaRVh6bGtxNUprSU1oN0lUdVl5QQ?oc=5",
+      "published": "2026-11-14T21:34:01.000Z"
+    },
+    {
       "title": "Kourtney Kardashian Shares Rare Baby Photos of Son Rocky After His Teenage Mutant Ninja Turtles Birthday Bash",
       "source": "AOL.com",
       "category": "News",
@@ -50,6 +57,13 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTFBWUk9VRG9tVkxLcW9wTkR5dU8tUHVaRkQ4SXJkaEc4V1dmbVpUX0lGVFpTU3l1NHdGd096ZHlLSktfUVdwR0h2WGhyTDVFaTFfNW45V3Y1REx6SmNCbGdLaU9OQ2FEOTA0QU9YLVpHOE40N1ZUb0lXNg?oc=5",
       "published": "2026-11-12T20:36:41.000Z"
+    },
+    {
+      "title": "Garden State Comic Fest returns to Vineland with actors from Teenage Mutant Ninja Turtles movies",
+      "source": "Press of Atlantic City",
+      "category": "Comics",
+      "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxOdWlXN3FPWmpmaFBWMjNrYmo4cW5GczRzX21iUlFTN2xnZHpuSzlwdmNmc09LQkhnOFQ4ek53dDRYMHVBMTRDNFlyaXFiQkdDdjFhT2NKT1BCX3RMbjF6dkFTeFV1emxVbDFWMEJqVGFMYy0wb0w4UGFmYTY0UWppWUt3SzMzd1ZzRl85a0dlQkp6bVBVQ0lud2M2WGtPd3p4VS00TFdNVEVWTTNxRUZqMHh1TQ?oc=5",
+      "published": "2026-11-12T20:00:00.000Z"
     },
     {
       "title": "‘Teenage Mutant Ninja Turtles’ Get ‘Warriors’-Inspired New Comic Book Arc | Exclusive",
@@ -407,20 +421,6 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMi2wFBVV95cUxOYnhwcWc2WjNVOXdnRW5UZzRSNUxBcGM1V3FTRGVYVzFmU1JrUFNHY1prVjdCNk5SU3BpaW50dlpLV2IzM2pJaWlEcUZPNm9fMFg1R2JRS3V2VXBsM2JzSG1rNlFhMTlQeTl5OWozNmNjYjZyNUFzUjgybGpjWERiT1Y4SURuV18xMlk3LXA3RDkwUmZDTHF1bTdVR1pEV2MzWDZEVjV2VG5fSTBwNU1TMDQ5eWJ0b3Y0cmJsQm5UUVkxRE1xZXotREpyVWpOZW84cXlfOWVmLWQ3MWs?oc=5",
       "published": "2025-07-29T07:00:00.000Z"
-    },
-    {
-      "title": "Kevin Eastman Gets As Nostalgic As We Do for TMNT's 35th Anniversary | SDCC 2025",
-      "source": "IGN Nordic",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMi2AFBVV95cUxPZG1RODBQTlR0YndHWmdMdS1LVEIyX3ktaENjNTRYaFB4ZUxqdWpQQ3dIUFZXSU45dU01UWRyT3ZlbS0zc0lNQVQ5bnRyNF9WNFFLdGgzQ1dHajZuZTVvSkR6NDVodVdNYTRDNFp0MGo0T3MzX2FKSG13ekpQaldoS0ZSNDdhZVZ4b3FKOEstMlpKM0dtWF94bjJxVlhQUkVLRU9mQWRaakhwekZyZmxEZWdtU0NyUUpKZUxfTXVLR2t2Y1NlVGRlTndfbl9WclV3d1RoeExuaUc?oc=5",
-      "published": "2025-07-26T07:00:00.000Z"
-    },
-    {
-      "title": "Nickelodeon’s ‘Tales of the Teenage Mutant Ninja Turtles’ Hits Comics Pages with IDW",
-      "source": "Animation Magazine",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNc2N2c0gzUUZiQV94S013ZXA0X3lnRFdncTdEMFZUX3pBZnE4YlFXQlJYLXAxUk1OaEtGdVB5bzlXdzF4NWdyTDZ2dUZ0T29WYjl6YXk3eVF1SEZnRldVbVQ1M2Fhdzk4M1dHbFg1bFNCVzdqQlZUb3M3T2ZxbFpHemNOQkdPQmJwQXpFQUMtY2pNZlVEc2VNWHlfSHlfVzgwdUdRWFY5U2NuMUJTdEI4ajBpTFl3cjQ5RlZwQ2hXN2pVQQ?oc=5",
-      "published": "2025-06-27T07:00:00.000Z"
     }
   ]
 }
