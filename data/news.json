@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-17T21:07:58.938Z",
+  "updated": "2026-11-17T22:09:58.065Z",
   "sample": false,
   "items": [
     {
@@ -15,13 +15,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlVJcW9TODlzUk9Zem5GQ28zOUxqeHFzTHRVNnJMTm9DdVd2ZGwyNEVQUENGczBKY0VqSzlKMktRYmxEbG43WDk0MTM1cGhISDdpZl8wcDUyX3ZZYlQxcVlGcTFvaVR1bUNLeEZLb3N1dXZkY1Vxd2hBZjBzd19ucmg0Q2hWelNMc1RqY1dibnFwWmRiRThwRzdqVlJwQQ?oc=5",
       "published": "2026-11-17T15:57:12.000Z"
-    },
-    {
-      "title": "TMNT Tuesday #83: New ‘Teenage Mutant Ninja Turtles’ and ‘Shredder’ previews",
-      "source": "AIPT",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9TOVFWUVB1Sks2aEh5enpWNDA5TjQ0YW9nWFZubnlRQ2FrcWNtN3NuV2NROVdGd090MF9CeEhtNHVnMlp2TXdoRDhtX0pwbFp5UTZYYldZRm1YTXo2eHg5T3hXOTBjQQ?oc=5",
-      "published": "2026-11-17T15:07:33.000Z"
     },
     {
       "title": "Teenage Mutant Ninja Turtles' Greatest Era Is Returning In 2027 With New Prequel",
@@ -421,6 +414,13 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZWpSU0piMkVoUXZWRmVTQ2tIZ3l3enQ3YmdzMWpsNkk4VFI2QzlZMmVUdGVGQTdhZTRRY0pUODEwZHE2TzM2MWhhZHBIbUhCaHR3ZnkwbGNpVXhHRXZ3bU9YOEx1cUlOdV9HOGV1Mm5KNGRpQnpnVWs2dVJaUU94TA?oc=5",
       "published": "2025-04-15T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles was the hardest game I ever played – so why am I back? | Dominik Diamond",
+      "source": "The Guardian",
+      "category": "Games",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPYVlEa0hndmQ1bktDbUY4dkZZd1Ayc1lOQkxDVmhRU3dxOC1wSU1fSXlEaWJEcjkyeHVfM0F4VFZZLTlUY1IxRTdjcDY4X1hkd2RiNFNJaDZLMFFPU0pxRDVYWFJsLUk0Q3U2b3c1WFFZRDRoZVJHRHcwLVY2TWFYMnl2dlpvTzVyS3AwajlLb3hrZ285RjVqaEpMZ1VtSU5PRWs3cGpR?oc=5",
+      "published": "2025-03-29T07:00:00.000Z"
     }
   ]
 }
