@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-18T13:32:01.210Z",
+  "updated": "2026-11-18T15:13:47.789Z",
   "sample": false,
   "items": [
     {
@@ -122,13 +122,6 @@
       "published": "2026-11-12T20:36:41.000Z"
     },
     {
-      "title": "Super Evil Megacorp Announces New TMNT: Splintered Fate Update",
-      "source": "KeenGamer",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxQNXdYT3IwaVZtaUU2WHdkdGpRWldUcV9pX1Y2Nk1wY3QwUVJyUXkzYkV1QWEtOVlNaThHUl9rcEFhVktMZ3FVdWk4emQwdWUxWHFEUVMyeGJCeXNjS2h2ekxKTlFKcTgwNV9PQWRfOXlHbnkyaVU2ODJ5YnRCdUNBSXU2V25TZ1pMYlgxUW0wU2xfTlNFdUtPTGlOME9sb0lDbl9jdQ?oc=5",
-      "published": "2026-11-12T17:22:15.000Z"
-    },
-    {
       "title": "‘Teenage Mutant Ninja Turtles’ Get ‘Warriors’-Inspired New Comic Book Arc | Exclusive",
       "source": "TheWrap",
       "category": "Comics",
@@ -141,6 +134,13 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxQSXNHeDNBaFZadXZxZVZWSGpPb21EVkJUcENjbHJWWW1HcEtqSnE2X0RIYXNnRW5HcGUydWVmZjNpUTFhbmM1YmtPVEdRclplN0hyOG9UVFc2YWtVNXJhcFp2NlBjcHRjVlcwakw4UUZYM0FKYlQxY3FZbV9waG5XNDlHWjh5VHFSSGl3NjA5SUVkU2dRcXAxc0FVTk1FSnN1YmRqLUdLQldEX2FaNWJialdfWQ?oc=5",
       "published": "2026-11-10T16:00:00.000Z"
+    },
+    {
+      "title": "Kourtney Kardashian Shares Glimpse of Son Rocky’s Epic Teenage Mutant Ninja Turtles -Themed 3rd Birthday Party",
+      "source": "People.com",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPcWJyTXJHckNKMHVMb3VFcUtpNE5xS0ZCcGd4NTA4Y0JGWUgwVGxqa19jTXVVeXBabUt4ZnVhcWVxVlZMbWw4dDgtOGFOMDlBNVFWQlgwd01tN0VoUkVCdktacEJUQVFJVlhYTy1yaDk0YWRDeTJyTG5ONVVsWWVneDVpYUlmRUpUekVuY0E3enNSY2V6bVFJSTZfOGJ0OHI3VHV3WXZ4WHNEQ1kxTGdBaHVFSXFtWmFaaF9TcEFoX2pmUQ?oc=5",
+      "published": "2026-11-09T08:00:00.000Z"
     },
     {
       "title": "Dover's Pine Hill Cemetery chapel needs $1 million restoration",
@@ -262,6 +262,13 @@
       "published": "2026-05-05T07:00:00.000Z"
     },
     {
+      "title": "‘Teenage Mutant Ninja Turtles VR’ Review – Totally Radical Beat ’em Up Action",
+      "source": "Road to VR",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOSlRhMEZVWFdsVkF0TjlrNm50TVFJR2tCbTRMQjJfWkdVZGhfY0VXQUhIcXNFUEJHbThaODhHSFRQc2xweGZUM0owT3BuUnluRTFaSTd3NHlva2VPODlHeVlGYVNhY0pRT3hWQ2drNHV1Rkl1YndzOXdZZEQyZklPSzVfYw?oc=5",
+      "published": "2026-04-30T07:00:00.000Z"
+    },
+    {
       "title": "Teenage Mutant Ninja Turtles: Empire City Launches Today on Meta Quest",
       "source": "www.meta.com",
       "category": "News",
@@ -274,13 +281,6 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNFVKS1NXUFprSzJOYlV6WDdGWFEtVy1MdkNIRWxQTlJSS1FwSnRHTVk4VHI3XzNzZzZITnh0dnhUaGtBZ0ZfSk9ZMFJSUk5zeE9QY1FHQnJHZ3hIRjlXZHYzZ2NNRUE0TENtd2MxRmZ6eEdPWjB5bGVzZHJwTXR5TFdEZWVCaHZTVHE4TTF3ZGhDbVEwalR0U2VFbm4xUFhWZWRN?oc=5",
       "published": "2026-04-28T07:00:00.000Z"
-    },
-    {
-      "title": "Frank Miller Draws His First-Ever ‘Teenage Mutant Ninja Turtles’ Cover (Exclusive)",
-      "source": "The Hollywood Reporter",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZjZaY0ZqMm82WVBSUThDczQzUGtYb0hkRlZpRnZ3b0xLTExUMGVRaEJXRWNTSy0xMVVGTmxlZUx2TTc0WHREYXZiSXgxNmdHbWpfOGhTSHl1MVZFbWRxZERYVDhVdkdYeHF5LW5KeWhBT255S1FwT05LZUJqVXltZTR2ZEduUlNCR2FNZDM3Z1kzQ2w1NmhGN0Zub2YzT0tmcDZNTlFjQ3hYSlgyMk01eHpkcDVnTlI2?oc=5",
-      "published": "2026-03-20T07:00:00.000Z"
     },
     {
       "title": "Co-creator Kevin Eastman: Bruce Lee inspired 'Ninja Turtles' fights",
