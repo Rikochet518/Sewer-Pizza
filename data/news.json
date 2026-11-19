@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-19T05:25:49.368Z",
+  "updated": "2026-11-19T07:39:08.854Z",
   "sample": false,
   "items": [
     {
@@ -50,6 +50,13 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9TOVFWUVB1Sks2aEh5enpWNDA5TjQ0YW9nWFZubnlRQ2FrcWNtN3NuV2NROVdGd090MF9CeEhtNHVnMlp2TXdoRDhtX0pwbFp5UTZYYldZRm1YTXo2eHg5T3hXOTBjQQ?oc=5",
       "published": "2026-11-17T15:07:33.000Z"
+    },
+    {
+      "title": "Naruto Joins Teenage Mutant Ninja Turtles For A Massive Comic Book Collaboration",
+      "source": "Comic Book Resources",
+      "category": "Comics",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0za3Nsd09wTmVLOEFoQ1Z1bUU5MXhOd3ExS2FCQlRhS0hEN21GNEw5YnpiUGNLd0ktYU5TUDVhNVdRQ29reS1jbmtjek1fS2NFXzdZRG82QVVSdFVVbU5jWmxPNTFsb2wyX1Q2ekFyWTNUZVNWOWUyRzROaF8xS2s?oc=5",
+      "published": "2026-11-16T01:00:00.000Z"
     },
     {
       "title": "Paramount Expanding TMNT Universe as DCU Faces Uncertain Future",
@@ -199,6 +206,13 @@
       "published": "2026-05-20T07:00:00.000Z"
     },
     {
+      "title": "Original 'TMNT' comics sold out at Portsmouth convention 42 years ago this week",
+      "source": "WMUR",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPU1NhUE1GT2hXRkprbjJrd1Y3dzU4QzNxMzhTRV9mVnd1N0FxOTJTTTFFRGNsVkNseVlOYUVjYUlUc2t3WXNCQXAtbWRQMjhSVzJKZUpYU044UlNHYU84ZDlMYTlxN2xIbEJSYjVVZTJUakxQdDdUaERlSmtCRXJrak91U0VQYk5XUkNGc0pTS2RYT0g5SG0zemNRVTNhRXUt?oc=5",
+      "published": "2026-05-05T07:00:00.000Z"
+    },
+    {
       "title": "‘Teenage Mutant Ninja Turtles VR’ Review – Totally Radical Beat ’em Up Action",
       "source": "Road to VR",
       "category": "News",
@@ -255,7 +269,7 @@
       "published": "2026-02-20T08:00:00.000Z"
     },
     {
-      "title": "Magic: The Gathering® | Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
+      "title": "Teenage Mutant Ninja Turtles Turtle Team-Up Contents",
       "source": "Magic: The Gathering",
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQTjlxMUYwcFROZnRUZ2d5RFBLYmRvNXBQQV82RVd4Z1l2b3NNSFU0M0lVdWFQbXotR05HVTRWOHc1RTlnWlhiNXVsT3ozNlhyQTQ4YzIwVDBPQ3czSE9TUXJzQ0JpTDgzekEwTFBZWE9aQlM2ZFZwaFpMbng4MTBBUXp3NE1Vc1U0OEctUGM2MUJha2tET1RQRnBSczB4NEh5QkE?oc=5",
@@ -407,20 +421,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxPb1c2d1Q0dndJa0Z2S2RQcUM1eUx4OC1IZ0xJTm5obnd2dzhTbEk0dVQzZE51YUcyTUNjSUhRRV9IbVphblZQZFd6R1NJVWUxRFR5WkZZY2VsVXVmNVJpY2ZxRGdDX25DbFkwckc3MVpDN1lzWHd2bDhBVE1jWmk4N1hvZ3JmZDFPMXlraGRMTTFoLWZRaFI2UW12UVZKYWJWYWpfSlF3?oc=5",
       "published": "2025-05-28T07:00:00.000Z"
-    },
-    {
-      "title": "Teenage Mutant Ninja Turtles: 35th Anniversary",
-      "source": "Museum of the Moving Image",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiYEFVX3lxTE9pWWc3ZlZaY3NaTDlxRFo1UGxILUFYY0U4eWk3R0cyLVRTZDJZTlFzeFRJaXdDOWFKYTA4Z3VtM09ZclJDT1dmdUlXUXU5bEM3aEtiaS1vSHVGdnVsYlF6dA?oc=5",
-      "published": "2025-04-19T07:00:00.000Z"
-    },
-    {
-      "title": "Cowabunga Dude: It’s Rocket League | TMNT!",
-      "source": "Rocket League ®",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxQZWpSU0piMkVoUXZWRmVTQ2tIZ3l3enQ3YmdzMWpsNkk4VFI2QzlZMmVUdGVGQTdhZTRRY0pUODEwZHE2TzM2MWhhZHBIbUhCaHR3ZnkwbGNpVXhHRXZ3bU9YOEx1cUlOdV9HOGV1Mm5KNGRpQnpnVWs2dVJaUU94TA?oc=5",
-      "published": "2025-04-15T07:00:00.000Z"
     }
   ]
 }
