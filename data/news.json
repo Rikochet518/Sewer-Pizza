@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T05:14:06.910Z",
+  "updated": "2026-11-22T06:14:08.235Z",
   "sample": false,
   "items": [
     {
@@ -57,13 +57,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxQbG50T2pPUC1yYUE5S0ZndjVyRTdGaElrYUpTTVlwLTBXaEViLWtYNmtuQW1LMnN0Q255RWVzQ01SZ3pMLXVYb2E4N1pUbmk3ZE5COVVHbFNGT2VXYy1QaEY0V2YyRVRwQUdiRlNLanVqZzVYNmhqWFctdzlZdDlZdk1MaC1pajI3ZnZyME53SW96b3V3clhnZXo0OExaRHk3bENDMUxlLTVlS0tsUUhzeWowUkY0cEU4UUVXZ3VzbGlrdw?oc=5",
       "published": "2026-11-15T11:33:08.000Z"
-    },
-    {
-      "title": "TEENY MUTANT NINJA TURTLES | Episode 15: Ninja Basketball 🏀 | Full Episode | Nick Jr., Rubble & Crew and Teenage Mutant Ninja Turtles",
-      "source": "NickALive!",
-      "category": "Shows",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxOMEdXSlNCRld5UEdFVHhqMm5MQ3M1eVA3Y3AzeUg1Mm9qa3E0MVQyYlh1TEVtNGhoY0pCTW9WVEZZalpac3pKSFBrQ3JlVXN2SVE0OFlub1lVczQ3V1JSOHdsNElrNlloMUpOTk9KdUtoYWQ5aVpGTHlpZGw0YXhVZEFR?oc=5",
-      "published": "2026-11-14T05:41:00.000Z"
     },
     {
       "title": "‘Teenage Mutant Ninja Turtles’ Get ‘Warriors’-Inspired New Comic Book Arc | Exclusive",
@@ -162,13 +155,6 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPem9fNVo3UWN3eEdOekFNcjZpcXhXengtZ1hrRE4zbGNhdDBHWUJhOUU0LVdFTzQ3Vk9QeDlYUXlZWXlpRkhJZlBzdmZnMjZBR2hUWENETHBObHU2RVdKRVZCUU5PYUNvaS1IZ2xZTE4zY2lWMFRNX3BkT3R0RC1RSi1UR0NIOFdRblg3YVJBc0toZ2Q4QzBfVXNTc290Rmc?oc=5",
       "published": "2026-07-15T07:00:00.000Z"
-    },
-    {
-      "title": "IDW unveils packed San Diego Comic-Con 2026 plans with TMNT #300, Godzilla, Hello Kitty, Sonic, and more",
-      "source": "AIPT",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ONXNYMnhPQ0dWNVF4YUxZWEhXbER1LWFKSFFWZWlZanZFaXBueWUxanFjNmtlSGpaZjZMbDhHN3cxZW9hdS1GQ3JYdUVNbUtBLWNCLTlQOUNTMmZBUktuZ3RuZmI5dVJCdWI3dW5xMllrMTRJLU5naFdR?oc=5",
-      "published": "2026-07-14T07:00:00.000Z"
     },
     {
       "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
@@ -421,6 +407,20 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
       "published": "2025-03-07T15:26:00.000Z"
+    },
+    {
+      "title": "TMNT Comic Writers Share Exciting Details of Ongoing Series and TMNT x Naruto | IGN Fan Fest 2025",
+      "source": "IGN Southeast Asia",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPaTRFVEhXbTl2NWtNTTJib0lRODFUVGI5eWFGNGRidzJ3SzMxVVQ3M3hEQ1IzTkc2dVVfaUFkN2ZKM0piZmluZ283SnpOTV9PMm5JWnlfUDRoQllMcHZxRlY5QnZRQ3hGS3ZmSm93cndJTjROYzhlaGZUNmhLbU91UFJPeENXOGpqQkFub25pQjVjenJuNWpUTWEzR1ZCQzgwV2FLcVZLbmFTTzBFUnpQbng4R2xsNjA5bG54U0N1YV9BWVMzRGpzTzRiNDlHVld5Qk93ZlNkdFVlSDBUNkRHUlpVMjZpNUlYM3VvNUI5ZFpmb2c?oc=5",
+      "published": "2025-03-01T08:00:00.000Z"
+    },
+    {
+      "title": "Dover Chamber announces 2025 annual award winners",
+      "source": "New Hampshire Union Leader",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcEd6dWhQRF84cV9DR08xMGQ1TllRd3RhUENmVy1xUGdWbGNEUTlESmVZUU5XVllLbGNOSG56R0tlRzJ1WEhUVUswbkF5MVRHR1lxNHJCcHVxNU04VTBVdW9BNTVtTVFxZEo1UTVQekdvMjVPeWxPd1MwY05STS1iblgtbjlXQTdkN0xDNUgxTQ?oc=5",
+      "published": "2025-02-17T08:00:00.000Z"
     }
   ]
 }
