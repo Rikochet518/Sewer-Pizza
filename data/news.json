@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-22T19:07:54.540Z",
+  "updated": "2026-11-22T20:00:08.703Z",
   "sample": false,
   "items": [
     {
@@ -50,13 +50,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9TOVFWUVB1Sks2aEh5enpWNDA5TjQ0YW9nWFZubnlRQ2FrcWNtN3NuV2NROVdGd090MF9CeEhtNHVnMlp2TXdoRDhtX0pwbFp5UTZYYldZRm1YTXo2eHg5T3hXOTBjQQ?oc=5",
       "published": "2026-11-17T15:07:33.000Z"
-    },
-    {
-      "title": "Naruto Joins Teenage Mutant Ninja Turtles For A Massive Comic Book Collaboration",
-      "source": "Comic Book Resources",
-      "category": "Comics",
-      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTE0za3Nsd09wTmVLOEFoQ1Z1bUU5MXhOd3ExS2FCQlRhS0hEN21GNEw5YnpiUGNLd0ktYU5TUDVhNVdRQ29reS1jbmtjek1fS2NFXzdZRG82QVVSdFVVbU5jWmxPNTFsb2wyX1Q2ekFyWTNUZVNWOWUyRzROaF8xS2s?oc=5",
-      "published": "2026-11-16T01:00:00.000Z"
     },
     {
       "title": "Paramount Expanding TMNT Universe as DCU Faces Uncertain Future",
@@ -214,7 +207,7 @@
     },
     {
       "title": "CGC Certifies Videocassettes and Video Games from the Personal Collections of Kevin Eastman and Peter Laird",
-      "source": "cgcgrading.com",
+      "source": "www.cgcgrading.com",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQd1dOZkF1ZkQtdTRnRTJPVGlNdk5TUUJHc2JDSmJCZWQwU1dsRy1BeVhwTzFTQklFNTllQ3JFcGxKVW8weHJTZjMzdG9IQWJWcU5GVWVzY1RCNXRrUmJ2SURsTkpjUmUydmxla1pkUkx3bDJ2Z3pDRnh2ZTg3RGo4SEZVWHJQSGhRUWpGNGZoZWJfb0FoYnBKN0dseWMzTUI0bVE1Rm9JVTZub2x6VHJ3Qno5cVN6Sm1VWk8yeU5WZWxrdGc2MnNTU05UeGV4VVJ0MTc4ZVRwc1VsR1J6NTR6ZzFHY3dVMGl4Snc1ekVJbVBZS0gtaDRGTXNXZXBoVXAxclE?oc=5",
       "published": "2026-03-01T08:00:00.000Z"
@@ -421,6 +414,13 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
       "published": "2025-03-07T15:26:00.000Z"
+    },
+    {
+      "title": "TMNT Comic Writers Share Exciting Details of Ongoing Series and TMNT x Naruto | IGN Fan Fest 2025",
+      "source": "IGN Southeast Asia",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPaTRFVEhXbTl2NWtNTTJib0lRODFUVGI5eWFGNGRidzJ3SzMxVVQ3M3hEQ1IzTkc2dVVfaUFkN2ZKM0piZmluZ283SnpOTV9PMm5JWnlfUDRoQllMcHZxRlY5QnZRQ3hGS3ZmSm93cndJTjROYzhlaGZUNmhLbU91UFJPeENXOGpqQkFub25pQjVjenJuNWpUTWEzR1ZCQzgwV2FLcVZLbmFTTzBFUnpQbng4R2xsNjA5bG54U0N1YV9BWVMzRGpzTzRiNDlHVld5Qk93ZlNkdFVlSDBUNkRHUlpVMjZpNUlYM3VvNUI5ZFpmb2c?oc=5",
+      "published": "2025-03-01T08:00:00.000Z"
     }
   ]
 }
