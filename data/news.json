@@ -1,14 +1,7 @@
 {
-  "updated": "2026-11-22T10:59:38.815Z",
+  "updated": "2026-11-22T11:56:32.686Z",
   "sample": false,
   "items": [
-    {
-      "title": "MONDO Teenage Mutant Ninja Turtles Michelangelo 1/6 Scale Timed Edition Comes Loaded With Mikey’s Street Gear",
-      "source": "玩具人 TOY PEOPLE",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBKU0JGTGJBSGdpdC04bTZITGFFWEx6bFZKTWIwZHRWNmxjS2g4OXlxNnhyZWRGRDZ6MjJiTWk3MlpkVW5HeTNvamw3NXQ5aGRZ?oc=5",
-      "published": "2026-11-21T13:37:24.000Z"
-    },
     {
       "title": "Donnie Invents an AI Turtle! 🤖 | TEENY MUTANT NINJA TURTLES | Episode 16: Here's Shelldon! | Nick Jr., Rubble & Crew and Teenage Mutant Ninja Turtles",
       "source": "NickALive!",
@@ -157,13 +150,6 @@
       "published": "2026-07-15T07:00:00.000Z"
     },
     {
-      "title": "IDW unveils packed San Diego Comic-Con 2026 plans with TMNT #300, Godzilla, Hello Kitty, Sonic, and more",
-      "source": "AIPT",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE5ONXNYMnhPQ0dWNVF4YUxZWEhXbER1LWFKSFFWZWlZanZFaXBueWUxanFjNmtlSGpaZjZMbDhHN3cxZW9hdS1GQ3JYdUVNbUtBLWNCLTlQOUNTMmZBUktuZ3RuZmI5dVJCdWI3dW5xMllrMTRJLU5naFdR?oc=5",
-      "published": "2026-07-14T07:00:00.000Z"
-    },
-    {
       "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
       "source": "Foster's Daily Democrat",
       "category": "Events",
@@ -214,7 +200,7 @@
     },
     {
       "title": "CGC Certifies Videocassettes and Video Games from the Personal Collections of Kevin Eastman and Peter Laird",
-      "source": "cgcgrading.com",
+      "source": "www.cgcgrading.com",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQd1dOZkF1ZkQtdTRnRTJPVGlNdk5TUUJHc2JDSmJCZWQwU1dsRy1BeVhwTzFTQklFNTllQ3JFcGxKVW8weHJTZjMzdG9IQWJWcU5GVWVzY1RCNXRrUmJ2SURsTkpjUmUydmxla1pkUkx3bDJ2Z3pDRnh2ZTg3RGo4SEZVWHJQSGhRUWpGNGZoZWJfb0FoYnBKN0dseWMzTUI0bVE1Rm9JVTZub2x6VHJ3Qno5cVN6Sm1VWk8yeU5WZWxrdGc2MnNTU05UeGV4VVJ0MTc4ZVRwc1VsR1J6NTR6ZzFHY3dVMGl4Snc1ekVJbVBZS0gtaDRGTXNXZXBoVXAxclE?oc=5",
       "published": "2026-03-01T08:00:00.000Z"
@@ -421,6 +407,20 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTFAzRXJNUjhWZm1OU3F0VFdDS194WUN4cjNjeVQ1U0F2YzVQcTRtRlRwOE1kSGJNQ2ZJVEtYS1AtbWVUNVc5azNjSVdJazZ5TEpFNlVoZEhKbFlNbUZK?oc=5",
       "published": "2025-03-07T15:26:00.000Z"
+    },
+    {
+      "title": "TMNT Comic Writers Share Exciting Details of Ongoing Series and TMNT x Naruto | IGN Fan Fest 2025",
+      "source": "IGN Southeast Asia",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMi8wFBVV95cUxPaTRFVEhXbTl2NWtNTTJib0lRODFUVGI5eWFGNGRidzJ3SzMxVVQ3M3hEQ1IzTkc2dVVfaUFkN2ZKM0piZmluZ283SnpOTV9PMm5JWnlfUDRoQllMcHZxRlY5QnZRQ3hGS3ZmSm93cndJTjROYzhlaGZUNmhLbU91UFJPeENXOGpqQkFub25pQjVjenJuNWpUTWEzR1ZCQzgwV2FLcVZLbmFTTzBFUnpQbng4R2xsNjA5bG54U0N1YV9BWVMzRGpzTzRiNDlHVld5Qk93ZlNkdFVlSDBUNkRHUlpVMjZpNUlYM3VvNUI5ZFpmb2c?oc=5",
+      "published": "2025-03-01T08:00:00.000Z"
+    },
+    {
+      "title": "Dog mess problem: Woodman Museum, Dover neighbors seek solution",
+      "source": "Foster's Daily Democrat",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTkJ6MlVROGZfVFB2Q2p5N0VVQlFlaFowand2SFI5MVVuTG5uOEt1dTJKTFNlRTBjcHBhaHlUX29GTHJZTjJlaTh4N3o5Qm1JWW8xbjlEdnNyeEpRNFUwTWR6dU0zeXZ2cGdWYnhMV05zUmVobzZPTTFkdXk1UGYxSF9ENUhtbGRidFlkNGc1MHVEakdBM1dJdUZuN0pwNzZBRnhMQWM2TTNHWHZVcktOUHQxSjBSRnpRNGc?oc=5",
+      "published": "2024-12-23T08:00:00.000Z"
     }
   ]
 }
