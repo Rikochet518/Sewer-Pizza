@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-23T06:24:40.511Z",
+  "updated": "2026-11-23T08:48:50.932Z",
   "sample": false,
   "items": [
     {
@@ -36,13 +36,6 @@
       "category": "News",
       "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxQZlVJcW9TODlzUk9Zem5GQ28zOUxqeHFzTHRVNnJMTm9DdVd2ZGwyNEVQUENGczBKY0VqSzlKMktRYmxEbG43WDk0MTM1cGhISDdpZl8wcDUyX3ZZYlQxcVlGcTFvaVR1bUNLeEZLb3N1dXZkY1Vxd2hBZjBzd19ucmg0Q2hWelNMc1RqY1dibnFwWmRiRThwRzdqVlJwQQ?oc=5",
       "published": "2026-11-17T15:57:12.000Z"
-    },
-    {
-      "title": "TMNT Tuesday #83: New ‘Teenage Mutant Ninja Turtles’ and ‘Shredder’ previews",
-      "source": "AIPT",
-      "category": "News",
-      "url": "https://news.google.com/rss/articles/CBMiZkFVX3lxTE9TOVFWUVB1Sks2aEh5enpWNDA5TjQ0YW9nWFZubnlRQ2FrcWNtN3NuV2NROVdGd090MF9CeEhtNHVnMlp2TXdoRDhtX0pwbFp5UTZYYldZRm1YTXo2eHg5T3hXOTBjQQ?oc=5",
-      "published": "2026-11-17T15:07:33.000Z"
     },
     {
       "title": "Paramount Expanding TMNT Universe as DCU Faces Uncertain Future",
@@ -421,6 +414,13 @@
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPcEd6dWhQRF84cV9DR08xMGQ1TllRd3RhUENmVy1xUGdWbGNEUTlESmVZUU5XVllLbGNOSG56R0tlRzJ1WEhUVUswbkF5MVRHR1lxNHJCcHVxNU04VTBVdW9BNTVtTVFxZEo1UTVQekdvMjVPeWxPd1MwY05STS1iblgtbjlXQTdkN0xDNUgxTQ?oc=5",
       "published": "2025-02-17T08:00:00.000Z"
+    },
+    {
+      "title": "Dog mess problem: Woodman Museum, Dover neighbors seek solution",
+      "source": "Foster's Daily Democrat",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPTkJ6MlVROGZfVFB2Q2p5N0VVQlFlaFowand2SFI5MVVuTG5uOEt1dTJKTFNlRTBjcHBhaHlUX29GTHJZTjJlaTh4N3o5Qm1JWW8xbjlEdnNyeEpRNFUwTWR6dU0zeXZ2cGdWYnhMV05zUmVobzZPTTFkdXk1UGYxSF9ENUhtbGRidFlkNGc1MHVEakdBM1dJdUZuN0pwNzZBRnhMQWM2TTNHWHZVcktOUHQxSjBSRnpRNGc?oc=5",
+      "published": "2024-12-23T08:00:00.000Z"
     }
   ]
 }
