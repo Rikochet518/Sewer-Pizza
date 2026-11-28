@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-27T23:11:46.673Z",
+  "updated": "2026-11-28T00:04:04.286Z",
   "sample": false,
   "items": [
     {
@@ -87,13 +87,6 @@
       "published": "2026-11-24T01:51:00.000Z"
     },
     {
-      "title": "Stan Sakai returns to ‘Usagi Yojimbo’ with new full-color series ‘Honor of the Arrow’ in March 2027",
-      "source": "AIPT",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE9ieXR0ZUhpR0FsSGdrMTJiSl96NXZVZ2Y1dUNyMlBVYnAzbnEyNGZxYkRzTWtOTDRLM29xVGJOSDVHM1F5T2lJd3duUEJRLXhGaGh0RlI5dGNHenpNVjQ3U0JmVGl5U3IxcUh5UUdIWnozVEgtbUZyMmN3?oc=5",
-      "published": "2026-11-23T20:56:32.000Z"
-    },
-    {
       "title": "‘Teenage Mutant Ninja Turtles’ #25 hits the ground running",
       "source": "AIPT",
       "category": "News",
@@ -106,20 +99,6 @@
       "category": "Movies",
       "url": "https://news.google.com/rss/articles/CBMiUEFVX3lxTFBEMVV3UEsxZnU1NEJlQnFZbE1VaV80ZmhZd3ExSkNFVjBfN1NFMnhzUVJYQ1MwRkM0Ny1YMzZBMG4tMkpfaUMzQWl4MUVPLU9O?oc=5",
       "published": "2026-11-20T23:50:16.000Z"
-    },
-    {
-      "title": "Is Agent Bishop the big bad of upcoming \"War All the Time\" TMNT comic storyline?",
-      "source": "Comics Beat",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1Xd3JXMGdCSHJKa3ozeUQzckZwNlJDalBfNURNTjZlRGgybXcySkZocTZwNkpPTGoxQU1OcEYzZXpHTnNPTDB3MEg3NEF5S0VTTWs0YXBycVRhMDNnZlJDT2VLdW9Zbmc?oc=5",
-      "published": "2026-11-17T18:45:07.000Z"
-    },
-    {
-      "title": "Draw Along with Gavin Smith at New York Comic Con 2026 | The Comic Creating Process | IDWPublishing",
-      "source": "NickALive!",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxQVTBicmFMX25sSkJOTk9TY0pjbURSMmVfZzNmUkp3RGVUUHBvaHl2bHg1a0t0OFVmYVIwOGdKd1B5eUxWRmNla2lRVWZoRzhOWTA1bk9kQWwyd1N5UC0xQUxRSkxleC0yZVdfb1ZTX1ZPTTlqTjdQRFY0aVc1WUFIVG5XNjc?oc=5",
-      "published": "2026-11-11T08:00:00.000Z"
     },
     {
       "title": "How Every Teenage Mutant Ninja Turtle Officially Dies In TMNT: The Last Ronin",
@@ -150,13 +129,6 @@
       "published": "2026-10-12T07:00:00.000Z"
     },
     {
-      "title": "The Ninja Turtles celebrate NYCC with not one, but two pop up events",
-      "source": "Gaming Age",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOcnVmbG02cFB2XzJzS1laSUNFaXBKNkhUNjVweGxvVzUyY0NRRzNSOG9rdDNkMmdvTjFVbFI3eF9COFlseVI2Mk01RElKRExfWkZpV1p1NHB3VzJqVVhEbkZ2NGFWSE1JNWliZllPaEtWMzY3c0xFSjVma0QzLWdCTU9ING5xOUNRTTJGdldlMTMyU2MzcnBMV0xuZmx2ZkdT0gGmAUFVX3lxTE1PbjJTRzR5dDhyQzB4TjBMV0F6em93djZPTVQ2Vm50NE5kTGFpWWZUbkVHOW95LXBrRHdDRkEybkw1Ym5HWDE0Y254ZTdxQ0Y5UVpNel9XeVBvbHdzb01qWGxNSXFYTnZKQnduUFdQQl9XX3ZYSEhUTE84Mm90THJ6MkdtZzVWRlVKeld3NFY0VTR4RlpFYmtkeUl2QXZlM09HUlRtcWc?oc=5",
-      "published": "2026-10-10T13:00:35.000Z"
-    },
-    {
       "title": "NYCC: Stan Sakai And Soo Lee Create TMNT: The First Ronin",
       "source": "Bleeding Cool News",
       "category": "Events",
@@ -164,53 +136,11 @@
       "published": "2026-10-09T07:00:00.000Z"
     },
     {
-      "title": "NYCC ’26: Sakai and Lee put a new spin on Heroes in the Half-Shell with TMNT: THE FIRST RONIN",
-      "source": "Comics Beat",
+      "title": "Comic Book Club Meeting: \"The Teenage Mutant Ninja Turtles -- Pop Culture on the Half Shell!\"",
+      "source": "Tompkins Weekly",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOWlYtMWpiZEl4aGRFZmFCZVgxcXQ0OGFMeHlVSWhhY3NydnBwai1MTFNiekJSMWFGTjFSRC1FYVdBaWxqMWhyZkJoQS12QkpRUGhYRV9vcFQwWXd2MHpXT2YxS0Q1UkV1WDAxSmFyXzlDcVptMDRZaGJNY0lnRFhZaQ?oc=5",
-      "published": "2026-10-09T07:00:00.000Z"
-    },
-    {
-      "title": "#TMNT Kicks Off #NYCC With Immersive NYC Takeover!",
-      "source": "Action Figure Insider",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxON3RYcmlRTGNqVm1HNGUzWXR6QjE5ajlpc1Q0T19jWFBOUFJEblpPX2cweS1OYk1HYnFhX0l2ejNxaWNlU2dMTThLZkZuaHRZbnJhWGQ4T1BGRE5Fc1FNWW1Gbzh2MmNmVTVMNGd1eXIyRVdsdEVxMEdfalZ3VUtBWnJDN21EMmYtM3RWQg?oc=5",
-      "published": "2026-10-09T07:00:00.000Z"
-    },
-    {
-      "title": "NYCC: TMNT: Splintered Fate Opens a Bodega Pop-Up Experience",
-      "source": "Bleeding Cool News",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxNMWZ5VEhIVkVialYwQWY3cno4WUZEaWlJMGtiMGN6NHd6RERvZ2R3VTJyZEY2WXJmSkI5bTNRNEdqN09tRnByN25pZ3Z6UnA4SW5zVjl0UVBSYld3SHNxbmFVOE1pWjNmX1JHZ2pEaGk1N2N0UDdLMXYyTnlCNGlMOU9TOGIzbS1IMFk2aVNUaGdUTFQtb1UtaWZfLWE?oc=5",
-      "published": "2026-10-08T07:00:00.000Z"
-    },
-    {
-      "title": "NYCC: Paramount’s TMNT-Themed Events Are Taking Over NYC",
-      "source": "The Pop Insider",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiXEFVX3lxTE9UVFVENElpWDczQ2NlUkg1czVIaGVueUZtblJKUjFXMEVsdVhYVzYtVS1vSGl0QzFrNmpnVmF3MzZhaEFTYk02ZFg4TW9tQXhXNVF1WkNLTncyUWpY?oc=5",
-      "published": "2026-10-05T07:00:00.000Z"
-    },
-    {
-      "title": "New Horrors From GODZILLA, TMNT And Even HELLO KITTY Are Coming [Exclusive]",
-      "source": "Fangoria",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE5ublNiNVpFdnZyd0pvci0wU0VDQmFRMmhZQXBGcjZkeW93cjVZWTNmUFFoUGxjbTYzaUF3NmxhbUxwMzNackJ5SXdBQ1NCbDI1eDc1VmtjZTZIaHJXV2tLYU1YTERuelV1T2ZMQw?oc=5",
-      "published": "2026-10-05T07:00:00.000Z"
-    },
-    {
-      "title": "Nickelodeon Powers Up New York Comic Con 2026 with the 'Fun-ergy Factory'",
-      "source": "NickALive!",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOb19LWUhqZjNDazk2UDlXWGM3VldOWVNCdUJKM0Q2TUZXZ2FRdXFvb205VDFfSUNSY2FTSXFPUTRqajVoRWJuWXdYLWp1T3NUaUh4X2JXUGJtVjJrVDBJaXpVWE8wR1pXeUpJNTJ2SGdseWZNcGVFRFA0YkdlMmkycA?oc=5",
-      "published": "2026-10-03T07:00:00.000Z"
-    },
-    {
-      "title": "IDW Reveals Two Big TMNT Changes for 2027 at SDCC 2026",
-      "source": "Everything Edinburgh",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1tWE8yNDNyRDNjMnFyVGhvb0VnREZlSi1KZ1RJbm9vV3ZOdm9NU3VxSDhpeW52dUVnMFg0Y2tUYWdWZkFIQ0NCMlZ3NUFTcGFfUkhrNzR4UXpTRTJxU2JPRGxEcVpDbHVzMU1PUUk0TlQ4LXdOSFNtX0dn?oc=5",
-      "published": "2026-09-25T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOZU8wU0w0dTBIcHJMcFZzaXBPc0VjSkx3X1IyRW85WWExZ0FnTFZWWDFIVGhyLVBLcTNvX0ZfTktrZDFaYzFEdXhoZWxNcFVXb3dBcGNiSDZSbEhMUmkwUFBwZk9Ya3c2UEwxN1NzTU9OZkw5MEhnYWFzbzZlSVBpWGVpMXU3QnpOY0xLMDRWdFc2R2FnVWdHOXZoWGExSVNlY1pnSA?oc=5",
+      "published": "2026-09-28T18:30:45.000Z"
     },
     {
       "title": "NH Marine lends gear used at ground zero to Woodman Museum i...",
@@ -220,11 +150,18 @@
       "published": "2026-09-10T07:00:00.000Z"
     },
     {
-      "title": "SDCC 2026 Interview: “Tales of the Teenage Mutant Ninja Turtles” Writer Andrew Joustra",
-      "source": "The Geekiary",
+      "title": "Atomic Comics reopens Sept. 2 in Chandler, Arizona",
+      "source": "Nerdvana Media",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPQzBSa3NLYWFaejI1WlN3Q2VlclU4VDlyZWpCcnl4aUg0V1Y0WGlwbEdQS04wVkU1NlVLbWg4b3VOSUV3bUFmYU1JTE1CWENxaTJXcEtjRXczbXlrb0FyLU9oSWh1ajV1UmlVcXhiX0s3RWN0ZWdJaS1KWjZBeHNRQU1kTVU3VG93OWdMMEJ5ckpONm1fV0gycnNfaWo1SkRZclI1OWtWZ2ZHTm1SM1dGOU1ybzg?oc=5",
-      "published": "2026-09-03T03:37:36.000Z"
+      "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxNTV9Ha2NPNGwyTEdxQnlHaFdzeE9XVjR5c1VGZk9QdUZna1pKWTEweVpuOWJ3ZEtlU05ybjVfOXNnUnpaTEFDYnBrendyQXNLQklQeG8zYWJVOElrTnNTUXNSN2VnWUpHSXB1SFNJbWJyN3FaRFRCR3JSeC10MjJhUVlIVEVQdGp2WnlMODNrbllXMUNr?oc=5",
+      "published": "2026-09-02T07:00:00.000Z"
+    },
+    {
+      "title": "Kevin Eastman Pictures",
+      "source": "Rotten Tomatoes",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTE5XZU9CMzJVQkxwMkxoTE5QZzdKMV9JM0hOdE9RT3RXUk9BQjJSSDRfSjZYMDhlaWpnRm5FTl9XcUs1dFNOOUMybDgtb3duTmFuQkZFalJObDlhbWg2cEp3Y3owSDJJY0JjcjZTMDRMRG14ZEk?oc=5",
+      "published": "2026-08-09T01:12:04.000Z"
     },
     {
       "title": "TEENAGE MUTANT NINJA TURTLES PACK IS AVAILABLE NOW",
@@ -241,6 +178,13 @@
       "published": "2026-07-27T07:00:00.000Z"
     },
     {
+      "title": "Watch the Teenage Mutant Ninja Turtles with Kevin Eastman, Rob Paulsen, Barry Gordon, Cam Clarke, Renae Jacobs, and Townsend Coleman from Florida Supercon 2026!",
+      "source": "Popverse",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMimwJBVV95cUxNVXJQOGhxUWZjSTVVdk9uVUE5aG9waWRmendGNkYyTnF0bjg2NVRwRnFRb2pmZnM5RjcybXBMMlpuaFMwRkQxNFJNMHItbDlUOEIwWngzRmtjNzIybFAydGhvM0hQb1RCM1VJajZLOW1TYm4wamNZNXZfUGRFTnpISGItT2xBMjd4QXZsWnh2cE4wQzlOUlI5bHlONTdZMWNnN2xCR3NSeFZXUkN6QjFDdGRtZnF5b050eWxYT3ROdm1sX1AydEZpNVNuZ0puRW8xVFp2Z3VBc1hwQlVfd28weFI2dEQtR05mMkZoM3pNaHhRX0h3aktmdjZZV2hMVnlqSldIbUx5ejRuU09NMm00RFpwZ2ZYRzgwcTNB?oc=5",
+      "published": "2026-07-26T07:00:00.000Z"
+    },
+    {
       "title": "IDW Teases an Exciting New Era for Teenage Mutant Ninja Turtles | Comic Con 2026",
       "source": "IGN",
       "category": "Events",
@@ -255,60 +199,11 @@
       "published": "2026-07-25T07:00:00.000Z"
     },
     {
-      "title": "Turtles by the Beach",
-      "source": "San Diego Comic-Con Unofficial Blog",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiaEFVX3lxTE82WnhDUGpCcUVCTlZoOThCbFd1TEo0SUc3MEFHQVNZcGNVZDRRWFlQd21yc1pnZm9tMFdkb1NrWEp6Z0wzeXIzZGFRT1lYaDZ5OW5WX2UtZGc4UWI2aWw2c3RGWmF1VzZs?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
-      "title": "SDCC ’26: Matthew Rosenberg and Juann Cabal take over TMNT ongoing series",
-      "source": "Comics Beat",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxQZlEyWHJ2TUtFTHdmQXVhZUtBdnJfUWFvMmpYZnhrZmdMSml3c1NzUVJWSU4tcC0zQmJxQUJCMVVKc0FYQlpIUk5naDdGY3A4VkpDaUxyRGRzVE9ILTYyZGJhVk1OMkFET2U1Sy0tZHBYN3FZUFhBRWcwem4zV1dnTVBfczUxZ0dyenlseTJn?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
-      "title": "Matthew Rosenberg Takes Over 'Teenage Mutant Ninja Turtles' As 'The Last Ronin' Gets A Final Chapter",
-      "source": "Comic Book Club",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPcS1aSlhrVDRvWkhWSGlIcXlwUUpLRXkwczM5ZzRubzFZTkk2U2ZFQXBrekx5MXk5bGQwNHpHNlRyN1NBX3NKd1dPcmVnQW9DRmMwVDVoLV9nanJNUHJjUXktZGQ4Wmk5VnQ2dklMRXZWQXQyRkZSZnBRdzl4RkhQOTVnU2FpVHdtdDVrNlhsQXd2clFUemlXdFJ2Y3Q5QUVFSGZwSDM5VmczTVNocVlEaE9ySHJfdzczSHlIRHpkU2E1UC0zVVFSSzd5Y1Q0cVd4SFdrMA?oc=5",
-      "published": "2026-07-25T07:00:00.000Z"
-    },
-    {
       "title": "‘TMNT: The Last Ronin 3’ reveals first look as flagship comic series changes hands (exclusive)",
       "source": "Entertainment Weekly",
       "category": "Events",
       "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxOazNzYUkwLVdNME5vYUJoRkZuTGR6WE5Ic2hHTHhBM3JOX1lSNzhlU0RMUVBIbTRxRmlQMXM1WWJORUxXM0QycXdUT2RtaDY1YzAwVllXbTBuLTZpSWl1YmdSUDk2U3BOcW9jdVplSnVFcnpnS0tINkRFRTFXT0otQXJ1bWQzZ0RhRDdwZ3BnNDFNODRYV09qVlVmRy1KLVhBZzZPOWF5M1VzZmxGWmN4bg?oc=5",
       "published": "2026-07-24T07:00:00.000Z"
-    },
-    {
-      "title": "7 Years Later, TMNT: The Last Ronin Will Finally End",
-      "source": "ScreenRant",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9uZUtWamZ6WEVaRkpDcFZ5MlJiSHk0T01qY25yeFhsMmJNdGd0OTFid0pzV2VrU2ZMOVZZT0RxaWUyTUpxeWhzQjBCUW50NWFRby1CMnVFdUZTaFlMMFlsM3kwQXdHMC1YZjFfT3Q3d2lQalE5ZGVN?oc=5",
-      "published": "2026-07-24T07:00:00.000Z"
-    },
-    {
-      "title": "Nickelodeon Powers Up Comic-Con International: San Diego 2026 with Activations and Exclusives",
-      "source": "NickALive!",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFB4by1XWC04THVsMnZfRzM3UWpqa1l3U1NLZWhNTmR3bTVHRlp4QTFrMFJmbEhCRGhzSnl0ZllXb1JtUlRrM1IyZTVlRmd5SmpTa2tIWV9aQ184MXZvcVBtZmNfa2Z0Z2FHOVA1S2tWeGIxbGo0YVduSUdn?oc=5",
-      "published": "2026-07-22T07:00:00.000Z"
-    },
-    {
-      "title": "IDW Previews 'Shredder' #10 and 'TMNT' #300, Teases Big News Set to Be Announced at SDCC 2026",
-      "source": "NickALive!",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxNY1BoV1lhV1VhR1hiX2s1Q3JYUFJfQm0xdWZGVktRaWdTX0ROT0dpREVmLVJBNG00eHNqQm1Bb0ZqY0Zwb3c0a2llTEduOUpBc0NxRHdmcTh6N2Qwb2pjeDNQSU1PWmJ3Q3Fncy1BemRMTmNScUxtc2NraHJJY2g0eDNn?oc=5",
-      "published": "2026-07-22T07:00:00.000Z"
-    },
-    {
-      "title": "Your Guide to Everything Paramount Has in Store for San Diego Comic-Con 2026",
-      "source": "www.skydance.com",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxOVk00UHVYTnNoYzV0bHdsZC1RR1VTYjhNMVdKckJhSDZpRGUwZ2lhWl9zenkxYndBSnZvNWl4Q011NmdkNi1rWHhGYV9qc1JfS2NPX1BxQ1hKaG9GU0tpWmNCVVh1by1OWGk3VkpWdUJfTUhpNjBVd0J4TGFZMG5QOTNZanZKVXkyaUV4T3NvVUJ3Y0lYdkZUVUxPR3c4Ul9TNUV3REg5WjQtZw?oc=5",
-      "published": "2026-07-22T07:00:00.000Z"
     },
     {
       "title": "Kevin Eastman Spent Teenage Mutant Ninja Turtles Royalties On A Tank",
@@ -318,32 +213,11 @@
       "published": "2026-07-21T07:00:00.000Z"
     },
     {
-      "title": "UCC Distributing San Diego Comic-Con 2026 Exclusives",
-      "source": "San Diego Comic-Con Unofficial Blog",
+      "title": "Kevin Eastman & the 1987 Teenage Mutant Ninja Turtles voice cast want to do a special live event for the cartoon’s 40th anniversary",
+      "source": "Popverse",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxPRXpMNlJ5WXBvazdTbWFsZ2h3eEw1SGcxMVRrb0ZINUtiVHliN0NLYVVzYUtsVlNfRlhERWd0cjM1X1dsZXFJNUFTWnMxU2pTM2JnUWdiM1hXV1Mzc2dWQ1RoelVTbUp4OVBXZXg1cFBCNjdudFJQQ3RDLWYxbjUzX3A3U1BmbGlYOHc?oc=5",
-      "published": "2026-07-21T07:00:00.000Z"
-    },
-    {
-      "title": "IDW Reveals Full Lineup of SDCC 2026 Panels and Signings",
-      "source": "Get Your Comic On",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOY0ZYd1hLVlFxQkJGY3lEYnA2VnlWMlM5VU5ZazY4NldpODdheG9XczlHNk5iNG5oTld3MWd1ZUc0Z2NlSWpOX3NiSGY0R1Y2X0FxdG1nOG5wTndKX2RUUnNqQTN0cnNHR3lCX1RWNGdKWVl2dHJSSWhQaHF0SXV6OXB1MWRtc29YbldBdzdIMGxlemVYeXh6X0p6WEhsaWloc3BFbw?oc=5",
-      "published": "2026-07-20T07:00:00.000Z"
-    },
-    {
-      "title": "Super7 San Diego Comic-Con 2026 Exclusives [UPDATE July 17]",
-      "source": "San Diego Comic-Con Unofficial Blog",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE4wLTctSjhkUDRaUnV2OU83WEhLMkducjBFN1NXY2gza0trQ3UzX3docGZJcEZ0ZUNTLTNKejVxSUszVWxGWnlDQWxGSk9KN3VfZ09YWkhEOVV5SHBhWVVYYmI0WFYzUTZBaUREVUVkbktHd3FxMUkzYlV6THA?oc=5",
-      "published": "2026-07-17T07:00:00.000Z"
-    },
-    {
-      "title": "Paramount Games Studio Unveils Immersive Slate for SDCC 2026 | Avatar Aang, TMNT: The Last Ronin, Star Trek and More",
-      "source": "Temple of Geek",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxPX05fLVhzdEprVnF3Qm01UVJ5a08wcy1YMTRNWV85cG9pajhhWVRzUmN0Y1JVS084LTZEVHFaVkZ3eWNtUmRZR0NaQ00xY3NhdnVpUVgtZTd0TGpBNlpkYUdNNDBzOGYtM0JkVXFOV2w0empTOW44U2lBbERhM0FjaTJyX2Fkdm53aEFIRHlKMUphdkdjR1VMcVFwOXduUFdCckg0NV81VmZSVkJjQnNPaDBIcXJrY3RXVFdtWEJJQkZVbW1rVkMtOUVaSGNWajFCWWRZ?oc=5",
-      "published": "2026-07-17T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPRTZyc2w2d3ZhNFlEZDE4dFlvSXlXS1VaMzlJUURaTmlkM3JYS1ZkOWUtc2JvcGtnLTd6bXZsbHVRSFdTVEFmU0RaOGoyVk1faFBPcUNxUm0tOEV2OEdLNnFaTHg3a0JCamJZTGVlMGVlSnJnR2tUMDA0SEJYcElpcktsU3Nwanl1VTg2LTRaZVU2ZjV2WWNFRjlKUER4bUFZZEdyblBKTldndlNFSDNmS0xB?oc=5",
+      "published": "2026-07-19T07:00:00.000Z"
     },
     {
       "title": "The '80s TMNT cartoon was far less serious and far more funny than the original comics, and co-creator Kevin Eastman loves it for that reason",
@@ -353,74 +227,200 @@
       "published": "2026-07-15T07:00:00.000Z"
     },
     {
-      "title": "Insight Editions San Diego Comic-Con 2026 Exclusives, Debuts, Signings",
-      "source": "San Diego Comic-Con Unofficial Blog",
+      "title": "The TMNT: Last Ronin movie should include the original Teenage Mutant Ninja Turtles cartoon voice actors, co-creator Kevin Eastman says",
+      "source": "Popverse",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPeE1VV25fbkhMSXBHRVNjMndtaHJBV3M4elVNNGVrUndCeUVReHZBUDVZdmF2eEUxUnVuV1N5QUZoRmVuNnJzMVd1S1FfM2NmcW5vMF9ESmExcll3TExZcGVycTNnLWI5TFFBMjdxSFFZQ2pnRVdmQXEtZXZqYkJBSEVRV20wWWdDNXFkX3BkRkJnSXJ6NFAxaDI0WDdBTG8?oc=5",
-      "published": "2026-07-15T07:00:00.000Z"
-    },
-    {
-      "title": "IDW Announces Blockbuster Summer Exclusives for San Diego Comic-Con 2026",
-      "source": "Get Your Comic On",
-      "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPVC1FUWp0MDBfRWFYUEtmTjVTZ2swVl9NSFlWQ3BOQnJKNjhwZWVybGpLOXd4OUN4eVp4WDVkcUxZWDJLZWpmQm5TU0Y3SVVWemlMZV9BYjNnTXJGVkZ3bnR1RGdhM25OMDVVWGRDUVQzYnFYZGZpY3pxMEwwVFlPLWxpM09uZU9GSklqanVWb0pLempaZktPWk1aM1RxanBTWkljMHpQNXBmUXFTZjBJU29pSjhqaG41b2c?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNbzNybkpIUTQ5bUpnU0w5aW9fSlJRcWZaNTlON3ZDNVpkM0dnTVhLMTFvemd1dzhwblotWjNzR1FKalM3T1Y4TDZObThkUE1pWUtLbzQtWWx3ekZxamhhM0ROQkw0eEdaZnptb1ZyREZ4cnhYT3pvQmp2ZHRSRk1RZzl4M3NSVldmVzdnTHZpNE1VQ1lpaGduQzRqUVItOWFDTFN3aEhSQ0xkYzRIb1JBaWI4WlY5N3dmTGRjUmZDVVZ6b0VqNmtrRQ?oc=5",
       "published": "2026-07-14T07:00:00.000Z"
     },
     {
-      "title": "SDCC ’26: IDW announces TMNT, Godzilla, Hello Kitty & more exclusives",
-      "source": "Comics Beat",
+      "title": "There’s a secret alternate version of the 1987 Teenage Mutant Ninja Turtles theme by the same songwriter, and co--creator Kevin Eastman still has it on tape",
+      "source": "Popverse",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxNWEJtMWJCcmFaQjRNZG5ub1EtNHlBZF8yZElpX3V2Q1RYNWI2UFZtOUdHc3VqckFsd1g1blZNUEE2dGtteGltWjRrZWdCN0VKYlNlLWxiUUxFUVZjcHVINEdUUnJjMk82X3R2cjlldy1EUDlldGxYUUlVMjNhSTU4VXhiS2hscnc2aGF0QzJGQmhwTUNKS2c?oc=5",
-      "published": "2026-07-13T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxOcjMwTENiNFpkd0tlcGdmc2dKSVV2OW1GT0hyWlNsUm5tdHk2WDNRcFE1S2txTk9RUnh6UlBVUnhFMnk1YVNKR1JJRzI3RGxTT3lib2JOOTdEWGp1S25Wa1d6ay0xR2pfRmNPRE15TWZhNEF0aG9TX2ZXbEJkTHVSOXJfRnZBRjJiVE42emd5M3BhY0xvRkRzMUVJWGl5eWtiaEFTYUM3MGI4TVRTSVpWMWJyMFpDcmRfSWQ3Ug?oc=5",
+      "published": "2026-07-14T07:00:00.000Z"
     },
     {
-      "title": "Teenage Mutant Ninja Turtles go Undercover for Comic-Con exclusive action figure set from Mondo",
-      "source": "Flickering Myth",
+      "title": "Woodman Museum of Dover's new 9/11 exhibit provided by first responder",
+      "source": "Foster's Daily Democrat",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMixgFBVV95cUxOSHZlZjhPX1l4Ym9lZUFLZTdPTG4xLWt4WlpOMk53VHBZbTJQdVVKWWxaN2RwMnFJUVVOOTBZRVpmcG0zMk9BY3lEcjZ6VmFKTWRPZXdVSFptOHFlSG9FT3FpSHdSc0VJWG5PaUlERm04bmg5NVhMS1lFUGVjVFB1eV9nQWxaRXJRdjRJVXN5NnVtSmNYMmhVU2JnVXdmZUpldnZ5NnFrNGd4OGhqQ3Nlc0NfMDhrTlFWZHYwVTdrQXc4ZFM0TGc?oc=5",
-      "published": "2026-07-11T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQcTEydjl1eUxRZnQzczdRZUNDUWdqSmlDNk1FbWtFOXZrbFd3S0hHRVNWU1hxd1BfLU5wWkJWWEg2b04tNmh6aDc1OFVidHFObFlaLWFhTFVlLWg2a1B1NmpRekpQdVNjTDVmcVIweVUtdEUxYTlZeFR4OGxIRVIwMlVtVEM4Vi1JLXlPS1l2RnNMSGQta1Eta0M5Q3I5SlpKUjBFVEE4UTh4Sjg3WlZTREZJTWI?oc=5",
+      "published": "2026-07-02T07:00:00.000Z"
     },
     {
-      "title": "Nickelodeon San Diego Comic-Con 2026 Exclusives, Booth, More",
-      "source": "San Diego Comic-Con Unofficial Blog",
+      "title": "Topps Is Hiding Incredible Original Marvel Art Inside Its New Card Set",
+      "source": "ScreenRant",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNOEJneVltcVo4cEdwa1A3TWVPSTVPazVoOUFnWl9vN2cwcThQWEd5cGh4SkFWUnplaVpjMkRMU251WmZsM25Kd3g3M0VNamYyek1iOEtXUkZZeGFFV0xiejNnYVJWQVVNZFlnbEY3aDRURWlVQXFmRXFPSUJVMEZJTHhKSnJBc0RJOXZVX2V6OGlVQQ?oc=5",
-      "published": "2026-07-09T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE5XX1J2d01QdjNBN2tWbG8zbF9pSUw5djk1Ry16Tk1XVzZrZWpTNDc2MTluU21PV1dGUWNBR2ZVUy16eUtrVjI4aFVVc2g1LVZ0TG96b1p5V3J2Z0tQZE9jSGhRSXVlUDZSaHlGM0lCR1pLVmFJN2YwZ1pyOA?oc=5",
+      "published": "2026-07-01T07:00:00.000Z"
     },
     {
-      "title": "Nickelodeon \"Fun-ergy Factory\" Set for SDCC 2026: Avatar, TMNT & More",
+      "title": "The Teenage Mutant Ninja Turtles Are Coming to a Stage Near You",
+      "source": "Playbill",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxPbDdac2ZaZUJCTmE4ZTRMTnU0dWV2VVdqa0ZXa1p5TndNYmZhQ2o2SEljTmZDWnFGXzgwUnhkbTFuc09TQk1NUHhBWW9wM3AzdlVxMXNaV084RmtLYVdtcUxHajZoMmZjMW5GRHBsQ29JZmdNanRLUXVnejVCTjgwMGVIdjhsYnVMelh5YUR5TXV3OEQ4eFlr?oc=5",
+      "published": "2026-06-24T07:00:00.000Z"
+    },
+    {
+      "title": "First Look At Teenage Mutant Ninja Turtles #300 With 200,000 Orders",
       "source": "Bleeding Cool News",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxQM3VMWHUzQVdXOEMtTHFvQzdULUdFQWdRSUpJTXRKdURObDY4NzRFNWFfdlhNMWpxckxUb0dzLXVKRl9ZMlpxemozNkhQNFpqVm9XM2d5a1pDYm11a1plUzR4V29INVZaemdIYVd2a1g5c2FRRUQtLUF1UWlhMkpuMThNMjlqR0FBZndCb25uRE1ldVdlQmc0?oc=5",
-      "published": "2026-07-09T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNYWZDNnJ6Vy1TSmdVYmVSSTIyd0hzY0gtSWhlQkFXQkgxQ2dUUHNEdGM2Yzd3UjdHNHdYd241X2hxOVp3ZGNjODdkbk1NT2pDNHE5ZTQzZW9DbElHZVNQVmVBNUdldWItZjlfUlp5TWx3bEczU0ZCSEdqWVpmR0tsazVQQ3gwZ3hma2JZUWpuY1lPUHJUMHJkZllBcVZqVjA?oc=5",
+      "published": "2026-06-05T07:00:00.000Z"
     },
     {
-      "title": "\"Fun Flows Here\": Nickelodeon’s Massive San Diego Comic-Con 2026 Plans and Huge Offsite Activation Announced",
+      "title": "PREVIEW: 'TMNT' #300 BLIND BAG COVERS AND INTERIOR PAGES",
+      "source": "ICv2",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNTlc3OFQtQzZUSWoyS3NZVmd6S3RXM0ktTU9TeE4taFpGZll4UkNMck5rMU9tUzRITFlvUEw3Q2J0WHAxa2R6VktHVmhQT2ZLbEVobV8tOUlOTms5VDI1VUZfZHo3dURUX2V3NUVMeDZ6U0dlT2JSSWM1VWY3cWV0ZllQT29VWUpvMmlPUGc2RWxxMlhTVFlVZnFB?oc=5",
+      "published": "2026-05-29T07:00:00.000Z"
+    },
+    {
+      "title": "From Ninja Turtles to Lincoln— Woodman is NH's wildest museum: America 250",
+      "source": "Foster's Daily Democrat",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQNGdURWRral9ZSlVCQ2hFQnFGNDRCNVFySTJRczdKeXkyUFdnVDdUMi1hQXZZajlGMTNXT0tmb0M4ck1pbE42YTBObXgxZnY5Z1VzODRHbFNhQ1YyazBIdzZHNEVfMVlUUWJrUkRTUFFreDdHbk8wTFMtTk1zbTRKUTAzOWtfb1dJaXBLbWFaWERwOGdUMXd5N1lvdnhhSk5CNTFyRHFZYWFVbW95cVhIOWZ2dzJUeHp2ZHdvaDk5Vl83dUZkb2RhQjZRaw?oc=5",
+      "published": "2026-05-20T07:00:00.000Z"
+    },
+    {
+      "title": "SCOOP: A Teenage Mutant Ninja Turtles #1 Facsimile From IDW In August",
+      "source": "Bleeding Cool News",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOVHpSeUdXVVdsWjgzUzlvaWphenpIczVGcDNUekZsSHF4eWhRMEV6dE9nLU4telFnWVByVlB3bFNaQWg0dWFjUHVVbEl1cmRVS1VwazVwT2tGUGc0TFppYk0wcjJSS3BBTmFvUDBhaWNQNmNRNmJHQ2t2M05BV3diWXMzZ1dtT1FDTEhEN2UtTlBRQjBKY1BXdTRUUGhUMXYxNHc?oc=5",
+      "published": "2026-05-18T07:00:00.000Z"
+    },
+    {
+      "title": "J Scott Campbell's April O'Neil For Teenage Mutant Ninja Turtles #300",
+      "source": "Bleeding Cool News",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOclk2aWxkb0lNNVVyYkUzMmhBS2w1Q25ac25JT1dKNzA3Z3VEYkY2c180bWFHdDI3UGV6VEtKZm80NkI2aFBMTHdBdWpTQ0ZYa2RnVm91czZ5clJjT3BtMGp0LW4wYUtVUVhWYU9hV3VIV2k4eVZjTS1pcXVRZHVwcC12WGZ1OTVpb0ZlRkN3ZkNWN2NXUy1qYXZUTEZwSnJU?oc=5",
+      "published": "2026-05-09T07:00:00.000Z"
+    },
+    {
+      "title": "Things Change (2003)",
+      "source": "IMDb",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxON2hCTmZQUVlQaWpjSC1ldVdid2dLQVhSNjh5SGZwQjBRY2VkR1dNYmZoXzNtZ283T1BlampwSWhMSUpwZC1CQ0wwdy1mdjgtZVBybVVSTU9hd1NkbXYtWG55RUVJMUV2Y3gwc1BlbHR0NklKNVotSDJrcEllQnZMaUtsWQ?oc=5",
+      "published": "2026-05-07T22:21:48.000Z"
+    },
+    {
+      "title": "Original 'TMNT' comics sold out at Portsmouth convention 42 years ago this week",
+      "source": "WMUR",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPU1NhUE1GT2hXRkprbjJrd1Y3dzU4QzNxMzhTRV9mVnd1N0FxOTJTTTFFRGNsVkNseVlOYUVjYUlUc2t3WXNCQXAtbWRQMjhSVzJKZUpYU044UlNHYU84ZDlMYTlxN2xIbEJSYjVVZTJUakxQdDdUaERlSmtCRXJrak91U0VQYk5XUkNGc0pTS2RYT0g5SG0zemNRVTNhRXUt?oc=5",
+      "published": "2026-05-05T07:00:00.000Z"
+    },
+    {
+      "title": "Teenage Mutant Ninja Turtles: Empire City Launches Today on Meta Quest",
+      "source": "www.meta.com",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMif0FVX3lxTFBOUmVkSzZSTWh5REVqT0RWSU1KRTNqbVh3RWZwZUxveTFqQ2xrM0xBbGlIQnN6TnhHVHFNTi1qbEFBVVBMS2M4Nmd1WVFvWFBwMXRwUnExWGNzNTNTR0JEV2tDMmxOUlFkZkNrSWRaVVJhSUY0ajl3UHdTWnVzRk0?oc=5",
+      "published": "2026-04-30T07:00:00.000Z"
+    },
+    {
+      "title": "\"We couldn't have made Teenage Mutant Ninja Turtles today”",
+      "source": "Creative Bloq",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiowFBVV95cUxNNFVKS1NXUFprSzJOYlV6WDdGWFEtVy1MdkNIRWxQTlJSS1FwSnRHTVk4VHI3XzNzZzZITnh0dnhUaGtBZ0ZfSk9ZMFJSUk5zeE9QY1FHQnJHZ3hIRjlXZHYzZ2NNRUE0TENtd2MxRmZ6eEdPWjB5bGVzZHJwTXR5TFdEZWVCaHZTVHE4TTF3ZGhDbVEwalR0U2VFbm4xUFhWZWRN?oc=5",
+      "published": "2026-04-28T07:00:00.000Z"
+    },
+    {
+      "title": "'TMNT: The Last Ronin' Prequel 'Training Day' Gets Gorgeous New Cover Art | First Look",
+      "source": "NickALive!",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNYzZaZjlPSm1LTDRMOHhLaGhQZno2Nno2SWh1MEpYSVJJU3BaSmRDLWoyeFA1d1FuVlRmWXA0TWdrYzhhUUx4QU1IVzFqZ0hGWmg0RmcwWkh0Vy1hbEJLTEJOeS1kdEZiUW5fZ3NScllUWHJPOHItZzB3NzhwWUJhTQ?oc=5",
+      "published": "2026-04-23T07:00:00.000Z"
+    },
+    {
+      "title": "Check Out These Gorgeous New Covers to TMNT: The Last Ronin - Training Day #1",
       "source": "IGN",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMie0FVX3lxTE1lUHFIdldMOFJaN2RMd3V0TzlsVEhWXzhQSl9xMjZCeVY2b3FXcV9kSmh3Ujh2X3N2TUNBOXZpNHFHRFpCM0d6djRmczdmUUVOTDM2SXFDaVlYODMwTWJtTEgwTjBlLUR6N1pnbG42WWN5bWU0S1BYTkVHQQ?oc=5",
-      "published": "2026-07-09T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxNdzUzaERFWEZjWWJfdGRIbmFpTHl1RHQtRkZQWjgzRTVRNjBGNHpGMTNuU0xKNWpwbWhMYUtvaFhkU3RJY2hyQ3Y0XzN6VFFCOW1MMnpkQ3BDNnBQb1dhdVZHOXBXYVNoc3pxMXpQTVZkSC0ydmZ2NUhXdUtCX2NvT25nWkp5OS13NWVHeTZBaTc5UmxmdGxmdUNFLWV3dw?oc=5",
+      "published": "2026-04-22T07:00:00.000Z"
     },
     {
-      "title": "Exclusive: IDW SDCC Exclusives: Godzilla, Hello Kitty, Star Trek, TMNT",
-      "source": "Bleeding Cool News",
+      "title": "40+ Years In the Making: 'TMNT #300' Features Frank Miller's First-Ever Ninja Turtles Cover",
+      "source": "NickALive!",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPdHFpZlZGT2Nja1M3U2hYWHUzcU96UnRsNjdBWFZTWEZrM3lxNjNPemh1ekNMSk16MF9YelZtT3NZTEpaa3BTYXdISW5XRjhUTjF2d3NxQVhDbnR6WXRSSGxxVWplQ1dsWVlGTjI3R01SVEZWNU5SUUF6WVo0TkRCNUlDdU9kOVJMWS1BM2E0dk1TenJNMHZHSjl6WmpTUTA?oc=5",
-      "published": "2026-07-09T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOZVJyNmVIeUNyRzVVNV9qSUFkZkJ4NTBMQkpDOEFTdmUxU1dXMjdhLUR6VzJoRkphOVRjbzdaMDFBNGxUM2dLaVpEVUpmUGhGOVNqLVRoUjZmRzVfdWU1YU8tM2Y3S0FNQ3dGVGZNbkZCRWdKU2k3dVRjbkJ2d0RMcA?oc=5",
+      "published": "2026-03-24T07:00:00.000Z"
     },
     {
-      "title": "Teenage Mutant Ninja Turtles x G.I. Joe Snake Eyes x Leo and Timber x Rahzar 2-pack coming to Comic-Con from Playmates Toys",
+      "title": "Frank Miller Draws His First ‘Teenage Mutant Ninja Turtles’ Cover for Issue #300",
+      "source": "Bloody Disgusting",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOWng5elFmMWFWcnZ3NEtQMV96QTFRQnc5SHRKRjBabzFTNm1tWnNiVnhlRGxncElRTjJieXgzb0wzY1VhOXhRS0x5R1ZLdmc2RnJ0ZWVPa3U4Q28zTE5IVjhMdVEwRERJM2RoQTZFYVdHQkdrbHlFc2NmWjg1YVV5dUxSWUFCbHdzdFJ4cVZHYkRqN3pIb2xWX0lwWXlRck5xN3RhRVFhOGxxQ09Ca0M0WWxzS2lVdHQ5T2JzdzB1TDc?oc=5",
+      "published": "2026-03-23T07:00:00.000Z"
+    },
+    {
+      "title": "The Biggest TMNT Comic Of The Year, #300 Arrives This Summer",
+      "source": "Comic Watch",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxObXhLdjF1WTVMOWNGMENQMlI4M0ZmNHhQVS1MaFpuclRoaHE1SUl4YkxnRWpxYWg3ZHQ4dTYzUXQweDM3aWhuZnBYREVqODZrSWRKOXpHc3N3Z0lHVmZ6RnV1TGY3WV9UT0VVYnQzdktGUEwzMkoyU2UydmFqZjNhaVh5SGYwbTBJMktfMUdBRUN2QXhab3gwc3Z6TDdfWnFLMjVtTnd3?oc=5",
+      "published": "2026-03-22T07:00:00.000Z"
+    },
+    {
+      "title": "Frank Miller draws Teenage Mutant Ninja Turtles for the first time for milestone 300th issue variant cover",
       "source": "Flickering Myth",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxOazdYVjMtZ09SSFd3bnM4VjI0dDFvbmpEaV9OVHVScUhsaFpyTnAxQTlhWTY1bjNXMEtmSHV0RFpkdFlFTXVXaTdUMGR1RVA3MGlYdGRLTjFlMUM4OEtSa1pSaFFfUEdpOFJPSms5bEFTSlV5WnF6dHpBekNOVHdTVk1kTENaeUxtbVlndzhDR2xlZzBsanZrc0dPdHNEZXJ2aHJsc0M5dktIZXc0X2l3amRyNlFRYlF5NkU1dUFsTzFhOElrN3l4S0tLaHhfVmg5UG95d1pfbkxmaEV6akJNaTc3RXZ5cEFocFE?oc=5",
-      "published": "2026-07-08T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPOVNCNmNmbWN2RXlnaUhvVXRxZENPbW93bjVaRUdhem9Wd1htaHdzd1lMYlFIcXNrcW5YRnQycGRvR1BBNVpmWkl6dTJ6bjUtZW1HT2xtdGNvQXZlbU5iTmZYTnJsSnNYTWNBWS0wUjRvV19VejBfSi1yUEUtYWZRc3NvekhuLU9ha1pqVkRwdE40OFZtMDVZeGlmeTI1aFpJMUtRTWZCNVYtb09kcklNdGRNS1dNYzlpSi00T2dlX3ZIQkctWS1aUFBKaFFYS0NULVRLdQ?oc=5",
+      "published": "2026-03-22T07:00:00.000Z"
     },
     {
-      "title": "NECA San Diego Comic-Con 2026 Exclusives [UPDATE July 6]",
-      "source": "San Diego Comic-Con Unofficial Blog",
+      "title": "Frank Miller Draws His First-Ever ‘Teenage Mutant Ninja Turtles’ Cover (Exclusive)",
+      "source": "The Hollywood Reporter",
       "category": "Events",
-      "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTE1xM0VTWGVxbW13T3VCQ0g3Y1NvWk0tWmlZaFpfdWd1OGZzMVZSekY1QzlCSDV2RlR0bGk5OS04a3Y2Q25MSzdVb3NpRzI2TjctWHlXdnFBX2RQQmlFb25LYUhhSDJsbVV1WnlDVmlCMVJBLW53U0pKbmFn?oc=5",
-      "published": "2026-07-06T07:00:00.000Z"
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQZjZaY0ZqMm82WVBSUThDczQzUGtYb0hkRlZpRnZ3b0xLTExUMGVRaEJXRWNTSy0xMVVGTmxlZUx2TTc0WHREYXZiSXgxNmdHbWpfOGhTSHl1MVZFbWRxZERYVDhVdkdYeHF5LW5KeWhBT255S1FwT05LZUJqVXltZTR2ZEduUlNCR2FNZDM3Z1kzQ2w1NmhGN0Zub2YzT0tmcDZNTlFjQ3hYSlgyMk01eHpkcDVnTlI2?oc=5",
+      "published": "2026-03-20T07:00:00.000Z"
+    },
+    {
+      "title": "Frank Miller Draws First Teenage Mutant Ninja Turtles Cover For #300",
+      "source": "Bleeding Cool News",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxOTmJpVWhXMmxtbUtlbUluenVSTlRHVjN1RFZWcmZ4eENmbExqY3FuT1U2WVVIWWZTQUlZeHVKSjhRdFR3SEN4dk5mYVl0UkItUG1RQjJ3QnY4MjVtS1g5Z2xSYmtRR2dZOHpKbnpOOEJrTmxXazVIYXJSaFRWcDFaTUt2U0t0VUZwamVENl9OY3hsMmN1MjVFd2pjM04yN29CdWc?oc=5",
+      "published": "2026-03-20T07:00:00.000Z"
+    },
+    {
+      "title": "IDW Reveals New Details for ‘TMNT’ #300 and Kevin Eastman Variant for 'The Last Ronin: Training Day'",
+      "source": "NickALive!",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxNZ2VNYWh6MVRJaENIOURENWZJd3Z2VWxHYTB3S3ZqSXNxczRMLW1PRU9GbVhWN1EwejdpVjd5aGNkX1NubjBHT2xuRWRkakc5MU45NVhoRjdIWHFOS19Kb19pa0JaLXJnclZFaHVhNWNzLUN0Y0dDbWtIUkdOMzFpQg?oc=5",
+      "published": "2026-03-17T07:00:00.000Z"
+    },
+    {
+      "title": "‘Teenage Mutant Ninja Turtles’ Original Voice Cast to Reunite at Florida Supercon",
+      "source": "TV Insider",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQQVlQUGIwci15Y1h3NFpQRFY5bjVlZG5JeFA1VFFxa0FkRTlwczJueF8xdlFNVDRZbjdLSHBlcC1NR3hUakF6Ylc3Wjd3eXBMUUFULVNRc3RQUS1BdTl0anVNTVVhanBzdktSd29IdGhsRDA1UlFXcEw3NnI5TGZ1MkZLcFVob29tcUNQOFgyeDdjOWhJR1FURmxpMzdiaE9DVm5TS2tLYkJKMUJ2UThKag?oc=5",
+      "published": "2026-03-13T07:00:00.000Z"
+    },
+    {
+      "title": "Co-creator Kevin Eastman: Bruce Lee inspired 'Ninja Turtles' fights",
+      "source": "upi",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxPZ1lJUHBwT1lHYjJXV0JYX05BVXEtLU1fdi1uTjRVbHI3LWZRbGNSZ1J1QVk3SHcyWnYtLU9FNmVQTW1QRkU5ajhBOVNOcHFZdnhVYVpBN2U1eUh2S2NDU2ZKcmdKY1VlMURKWC1hSTBfdExoU1RRMWFCdkJwR3E5QURpX3AyUEhONXItZUNzaWlqeFJBenBzdWVZME5PQ1NzenM0VGpyTTltRmVIMjlpTWZLUHBEMXlUYlBPbThneG9CZ9IBxwFBVV95cUxPclcxQzlsb25wTjZvb0Q5TFpRdHg5SXJ4R2JvLUswaFpNMHM5U3VZcDRER1kyLWJGaXhDbGpDbkdRZ25PRHhtSzNPX2VLMkVYZ1d5Wkh0LXI5cldHMnNOUnJxaDM2N1FwTFk3em9wSld1SGVYdnRXNlRNNGNLNTZIdU1ERGY5TDJhZXRjaU0tdF9vTlYtTFBrRGxxejN6czdENGREdVZCOWJYVEFsWEY4RnBvTEtIeTY4QUYwaXdrbVZZVEZ5djdn?oc=5",
+      "published": "2026-03-12T07:00:00.000Z"
+    },
+    {
+      "title": "CGC Certifies Videocassettes and Video Games from the Personal Collections of Kevin Eastman and Peter Laird",
+      "source": "www.cgcgrading.com",
+      "category": "Events",
+      "url": "https://news.google.com/rss/articles/CBMiggJBVV95cUxQd1dOZkF1ZkQtdTRnRTJPVGlNdk5TUUJHc2JDSmJCZWQwU1dsRy1BeVhwTzFTQklFNTllQ3JFcGxKVW8weHJTZjMzdG9IQWJWcU5GVWVzY1RCNXRrUmJ2SURsTkpjUmUydmxla1pkUkx3bDJ2Z3pDRnh2ZTg3RGo4SEZVWHJQSGhRUWpGNGZoZWJfb0FoYnBKN0dseWMzTUI0bVE1Rm9JVTZub2x6VHJ3Qno5cVN6Sm1VWk8yeU5WZWxrdGc2MnNTU05UeGV4VVJ0MTc4ZVRwc1VsR1J6NTR6ZzFHY3dVMGl4Snc1ekVJbVBZS0gtaDRGTXNXZXBoVXAxclE?oc=5",
+      "published": "2026-03-01T08:00:00.000Z"
+    },
+    {
+      "title": "Review: Teenage Mutant Ninja Turtles take over Magic: The Gathering",
+      "source": "Games with James | Substack",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMifkFVX3lxTE9yNDJfUk9iUE5ESGVhZk5rUGx0TzFzOFEyd2tyNUNCV3BKWmczWTV6TDlBdDJEVUwwY3VrdHZoaUhicWpUZlBWaHZ1cV82S2dMcXBTYlRCb1RoZl9XYmN4Ymd0ejc0V05OZDlVY3ZJWXhWU3hDOUhqSGhocXd4UQ?oc=5",
+      "published": "2026-02-27T08:00:00.000Z"
+    },
+    {
+      "title": "Sneak Into Design with Magic: The Gathering® | Teenage Mutant Ninja Turtles",
+      "source": "Magic: The Gathering",
+      "category": "News",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxOZHlJY25OYm1SMGFJb1dwNVpiY0Ewcmo3VHk1cTI5azdIeWVCeDItOHRLZEh4WS0ySEJoeUNkVGZHUXhSTTRzWUUzUUNFalhISmRIOWxydXc5VE1fNVhIYndHZVhTQ3dMQXFxY3VEb0lfN1hSdUJyOHAtS2U0S2o3UHVMQ0lkRkg4d0pBTVdRWHZPOTBoWW41bA?oc=5",
+      "published": "2026-02-25T08:00:00.000Z"
     }
   ]
 }
